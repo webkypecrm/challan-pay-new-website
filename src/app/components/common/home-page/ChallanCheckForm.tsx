@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+//import Image from "next/image";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Check } from "lucide-react";
@@ -65,10 +65,9 @@ export default function Home() {
               <CardContent className="flex flex-col items-center justify-center gap-1 p-2">
                 {/* Image */}
                 <div className="w-16 h-16 relative">
-                  <Image
+                  <img
                     src={card.image}
                     alt={card.title}
-                    fill
                     className="object-scale-down rounded-md"
                   />
                 </div>
