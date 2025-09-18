@@ -34,7 +34,7 @@ export default function Home() {
         <RadioGroup
           value={selected}
           onValueChange={(val) => setSelected(val)}
-          className="w-full grid grid-cols-2 sm:grid-cols-2 gap-6 justify-items-center"
+          className="w-full grid grid-cols-2 sm:grid-cols-2 gap-4 justify-items-center"
         >
           {cards.map((card) => (
             <Card
