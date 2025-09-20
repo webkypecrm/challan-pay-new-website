@@ -20,14 +20,14 @@ import { Menu } from "lucide-react";
 export default function Header() {
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
-      <div className="container mx-auto flex items-center justify-between p-2">
+      <div className="container mx-auto flex items-center justify-between p-2 ">
         {/* Logo */}
         <Link href="/">
           <Image
             src="/logo/logo.svg" // Path to your logo in public folder
             alt="Challan Pay Logo"
-            width={150} // Adjust width
-            height={50} // Adjust height
+            width={108} // Adjust width
+            height={28} // Adjust height
             className="object-contain"
           />
         </Link>
@@ -65,15 +65,26 @@ export default function Header() {
         {/* Mobile Menu */}
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <Menu className="h-6 w-6 " />
-            </Button>
+            <div className="w-9  flex border-1 rounded-lg justify-center item-center ">
+              <Button variant="ghost" size="icon" className="md:hidden mt-0">
+                <Menu className="h-6 w-6 " />
+              </Button>
+            </div>
           </SheetTrigger>
-          <SheetContent
-            side="right"
-            className="w-full h-[150px] rounded-lg top-23"
-          >
-            <nav className="flex flex-col mx-4 gap-4 mt-6">
+          <SheetContent side="right" className="w-full h-[260px] rounded-b-xl">
+            <nav className="flex flex-col  mx-3 gap-4 mt-3">
+              <SheetClose asChild>
+                <Link href="/">
+                  <Image
+                    src="/logo/logo.svg" // Path to your logo in public folder
+                    alt="Challan Pay Logo"
+                    width={108} // Adjust width
+                    height={28} // Adjust height
+                    className="object-contain"
+                  />
+                </Link>
+              </SheetClose>
+              <hr />
               <SheetClose asChild>
                 <Link href="/" className="text-gray-900 hover:text-blue-600">
                   How it Works
@@ -95,7 +106,7 @@ export default function Header() {
                   Support
                 </Link>
               </SheetClose>
-              {/* <Button className="w-full">Check Challan Status</Button> */}
+              <Button className="bg-cyan-600">Track Status</Button>
             </nav>
           </SheetContent>
         </Sheet>

@@ -22,7 +22,7 @@ export function HeroSection() {
   return (
     <div
       className="w-full max-w-screen-xl mx-auto px-4"
-      style={{ marginTop: "120px", marginBottom: "50px" }}
+      style={{ marginTop: "70px", marginBottom: "50px" }}
     >
       <Carousel
         plugins={[plugin.current]}
@@ -34,12 +34,12 @@ export function HeroSection() {
           {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem key={index}>
               <div className="p-1">
-                <Card className="h-auto border md:h-64 py-0">
+                <Card className="h-auto border md:h-64 py-0 rounded">
                   <CardContent className="flex items-center justify-center p-3 h-full">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
                       {/* Left Content (text) */}
                       <div className="flex-1  md:text-left">
-                        <h1 className="text-3xl md:text-4xl font-bold leading-snug uppercase">
+                        <h1 className="text-3xl md:text-4xl font-bold leading-snug">
                           <span className="text-cyan-600">Challan Pay</span>
                           <br />
                           <span className="text-black">AnyTime</span>
