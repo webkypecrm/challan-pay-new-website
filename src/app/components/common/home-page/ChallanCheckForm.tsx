@@ -39,7 +39,7 @@ export default function Home() {
           {cards.map((card) => (
             <Card
               key={card.id}
-              className={`relative cursor-pointer border rounded-2xl w-[130px] h-[120px] sm:w-[200px] sm:h-[180px] flex flex-col items-center justify-center transition 
+              className={`relative cursor-pointer border rounded-2xl w-[140px] h-[120px] sm:w-[200px] sm:h-[180px] flex flex-col items-center justify-center transition 
         ${
           selected === card.id
             ? "border-gray-200 bg-cyan-50"
@@ -52,12 +52,15 @@ export default function Home() {
                 <RadioGroupItem
                   value={card.id}
                   id={card.id}
-                  className="h-5 w-5  border-1 border-cyan-500
-                     data-[state=checked]:bg-cyan-500 
-                     data-[state=checked]:border-cyan-500 flex items-center justify-center"
+                  className="
+      h-5 w-5 border  rounded-full
+      data-[state=checked]:bg-cyan-600
+      data-[state=checked]:border-cyan-600
+      flex items-center justify-center
+    "
                 >
                   {/* White Tick Icon */}
-                  <Check className="h-3 w-3 text-white" />
+                  <Check className=" h-3 w-3 text-white" />
                 </RadioGroupItem>
               </div>
 
@@ -88,7 +91,7 @@ export default function Home() {
       </div>
 
       {/* Right Section - Input & Button */}
-      <div className="w-full lg:w-1/3 flex flex-col justify-center gap-2  lg:mt-0">
+      <div className="w-full mt-2 lg:w-1/3 flex flex-col justify-center gap-4 lg:mt-0">
         <div className="text-xl font-bold   lg:text-left">
           Enter Vehicle Number
         </div>

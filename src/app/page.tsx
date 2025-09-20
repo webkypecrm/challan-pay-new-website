@@ -20,8 +20,9 @@ function HomePage() {
         <ChallanCheckForm />
         <BotBanner />
         <TrustedByMillions />
-        <HowItWorks />
         <Testimonials />
+        <HowItWorks />
+
         <TrustedPartner />
         <SupportedBy />
         <div>

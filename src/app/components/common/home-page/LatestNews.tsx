@@ -6,11 +6,10 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  // CarouselNext,
-  // CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import Link from "next/link";
+import Autoplay from "embla-carousel-autoplay";
 
 interface NewsItem {
   logo: string;
@@ -73,46 +72,70 @@ const newsData: NewsItem[] = [
 ];
 
 export function LatestNews() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
+
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([]);
+  const [emblaApi, setEmblaApi] = React.useState<any>(null);
+
+  React.useEffect(() => {
+    if (!emblaApi) return;
+
+    setScrollSnaps(emblaApi.scrollSnapList());
+    emblaApi.on("select", () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    });
+  }, [emblaApi]);
+
   return (
     <div>
       <div>
-        <div className="text-center mb-8 mt-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 uppercase">
-            Latest News
+        <div className="text-center mb-6 mt-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#0A0A0A]">
+            Latest Media and
+            <br /> <span>News</span>
           </h2>
-          <p className="text-gray-600 text-sm md:text-base mt-2">
+          {/* <p className="text-gray-600 text-sm md:text-base mt-2">
             Stay Updated with our most recent stories and updates from across
             the country
-          </p>
+          </p> */}
         </div>
       </div>
-      <Carousel className="w-full">
+      <Carousel
+        className="w-full"
+        setApi={setEmblaApi} // 👈 connect carousel API
+        plugins={[plugin.current]}
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={plugin.current.reset}
+      >
         <CarouselContent className="-ml-2">
           {newsData.map((item, index) => (
             <CarouselItem
               key={index}
               className="pl-2 md:basis-1/2 lg:basis-1/3"
             >
-              <Card className="rounded-xl border border-gray-200 py-0 shadow-sm hover:shadow-md transition">
+              <Card className="rounded-xl border border-gray-200 py-0 shadow-sm hover:shadow-md transition h-80">
                 <CardContent className="p-5 space-y-3">
                   {/* Logo */}
                   <div className="flex items-center">
                     <Image
                       src={item.logo}
                       alt="logo"
-                      width={50}
+                      width={60}
                       height={50}
-                      className="object-contain"
+                      className="object-contain h-15"
                     />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-base font-semibold text-gray-900">
+                  <div className="font-bold text-sm text-[#0A0A0A]">
                     {item.title}
-                  </h3>
+                  </div>
 
                   {/* Description */}
-                  <p className="text-sm text-gray-600">{item.description}</p>
+                  <p className="text-sm  text-[#0A0A0A]">{item.description}</p>
 
                   {/* Footer */}
                   <div className="flex items-center justify-between pt-2">
@@ -134,6 +157,17 @@ export function LatestNews() {
         {/* <CarouselPrevious />
       <CarouselNext /> */}
       </Carousel>
+      <div className="flex justify-center mt-4  gap-2">
+        {scrollSnaps.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => emblaApi && emblaApi.scrollTo(idx)}
+            className={`w-2 h-2 rounded-full transition-colors ${
+              idx === selectedIndex ? "bg-cyan-600" : "bg-gray-200"
+            }`}
+          />
+        ))}
+      </div>
     </div>
   );
 }

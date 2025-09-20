@@ -57,7 +57,7 @@ export default function TrustedPartner() {
   ]);
 
   return (
-    <div className="mt-10">
+    <div className="mt-4">
       {/* Heading */}
       <div className="text-center mb-8">
         <h4 className="text-lg md:text-3xl font-bold text-black">

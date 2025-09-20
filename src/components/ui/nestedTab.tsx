@@ -5,7 +5,7 @@ import * as TabsPrimitive from "@radix-ui/react-tabs";
 
 import { cn } from "@/lib/utils";
 
-function Tabs({
+function Tabs2({
   className,
   ...props
 }: React.ComponentProps<typeof TabsPrimitive.Root>) {
@@ -18,7 +18,7 @@ function Tabs({
   );
 }
 
-function TabsList({
+function TabsList2({
   className,
   ...props
 }: React.ComponentProps<typeof TabsPrimitive.List>) {
@@ -34,7 +34,7 @@ function TabsList({
   );
 }
 
-function TabsTrigger({
+function TabsTrigger2({
   className,
   ...props
 }: React.ComponentProps<typeof TabsPrimitive.Trigger>) {
@@ -42,7 +42,7 @@ function TabsTrigger({
     <TabsPrimitive.Trigger
       data-slot="tabs-trigger"
       className={cn(
-        "data-[state=active]:bg-cyan-600 data-[state=active]:text-white dark:data-[state=active]:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring dark:data-[state=active]:border-input dark:data-[state=active]:bg-input/30 text-foreground dark:text-muted-foreground inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "data-[state=active]:bg-cyan-50 data-[state=active]:text-cyan-600 dark:data-[state=active]:text-foreground focus-visible: focus-visible:ring-ring/50 focus-visible:outline-ring dark:data-[state=active]:border-input text-foreground dark:text-muted-foreground inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5  border border-transparent  text-[10px] font-medium whitespace-nowrap transition-[color] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50  [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}
@@ -50,7 +50,7 @@ function TabsTrigger({
   );
 }
 
-function TabsContent({
+function TabsContent2({
   className,
   ...props
 }: React.ComponentProps<typeof TabsPrimitive.Content>) {
@@ -63,4 +63,4 @@ function TabsContent({
   );
 }
 
-export { Tabs, TabsList, TabsTrigger, TabsContent };
+export { Tabs2, TabsList2, TabsTrigger2, TabsContent2 };

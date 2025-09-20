@@ -29,8 +29,8 @@ export default function TrustedByMillions() {
     <Card className="w-full rounded-2xl  border  p-2 py-8 md:p-10 shadow-sm">
       {/* Heading */}
       <div className="text-center mb-8">
-        <h2 className=" text-xl md:text-3xl font-bold text-gray-900">
-          TRUSTED BY <span className="text-cyan-600">MILLIONS</span>
+        <h2 className=" text-2xl md:text-3xl font-bold text-gray-900">
+          Trusted By <span className="text-cyan-600">Millions</span>
         </h2>
         <p className="text-black font-medium text-sm md:text-base mt-1">
           Join the Largest Challan Resolution Platform in India

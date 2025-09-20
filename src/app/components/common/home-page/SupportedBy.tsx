@@ -9,6 +9,8 @@ export default function SupportedBy() {
     { icon: "/supported-by/MSME.png" },
     { icon: "/supported-by/ULIP.png" },
     { icon: "/supported-by/EntrepreneurIndia.png" },
+    { icon: "/supported-by/fada.png" },
+    { icon: "/supported-by/aitwa.png" },
   ];
 
   return (
@@ -21,11 +23,11 @@ export default function SupportedBy() {
       </div>
 
       {/* Grid of cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2">
         {partners.map((partner, idx) => (
           <Card
             key={idx}
-            className="flex flex-col items-center justify-center p-2 rounded-sm  border border-gray-200 hover:shadow-md transition"
+            className="flex h-16 flex-col items-center justify-center p-1 rounded-sm  border border-gray-200 hover:shadow-md transition"
           >
             <Image
               src={partner.icon}

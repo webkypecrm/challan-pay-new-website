@@ -2,14 +2,12 @@
 
 import React from "react";
 import Image from "next/image";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 interface Testimonial {
   name: string;
@@ -55,17 +53,41 @@ const testimonials: Testimonial[] = [
 ];
 
 const Testimonials: React.FC = () => {
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
+
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([]);
+  const [emblaApi, setEmblaApi] = React.useState<any>(null);
+
+  React.useEffect(() => {
+    if (!emblaApi) return;
+
+    setScrollSnaps(emblaApi.scrollSnapList());
+    emblaApi.on("select", () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    });
+  }, [emblaApi]);
+
   return (
-    <div className="bg-[#31AB76] text-white py-4 px-2">
+    <div className="bg-[#31AB76] text-white py-4 px-2 mt-6">
       <h2 className="text-2xl font-bold text-center mb-4">
-        REAL STORIES, REAL SAVINGS
+        Real Stories, Real <br />
+        <span> Savings</span>
       </h2>
       <div className="flex flex-wrap justify-center gap-6">
-        <Carousel className="w-full max-w-xs">
+        <Carousel
+          className="w-full max-w-xs"
+          setApi={setEmblaApi} // 👈 connect carousel API
+          plugins={[plugin.current]}
+          onMouseEnter={plugin.current.stop}
+          onMouseLeave={plugin.current.reset}
+        >
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index}>
-                <div className="bg-white text-black rounded-lg shadow-lg w-80 h-60 p-5 flex flex-col">
+                <div className="bg-white text-black rounded-lg shadow-lg w-auto h-70 p-5 flex flex-col border-b-4 border-yellow-500">
                   <div className="flex flex-row justify-between">
                     <div>
                       {" "}
@@ -124,6 +146,17 @@ const Testimonials: React.FC = () => {
           {/* <CarouselPrevious />
           <CarouselNext /> */}
         </Carousel>
+        <div className="flex justify-center  gap-2">
+          {scrollSnaps.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => emblaApi && emblaApi.scrollTo(idx)}
+              className={`w-2 h-2 rounded-full transition-colors ${
+                idx === selectedIndex ? "bg-yellow-400" : "bg-gray-200"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
