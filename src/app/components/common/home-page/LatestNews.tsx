@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import Autoplay from "embla-carousel-autoplay";
+import type { EmblaCarouselType } from "embla-carousel";
 
 interface NewsItem {
   logo: string;
@@ -78,7 +79,9 @@ export function LatestNews() {
 
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([]);
-  const [emblaApi, setEmblaApi] = React.useState<any>(null);
+  const [emblaApi, setEmblaApi] = React.useState<EmblaCarouselType | undefined>(
+    undefined
+  );
 
   React.useEffect(() => {
     if (!emblaApi) return;

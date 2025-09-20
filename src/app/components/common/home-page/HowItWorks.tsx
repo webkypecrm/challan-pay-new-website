@@ -10,6 +10,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import type { EmblaCarouselType } from "embla-carousel";
 
 export default function HowItWorks() {
   const steps = [
@@ -39,7 +40,9 @@ export default function HowItWorks() {
 
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([]);
-  const [emblaApi, setEmblaApi] = React.useState<any>(null);
+  const [emblaApi, setEmblaApi] = React.useState<EmblaCarouselType | undefined>(
+    undefined
+  );
 
   React.useEffect(() => {
     if (!emblaApi) return;

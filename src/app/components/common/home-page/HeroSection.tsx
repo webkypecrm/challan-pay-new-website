@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import type { EmblaCarouselType } from "embla-carousel";
 
 const cardData = [
   {
@@ -63,7 +64,9 @@ export function HeroSection() {
 
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([]);
-  const [emblaApi, setEmblaApi] = React.useState<any>(null);
+  const [emblaApi, setEmblaApi] = React.useState<EmblaCarouselType | undefined>(
+    undefined
+  );
 
   React.useEffect(() => {
     if (!emblaApi) return;

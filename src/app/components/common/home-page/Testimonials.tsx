@@ -8,6 +8,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import type { EmblaCarouselType } from "embla-carousel";
 
 interface Testimonial {
   name: string;
@@ -59,7 +60,9 @@ const Testimonials: React.FC = () => {
 
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([]);
-  const [emblaApi, setEmblaApi] = React.useState<any>(null);
+  const [emblaApi, setEmblaApi] = React.useState<EmblaCarouselType | undefined>(
+    undefined
+  );
 
   React.useEffect(() => {
     if (!emblaApi) return;
