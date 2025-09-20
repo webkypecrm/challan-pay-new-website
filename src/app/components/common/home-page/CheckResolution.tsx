@@ -243,7 +243,7 @@ export function CheckResolution() {
             <CardContent className="grid gap-6">
               <div className="flex  items-center justify-center">
                 <Image
-                  src={"/images/government.png"}
+                  src={"/Images/government.png"}
                   alt="Challan Pay Png"
                   width={350}
                   height={250}
