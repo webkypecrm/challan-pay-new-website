@@ -15,10 +15,10 @@ export default function Home() {
 
   // Dynamic cards array
   const cards = [
-    { id: "car", title: "Private", image: "/images/car.png" },
-    { id: "bike", title: "Two - Wheelar", image: "/images/bike.png" },
-    { id: "truck", title: "Electric", image: "/images/electric.png" },
-    { id: "bus", title: "Commercial", image: "/images/truck.png" },
+    { id: "car", title: "Private", image: "/Images/car.png" },
+    { id: "bike", title: "Two - Wheelar", image: "/Images/bike.png" },
+    { id: "truck", title: "Electric", image: "/Images/electric.png" },
+    { id: "bus", title: "Commercial", image: "/Images/truck.png" },
   ];
 
   return (

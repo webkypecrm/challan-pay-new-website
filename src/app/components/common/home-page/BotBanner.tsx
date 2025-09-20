@@ -9,7 +9,7 @@ export default function Banner() {
       <div className="flex flex-col md:flex-row items-center md:justify-between gap-4">
         {/* image */}
         <Image
-          src={"/images/truckonroad.png"}
+          src={"/Images/truckonroad.png"}
           alt="Banner"
           width={350}
           height={250}
