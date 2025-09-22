@@ -30,29 +30,28 @@ const cardData = [
   {
     title: (
       <>
-        <span className="text-cyan-600">Challan Pay</span>
+        <span className="text-cyan-600">No queues.</span>
         <br />
-        <span className="text-black">AnyTime</span>
+        <span className="text-black">No stress.</span>
         <br />
-        <span className="text-black">AnyWhere</span>
+        <span className="text-black">With ChallanPay</span>
       </>
     ),
     description:
-      "ChallanPay brings you a fast, secure, and hassle-free way to settle your traffic challans online",
+      "Few clicks, thats it. Discover and resolve your traffic challans.",
     image: "/Images/hero-section-img.png",
   },
   {
     title: (
       <>
-        <span className="text-cyan-600">Challan Pay</span>
+        <span className="text-cyan-600">Pay Traffic</span>
         <br />
-        <span className="text-black">AnyTime</span>
+        <span className="text-black">Challans</span>
         <br />
-        <span className="text-black">AnyWhere</span>
+        <span className="text-black">Instantly</span>
       </>
     ),
-    description:
-      "ChallanPay brings you a fast, secure, and hassle-free way to settle your traffic challans online",
+    description: "No spam, no scam. Only authorized payments with ChallanPay.",
     image: "/Images/hero-section-img.png",
   },
 ];
