@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { SelectDemo } from "../Select";
+import { SelectDemo } from "../common/Select";
 import { FaWhatsapp } from "react-icons/fa";
 import { XIcon } from "lucide-react";
 

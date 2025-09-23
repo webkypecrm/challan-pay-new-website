@@ -1,0 +1,48 @@
+import React from "react";
+import Image from "next/image";
+import CircularProgressBar from "./CircularProgressBar";
+
+function Loader() {
+  return (
+    <div className="bg-white fixed inset-0 z-50 flex flex-col bg-gradient-to-b from-blue-100 to-white">
+      {/* Top bar with company logo */}
+      <div className="flex items-center p-4">
+        <Image
+          src={"/logo/logo.svg"}
+          alt="Company Logo"
+          width={120}
+          height={40}
+        />
+      </div>
+
+      <div className="flex-1 flex flex-col items-center justify-center">
+        <Image
+          src={"/loader-img/road-side.png"}
+          alt="Center"
+          width={200}
+          height={200}
+          className=""
+        />
+        <div className="flex flex-col text-center justify-center items-center mt-4 mb-4">
+          <p className="text-lg font-bold">
+            Please wait for a while, data <br /> is preparing to serve you...
+          </p>{" "}
+        </div>
+        {/* <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div> */}
+        <CircularProgressBar />
+      </div>
+
+      {/* Bottom image */}
+      <div className="flex justify-center">
+        <Image
+          src={"/loader-img/red-light.png"}
+          alt="Bottom"
+          width={300}
+          height={100}
+        />
+      </div>
+    </div>
+  );
+}
+
+export default Loader;

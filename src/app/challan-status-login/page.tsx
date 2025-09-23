@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Header from "../components/common/Header";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,11 +13,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Image from "next/image";
-import { Checkbox } from "@/components/ui/checkbox";
+//import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Loader from "../components/common/loader/Loader";
+import { useRouter } from "next/navigation";
 
 // ✅ Validation Schema
 const loginSchema = z.object({
@@ -31,11 +33,13 @@ const loginSchema = z.object({
 type LoginFormData = z.infer<typeof loginSchema>;
 
 export default function LoginPage() {
+  const router = useRouter();
   const [showOtp, setShowOtp] = useState(false);
+  const [loading, setLoading] = useState(false);
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   const {
-    control,
+    // control,
     register,
     handleSubmit,
     formState: { errors },
@@ -79,11 +83,21 @@ export default function LoginPage() {
     }
   };
 
+  const handleChallanDataFetch = () => {
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+      // router.push("/challan-cart");
+      router.push("/challan-cart");
+    }, 9000);
+  };
+
   return (
     <>
       <Header />
       <Card className="w-full max-w-sm mt-10 mx-auto">
-        <div className="w-full flex flex-col justify-center items-center">
+        <div className="w-full flex flex-col justify-center items-center mt-5">
           <Image
             src="/Images/loginImg.png"
             width={180}
@@ -122,37 +136,22 @@ export default function LoginPage() {
 
                   <div className="grid gap-2">
                     <Label htmlFor="phone">Mobile Number</Label>
-                    <Input
-                      id="phone"
-                      placeholder="9876543210"
-                      {...register("phone")}
-                    />
+                    <div className="flex">
+                      <span className="inline-flex items-center px-1 border border-r-0 border-gray-200 rounded-l-md text-gray-500">
+                        +91
+                      </span>
+                      <Input
+                        id="phone"
+                        placeholder="9876543210"
+                        {...register("phone")}
+                        className="rounded-l-none flex-1 border-l-0 "
+                      />
+                    </div>
                     {errors.phone && (
                       <p className="text-red-500 text-sm">
                         {errors.phone.message}
                       </p>
                     )}
-                  </div>
-
-                  <div className="flex items-center gap-2 border border-dashed p-2 rounded">
-                    <Controller
-                      name="whatsappOptIn"
-                      control={control}
-                      defaultValue={false} // important: initial value is boolean
-                      render={({ field }) => (
-                        <Checkbox
-                          id="whatsappOptIn"
-                          checked={field.value} // boolean
-                          onCheckedChange={(checked) => field.onChange(checked)} // ShadCN returns boolean
-                        />
-                      )}
-                    />
-                    <Label
-                      htmlFor="whatsappOptIn"
-                      className="text-muted-foreground text-sm"
-                    >
-                      Get Challan status on Whatsapp
-                    </Label>
                   </div>
 
                   {/* 🔑 Button must be INSIDE form */}
@@ -209,20 +208,25 @@ export default function LoginPage() {
             </CardContent>
 
             <CardFooter className="flex-col gap-2 mt-6">
-              <Button type="submit" className="w-full bg-cyan-600">
+              <Button
+                type="button"
+                onClick={handleChallanDataFetch}
+                className="w-full bg-cyan-600"
+              >
                 Submit OTP
               </Button>
             </CardFooter>
 
-            <div className="text-xs text-center mt-6 mx-6">
+            <div className="text-xs text-center text-gray-600 mt-6 mx-6">
               Did not receive any code?
               <br />
-              <span className="text-blue-600 font-bold cursor-pointer">
+              <div className="text-blue-600 my-2  font-bold cursor-pointer">
                 Resend Now
-              </span>
+              </div>
             </div>
           </>
         )}
+        {loading && <Loader />}
       </Card>
     </>
   );
