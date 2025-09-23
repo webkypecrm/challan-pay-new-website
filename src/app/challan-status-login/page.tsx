@@ -49,10 +49,6 @@ export default function LoginPage() {
     setShowOtp(true); // show OTP form conditionally
   };
 
-  const onError = (errors: any) => {
-    console.log("Validation failed ❌", errors);
-  };
-
   // ✅ OTP input behavior
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -108,7 +104,7 @@ export default function LoginPage() {
 
             <CardContent className="px-6">
               {/* 🔑 Keep button inside form */}
-              <form onSubmit={handleSubmit(onSubmit, onError)}>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex flex-col gap-6">
                   <div className="grid gap-2">
                     <Label htmlFor="fullName">Full Name</Label>

@@ -9,7 +9,7 @@ export default function TrustedByMillions() {
       label: "Vehicles Protected",
     },
     {
-      icon: "/trusted-by/icon2.png",
+      icon: "/trusted-by/icon4.png",
       value: "1.65 Lakh+",
       label: "Challans Resolved",
     },
@@ -19,7 +19,7 @@ export default function TrustedByMillions() {
       label: "Savings on Legal Fees",
     },
     {
-      icon: "/trusted-by/icon4.png",
+      icon: "/trusted-by/icon2.png",
       value: "99%",
       label: "Successful Resolutions",
     },

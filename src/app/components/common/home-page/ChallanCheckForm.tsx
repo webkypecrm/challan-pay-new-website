@@ -172,7 +172,7 @@ export default function Home() {
               render={({ field }) => (
                 <Checkbox
                   id="terms-2"
-                  className="mt-1"
+                  className="mt-1 data-[state=checked]:bg-cyan-600 data-[state=checked]:border-cyan-600"
                   checked={field.value}
                   onCheckedChange={field.onChange}
                 />
@@ -180,9 +180,10 @@ export default function Home() {
             />
             <div className="grid gap-2">
               <p className="text-muted-foreground text-sm">
-                I agree to terms & Condition and Privacy Policy and authorize to
-                fetch my vehicle registration and Challan Details from
-                Government Database This is a checkbox description.
+                I agree to the terms, conditions and the privacy policy, and
+                authorize ChallanPay to fetch my vehicle registration and
+                challan details from the Government database. This is a checkbox
+                description.
               </p>
               {errors.terms && (
                 <p className="text-red-500 text-sm">{errors.terms.message}</p>

@@ -22,7 +22,7 @@ export default function Banner() {
           className="object-cover  h-auto md:w-[350px] md:h-[250px]"
         />
         {/* Left text */}
-        <p className="text-sm md:text-base font-bold text-black text-center md:text-left">
+        <p className="text-lg md:text-base font-bold text-black text-center md:text-left px-5">
           Want to check challans for multiple vehicles together? Do not worry.{" "}
         </p>
         <DialogDemo open={open} onOpenChange={setOpen} />
@@ -33,7 +33,7 @@ export default function Banner() {
           onClick={() => setOpen(true)}
         >
           <FaWhatsapp size={40} color="" />
-          Contact us on WhatsApp
+          Chat with us on WhatsApp
         </Button>
       </div>
     </Card>
