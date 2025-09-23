@@ -182,8 +182,7 @@ export default function Home() {
               <p className="text-muted-foreground text-sm">
                 I agree to the terms, conditions and the privacy policy, and
                 authorize ChallanPay to fetch my vehicle registration and
-                challan details from the Government database. This is a checkbox
-                description.
+                challan details from the Government database.
               </p>
               {errors.terms && (
                 <p className="text-red-500 text-sm">{errors.terms.message}</p>
