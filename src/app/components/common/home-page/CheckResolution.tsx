@@ -123,7 +123,7 @@ export function CheckResolution() {
                                 Check Challan Status
                               </span>
                               <p className="text-gray-600 text-sm mt-2">
-                                View all e-challans linked to your vehicle
+                                View all E-challans linked to your vehicle
                                 instantly
                               </p>
                             </div>
@@ -279,7 +279,7 @@ export function CheckResolution() {
                                 Visit the Official Portal
                               </span>
                               <p className="text-gray-600 text-sm mt-2">
-                                Go to the authorized government e-challan
+                                Go to the authorized government E-challan
                                 website
                               </p>
                             </div>
@@ -317,7 +317,7 @@ export function CheckResolution() {
                                 View Challan Status
                               </span>
                               <p className="text-gray-600 text-sm mt-2">
-                                The portal will display all e-challans
+                                The portal will display all E-challans
                                 associated with your vehicle
                               </p>
                             </div>

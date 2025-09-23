@@ -43,15 +43,15 @@ export default function Header() {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
-              <NavigationMenuItem>
+              {/* <NavigationMenuItem>
                 <Link href="/about" legacyBehavior passHref>
                   <NavigationMenuLink className="px-3 py-2 text-gray-700 hover:text-blue-600">
                     Blogs
                   </NavigationMenuLink>
                 </Link>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
               <NavigationMenuItem>
-                <Link href="/contact" legacyBehavior passHref>
+                <Link href="/" legacyBehavior passHref>
                   <NavigationMenuLink className="px-3 py-2 text-gray-700 hover:text-blue-600">
                     Support
                   </NavigationMenuLink>
@@ -90,19 +90,16 @@ export default function Header() {
                   How it Works
                 </Link>
               </SheetClose>
-              <SheetClose asChild>
+              {/* <SheetClose asChild>
                 <Link
                   href="/about"
                   className="text-gray-900 hover:text-blue-600"
                 >
                   Blogs
                 </Link>
-              </SheetClose>
+              </SheetClose> */}
               <SheetClose asChild>
-                <Link
-                  href="/contact"
-                  className="text-gray-900 hover:text-blue-600"
-                >
+                <Link href="#" className="text-gray-900 hover:text-blue-600">
                   Support
                 </Link>
               </SheetClose>

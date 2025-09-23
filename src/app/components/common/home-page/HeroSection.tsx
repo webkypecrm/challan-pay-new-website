@@ -18,8 +18,7 @@ const cardData = [
       <>
         <span className="text-cyan-600">Challan Pay</span>
         <br />
-        <span className="text-black">AnyTime</span>
-        <br />
+        <span className="text-black">AnyTime</span>{" "}
         <span className="text-black">AnyWhere</span>
       </>
     ),
@@ -131,7 +130,7 @@ export function HeroSection() {
             key={idx}
             onClick={() => emblaApi && emblaApi.scrollTo(idx)}
             className={`w-2 h-2 rounded-full transition-colors ${
-              idx === selectedIndex ? "bg-black" : "bg-gray-200"
+              idx === selectedIndex ? "bg-cyan-600" : "bg-gray-200"
             }`}
           />
         ))}

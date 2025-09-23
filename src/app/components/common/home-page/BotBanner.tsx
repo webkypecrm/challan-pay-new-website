@@ -1,9 +1,15 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
-import { MessageCircle } from "lucide-react";
+import { useState } from "react";
+//import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+import { DialogDemo } from "./HomePageDailog";
 
 export default function Banner() {
+  const [open, setOpen] = useState(false);
   return (
     <Card className="bg-white rounded-2xl px-2 py-4 shadow-sm border border-gray-200 my-10">
       <div className="flex flex-col md:flex-row items-center md:justify-between gap-4">
@@ -19,13 +25,14 @@ export default function Banner() {
         <p className="text-sm md:text-base font-bold text-black text-center md:text-left">
           Want to check challans for multiple vehicles together? Do not worry.{" "}
         </p>
-
+        <DialogDemo open={open} onOpenChange={setOpen} />
         {/* WhatsApp Button */}
         <Button
           variant="outline"
           className="flex items-center h-10 gap-2 rounded-md bg-secondary text-green-600 hover:bg-green-50 justify-center"
+          onClick={() => setOpen(true)}
         >
-          <MessageCircle className="h-4 w-4" />
+          <FaWhatsapp size={40} color="" />
           Contact us on WhatsApp
         </Button>
       </div>
