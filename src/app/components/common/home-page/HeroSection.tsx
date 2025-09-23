@@ -31,8 +31,7 @@ const cardData = [
       <>
         <span className="text-cyan-600">No queues.</span>
         <br />
-        <span className="text-black">No stress.</span>
-        <br />
+        <span className="text-black">No stress.</span>{" "}
         <span className="text-black">With ChallanPay</span>
       </>
     ),
@@ -45,8 +44,7 @@ const cardData = [
       <>
         <span className="text-cyan-600">Pay Traffic</span>
         <br />
-        <span className="text-black">Challans</span>
-        <br />
+        <span className="text-black">Challans</span>{" "}
         <span className="text-black">Instantly</span>
       </>
     ),
