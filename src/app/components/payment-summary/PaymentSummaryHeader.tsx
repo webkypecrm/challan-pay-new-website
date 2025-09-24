@@ -1,13 +1,16 @@
 "use client";
 
 import React from "react";
+import { useState } from "react";
 import { ChevronLeft } from "lucide-react";
 import { ChevronDown } from "lucide-react";
 //import { FaWhatsapp } from "react-icons/fa";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { PaymentSummarySlider } from "../common/PaymentSummarySlider";
 
 function PaymentSummaryHeader() {
+  const [open, setOpen] = useState(false);
   const router = useRouter();
 
   const handleBack = () => {
@@ -45,9 +48,13 @@ function PaymentSummaryHeader() {
         <div className="text-sm mt-2">2 Challans selected for settlement</div>
       </div>
       <div className="flex justify-between items-center border border-gray-200 p-2 rounded-lg mt-2">
-        <button type="button" className="text-normal flex">
-          <ChevronDown />
-          <span> Check Summary</span>
+        <button
+          type="button"
+          className="text-normal flex items-center"
+          onClick={() => setOpen(true)}
+        >
+          <ChevronDown size={18} />
+          <span className="mx-2"> Check Summary</span>
         </button>
         <div className="text-base font-bold">₹ 4000</div>
       </div>
@@ -56,6 +63,7 @@ function PaymentSummaryHeader() {
           630 Peoples have claimed ₹500 reward
         </div>
       </div>
+      <PaymentSummarySlider open={open} setOpen={setOpen} />
     </div>
   );
 }

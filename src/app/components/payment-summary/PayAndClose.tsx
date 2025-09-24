@@ -1,8 +1,14 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { Gift } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
+import { PledgeModal } from "../common/PledgeModal";
+import { ReadMoreSlider } from "../common/ReadMoreSlider";
 
 function PayAndClose() {
+  const [open, setOpen] = useState(false);
+  const [openReadMore, setOpenReadMore] = useState(false);
   return (
     <div className="border-1 border-yellow-700 rounded-2xl bg-white mb-4 ">
       <div className="p-2 px-4 flex justify-between items-center bg-[#FEFCE8] rounded-t-2xl ">
@@ -13,8 +19,16 @@ function PayAndClose() {
           <Gift />
         </div>
       </div>
+      <PledgeModal open={open} onOpenChange={setOpen} />
       <div className="p-4 flex items-center gap-2">
-        <Checkbox className="rounded-full w-6 h-6" />
+        <button type="button" onClick={() => setOpen(true)}>
+          {" "}
+          <Checkbox
+            className="rounded-full w-6 h-6"
+            // onClick={() => setOpen(true)}
+          />
+        </button>
+
         <span className="text-sm font-semibold"> I Pledge to Drive Safely</span>
       </div>
       <div className="p-2 flex justify-start items-center gap-2">
@@ -28,8 +42,11 @@ function PayAndClose() {
       <div className="p-4 text-xs font-medium">
         I wish to pledge & pay to claim upfront benefits. I understand it may
         take 45–60 days, and I am not eligible for any refund from waivers...
-        <span className="text-blue-600">read more</span>
+        <span className="text-blue-600" onClick={() => setOpenReadMore(true)}>
+          read more
+        </span>
       </div>
+      <ReadMoreSlider open={openReadMore} setOpen={setOpenReadMore} />
     </div>
   );
 }
