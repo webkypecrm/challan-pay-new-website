@@ -3,7 +3,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 
 function ContestAndWait() {
   return (
-    <div className="border-1 border-yellow-700 rounded-2xl bg-white mb-4 ">
+    <div className="border-1 border-gray-200 rounded-2xl bg-white mb-4 ">
       <div className="p-4 flex flex-1 items-center gap-2">
         <Checkbox className="rounded-full w-6 h-6" />
         <span className="text-sm font-semibold"> Contest and Wait</span>
