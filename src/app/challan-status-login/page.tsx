@@ -88,7 +88,6 @@ export default function LoginPage() {
 
     setTimeout(() => {
       setLoading(false);
-      // router.push("/challan-cart");
       router.push("/challan-cart");
     }, 5000);
   };
