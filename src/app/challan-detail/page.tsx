@@ -2,9 +2,9 @@
 
 import React from "react";
 import Header from "../components/common/Header";
-import { useRouter } from "next/navigation";
 import { ChevronLeft, Copy } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { useRouter } from "next/navigation";
 
 function page() {
   const router = useRouter();
