@@ -1,15 +1,26 @@
+"use client";
+
 import React from "react";
 import { ChevronLeft } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 function ChallanCartHeader() {
+  const router = useRouter();
+
+  const handleBack = () => {
+    router.push("/");
+  };
   return (
-    <div className="mt-15 px-2">
+    <div className="mt-15 px-4">
       <div className="flex items-center justify-between">
         {/* Left side: Back button + Title */}
         <div className="flex items-center gap-2">
-          <button className="p-1 bg-gray-100 border border-gray-200 rounded-sm hover:bg-gray-200">
+          <button
+            className="p-1 bg-gray-100 border border-gray-200 rounded-sm hover:bg-gray-200"
+            onClick={handleBack}
+          >
             <ChevronLeft size={18} />
           </button>
           <span className="text-base font-semibold">Challan Summary</span>

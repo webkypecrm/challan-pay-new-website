@@ -30,8 +30,7 @@ function ChallanCard() {
       {/* Bottom row: View Details */}
       <div className="flex justify-end mt-3">
         <button className="flex items-center text-blue-700 text-sm hover:underline">
-          View Details{" "}
-          <ArrowRight size={16} className="ml-1" style={{ marginTop: "3px" }} />
+          View Details <ArrowRight size={16} className="ml-1" />
         </button>
       </div>
     </div>

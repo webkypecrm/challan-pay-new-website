@@ -90,7 +90,7 @@ export default function LoginPage() {
       setLoading(false);
       // router.push("/challan-cart");
       router.push("/challan-cart");
-    }, 9000);
+    }, 5000);
   };
 
   return (

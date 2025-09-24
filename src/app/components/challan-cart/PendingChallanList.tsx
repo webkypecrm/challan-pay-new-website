@@ -4,7 +4,7 @@ import ChallanCard from "./ChallanCard";
 
 function PendingChallanList() {
   return (
-    <div className="px-2 bg-slate-100 rounded-lg">
+    <div className="px-2 bg-slate-100 rounded-lg pb-4">
       <div className="flex justify-between items-center py-3">
         <div className="text-sm">0 Selected</div>
         <div className="text-sm flex items-center justify-center">
