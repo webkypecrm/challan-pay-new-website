@@ -44,7 +44,7 @@ export function ReadMoreSlider({
                 👨‍👩‍👧 You Influence the People Around You
               </div>
               <p className="text-xs">
-                Whether you're a parent, friend, colleague, or stranger on the
+                Whether you are a parent, friend, colleague, or stranger on the
                 road—your behaviour sets a powerful example. When you drive with
                 discipline and respect, you silently inspire others to do the
                 same.
@@ -53,12 +53,12 @@ export function ReadMoreSlider({
             <div className="space-y-2 text-sm leading-relaxed">
               {/* Bold highlighted line */}
               <div className="font-bold text-sm">
-                🇮🇳 You’re Part of a Safer India
+                🇮🇳 You are Part of a Safer India
               </div>
               <p className="text-xs">
                 One person's responsible actions may seem small. But when
                 thousands act together, it shifts the culture. Your pledge adds
-                momentum to a collective force making India’s roads safer and
+                momentum to a collective force making India roads safer and
                 saner.
               </p>
             </div>
