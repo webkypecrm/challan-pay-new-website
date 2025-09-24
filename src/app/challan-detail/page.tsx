@@ -4,14 +4,14 @@ import React from "react";
 import Header from "../components/common/Header";
 import { ChevronLeft, Copy } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import { useRouter } from "next/navigation";
+//import { useRouter } from "next/navigation";
 
 function page() {
-  const router = useRouter();
+  // const router = useRouter();
 
-  const handleBack = () => {
-    router.push("/challan-cart");
-  };
+  // const handleBack = () => {
+  //   router.push("/challan-cart");
+  // };
   return (
     <>
       <Header />
@@ -21,7 +21,7 @@ function page() {
           <div className="flex items-center gap-2">
             <button
               className="p-1 bg-gray-100 border border-gray-200 rounded-sm hover:bg-gray-200"
-              onClick={handleBack}
+              // onClick={handleBack}
             >
               <ChevronLeft size={18} />
             </button>
