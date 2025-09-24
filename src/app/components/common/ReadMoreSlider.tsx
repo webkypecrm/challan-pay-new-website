@@ -56,7 +56,7 @@ export function ReadMoreSlider({
                 🇮🇳 You are Part of a Safer India
               </div>
               <p className="text-xs">
-                One person's responsible actions may seem small. But when
+                One persons responsible actions may seem small. But when
                 thousands act together, it shifts the culture. Your pledge adds
                 momentum to a collective force making India roads safer and
                 saner.
