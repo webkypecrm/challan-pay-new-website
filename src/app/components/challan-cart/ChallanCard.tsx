@@ -1,9 +1,17 @@
+"use client";
+
 import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
 import React from "react";
 import { ArrowRight, Copy } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 function ChallanCard() {
+  const router = useRouter();
+
+  const handleViewDetail = () => {
+    router.push("/challan-detail");
+  };
   return (
     <div className="bg-white p-4 rounded-lg mt-4 shadow hover:shadow-md transition-shadow">
       {/* Top row: Challan ID + Checkbox */}
@@ -29,7 +37,10 @@ function ChallanCard() {
 
       {/* Bottom row: View Details */}
       <div className="flex justify-end mt-3">
-        <button className="flex items-center text-blue-700 text-sm hover:underline">
+        <button
+          className="flex items-center text-blue-700 text-sm hover:underline"
+          onClick={handleViewDetail}
+        >
           View Details <ArrowRight size={16} className="ml-1" />
         </button>
       </div>

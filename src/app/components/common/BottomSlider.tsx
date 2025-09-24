@@ -5,8 +5,14 @@ import { cn } from "@/lib/utils"; // shadcn helper for conditional classes
 import { Button } from "@/components/ui/button";
 import { Gift } from "lucide-react";
 import { ChevronRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function BottomSlider() {
+  const router = useRouter();
+
+  const handleProcced = () => {
+    router.push("payment-summary");
+  };
   return (
     <div className="relative h-30 bg-gray-100">
       <div
@@ -29,7 +35,10 @@ export default function BottomSlider() {
             <p className="text-[#737373] text-xs">Total Challan Amount</p>
           </div>
           <div>
-            <Button className="bg-cyan-600 text-sm font-medium">
+            <Button
+              className="bg-cyan-600 text-sm font-medium"
+              onClick={handleProcced}
+            >
               Proceed next
               <ChevronRight size={16} />
             </Button>
