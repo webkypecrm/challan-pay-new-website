@@ -30,11 +30,11 @@ function page() {
         </div>
       </div>
       <div className="bg-gray-100 p-3 mt-2 min-h-screen">
-        <div className="bg-gray-300 px-4 py-2 rounded-t-xl">
-          <p className="text-xs font-semibold">Challan</p>
+        <div className="bg-slate-500 px-4 py-2 rounded-t-xl">
+          <p className="text-xs font-semibold text-white">Challan</p>
           <div className="flex items-center gap-2">
-            <p className="text-xs">UP40838230418090682</p>
-            <Copy className="cursor-pointer" size={12} />
+            <p className="text-xs text-white">UP40838230418090682</p>
+            <Copy className="cursor-pointer text-white" size={12} />
           </div>
         </div>
 

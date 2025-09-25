@@ -62,7 +62,7 @@ export function ReadMoreSlider({
                 saner.
               </p>
             </div>
-            <Button className="bg-cyan-600 text-sm font-medium mt-4">
+            <Button className="bg-cyan-600 text-sm font-medium mt-4 w-full">
               Proceed next
               <ChevronRight size={16} />
             </Button>
