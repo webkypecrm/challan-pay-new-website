@@ -44,15 +44,6 @@ export default function Home() {
   });
 
   const onSubmit = (data: FormData) => {
-    console.log(data);
-    // Navigate to challan status page with vehicle number as query or state
-    // router.push({
-    //   pathname: "/challan-status-login",
-    //   query: {
-    //     vehicleNumber: data.vehicleNumber,
-    //     vehicleType: data.vehicleType,
-    //   },
-    // });
     router.push("/challan-status-login");
   };
 
@@ -78,35 +69,25 @@ export default function Home() {
             name="vehicleType"
             render={({ field }) => (
               <RadioGroup
-                value={selected}
-                onValueChange={(val) => {
-                  field.onChange(val);
-                  setSelected(val);
-                }}
+                value={field.value}
+                onValueChange={field.onChange}
                 className="w-full grid grid-cols-2 sm:grid-cols-2 gap-4 justify-items-center"
               >
                 {cards.map((card) => (
                   <Card
                     key={card.id}
-                    className={`relative cursor-pointer border rounded-2xl w-[140px] h-[120px] sm:w-[200px] sm:h-[180px] flex flex-col items-center justify-center transition 
-                    ${
-                      selected === card.id
-                        ? "border-gray-200 bg-cyan-50"
+                    className={`relative cursor-pointer border rounded-2xl w-[140px] h-[120px] sm:w-[200px] sm:h-[180px] flex flex-col items-center justify-center transition ${
+                      field.value === card.id
+                        ? "border-gray-100 bg-cyan-50"
                         : "border-gray-200"
                     }`}
-                    onClick={() => {
-                      setSelected(card.id);
-                      field.onChange(card.id);
-                    }}
                   >
                     <div className="absolute top-2 right-2">
                       <RadioGroupItem
                         value={card.id}
                         id={card.id}
                         className="h-5 w-5 border rounded-full data-[state=checked]:bg-cyan-600 data-[state=checked]:border-cyan-600 flex items-center justify-center"
-                      >
-                        <Check className=" h-3 w-3 text-white" />
-                      </RadioGroupItem>
+                      />
                     </div>
 
                     <CardContent className="flex flex-col items-center justify-center gap-1 p-2">
@@ -120,8 +101,10 @@ export default function Home() {
                       <Label
                         htmlFor={card.id}
                         className={`font-medium cursor-pointer text-center text-sm sm:text-base ${
-                          selected === card.id ? "text-cyan-600" : "text-black"
-                        } `}
+                          field.value === card.id
+                            ? "text-cyan-600"
+                            : "text-black"
+                        }`}
                       >
                         {card.title}
                       </Label>
@@ -131,6 +114,7 @@ export default function Home() {
               </RadioGroup>
             )}
           />
+
           {errors.vehicleType && (
             <p className="text-red-500 text-sm">{errors.vehicleType.message}</p>
           )}
