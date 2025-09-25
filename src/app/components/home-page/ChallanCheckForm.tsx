@@ -56,7 +56,7 @@ export default function Home() {
   ];
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form id="challan-check" onSubmit={handleSubmit(onSubmit)}>
       <div className="flex flex-col lg:flex-row gap-4 justify-center ">
         {/* Left Section */}
         <div className="flex flex-col lg:items-start w-full lg:w-1/3 gap-6">

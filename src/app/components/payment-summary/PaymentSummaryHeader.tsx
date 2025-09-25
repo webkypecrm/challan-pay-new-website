@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react";
 //import { FaWhatsapp } from "react-icons/fa";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { PaymentSummarySlider } from "../common/PaymentSummarySlider";
+import { PaymentSummarySheet } from "./PaymentSummarySheet";
 
 function PaymentSummaryHeader() {
   const [open, setOpen] = useState(false);
@@ -63,7 +63,7 @@ function PaymentSummaryHeader() {
           630 Peoples have claimed ₹500 reward
         </div>
       </div>
-      <PaymentSummarySlider open={open} setOpen={setOpen} />
+      <PaymentSummarySheet open={open} setOpen={setOpen} />
     </div>
   );
 }

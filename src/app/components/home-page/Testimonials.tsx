@@ -20,36 +20,124 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Rashmi Sharma",
+    name: "Dweep",
     description:
-      "“Pehle socha online challan bharna risky hoga, par yahaan process clear aur har step pe update milta raha.”",
+      "“Challan dekh ke tension ho gayi thi, par is service ne process bahut simple bana diya. Kahi bhaagne ki zarurat hi nahi padi.”",
     location: "Two-Wheeler Owner · Delhi",
     amountSaved: 2300,
-    photo: "/photo/user1.jpg",
+    photo: "/photo/Polish_20250530_112449084.jpg",
   },
   {
-    name: "Rakesh Yadav",
+    name: "Tina",
     description:
-      "“Mere challan court ke the, par yahaan se easily resolve ho gaye bina kisi lawyer ke. Kaafi helpful service hai.”",
-    location: "Car Owner · Faridabad",
-    amountSaved: 1100,
-    photo: "/photo/user1.jpg",
-  },
-  {
-    name: "Raj Mahawar",
-    description:
-      "“I wasn’t sure how to deal with a pending traffic challan, but this service made it hassle-free. Everything was sorted in minutes!”",
-    location: "Two-Wheeler Owner · Chandigarh",
+      "“WhatsApp pe link aaya, maine details check ki aur turant payment ho gaya. Pehle kabhi itna smooth nahi laga challan bharna.”",
+    location: "Two-Wheeler Owner • Jaipur",
     amountSaved: 1700,
-    photo: "/photo/user1.jpg",
+    photo: "/photo/Polish_20250530_112728906.jpg",
   },
   {
     name: "Khushi",
     description:
       "“Is platform ne sirf challan nahi bhara, sahi time pe reminder bhi bheja. Helpful laga mujhe.”",
-    location: "Two-Wheeler Owner · Gurugram",
-    amountSaved: 1000,
-    photo: "/photo/user1.jpg",
+    location: "Two-Wheeler Owner • Gurugram",
+    amountSaved: 2000,
+    photo: "/photo/Polish_20250530_112931018.jpg",
+  },
+  {
+    name: "Raj Mahawar",
+    description:
+      "“I wasn’t sure how to deal with a pending traffic challan, but this service made it hassle-free. Everything was sorted in minutes!”",
+    location: "Two-Wheeler Owner • Chandigarh",
+    amountSaved: 1100,
+    photo: "/photo/Polish_20250530_113141965.jpg",
+  },
+  {
+    name: "Zia",
+    description:
+      "“Got a message, clicked the link, paid the fine. It was surprisingly smooth. Save me a trip to the curt.”",
+    location: "Two-Wheeler Owner • Lucknow",
+    amountSaved: 1300,
+    photo: "/photo/Polish_20250530_113046363.jpg",
+  },
+  {
+    name: "Rakesh Yadav",
+    description:
+      "“Mere challan court ke the, par yahaan se easily resolve ho gaye bina kisi lawyer ke. Kaafi helpful service hai.”",
+    location: "Two-Wheeler Owner • Faridabad",
+    amountSaved: 2600,
+    photo: "/photo/Polish_20250703_134343472.jpg",
+  },
+  {
+    name: "Rashmi Sharma",
+    description:
+      "“Pehle socha online challan bharna risky hoga, par yahaan process clear tha aur har step pe update milta raha.”",
+    location: "Two-Wheeler Owner • Delhi",
+    amountSaved: 1500,
+    photo: "/photo/Polish_20250704_123805883.jpg",
+  },
+  {
+    name: "Pooja",
+    description:
+      "“Their WhatsApp support actually responds fast. Got my doubts cleared and fine paid without a headache.”",
+    location: "Two-Wheeler Owner • Bengaluru",
+    amountSaved: 2100,
+    photo: "/photo/Polish_20250703_134415045.jpg",
+  },
+  {
+    name: "Sanya  Kapoor",
+    description:
+      "“I travel a lot for work and missed a few challans. This platform helped me clear them all in one go.”",
+    location: "Two-Wheeler Owner • Hyderabad",
+    amountSaved: 2000,
+    photo: "/photo/Polish_20250703_134446374.jpg",
+  },
+  {
+    name: "Karan",
+    description:
+      "“I had multiple pending challans and was worried about deadlines, but this service cleared them all smoothly in one go.”",
+    location: "Two-Wheeler Owner • Mumbai",
+    amountSaved: 2000,
+    photo: "/photo/karan.png",
+  },
+  {
+    name: "Anjali Sharma",
+    description:
+      "“The step-by-step updates made me feel confident about the process. Honestly, the easiest challan payment I have done.”",
+    location: "Two-Wheeler Owner • Ahmedabad",
+    amountSaved: 2000,
+    photo: "/photo/anjali.png",
+  },
+  {
+    name: "Rohit Mehra",
+    description:
+      "“I did not expect WhatsApp support to be this responsive. Got my query solved instantly and payment done without delay.”",
+    location: "Two-Wheeler Owner • Bengaluru",
+    amountSaved: 2000,
+    photo: "/photo/rohit.png",
+  },
+  {
+    name: "Meena",
+    description:
+      "“WhatsApp pe link aaya, maine click karke payment kar diya. Bilkul court jaane ki tension hi nahi rahi.”",
+    location: "Two-Wheeler Owner • Varanasi",
+    amountSaved: 2000,
+    photo: "/photo/meena.png",
+  },
+  {
+    name: "Arjun Patel",
+    description:
+      "“Bahut simple aur transparent process tha. Reminder time pe mil gaya, warna late fees deni padti.”",
+    location: "Two-Wheeler Owner • Bhopal",
+    amountSaved: 2000,
+    photo: "/photo/arjun.png",
+  },
+  {
+    name: "Sameer Khanna",
+    description:
+      "“Clearing my traffic fines was always stressful, but this platform made it completely hassle-free. Quick, reliable, and easy!”",
+    location: "Two-Wheeler Owner • Hyderabad",
+    amountSaved: 2000,
+    photo: "/photo/sameer.png",
   },
 ];
 
@@ -150,15 +238,30 @@ const Testimonials: React.FC = () => {
           <CarouselNext /> */}
         </Carousel>
         <div className="flex justify-center  gap-2">
-          {scrollSnaps.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => emblaApi && emblaApi.scrollTo(idx)}
-              className={`w-2 h-2 rounded-full transition-colors ${
-                idx === selectedIndex ? "bg-yellow-400" : "bg-gray-200"
-              }`}
-            />
-          ))}
+          {scrollSnaps.map((_, idx) => {
+            // Default color = gray
+            let dotColor = "bg-gray-100";
+
+            // If dot is within the active "window" of 3
+            const offset = idx - selectedIndex;
+            if (offset >= 0 && offset < 3) {
+              if (offset === 0) {
+                dotColor = "bg-green-500";
+              } else if (offset === 1) {
+                dotColor = "bg-yellow-400";
+              } else if (offset === 2) {
+                dotColor = "bg-red-500"; // active
+              }
+            }
+
+            return (
+              <button
+                key={idx}
+                onClick={() => emblaApi && emblaApi.scrollTo(idx)}
+                className={`w-2 h-2 rounded-full transition-colors ${dotColor}`}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
