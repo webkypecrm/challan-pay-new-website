@@ -1,8 +1,14 @@
+"use client";
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import PayAndClose from "./PayAndClose";
 import ContestAndWait from "./ContestAndWait";
+import BottomSheet from "../common/BottomSheet";
+import { useRouter } from "next/navigation";
 
 export function PaymentSummaryTabs() {
+  const router = useRouter();
+
   return (
     <div className="bg-slate-100 rounded-xl">
       <div className="flex w-full max-w-md flex-col gap-4 mt-4 px-4 pt-2">
@@ -31,6 +37,12 @@ export function PaymentSummaryTabs() {
           </TabsContent>
         </Tabs>
       </div>
+      <BottomSheet
+        amount="₹ 4000"
+        subtitle="Total Challan Amount"
+        buttonText="Proceed to pay"
+        onButtonClick={() => router.push("/payment-success")}
+      />
     </div>
   );
 }
