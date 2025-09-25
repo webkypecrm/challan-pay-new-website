@@ -85,7 +85,7 @@ export function CheckResolution() {
                                 Enter Vehicle Details
                               </span>
                               <p className="text-gray-600 text-sm mt-2">
-                                {`Input your vehicle's registration number to
+                                {`Input your vehicles registration number to
                                 fetch challan information`}
                               </p>
                             </div>
@@ -298,7 +298,7 @@ export function CheckResolution() {
                                 Enter Vehicle Details
                               </span>
                               <p className="text-gray-600 text-sm mt-2">
-                                {`Provide your vehicle's registration number to
+                                {`Provide your vehicles registration number to
                                 retrieve challan details`}
                               </p>
                             </div>
@@ -438,7 +438,7 @@ export function CheckResolution() {
                                 Get Confirmation
                               </span>
                               <p className="text-gray-600 text-sm mt-2">
-                                {`You'll receive a confirmation with a transaction
+                                {`You will receive a confirmation with a transaction
                                 ID`}
                               </p>
                             </div>

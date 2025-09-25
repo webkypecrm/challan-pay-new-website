@@ -3,12 +3,7 @@
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 
-import {
-  FaWhatsapp,
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-} from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import Image from "next/image";
 
 export default function Footer() {
@@ -102,7 +97,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:text-green-500"
             >
-              <FaWhatsapp size={32} />
+              <FaTwitter size={32} />
             </Link>
 
             <Link

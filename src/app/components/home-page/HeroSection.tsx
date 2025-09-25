@@ -89,7 +89,7 @@ export function HeroSection() {
           {cardData.map((card, index) => (
             <CarouselItem key={index}>
               <div className="p-1">
-                <Card className="h-auto border md:h-64 py-0 rounded">
+                <Card className="h-100 border md:h-64 py-0 rounded">
                   <CardContent className="flex items-center justify-center p-3 h-full">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
                       {/* Left Content */}
@@ -123,17 +123,40 @@ export function HeroSection() {
 
       {/* Dots */}
       <div className="flex justify-center mt-2 gap-2">
-        {scrollSnaps.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => emblaApi && emblaApi.scrollTo(idx)}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              idx === selectedIndex ? "bg-cyan-600" : "bg-gray-200"
-            }`}
-          />
-        ))}
+        {scrollSnaps.map((_, idx) => {
+          // find relative position with wrap-around
+          const offset =
+            (idx - selectedIndex + scrollSnaps.length) % scrollSnaps.length;
+
+          let dotColor = "bg-gray-200";
+
+          if (offset === 0) {
+            dotColor = "bg-red-500"; // active
+          } else if (offset === 1) {
+            dotColor = "bg-yellow-400"; // next
+          } else if (offset === 2) {
+            dotColor = "bg-green-500"; // next-next
+          }
+
+          return (
+            <button
+              key={idx}
+              onClick={() => emblaApi && emblaApi.scrollTo(idx)}
+              className={`w-2 h-2 rounded-full transition-colors ${dotColor}`}
+            />
+          );
+        })}
       </div>
-      <Button className="w-full bg-cyan-600 mt-4">Check Challan Status</Button>
+      <Button
+        className="w-full bg-cyan-600 mt-4"
+        onClick={() => {
+          document.getElementById("challan-check")?.scrollIntoView({
+            behavior: "smooth", // 👈 smooth scrolling
+          });
+        }}
+      >
+        Check Challan Status
+      </Button>
     </div>
   );
 }

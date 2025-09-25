@@ -22,13 +22,13 @@ export default function HowItWorks() {
     },
     {
       id: 2,
-      img: "/how-it-work/rectangle2.png",
+      img: "/how-it-work/rectangle3.png",
       heading: "View and Pay Challans",
       text: "Settle your challans without visiting courts - fast, easy and hassle-free",
     },
     {
       id: 3,
-      img: "/how-it-work/rectangle3.png",
+      img: "/how-it-work/rectangle2.png",
       heading: "View Challans",
       text: "Enter your vehicle number and mobile number to begin",
     },
@@ -78,7 +78,7 @@ export default function HowItWorks() {
                   className="relative flex flex-col items-center justify-center rounded-xl overflow-hidden border shadow-sm py-0"
                 >
                   {/* Step Number Badge */}
-                  <div className="absolute top-2 left-2 bg-cyan-500 text-white text-sm font-bold px-3 py-2 rounded">
+                  <div className="absolute w-14 h-14  top-0 left-0 bg-cyan-100 text-cyan-600 text-4xl font-bold px-5 py-2 ">
                     {step.id}
                   </div>
 
@@ -107,21 +107,42 @@ export default function HowItWorks() {
         <CarouselNext /> */}
         </Carousel>
         <div className="flex justify-center  mt-2 gap-2">
-          {scrollSnaps.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => emblaApi && emblaApi.scrollTo(idx)}
-              className={`w-2 h-2 rounded-full transition-colors ${
-                idx === selectedIndex ? "bg-cyan-600" : "bg-gray-200"
-              }`}
-            />
-          ))}
+          {scrollSnaps.map((_, idx) => {
+            // find relative position with wrap-around
+            const offset =
+              (idx - selectedIndex + scrollSnaps.length) % scrollSnaps.length;
+
+            let dotColor = "bg-gray-200";
+
+            if (offset === 0) {
+              dotColor = "bg-red-500"; // active
+            } else if (offset === 1) {
+              dotColor = "bg-yellow-400"; // next
+            } else if (offset === 2) {
+              dotColor = "bg-green-500"; // next-next
+            }
+
+            return (
+              <button
+                key={idx}
+                onClick={() => emblaApi && emblaApi.scrollTo(idx)}
+                className={`w-2 h-2 rounded-full transition-colors ${dotColor}`}
+              />
+            );
+          })}
         </div>
       </div>
 
       {/* CTA Button */}
       <div className="w-full flex justify-center mt-8">
-        <Button className="w-full bg-cyan-600 hover:bg-cyan-700 text-white rounded-md px-6">
+        <Button
+          className="w-full bg-cyan-600 hover:bg-cyan-700 text-white rounded-md px-6"
+          onClick={() => {
+            document.getElementById("challan-check")?.scrollIntoView({
+              behavior: "smooth", // 👈 smooth scrolling
+            });
+          }}
+        >
           Check Challan Status
         </Button>
       </div>

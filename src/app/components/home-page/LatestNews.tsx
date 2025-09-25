@@ -22,51 +22,56 @@ interface NewsItem {
 
 const newsData: NewsItem[] = [
   {
-    logo: "/news-logo/abp-logo-png_seeklogo-432770.png",
+    logo: "/news-logo/yourstory-logo-png_seeklogo-528345.png",
     title:
-      "Meet Himanshu Gupta: The Visionary Revolutionizing Road Side Legal Assistance with LOTS",
+      "Revolutionizing On-Road Legal Support:Lawyereds Journey Towards Accessible Justice",
     description:
-      "With a mission to make Indian roads safer and more efficient, Himanshu has introduced cutting-edge tools like challan resolution and immediate legal help through the LOTS app...",
-    date: "Apr 02, 2025",
-    link: "#",
-  },
-  {
-    logo: "/news-logo/images2.jpeg",
-    title: "LOTS App Empowers Drivers with Instant Challan Resolution",
-    description:
-      "The LOTS app is transforming how drivers resolve challans instantly, reducing legal complexities and ensuring compliance...",
+      "Lawyered, a legal tech startup founded by Himanshu Gupta, is transforming the landscape of on-road legal assistance for vehicle owners in India. With its innovative LOTS platform, the company connects users to a network of over 70,000 lawyers for immediate support on traffic violations and legal disputes, operating 24/7 across 98% of Indias pin codes.",
     date: "Mar 15, 2025",
     link: "#",
   },
   {
-    logo: "/news-logo/images3.png",
-    title: "Tech-Driven Legal Assistance: The Future of Road Safety",
+    logo: "/news-logo/abp-logo-png_seeklogo-432770.png",
+    title:
+      "Contracts To Code: Legal Tech Is Shaping Indias Startup Future. Heres How",
     description:
-      "Cutting-edge digital platforms are enabling roadside legal assistance with unprecedented speed and accuracy...",
+      "At a justice innovation workshop in a rural Tamil Nadu law school—well past the temple town of Mahabalipuram—we asked a class of law students how many were using ChatGPT. Every hand shot up. In an urban college, this would not have been surprising. But here? Their professor explained: most of these students were the children of farmers and fishermen from adjoining villages.x",
+    date: "Apr 02, 2025",
+    link: "#",
+  },
+
+  {
+    logo: "/news-logo/images3.png",
+    title:
+      "Delhi traffic challan: How to get them waived off or settled at Lok Adalat 2025",
+    description:
+      "In India today, technology touches almost every part of our lives — from how we pay bills to how we travel, shop, and even consult a doctor. Quietly, but powerfully, its also starting to reshape another cornerstone of our society: the legal system.",
     date: "Mar 01, 2025",
     link: "#",
   },
   {
     logo: "/news-logo/Lawyered_logo (3446x654)_20250527_103837_0000.png",
-    title: "LOTS: Transforming the Legal Landscape for Roadside Issues",
+    title:
+      "Celebrating Vision and Leadership:Himanshu Gupta Awarded Entrepreneur of the Year at 2024 Entrepreneur India Startup Awards",
     description:
-      "By providing immediate support for challan disputes, LOTS is saving crores in legal fees across India...",
+      "Himanshu Gupta, Founder & CEO of Lawyered, has been honored with the Entrepreneur of the Year in Service Business - Legal award at the Entrepreneur India Startup Awards",
     date: "Feb 20, 2025",
     link: "#",
   },
   {
     logo: "/news-logo/sugermint-mobile-logo.png",
-    title: "Revolutionizing Road Safety with AI-Powered Tools",
+    title:
+      "Meet Himanshu Gupta: The Visionary Revolutionizing Road Side Legal Assistance with LOTS",
     description:
-      "Artificial Intelligence is at the heart of LOTS’s mission, making legal resolutions faster and more accurate...",
+      "With a mission to make Indian roads safer and more efficient, Himanshu has introduced cutting-edge tools like challan resolution and immediate legal help through the LOTS app. His journey is a testament to passion, purpose, and the power of technology to solve real-world problems.",
     date: "Feb 10, 2025",
     link: "#",
   },
   {
     logo: "/news-logo/print_logo.png",
-    title: "India’s First Digital Roadside Legal Support Platform",
+    title: "LOTS Launches at Dealerships in Chhattisgarh with FADA & RADA",
     description:
-      "LOTS is pioneering a new category of tech-enabled legal services for drivers, fleet owners, and individuals...",
+      "On February 28, 2024, the Federation of Automobile Dealers Associations (FADA) and the Raipur Automobile Dealers Association (RADA) welcomed the launch of Lawyereds flagship product, LOTS24×7 (On-Road Legal Assistance), at dealerships across Raipur, Chhattisgarh.",
     date: "Jan 25, 2025",
     link: "#",
   },
@@ -119,7 +124,7 @@ export function LatestNews() {
               key={index}
               className="pl-2 md:basis-1/2 lg:basis-1/3"
             >
-              <Card className="rounded-xl border border-gray-200 py-0 shadow-sm hover:shadow-md transition h-80">
+              <Card className="rounded-xl border border-gray-200 py-0 shadow-sm hover:shadow-md transition h-110">
                 <CardContent className="p-5 space-y-3">
                   {/* Logo */}
                   <div className="flex items-center">
@@ -161,15 +166,34 @@ export function LatestNews() {
       <CarouselNext /> */}
       </Carousel>
       <div className="flex justify-center mt-4  gap-2">
-        {scrollSnaps.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => emblaApi && emblaApi.scrollTo(idx)}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              idx === selectedIndex ? "bg-cyan-600" : "bg-gray-200"
-            }`}
-          />
-        ))}
+        {scrollSnaps.map((_, idx) => {
+          // default = gray
+          let dotColor = "bg-gray-200";
+
+          // offset relative to active index
+          let offset = idx - selectedIndex;
+
+          // wrap-around (for circular case, e.g. last to first)
+          if (offset < 0) offset += scrollSnaps.length;
+
+          if (offset >= 0 && offset < 3) {
+            if (offset === 0) {
+              dotColor = "bg-green-500"; // first
+            } else if (offset === 1) {
+              dotColor = "bg-yellow-400"; // second
+            } else if (offset === 2) {
+              dotColor = "bg-red-500"; // active (always red)
+            }
+          }
+
+          return (
+            <button
+              key={idx}
+              onClick={() => emblaApi && emblaApi.scrollTo(idx)}
+              className={`w-2 h-2 rounded-full transition-colors ${dotColor}`}
+            />
+          );
+        })}
       </div>
     </div>
   );

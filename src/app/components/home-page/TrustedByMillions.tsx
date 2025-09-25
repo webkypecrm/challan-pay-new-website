@@ -5,22 +5,22 @@ export default function TrustedByMillions() {
   const stats = [
     {
       icon: "/trusted-by/icon1.png",
-      value: "5.5 Lakhs+",
+      value: "6 Lakhs+",
       label: "Vehicles Protected",
     },
     {
       icon: "/trusted-by/icon4.png",
-      value: "1.65 Lakh+",
+      value: "1.5 Lakh+",
       label: "Challans Resolved",
     },
     {
       icon: "/trusted-by/icon3.png",
-      value: "61 Crore+",
+      value: "53 Crore+",
       label: "Savings on Legal Fees",
     },
     {
       icon: "/trusted-by/icon2.png",
-      value: "99%",
+      value: "98%",
       label: "Successful Resolutions",
     },
   ];
