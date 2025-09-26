@@ -3,7 +3,6 @@ import Header from "../components/common/Header";
 import PaymentInfo from "../components/payment-success/PaymentInfo";
 import ChallanDetailCard from "../components/payment-success/ChallanDetailCard";
 import { CircleCheck } from "lucide-react";
-//import BottomSheet from "../components/common/BottomSheet";
 
 function page() {
   return (

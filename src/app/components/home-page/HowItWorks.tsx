@@ -54,33 +54,32 @@ export default function HowItWorks() {
   }, [emblaApi]);
 
   return (
-    <section className="w-full py-20 ">
-      <div className="text-center mb-8 px-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-black ">
-          Pay Challan In Just 3 Easy Steps
+    <section className="w-full py-12 ">
+      <div className="text-center mb-8 px-4">
+        <h2 className="font-broken text-2xl text-[#374151] uppercase">
+          Pay Challan In Just 3 <br />
+          <span>Easy Steps</span>
         </h2>
       </div>
 
       {/* Steps Grid */}
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center w-full relative">
+        <div className="w-12 h-12 absolute -top-4 -left-1 rounded-full bg-cyan-500 text-white text-lg font-bold flex items-center justify-center z-10">
+          {selectedIndex + 1} {/* dynamically show current slide number */}
+        </div>
+
         <Carousel
-          className="w-full max-w-xs"
-          setApi={setEmblaApi} // 👈 connect carousel API
+          className="w-full max-w-xs sm:max-w-md "
+          setApi={setEmblaApi}
           plugins={[plugin.current]}
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
         >
           <CarouselContent>
-            {steps.map((step, index) => (
-              <CarouselItem key={index}>
-                <Card
-                  key={step.id}
-                  className="relative flex flex-col items-center justify-center rounded-xl overflow-hidden border shadow-sm py-0"
-                >
+            {steps.map((step) => (
+              <CarouselItem key={step.id}>
+                <Card className=" flex flex-col items-center justify-center rounded-xl overflow-visible border shadow-sm py-0">
                   {/* Step Number Badge */}
-                  <div className="absolute w-14 h-14  top-0 left-0 bg-cyan-100 text-cyan-600 text-4xl font-bold px-5 py-2 ">
-                    {step.id}
-                  </div>
 
                   {/* Image */}
                   <Image
@@ -91,20 +90,19 @@ export default function HowItWorks() {
                     className="w-full h-auto object-contain"
                   />
                 </Card>
-                <div>
-                  <h3 className="text-base text-black font-bold py-1">
+
+                {/* Heading & Text */}
+                <div className=" mt-2">
+                  <h3 className="text-base font-bold text-black">
                     {step.heading}
                   </h3>
-                  {/* Text */}
-                  <p className="text-sm font-normal text-black  py-1">
+                  <p className="text-sm font-normal text-black mt-1">
                     {step.text}
                   </p>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          {/* <CarouselPrevious />
-        <CarouselNext /> */}
         </Carousel>
         <div className="flex justify-center  mt-2 gap-2">
           {scrollSnaps.map((_, idx) => {
@@ -134,7 +132,7 @@ export default function HowItWorks() {
       </div>
 
       {/* CTA Button */}
-      <div className="w-full flex justify-center mt-8">
+      {/* <div className="w-full flex justify-center mt-8">
         <Button
           className="w-full bg-cyan-600 hover:bg-cyan-700 text-white rounded-md px-6"
           onClick={() => {
@@ -145,7 +143,7 @@ export default function HowItWorks() {
         >
           Check Challan Status
         </Button>
-      </div>
+      </div> */}
     </section>
   );
 }

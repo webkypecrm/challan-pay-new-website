@@ -101,14 +101,10 @@ export function LatestNews() {
     <div>
       <div>
         <div className="text-center mb-6 mt-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#0A0A0A]">
+          <h2 className="font-broken text-2xl md:text-3xl  text-[#374151] uppercase">
             Latest Media and
             <br /> <span>News</span>
           </h2>
-          {/* <p className="text-gray-600 text-sm md:text-base mt-2">
-            Stay Updated with our most recent stories and updates from across
-            the country
-          </p> */}
         </div>
       </div>
       <Carousel

@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import Image from "next/image";
 
@@ -97,7 +98,11 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:text-green-500"
             >
-              <FaTwitter size={32} />
+              <FontAwesomeIcon
+                icon={faXTwitter}
+                size="2x"
+                className="text-black"
+              />
             </Link>
 
             <Link

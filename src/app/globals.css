@@ -118,3 +118,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+@font-face {
+  font-family: "KGBrokenVesselsSketch";
+  src: url("/fonts/KGBrokenVesselsSketch.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-broken {
+  font-family: "KGBrokenVesselsSketch";
+}
