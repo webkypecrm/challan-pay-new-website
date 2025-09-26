@@ -15,7 +15,7 @@ import {
   SheetContent,
   SheetClose,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, XIcon } from "lucide-react";
 
 export default function Header() {
   return (
@@ -24,7 +24,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/">
           <Image
-            src="/logo/logo.svg" // Path to your logo in public folder
+            src="/logo/text-logo.svg" // Path to your logo in public folder
             alt="Challan Pay Logo"
             width={108} // Adjust width
             height={28} // Adjust height
@@ -71,18 +71,27 @@ export default function Header() {
               </Button>
             </div>
           </SheetTrigger>
-          <SheetContent side="right" className="w-full h-[200px] rounded-b-xl">
+          <SheetContent side="top" className="w-full h-[240px] rounded-b-xl">
             <nav className="flex flex-col  mx-3 gap-4 mt-3">
               <SheetClose asChild>
                 <Link href="/">
                   <Image
-                    src="/logo/logo.svg" // Path to your logo in public folder
+                    src="/logo/text-logo.svg" // Path to your logo in public folder
                     alt="Challan Pay Logo"
                     width={108} // Adjust width
                     height={28} // Adjust height
                     className="object-contain"
                   />
                 </Link>
+              </SheetClose>
+              <SheetClose asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute right-2 top-6 p-3 border border-gray-200"
+                >
+                  <XIcon />
+                </Button>
               </SheetClose>
               <hr />
               <SheetClose asChild>
@@ -103,7 +112,9 @@ export default function Header() {
                   Support
                 </Link>
               </SheetClose>
-              <Button className="bg-cyan-600">Track Status</Button>
+              <Button className="bg-cyan-600 w-40 rounded-md">
+                Track Status
+              </Button>
             </nav>
           </SheetContent>
         </Sheet>

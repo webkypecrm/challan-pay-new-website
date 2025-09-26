@@ -16,9 +16,9 @@ const cardData = [
   {
     title: (
       <>
-        <span className="text-cyan-600">Challan Pay</span>
+        <span className="text-black">Challan Pay</span>
         <br />
-        <span className="text-black">AnyTime</span>{" "}
+        <span className="text-black">AnyTime</span> <br />
         <span className="text-black">AnyWhere</span>
       </>
     ),
@@ -29,7 +29,7 @@ const cardData = [
   {
     title: (
       <>
-        <span className="text-cyan-600">No queues.</span>
+        <span className="text-black">No queues.</span>
         <br />
         <span className="text-black">No stress.</span>{" "}
         <span className="text-black">With ChallanPay</span>
@@ -42,7 +42,7 @@ const cardData = [
   {
     title: (
       <>
-        <span className="text-cyan-600">Pay Traffic</span>
+        <span className="text-black">Pay Traffic</span>
         <br />
         <span className="text-black">Challans</span>{" "}
         <span className="text-black">Instantly</span>
@@ -75,8 +75,8 @@ export function HeroSection() {
 
   return (
     <div
-      className="w-full max-w-screen-xl mx-auto px-4"
-      style={{ marginTop: "70px", marginBottom: "50px" }}
+      className="w-full max-w-screen-xl mx-auto px-4 "
+      style={{ marginTop: "100px", marginBottom: "30px" }}
     >
       <Carousel
         setApi={setEmblaApi} // 👈 connect carousel API
@@ -89,7 +89,7 @@ export function HeroSection() {
           {cardData.map((card, index) => (
             <CarouselItem key={index}>
               <div className="p-1">
-                <Card className="h-100 border md:h-64 py-0 rounded">
+                <Card className="h-100 border md:h-64 py-0 rounded-md">
                   <CardContent className="flex items-center justify-center p-3 h-full">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
                       {/* Left Content */}
@@ -97,7 +97,7 @@ export function HeroSection() {
                         <h1 className="text-3xl md:text-4xl font-bold leading-snug">
                           {card.title}
                         </h1>
-                        <p className="mt-2 text-black font-medium text-sm md:text-base max-w-md mx-auto md:mx-0">
+                        <p className="mt-2 text-[#423F3F] font-medium text-sm md:text-base max-w-md mx-auto md:mx-0">
                           {card.description}
                         </p>
                       </div>
@@ -147,7 +147,7 @@ export function HeroSection() {
           );
         })}
       </div>
-      <Button
+      {/* <Button
         className="w-full bg-cyan-600 mt-4"
         onClick={() => {
           document.getElementById("challan-check")?.scrollIntoView({
@@ -156,7 +156,7 @@ export function HeroSection() {
         }}
       >
         Check Challan Status
-      </Button>
+      </Button> */}
     </div>
   );
 }

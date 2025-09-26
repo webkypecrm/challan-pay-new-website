@@ -162,7 +162,7 @@ const Testimonials: React.FC = () => {
   }, [emblaApi]);
 
   return (
-    <div className="bg-[#31AB76] text-white py-4 px-2 mt-6">
+    <div className="bg-[#31AB76] text-white py-4 px-2 mt-6 rounded-lg">
       <h2 className="text-2xl font-bold text-center mb-4">
         Real Stories, Real <br />
         <span> Savings</span>

@@ -16,8 +16,8 @@ export function CheckResolution() {
       </div>
       <Tabs defaultValue="account" className="w-full">
         {/* Tabs List full width */}
-        <TabsList className="w-full flex justify-between">
-          <TabsTrigger value="account" className="flex-1">
+        <TabsList className="w-full flex justify-between bg-[#FAF8F7]">
+          <TabsTrigger value="account" className="flex-1 ">
             ChallanPay
           </TabsTrigger>
           <TabsTrigger value="password" className="flex-1">
@@ -26,8 +26,8 @@ export function CheckResolution() {
         </TabsList>
 
         {/* Tab Content full width */}
-        <TabsContent value="account" className="w-full">
-          <Card className="w-full">
+        <TabsContent value="account" className="w-full ">
+          <Card className="w-full bg-[#FAF8F7]">
             <CardContent className="grid gap-6">
               <div className="flex  items-center justify-center">
                 <Image
@@ -51,7 +51,7 @@ export function CheckResolution() {
 
                 {/* Tab Content full width */}
                 <TabsContent2 value="account1" className="w-full">
-                  <Card className="w-full">
+                  <Card className="w-full  bg-[#FAF8F7]">
                     <CardContent className="grid gap-6">
                       <ul>
                         <li className="py-3 my-2">
@@ -66,7 +66,7 @@ export function CheckResolution() {
                               <span className="font-bold text-md">
                                 Visit the Official Website
                               </span>
-                              <p className="text-gray-600 text-sm mt-2">
+                              <p className="text-gray-600 text-sm ">
                                 Navigate to the website
                               </p>
                             </div>
@@ -84,7 +84,7 @@ export function CheckResolution() {
                               <span className="font-bold text-md block">
                                 Enter Vehicle Details
                               </span>
-                              <p className="text-gray-600 text-sm mt-2">
+                              <p className="text-gray-600 text-sm ">
                                 {`Input your vehicles registration number to
                                 fetch challan information`}
                               </p>
@@ -103,7 +103,7 @@ export function CheckResolution() {
                               <span className="font-bold text-md block">
                                 Verify Your Identity
                               </span>
-                              <p className="text-gray-600 text-sm mt-2">
+                              <p className="text-gray-600 text-sm">
                                 Provide your mobile number and authenticate via
                                 OTP
                               </p>
@@ -122,7 +122,7 @@ export function CheckResolution() {
                               <span className="font-bold text-md block">
                                 Check Challan Status
                               </span>
-                              <p className="text-gray-600 text-sm mt-2">
+                              <p className="text-gray-600 text-sm ">
                                 View all E-challans linked to your vehicle
                                 instantly
                               </p>
@@ -134,7 +134,7 @@ export function CheckResolution() {
                   </Card>
                 </TabsContent2>
                 <TabsContent2 value="password2" className="w-full">
-                  <Card className="w-full">
+                  <Card className="w-full  bg-[#FAF8F7]">
                     <CardContent className="grid gap-6">
                       <ul>
                         <li className="py-3 my-2">
@@ -149,7 +149,7 @@ export function CheckResolution() {
                               <span className="font-bold text-md">
                                 Select the challan
                               </span>
-                              <p className="text-gray-600 text-sm mt-2">
+                              <p className="text-gray-600 text-sm ">
                                 Choose the specific challan you wish to pay
                               </p>
                             </div>
@@ -167,7 +167,7 @@ export function CheckResolution() {
                               <span className="font-bold text-md block">
                                 Proceed with payment
                               </span>
-                              <p className="text-gray-600 text-sm mt-2">
+                              <p className="text-gray-600 text-sm ">
                                 You will be redirected to a secure payment
                                 gateway
                               </p>
@@ -186,7 +186,7 @@ export function CheckResolution() {
                               <span className="font-bold text-md block">
                                 Choose payment mode
                               </span>
-                              <p className="text-gray-600 text-sm mt-2">
+                              <p className="text-gray-600 text-sm ">
                                 Select from options like credit card/debit card
                                 or net-banking
                               </p>
@@ -205,7 +205,7 @@ export function CheckResolution() {
                               <span className="font-bold text-md block">
                                 Receive Confirmation
                               </span>
-                              <p className="text-gray-600 text-sm mt-2">
+                              <p className="text-gray-600 text-sm">
                                 You will get a confirmation with a transaction
                                 ID
                               </p>
@@ -224,7 +224,7 @@ export function CheckResolution() {
                               <span className="font-bold text-md block">
                                 Complete the transaction
                               </span>
-                              <p className="text-gray-600 text-sm mt-2">
+                              <p className="text-gray-600 text-sm">
                                 Follow the on-screen instructions to complete
                               </p>
                             </div>
@@ -239,7 +239,7 @@ export function CheckResolution() {
           </Card>
         </TabsContent>
         <TabsContent value="password" className="w-full">
-          <Card className="w-full">
+          <Card className="w-full  bg-[#FAF8F7]">
             <CardContent className="grid gap-6">
               <div className="flex  items-center justify-center">
                 <Image
@@ -250,7 +250,7 @@ export function CheckResolution() {
                   className="object-contain w-64 h-auto md:w-[350px] md:h-[250px]"
                 />
               </div>
-              <Tabs2 defaultValue="account2" className="w-full">
+              <Tabs2 defaultValue="account2" className="w-full bg-[#FAF8F7]">
                 {/* Tabs List full width */}
                 <TabsList2 className="w-full flex justify-between">
                   <TabsTrigger2 value="account2" className="flex-1">
@@ -263,8 +263,8 @@ export function CheckResolution() {
 
                 {/* Tab Content full width */}
                 <TabsContent2 value="account2" className="w-full">
-                  <Card className="w-full">
-                    <CardContent className="grid gap-6">
+                  <Card className="w-full !bg-[#FAF8F7]">
+                    <CardContent className="grid gap-6  !bg-[#FAF8F7]">
                       <ul>
                         <li className="py-3 my-2">
                           <div className="flex items-start gap-3">
@@ -278,7 +278,7 @@ export function CheckResolution() {
                               <span className="font-bold text-md">
                                 Visit the Official Portal
                               </span>
-                              <p className="text-gray-600 text-sm mt-2">
+                              <p className="text-gray-600 text-sm">
                                 Go to the authorized government E-challan
                                 website
                               </p>
@@ -297,7 +297,7 @@ export function CheckResolution() {
                               <span className="font-bold text-md block">
                                 Enter Vehicle Details
                               </span>
-                              <p className="text-gray-600 text-sm mt-2">
+                              <p className="text-gray-600 text-sm ">
                                 {`Provide your vehicles registration number to
                                 retrieve challan details`}
                               </p>
@@ -316,7 +316,7 @@ export function CheckResolution() {
                               <span className="font-bold text-md block">
                                 View Challan Status
                               </span>
-                              <p className="text-gray-600 text-sm mt-2">
+                              <p className="text-gray-600 text-sm">
                                 The portal will display all E-challans
                                 associated with your vehicle
                               </p>
@@ -335,7 +335,7 @@ export function CheckResolution() {
                               <span className="font-bold text-md block">
                                 Verify Information
                               </span>
-                              <p className="text-gray-600 text-sm mt-2">
+                              <p className="text-gray-600 text-sm ">
                                 Check the violation details, date, and fine
                                 amount to ensure accuracy
                               </p>
@@ -347,7 +347,7 @@ export function CheckResolution() {
                   </Card>
                 </TabsContent2>
                 <TabsContent2 value="password2" className="w-full">
-                  <Card className="w-full">
+                  <Card className="w-full !bg-[#FAF8F7]">
                     <CardContent className="grid gap-6">
                       <ul>
                         <li className="py-3 my-2">
@@ -362,7 +362,7 @@ export function CheckResolution() {
                               <span className="font-bold text-md">
                                 Select the Challan
                               </span>
-                              <p className="text-gray-600 text-sm mt-2">
+                              <p className="text-gray-600 text-sm ">
                                 Choose the specific challan you want to pay
                               </p>
                             </div>
@@ -380,7 +380,7 @@ export function CheckResolution() {
                               <span className="font-bold text-md block">
                                 Proceed to Payment
                               </span>
-                              <p className="text-gray-600 text-sm mt-2">
+                              <p className="text-gray-600 text-sm">
                                 You will be redirected to a secure payment
                                 gateway
                               </p>
@@ -399,7 +399,7 @@ export function CheckResolution() {
                               <span className="font-bold text-md block">
                                 Choose Payment Mode
                               </span>
-                              <p className="text-gray-600 text-sm mt-2">
+                              <p className="text-gray-600 text-sm">
                                 Select from options like credit/debit card, net
                                 banking, or digital wallets
                               </p>
@@ -418,7 +418,7 @@ export function CheckResolution() {
                               <span className="font-bold text-md block">
                                 Complete the Payment
                               </span>
-                              <p className="text-gray-600 text-sm mt-2">
+                              <p className="text-gray-600 text-sm ">
                                 Follow the instructions to finalize the
                                 transaction
                               </p>
@@ -437,7 +437,7 @@ export function CheckResolution() {
                               <span className="font-bold text-md block">
                                 Get Confirmation
                               </span>
-                              <p className="text-gray-600 text-sm mt-2">
+                              <p className="text-gray-600 text-sm">
                                 {`You will receive a confirmation with a transaction
                                 ID`}
                               </p>

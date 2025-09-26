@@ -18,6 +18,7 @@ function HomePage() {
       <HeroSection />
       <div className="p-4 bg-[#FAF8F7]">
         <ChallanCheckForm />
+
         <BotBanner />
         <TrustedByMillions />
         <Testimonials />

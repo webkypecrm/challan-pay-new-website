@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+//import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Check } from "lucide-react";
+//import { Check } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 // Zod schema
@@ -26,7 +26,7 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 export default function Home() {
-  const [selected, setSelected] = useState<string>("");
+  //const [selected, setSelected] = useState<string>("");
   const router = useRouter();
 
   const {
@@ -49,10 +49,10 @@ export default function Home() {
 
   // Dynamic cards array
   const cards = [
-    { id: "car", title: "Private", image: "/Images/car.png" },
-    { id: "bike", title: "Two - Wheelar", image: "/Images/bike.png" },
-    { id: "truck", title: "Electric", image: "/Images/electric.png" },
-    { id: "bus", title: "Commercial", image: "/Images/truck.png" },
+    { id: "car", title: "Private", image: "/Images/car.svg" },
+    { id: "bike", title: "Two - Wheelar", image: "/Images/bike.svg" },
+    { id: "truck", title: "Electric", image: "/Images/electric.svg" },
+    { id: "bus", title: "Commercial", image: "/Images/truck.svg" },
   ];
 
   return (
@@ -61,7 +61,7 @@ export default function Home() {
         {/* Left Section */}
         <div className="flex flex-col lg:items-start w-full lg:w-1/3 gap-6">
           <div className="text-xl font-bold lg:text-left">
-            Select Vehicle Type
+            Select Vehicle Type*
           </div>
 
           <Controller
@@ -74,42 +74,51 @@ export default function Home() {
                 className="w-full grid grid-cols-2 sm:grid-cols-2 gap-4 justify-items-center"
               >
                 {cards.map((card) => (
-                  <Card
+                  <div
                     key={card.id}
-                    className={`relative cursor-pointer border rounded-2xl w-[140px] h-[120px] sm:w-[200px] sm:h-[180px] flex flex-col items-center justify-center transition ${
-                      field.value === card.id
-                        ? "border-gray-100 bg-cyan-50"
-                        : "border-gray-200"
-                    }`}
+                    className="flex flex-col justify-center items-center gap-1"
                   >
-                    <div className="absolute top-2 right-2">
-                      <RadioGroupItem
-                        value={card.id}
-                        id={card.id}
-                        className="h-5 w-5 border rounded-full data-[state=checked]:bg-cyan-600 data-[state=checked]:border-cyan-600 flex items-center justify-center"
-                      />
-                    </div>
+                    {/* Hidden radio (still functional) */}
+                    <RadioGroupItem
+                      value={card.id}
+                      id={card.id}
+                      className="hidden"
+                    />
 
-                    <CardContent className="flex flex-col items-center justify-center gap-1 p-2">
-                      <div className="w-16 h-16 relative">
-                        <img
-                          src={card.image}
-                          alt={card.title}
-                          className="object-scale-down rounded-md"
-                        />
-                      </div>
-                      <Label
-                        htmlFor={card.id}
-                        className={`font-medium cursor-pointer text-center text-sm sm:text-base ${
+                    {/* Label will trigger the radio when clicked */}
+                    <Label
+                      htmlFor={card.id}
+                      className="w-full cursor-pointer flex flex-col items-center"
+                    >
+                      <Card
+                        className={`relative border rounded-full w-[120px] h-[120px] sm:w-[200px] sm:h-[180px] flex flex-col items-center justify-center transition ${
+                          field.value === card.id
+                            ? "border-cyan-600 bg-cyan-50"
+                            : "border-gray-200"
+                        }`}
+                      >
+                        <CardContent className="flex flex-col items-center justify-center gap-1 p-2">
+                          <div className="w-25 h-30 relative">
+                            <img
+                              src={card.image}
+                              alt={card.title}
+                              className="object-scale-down rounded-md"
+                            />
+                          </div>
+                        </CardContent>
+                      </Card>
+
+                      <span
+                        className={`font-medium text-center text-sm sm:text-base ${
                           field.value === card.id
                             ? "text-cyan-600"
                             : "text-black"
                         }`}
                       >
                         {card.title}
-                      </Label>
-                    </CardContent>
-                  </Card>
+                      </span>
+                    </Label>
+                  </div>
                 ))}
               </RadioGroup>
             )}
@@ -128,7 +137,7 @@ export default function Home() {
 
           <Input
             placeholder="eg. UP32MM1113"
-            className="w-full h-9 rounded-md border bg-white"
+            className="w-full h-12 rounded-md border bg-white"
             {...register("vehicleNumber", {
               onChange: (e) => {
                 e.target.value = e.target.value.toUpperCase();
@@ -145,7 +154,10 @@ export default function Home() {
             Enter your vehicle registration number without spaces
           </p>
 
-          <Button className="w-full bg-cyan-600 sm:w-auto" type="submit">
+          <Button
+            className="w-full bg-[#F04B50] tex-sm font-medium rounded-md sm:w-auto "
+            type="submit"
+          >
             Check Challan Status
           </Button>
 
