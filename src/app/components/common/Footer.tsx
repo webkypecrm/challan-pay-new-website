@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 
 export default function Footer() {
@@ -93,7 +93,7 @@ export default function Footer() {
         <ul className="mt-1 flex items-center justify-center">
           <li className="flex items-center space-x-3">
             <Link
-              href="https://wa.me/9199884411033"
+              href="https://x.com/challanpay25389?t=Rt94s4lkuIfFsUpMHC8_VA&s=09"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-green-500"
@@ -106,7 +106,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="https://www.instagram.com/yourpage"
+              href="https://www.instagram.com/challanpay.in"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-pink-500"
@@ -115,7 +115,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="https://www.facebook.com/yourpage"
+              href="https://www.facebook.com/share/14KSBMrXdXs/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-600"
@@ -124,7 +124,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="https://www.linkedin.com/company/yourpage"
+              href="https://www.linkedin.com/company/challanpay/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-500"
