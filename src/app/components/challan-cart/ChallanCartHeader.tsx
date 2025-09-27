@@ -32,13 +32,22 @@ function ChallanCartHeader() {
           <span className="text-xs font-medium text-gray-900">Share</span>
         </button>
       </div>
-      <div className="flex items-center justify-start p-2 gap-4  bg-slate-50 rounded mt-4">
-        <Image src={"/Images/car.png"} width={50} height={30} alt="car image" />
+      <div className="h-18 flex items-center justify-start p-2 gap-4 bg-slate-50 rounded-lg mt-4">
+        {/* Left side (car image) */}
+        <Image
+          src="/Images/car.svg"
+          alt="car image"
+          width={80}
+          height={30}
+          className="object-contain"
+        />
+
+        {/* Centered number plate */}
+        {/* <div className="flex-1 flex justify-center"> */}
         <div className="p-1 border border-gray-300">
-          <div className="border border-black px-2  font-bold">
-            • UP 32MM 1113 •
-          </div>
+          <div className="border border-black font-bold">• UP 32MM 1113 •</div>
         </div>
+        {/* </div> */}
       </div>
     </div>
   );

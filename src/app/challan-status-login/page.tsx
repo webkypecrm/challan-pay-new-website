@@ -89,7 +89,7 @@ export default function LoginPage() {
     setTimeout(() => {
       setLoading(false);
       router.push("/challan-cart");
-    }, 5000);
+    }, 4000);
   };
 
   return (
@@ -123,7 +123,7 @@ export default function LoginPage() {
                     <Label htmlFor="fullName">Full Name</Label>
                     <Input
                       id="fullName"
-                      placeholder="John Doe"
+                      placeholder="Aman Mishra"
                       {...register("fullName")}
                     />
                     {errors.fullName && (
@@ -135,7 +135,7 @@ export default function LoginPage() {
 
                   <div className="grid gap-2">
                     <Label htmlFor="phone">Mobile Number</Label>
-                    <div className="flex">
+                    <div className="flex  border-gray-200">
                       <span className="inline-flex items-center px-1 border border-r-0 border-gray-200 rounded-l-md text-gray-500">
                         +91
                       </span>
@@ -161,7 +161,7 @@ export default function LoginPage() {
               </form>
             </CardContent>
 
-            <div className="text-xs text-center mt-6 mx-6">
+            <div className="text-xs text-center mt-20 mx-6">
               By continuing, you agree to our{" "}
               <span className="text-blue-600 underline">
                 <Link href="#">terms & Condition</Link>
