@@ -25,7 +25,7 @@ const testimonials: Testimonial[] = [
       "“Challan dekh ke tension ho gayi thi, par is service ne process bahut simple bana diya. Kahi bhaagne ki zarurat hi nahi padi.”",
     location: "Two-Wheeler Owner · Delhi",
     amountSaved: 2300,
-    photo: "/photo/Polish_20250530_112449084.jpg",
+    photo: "/photo/dweep.jpg",
   },
   {
     name: "Tina",
