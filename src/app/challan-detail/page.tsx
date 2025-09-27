@@ -4,24 +4,24 @@ import React from "react";
 import Header from "../components/common/Header";
 import { ChevronLeft, Copy } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-//import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
-function page() {
-  // const router = useRouter();
+function ChallanDetail() {
+  const router = useRouter();
 
-  // const handleBack = () => {
-  //   router.push("/challan-cart");
-  // };
+  const handleBack = () => {
+    router.push("/challan-cart");
+  };
   return (
     <>
       <Header />
-      <div className="mt-16 px-4">
+      <div className="mt-20 px-4">
         <div className="flex items-center justify-between">
           {/* Left side: Back button + Title */}
           <div className="flex items-center gap-2">
             <button
               className="p-1 bg-gray-100 border border-gray-200 rounded-sm hover:bg-gray-200"
-              // onClick={handleBack}
+              onClick={handleBack}
             >
               <ChevronLeft size={18} />
             </button>
@@ -64,4 +64,4 @@ function page() {
   );
 }
 
-export default page;
+export default ChallanDetail;

@@ -21,18 +21,13 @@ const ChallanDetailCard = () => {
         </div>
         <Separator />
         <div className="flex justify-between items-center p-4">
-          <div className="text-[#737373]">Vehicle Number</div>
-          <div className="text-black text-sm font-semibold">UP32MM1113</div>
+          <div className="text-[#737373]">Challan Type</div>
+          <div className="text-black text-sm font-semibold">Court Challan</div>
         </div>
         <Separator />
         <div className="flex justify-between items-center p-4">
-          <div className="text-[#737373]">Challans Submitted</div>
-          <div className="text-black text-sm font-semibold">02</div>
-        </div>
-        <Separator />
-        <div className="flex justify-between items-center p-4">
-          <div className="text-[#737373]">Total Amount Paid</div>
-          <div className="text-black text-sm font-semibold">₹4236.00</div>
+          <div className="text-[#737373]">Resolution Date</div>
+          <div className="text-black text-sm font-semibold">02-09-2025</div>
         </div>
       </div>
     </div>

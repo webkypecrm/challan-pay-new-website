@@ -1,10 +1,16 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Header from "../components/common/Header";
 import PaymentInfo from "../components/payment-success/PaymentInfo";
 import ChallanDetailCard from "../components/payment-success/ChallanDetailCard";
 import { CircleCheck } from "lucide-react";
+import WhatNext from "../components/payment-success/WhatNext";
+//import BottomSheet from "../components/common/BottomSheet";
+import TrackStatusBottomSheet from "../components/common/TrackStatusBottomSheet";
 
-function page() {
+function PaymentSuccess() {
+  const [open, setOpen] = useState(false);
   return (
     <>
       <Header />
@@ -16,9 +22,13 @@ function page() {
       </div>
       <PaymentInfo />
       <ChallanDetailCard />
-      {/* <BottomSheet /> */}
+      <WhatNext />
+      <TrackStatusBottomSheet
+        primaryText={"Track Status"}
+        secondaryText={"Download Reciept"}
+      />
     </>
   );
 }
 
-export default page;
+export default PaymentSuccess;
