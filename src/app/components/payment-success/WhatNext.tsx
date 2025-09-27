@@ -5,7 +5,7 @@ import { CardContent } from "@/components/ui/card";
 function WhatNext() {
   return (
     <Card className="w-full  px-4">
-      <CardTitle className="my-4 text-xl font-bold">What's Next</CardTitle>
+      <CardTitle className="my-4 text-xl font-bold">Whats Next</CardTitle>
       <CardContent className="grid gap-6  !bg-[#FAF8F7] rounded-lg">
         <ul>
           <li className="py-3 my-2">
