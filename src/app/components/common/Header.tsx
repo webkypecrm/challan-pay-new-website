@@ -16,8 +16,13 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { Menu, XIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
+  const router = useRouter();
+  const handleTrackChallanDashboard = () => {
+    router.push("/track-status-dashboard");
+  };
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
       <div className="container mx-auto flex items-center justify-between p-2 ">
@@ -112,7 +117,10 @@ export default function Header() {
                   Support
                 </Link>
               </SheetClose>
-              <Button className="bg-cyan-600 w-40 rounded-md">
+              <Button
+                className="bg-cyan-600 w-40 rounded-md"
+                onClick={handleTrackChallanDashboard}
+              >
                 Track Status
               </Button>
             </nav>
