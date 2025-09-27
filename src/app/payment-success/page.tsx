@@ -1,16 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Header from "../components/common/Header";
 import PaymentInfo from "../components/payment-success/PaymentInfo";
 import ChallanDetailCard from "../components/payment-success/ChallanDetailCard";
 import { CircleCheck } from "lucide-react";
 import WhatNext from "../components/payment-success/WhatNext";
-//import BottomSheet from "../components/common/BottomSheet";
 import TrackStatusBottomSheet from "../components/common/TrackStatusBottomSheet";
+import { useRouter } from "next/navigation";
 
 function PaymentSuccess() {
-  const [open, setOpen] = useState(false);
+  const router = useRouter();
+
+  const handleTrackChallanDashboard = () => {
+    router.push("/track-status-dashboard");
+  };
+
   return (
     <>
       <Header />
@@ -26,6 +31,7 @@ function PaymentSuccess() {
       <TrackStatusBottomSheet
         primaryText={"Track Status"}
         secondaryText={"Download Reciept"}
+        onPrimaryClick={handleTrackChallanDashboard}
       />
     </>
   );
