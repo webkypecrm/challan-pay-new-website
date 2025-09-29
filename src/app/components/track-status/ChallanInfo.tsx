@@ -12,10 +12,16 @@ import {
 import InfoBanner from "../common/InfoBanner";
 import SearchBar from "../common/SearchBar";
 import ChallanInfoTabs from "./ChallanInfoTabs";
+import { useRouter } from "next/navigation";
 
 function ChallanInfo() {
   const handleSearch = (value: string) => {
     console.log("Searching for:", value);
+  };
+  const router = useRouter();
+
+  const handleFrequentlyAsked = () => {
+    router.push("/frequently-asked-questions");
   };
   return (
     <div className="">
@@ -52,7 +58,10 @@ function ChallanInfo() {
           href="/refund-challan"
         />
       </div>
-      <div className="flex justify-between items-center  bg-white border border-gray-300 p-2  rounded-lg mx-4">
+      <div
+        className="flex justify-between items-center  bg-white border border-gray-300 p-2  rounded-lg mx-4"
+        onClick={handleFrequentlyAsked}
+      >
         <div className="text-sm font-semibold px-2">
           Frequently Asked Questions
         </div>
