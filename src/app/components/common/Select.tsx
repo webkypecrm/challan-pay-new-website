@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import {
   Select,
   SelectContent,
@@ -9,18 +8,38 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export function SelectDemo() {
+type Option = {
+  label: string;
+  value: string | number;
+};
+
+interface CommonSelectProps {
+  placeholder?: string;
+  options: Option[];
+  value?: string | number;
+  onChange?: (value: string) => void;
+  className?: string;
+}
+
+export function CommonSelect({
+  placeholder = "Select option",
+  options,
+  value,
+  onChange,
+  className,
+}: CommonSelectProps) {
   return (
-    <Select>
-      <SelectTrigger className="w-auto">
-        <SelectValue placeholder="Select Vehicals" />
+    <Select value={value?.toString()} onValueChange={onChange}>
+      <SelectTrigger className={className || "w-auto"}>
+        <SelectValue placeholder={placeholder} />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectItem value="apple">0-10</SelectItem>
-          <SelectItem value="banana">10-20</SelectItem>
-          <SelectItem value="blueberry">20-30</SelectItem>
-          <SelectItem value="grapes">30+</SelectItem>
+          {options.map((option) => (
+            <SelectItem key={option.value} value={option.value.toString()}>
+              {option.label}
+            </SelectItem>
+          ))}
         </SelectGroup>
       </SelectContent>
     </Select>

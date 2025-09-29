@@ -8,9 +8,10 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { SelectDemo } from "../common/Select";
+import { CommonSelect } from "../common/Select";
 import { FaWhatsapp } from "react-icons/fa";
 import { XIcon } from "lucide-react";
 
@@ -21,6 +22,14 @@ export function DialogDemo({
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }) {
+  const [selected, setSelected] = useState("");
+
+  const vehicleOptions = [
+    { label: "0-10", value: "0-10" },
+    { label: "10-20", value: "10-20" },
+    { label: "20-30", value: "20-30" },
+    { label: "30+", value: "30+" },
+  ];
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <form>
@@ -42,7 +51,12 @@ export function DialogDemo({
             </div>
             <div className="grid gap-3">
               <Label htmlFor="username-1">Number of Vehicals</Label>
-              <SelectDemo />
+              <CommonSelect
+                placeholder="Select Vehicles"
+                options={vehicleOptions}
+                value={selected}
+                onChange={setSelected}
+              />
             </div>
           </div>
           <DialogFooter>

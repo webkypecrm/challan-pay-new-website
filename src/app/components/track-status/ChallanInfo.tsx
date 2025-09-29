@@ -15,10 +15,14 @@ import ChallanInfoTabs from "./ChallanInfoTabs";
 import { useRouter } from "next/navigation";
 
 function ChallanInfo() {
-  const handleSearch = (value: string) => {
-    console.log("Searching for:", value);
-  };
   const router = useRouter();
+
+  const handleSearch = (value: string) => {
+    console.log(value);
+    if (value) {
+      router.push("/search-result");
+    }
+  };
 
   const handleFrequentlyAsked = () => {
     router.push("/frequently-asked-questions");
@@ -69,7 +73,7 @@ function ChallanInfo() {
           <CircleChevronRight size={20} />
         </div>
       </div>
-      <div className="px-4">
+      <div className="px-4 mb-4">
         <InfoBanner
           title={"Easily Resolve Challan with ChallanPay"}
           bgColor="#ECFEFF" // default yellow background

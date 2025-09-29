@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/common/Header";
 import CommonHeader from "../components/common/CommonHeader";
 import { useRouter } from "next/navigation";
@@ -8,11 +8,16 @@ import { Separator } from "@/components/ui/separator";
 import { Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ResolutionTimeline from "../components/track-status/ResolutionTimeLine";
+import { RaiseDispute } from "../components/track-status/RaiseDispute";
 
 function TrackChallanDetail() {
+  const [open, setOpen] = useState(false);
   const router = useRouter();
   const handleBack = () => {
     router.push("/track-status-dashboard");
+  };
+  const handleRaiseDispute = () => {
+    setOpen(true);
   };
   return (
     <div className="bg-slate-100 ">
@@ -64,13 +69,17 @@ function TrackChallanDetail() {
         <Button className="bg-white text-black w-full mt-4">
           Download Receipt
         </Button>
-        <Button className="bg-cyan-600 text-white w-full mt-4">
+        <Button
+          className="bg-cyan-600 text-white w-full mt-4"
+          onClick={handleRaiseDispute}
+        >
           Raise a Dispute
         </Button>
       </div>
       <div className="mt-4 px-4 mb-10">
         <ResolutionTimeline />
       </div>
+      <RaiseDispute open={open} onOpenChange={setOpen} />
     </div>
   );
 }
