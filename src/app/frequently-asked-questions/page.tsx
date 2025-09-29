@@ -31,9 +31,9 @@ function FrequentlyAsked() {
         >
           <AccordionItem
             value="item-1"
-            className="bg-white rounded-md mb-[10px] px-2"
+            className="bg-white rounded-md mb-[10px] px-2 border border-gray-200"
           >
-            <AccordionTrigger className="text-sm font-normal">
+            <AccordionTrigger className="text-sm font-semibold">
               How do I track my challan status?
             </AccordionTrigger>
             <AccordionContent className="flex flex-col gap-4 text-balance">
@@ -52,9 +52,9 @@ function FrequentlyAsked() {
 
           <AccordionItem
             value="item-2"
-            className="bg-white rounded-md mb-[10px] px-2"
+            className="bg-white rounded-md mb-[10px] px-2 border  border-gray-200"
           >
-            <AccordionTrigger className="text-sm font-normal">
+            <AccordionTrigger className="text-sm  font-semibold">
               Will I be notified when my challan gets cleared? If yes, how?
             </AccordionTrigger>
             <AccordionContent className="flex flex-col gap-4 text-balance">
@@ -72,9 +72,9 @@ function FrequentlyAsked() {
 
           <AccordionItem
             value="item-3"
-            className="bg-white rounded-md mb-[10px] px-2"
+            className="bg-white rounded-md mb-[10px] px-2  border    border-gray-200"
           >
-            <AccordionTrigger className="text-sm font-normal">
+            <AccordionTrigger className="text-sm  font-semibold">
               Can I resolve both online and court challans through the landing
               page?
             </AccordionTrigger>
@@ -92,10 +92,10 @@ function FrequentlyAsked() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
-            value="item-3"
-            className="bg-white rounded-md mb-[10px] px-2"
+            value="item-4"
+            className="bg-white rounded-md mb-[10px] px-2  border    border-gray-200"
           >
-            <AccordionTrigger className="text-sm font-normal">
+            <AccordionTrigger className="text-sm  font-semibold">
               If my vehicle has both court and online challans pending, can I
               clear both through LOTS?
             </AccordionTrigger>
@@ -113,10 +113,10 @@ function FrequentlyAsked() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
-            value="item-1"
-            className="bg-white rounded-md mb-[10px] px-2"
+            value="item-5"
+            className="bg-white rounded-md mb-[10px] px-2  border    border-gray-200"
           >
-            <AccordionTrigger className="text-sm font-normal">
+            <AccordionTrigger className="text-sm  font-semibold">
               Once the challan is cleared, how will I be informed?
             </AccordionTrigger>
             <AccordionContent className="flex flex-col gap-4 text-balance">
@@ -129,45 +129,6 @@ function FrequentlyAsked() {
                 Key features include advanced processing capabilities, and an
                 intuitive user interface designed for both beginners and
                 experts.
-              </p>
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem
-            value="item-2"
-            className="bg-white rounded-md mb-[10px] px-2"
-          >
-            <AccordionTrigger className="text-sm font-normal">
-              What if I accidentally pay for the same challan twice?
-            </AccordionTrigger>
-            <AccordionContent className="flex flex-col gap-4 text-balance">
-              <p>
-                We offer worldwide shipping through trusted courier partners.
-                Standard delivery takes 3-5 business days, while express
-                shipping ensures delivery within 1-2 business days.
-              </p>
-              <p>
-                All orders are carefully packaged and fully insured. Track your
-                shipment in real-time through our dedicated tracking portal.
-              </p>
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem
-            value="item-2"
-            className="bg-white rounded-md mb-[10px] px-2"
-          >
-            <AccordionTrigger className="text-sm font-normal">
-              What types of challans can I resolve using Challan Pay?
-            </AccordionTrigger>
-            <AccordionContent className="flex flex-col gap-4 text-balance">
-              <p>
-                We offer worldwide shipping through trusted courier partners.
-                Standard delivery takes 3-5 business days, while express
-                shipping ensures delivery within 1-2 business days.
-              </p>
-              <p>
-                All orders are carefully packaged and fully insured. Track your
-                shipment in real-time through our dedicated tracking portal.
               </p>
             </AccordionContent>
           </AccordionItem>

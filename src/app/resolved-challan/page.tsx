@@ -12,10 +12,13 @@ function ResolvedChallan() {
     router.push("/track-status-dashboard");
   };
   return (
-    <div>
+    <div className="bg-slate-100">
       <Header />
-      <div className="bg-slate-100 px-4 mt-18">
+      <div className="bg-white rounded-xl">
+        {" "}
         <CommonHeader title="Resolved Challan" onBack={handleBack} />
+      </div>
+      <div className="px-4">
         <ChallanCloseCard />
         <ChallanCloseCard />
         <ChallanCloseCard />

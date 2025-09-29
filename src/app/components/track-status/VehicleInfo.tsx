@@ -1,5 +1,7 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import {
   Accordion,
@@ -9,14 +11,21 @@ import {
 } from "@/components/ui/accordion";
 import { FileSpreadsheet, CircleUser, Car } from "lucide-react";
 import RegisterInfoCard from "../common/RegisterInfoCard";
+import { AddVehicleModal } from "./AddVehicleModal";
 
 function VehicleInfo() {
+  const [open, setOpen] = useState(false);
   return (
     <div className="p-4">
       <div className="flex justify-between items-center">
         <div className="text-base font-bold">Vehicle Details</div>
         <div>
-          <Button className="bg-white text-black text-xs">+ Add Vehicle</Button>
+          <Button
+            className="bg-white text-black text-xs"
+            onClick={() => setOpen(true)}
+          >
+            + Add Vehicle
+          </Button>
         </div>
       </div>
       <div className="bg-white rounded-lg px-4 mt-4">
@@ -29,9 +38,6 @@ function VehicleInfo() {
             height={30}
             className="object-contain"
           />
-
-          {/* Centered number plate */}
-          {/* <div className="flex-1 flex justify-center"> */}
           <div className="w-full flex justify-between ">
             <div className="border border-black font-bold rounded">
               • UP 32MM 1113 •
@@ -103,6 +109,7 @@ function VehicleInfo() {
           </Accordion>
         </div>
       </div>
+      <AddVehicleModal open={open} onOpenChange={setOpen} />
     </div>
   );
 }

@@ -3,8 +3,8 @@
 import React from "react";
 import Header from "../components/common/Header";
 import CommonHeader from "../components/common/CommonHeader";
-import ChallanCloseCard from "../components/common/ChallanCloseCard";
 import { useRouter } from "next/navigation";
+import ChallanCardTrackStatus from "../components/common/ChallanCardTrackStatus";
 
 function InProgressChallan() {
   const router = useRouter();
@@ -12,13 +12,34 @@ function InProgressChallan() {
     router.push("/track-status-dashboard");
   };
   return (
-    <div>
+    <div className="bg-slate-100">
       <Header />
-      <div className="bg-slate-100  px-4 mt-18">
+      <div className="bg-white rounded-xl">
+        {" "}
         <CommonHeader title="In Progress Challan" onBack={handleBack} />
-        <ChallanCloseCard />
-        <ChallanCloseCard />
-        <ChallanCloseCard />
+      </div>
+      <div className="px-4">
+        <ChallanCardTrackStatus
+          challanId="UP6545643843253554"
+          status="In progress"
+          vehicleNumber="HR26DK8337"
+          incidentId="INC1234"
+          onViewDetails={handleBack}
+        />
+        <ChallanCardTrackStatus
+          challanId="UP6545643843253554"
+          status="In progress"
+          vehicleNumber="HR26DK8337"
+          incidentId="INC1234"
+          onViewDetails={handleBack}
+        />
+        <ChallanCardTrackStatus
+          challanId="UP6545643843253554"
+          status="In progress"
+          vehicleNumber="HR26DK8337"
+          incidentId="INC1234"
+          onViewDetails={handleBack}
+        />
       </div>
     </div>
   );
