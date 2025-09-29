@@ -151,9 +151,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { CommonSelect } from "../common/Select";
-import { XIcon, House } from "lucide-react";
+import { XIcon } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { useRef } from "react";
+import Image from "next/image";
 
 export function AddVehicleModal({
   open,
@@ -283,7 +284,12 @@ export function AddVehicleModal({
             {step === 3 && (
               <div className=" text-center  py-2">
                 <div className="flex justify-center font-normal">
-                  <House size={60} />
+                  <Image
+                    src="/Images/addvehicle.png"
+                    alt="success-image"
+                    width={80}
+                    height={80}
+                  />
                 </div>
 
                 <div className="text-gray-500 text-sm my-2">

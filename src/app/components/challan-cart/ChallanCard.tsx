@@ -19,7 +19,7 @@ function ChallanCard() {
         <div className="flex  font-medium text-gray-800">
           UP6545643843253554 <Copy size={16} className="ml-2 mt-1" />
         </div>
-        <Checkbox className="w-6 h-6" />
+        <Checkbox className="w-6 h-6 data-[state=checked]:bg-cyan-600   data-[state=checked]:text-white data-[state=checked]:border-cyan-600" />
       </div>
 
       <Separator />

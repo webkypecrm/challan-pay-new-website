@@ -8,7 +8,7 @@ function PendingChallanList() {
       <div className="flex justify-between items-center py-3">
         <div className="text-sm">0 Selected</div>
         <div className="text-sm flex items-center justify-center">
-          <Checkbox className="bg-white" />{" "}
+          <Checkbox className="w-4 h-4 bg-white data-[state=checked]:bg-cyan-600   data-[state=checked]:text-white data-[state=checked]:border-cyan-600" />{" "}
           <span className="mx-1">Select All</span>
         </div>
       </div>
