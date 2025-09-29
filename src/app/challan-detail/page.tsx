@@ -5,6 +5,7 @@ import Header from "../components/common/Header";
 import { ChevronLeft, Copy } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { useRouter } from "next/navigation";
+import CommonHeader from "../components/common/CommonHeader";
 
 function ChallanDetail() {
   const router = useRouter();
@@ -15,21 +16,10 @@ function ChallanDetail() {
   return (
     <>
       <Header />
-      <div className="mt-20 px-4">
-        <div className="flex items-center justify-between">
-          {/* Left side: Back button + Title */}
-          <div className="flex items-center gap-2">
-            <button
-              className="p-1 bg-gray-100 border border-gray-200 rounded-sm hover:bg-gray-200"
-              onClick={handleBack}
-            >
-              <ChevronLeft size={18} />
-            </button>
-            <span className="text-xs font-semibold">Challan Detail</span>
-          </div>
-        </div>
+      <div className="mt-15 px-3">
+        <CommonHeader title="Challan Detail" onBack={handleBack} />
       </div>
-      <div className="bg-gray-100 p-3 mt-2 min-h-screen">
+      <div className="bg-slate-50 p-4 mt-2 min-h-screen">
         <div className="bg-slate-500 px-4 py-2 rounded-t-xl">
           <p className="text-xs font-semibold text-white">Challan</p>
           <div className="flex items-center gap-2">

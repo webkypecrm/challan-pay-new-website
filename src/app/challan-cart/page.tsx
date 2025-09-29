@@ -14,9 +14,11 @@ function ChallanCart() {
     router.push("/payment-summary");
   };
   return (
-    <>
+    <div className="bg-slate-100">
       <Header />
-      <ChallanCartHeader />
+      <div className="bg-white">
+        <ChallanCartHeader />
+      </div>
       <ChallanCartTabs />
       <BottomSheet
         amount="₹ 4000"
@@ -24,7 +26,7 @@ function ChallanCart() {
         buttonText="Proceed next"
         onButtonClick={handleProccedNext}
       />
-    </>
+    </div>
   );
 }
 

@@ -8,6 +8,9 @@ import ChallanCardTrackStatus from "../components/common/ChallanCardTrackStatus"
 
 function InProgressChallan() {
   const router = useRouter();
+  const handleChallanDetail = () => {
+    router.push("/track-challan-detail");
+  };
   const handleBack = () => {
     router.push("/track-status-dashboard");
   };
@@ -24,21 +27,21 @@ function InProgressChallan() {
           status="In progress"
           vehicleNumber="HR26DK8337"
           incidentId="INC1234"
-          onViewDetails={handleBack}
+          onViewDetails={handleChallanDetail}
         />
         <ChallanCardTrackStatus
           challanId="UP6545643843253554"
           status="In progress"
           vehicleNumber="HR26DK8337"
           incidentId="INC1234"
-          onViewDetails={handleBack}
+          onViewDetails={handleChallanDetail}
         />
         <ChallanCardTrackStatus
           challanId="UP6545643843253554"
           status="In progress"
           vehicleNumber="HR26DK8337"
           incidentId="INC1234"
-          onViewDetails={handleBack}
+          onViewDetails={handleChallanDetail}
         />
       </div>
     </div>

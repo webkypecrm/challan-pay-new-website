@@ -47,7 +47,7 @@ export function DialogDemo({
           <div className="grid gap-4">
             <div className="grid gap-3">
               <Label htmlFor="name-1">Company Name</Label>
-              <Input id="name-1" name="name" defaultValue="Aman Mishra" />
+              <Input id="name-1" name="name" placeholder="Aman" />
             </div>
             <div className="grid gap-3">
               <Label htmlFor="username-1">Number of Vehicals</Label>
@@ -60,9 +60,6 @@ export function DialogDemo({
             </div>
           </div>
           <DialogFooter>
-            {/* <DialogClose asChild>
-              <Button variant="outline">Cancel</Button>
-            </DialogClose> */}
             <Button type="submit" className="bg-green-500">
               <FaWhatsapp size={32} color="white" />
               Send WhatsApp Message
