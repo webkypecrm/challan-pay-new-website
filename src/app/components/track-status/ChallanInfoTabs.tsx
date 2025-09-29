@@ -1,7 +1,12 @@
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ChallanCardTrackStatus from "../common/ChallanCardTrackStatus";
+import { useRouter } from "next/navigation";
 function ChallanInfoTabs() {
+  const router = useRouter();
+  const handleBack = () => {
+    router.push("track-challan-detail");
+  };
   return (
     <div className="rounded-b-xl mt-4">
       <Tabs defaultValue="all">
@@ -51,27 +56,21 @@ function ChallanInfoTabs() {
             status="Closed"
             vehicleNumber="HR26DK8337"
             incidentId="INC1234"
-            onViewDetails={() =>
-              alert("Viewing details for Challan UP6545643843253554")
-            }
+            onViewDetails={handleBack}
           />
           <ChallanCardTrackStatus
             challanId="UP6545643843253554"
             status="Closed"
             vehicleNumber="HR26DK8337"
             incidentId="INC1234"
-            onViewDetails={() =>
-              alert("Viewing details for Challan UP6545643843253554")
-            }
+            onViewDetails={handleBack}
           />
           <ChallanCardTrackStatus
             challanId="UP6545643843253554"
             status="Closed"
             vehicleNumber="HR26DK8337"
             incidentId="INC1234"
-            onViewDetails={() =>
-              alert("Viewing details for Challan UP6545643843253554")
-            }
+            onViewDetails={handleBack}
           />
         </TabsContent>
         <TabsContent value="inprogress" className="bg-slate-100">

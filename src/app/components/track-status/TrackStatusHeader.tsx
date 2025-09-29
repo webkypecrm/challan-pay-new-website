@@ -1,6 +1,7 @@
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ChallanInfo from "./ChallanInfo";
+import VehicleInfo from "./VehicleInfo";
 
 function TrackStatusHeader() {
   return (
@@ -36,7 +37,9 @@ function TrackStatusHeader() {
           <ChallanInfo />
         </TabsContent>
 
-        <TabsContent value="paid" className="bg-slate-100 "></TabsContent>
+        <TabsContent value="paid" className="bg-slate-100 ">
+          <VehicleInfo />
+        </TabsContent>
       </Tabs>
     </div>
   );
