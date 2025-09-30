@@ -6,11 +6,11 @@ import { PaymentSummaryTabs } from "../components/payment-summary/PaymentSummary
 
 function page() {
   return (
-    <>
+    <div className="bg-slate-50">
       <Header />
       <PaymentSummaryHeader />
       <PaymentSummaryTabs />
-    </>
+    </div>
   );
 }
 

@@ -32,7 +32,7 @@ const loginSchema = z.object({
 
 type LoginFormData = z.infer<typeof loginSchema>;
 
-export default function LoginPage() {
+export default function TrackLoginPage() {
   const router = useRouter();
   const [showOtp, setShowOtp] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -87,7 +87,7 @@ export default function LoginPage() {
     setLoading(true);
 
     setTimeout(() => {
-      router.push("/challan-cart");
+      router.push("/track-status-dashboard");
     }, 9000);
   };
 

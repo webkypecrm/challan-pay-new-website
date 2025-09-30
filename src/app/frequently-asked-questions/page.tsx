@@ -36,7 +36,7 @@ function FrequentlyAsked() {
             <AccordionTrigger className="text-sm font-semibold">
               How do I track my challan status?
             </AccordionTrigger>
-            <AccordionContent className="flex flex-col gap-4 text-balance">
+            <AccordionContent className="flex flex-col gap-4 text-balance px-1">
               <p>
                 Our flagship product combines cutting-edge technology with sleek
                 design. Built with premium materials, it offers unparalleled
@@ -57,7 +57,7 @@ function FrequentlyAsked() {
             <AccordionTrigger className="text-sm  font-semibold">
               Will I be notified when my challan gets cleared? If yes, how?
             </AccordionTrigger>
-            <AccordionContent className="flex flex-col gap-4 text-balance">
+            <AccordionContent className="flex flex-col gap-4 text-balance  px-1">
               <p>
                 We offer worldwide shipping through trusted courier partners.
                 Standard delivery takes 3-5 business days, while express
@@ -78,7 +78,7 @@ function FrequentlyAsked() {
               Can I resolve both online and court challans through the landing
               page?
             </AccordionTrigger>
-            <AccordionContent className="flex flex-col gap-4 text-balance">
+            <AccordionContent className="flex flex-col gap-4 text-balance  px-1">
               <p>
                 We stand behind our products with a comprehensive 30-day return
                 policy. If you&apos;re not completely satisfied, simply return
@@ -99,7 +99,7 @@ function FrequentlyAsked() {
               If my vehicle has both court and online challans pending, can I
               clear both through LOTS?
             </AccordionTrigger>
-            <AccordionContent className="flex flex-col gap-4 text-balance">
+            <AccordionContent className="flex flex-col gap-4 text-balance  px-1">
               <p>
                 We stand behind our products with a comprehensive 30-day return
                 policy. If you&apos;re not completely satisfied, simply return
@@ -119,7 +119,7 @@ function FrequentlyAsked() {
             <AccordionTrigger className="text-sm  font-semibold">
               Once the challan is cleared, how will I be informed?
             </AccordionTrigger>
-            <AccordionContent className="flex flex-col gap-4 text-balance">
+            <AccordionContent className="flex flex-col gap-4 text-balance  px-1">
               <p>
                 Our flagship product combines cutting-edge technology with sleek
                 design. Built with premium materials, it offers unparalleled

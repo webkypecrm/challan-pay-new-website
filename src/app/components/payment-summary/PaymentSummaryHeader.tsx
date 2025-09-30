@@ -17,7 +17,7 @@ function PaymentSummaryHeader() {
     router.push("/challan-cart");
   };
   return (
-    <div className="mt-20 px-4">
+    <div className="mt-20 px-4 bg-white">
       <div className="flex items-center justify-between">
         {/* Left side: Back button + Title */}
         <div className="flex items-center gap-2">
@@ -61,11 +61,12 @@ function PaymentSummaryHeader() {
         </button>
         <div className="text-base font-bold">₹ 4000</div>
       </div>
-      <div className="flex justify-center items-center  bg-cyan-50 border border-cyan-50 p-2  rounded-lg mt-3">
+      <div className="flex justify-center items-center  bg-cyan-50 border border-cyan-50 p-2  rounded-lg mt-3 ">
         <div className="text-xs font-semibold text-cyan-800">
           630 Peoples have claimed ₹500 reward
         </div>
       </div>
+      <div className="h-4 bg-white"></div>
       <PaymentSummarySheet open={open} setOpen={setOpen} />
     </div>
   );

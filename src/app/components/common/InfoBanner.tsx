@@ -18,7 +18,7 @@ export default function InfoBanner({
 }: InfoBannerProps) {
   return (
     <div
-      className="p-2  px-4 flex justify-between items-center rounded-t-2xl"
+      className="p-2  px-4 flex justify-between items-center rounded-2xl"
       style={{ backgroundColor: bgColor, color: textColor }}
     >
       <div className="text-xs font-medium">{title}</div>
