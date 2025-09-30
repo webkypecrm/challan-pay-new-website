@@ -19,7 +19,8 @@ function Loader() {
           src={"/Images/vector.png"}
           alt="Company Logo"
           width={700}
-          height={200}
+          height={100}
+          className="mask-gradient"
         />
       </div>
 
