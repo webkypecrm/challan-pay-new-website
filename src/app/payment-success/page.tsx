@@ -20,8 +20,8 @@ function PaymentSuccess() {
   return (
     <>
       <Header />
-      <div className="bg-slate-50 mt-8 pb-4">
-        <div className="px-6 text-center text-black font-bold pt-15">
+      <div className="bg-slate-50 mt-4 pb-4">
+        <div className="px-6 text-center text-black font-bold pt-6">
           <div className="px-6 text-center text-black font-bold pt-15 flex flex-col items-center">
             <Image
               src="/gif/icons8-check.gif"
@@ -34,6 +34,7 @@ function PaymentSuccess() {
         </div>
       </div>
       <PaymentInfo />
+      <ChallanDetailCard />
       <ChallanDetailCard />
       <WhatNext />
       <TrackStatusBottomSheet
