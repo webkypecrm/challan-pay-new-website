@@ -10,7 +10,7 @@ function ChallanCartHeader() {
   const router = useRouter();
 
   const handleBack = () => {
-    router.push("/");
+    router.push("/challan-status-login");
   };
   return (
     <div className="mt-20 px-4 pb-4">

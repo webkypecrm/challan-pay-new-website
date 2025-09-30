@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation";
 export default function Header() {
   const router = useRouter();
   const handleTrackChallanDashboard = () => {
-    router.push("/track-status-dashboard");
+    router.push("/track-challan-login");
   };
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">

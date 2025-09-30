@@ -10,10 +10,10 @@ export function PaymentSummaryTabs() {
   const router = useRouter();
 
   return (
-    <div className="rounded-xl">
-      <div className="flex w-full max-w-md flex-col gap-4 mt-4 px-4 pt-2">
+    <div className="rounded-xl ">
+      <div className="flex w-full max-w-md flex-col ">
         <Tabs defaultValue="payandclose">
-          <TabsList className="w-full justify-center  px-3 ">
+          <TabsList className="w-full justify-center  px-4  rounded-t-none ">
             <TabsTrigger
               className="w-1/2 text-center data-[state=active]:bg-black rounded-lg data-[state=active]:rounded-lg  data-[state=active]:text-white "
               value="payandclose"
@@ -28,11 +28,11 @@ export function PaymentSummaryTabs() {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="payandclose">
+          <TabsContent value="payandclose" className=" px-4">
             <PayAndClose />
           </TabsContent>
 
-          <TabsContent value="contestandwait">
+          <TabsContent value="contestandwait" className=" px-4">
             <ContestAndWait />
           </TabsContent>
         </Tabs>
