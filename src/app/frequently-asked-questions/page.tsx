@@ -17,7 +17,7 @@ function FrequentlyAsked() {
     router.push("/track-status-dashboard");
   };
   return (
-    <div className="bg-slate-100">
+    <div className="bg-slate-100 min-h-screen">
       <Header />
       <div className="bg-white rounded-lg">
         <CommonHeader title="Frequently Asked Questions" onBack={handleBack} />

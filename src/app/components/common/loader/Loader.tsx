@@ -4,7 +4,7 @@ import CircularProgressBar from "./CircularProgressBar";
 
 function Loader() {
   return (
-    <div className="bg-white fixed inset-0 z-50 flex flex-col bg-gradient-to-b from-blue-100 to-white">
+    <div className="bg-white fixed inset-0 z-50 flex flex-col bg-gradient-to-b from-cyan-200 to-white">
       {/* Top bar with company logo */}
       <div className="flex items-center p-4">
         <Image
@@ -14,8 +14,16 @@ function Loader() {
           height={40}
         />
       </div>
+      <div className="items-center absolute top-10 ">
+        <Image
+          src={"/Images/vector.png"}
+          alt="Company Logo"
+          width={700}
+          height={200}
+        />
+      </div>
 
-      <div className="flex-1 flex flex-col items-center justify-center">
+      <div className="flex-1 flex flex-col items-center justify-center z-100">
         <Image
           src={"/loader-img/road-side.png"}
           alt="Center"

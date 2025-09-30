@@ -21,6 +21,15 @@ export function PaymentSummarySheet({
         </div>
         <div className="border-t border-1 border-dashed border-gray-300 my-2"></div>
         <div className="flex justify-between items-center text-black px-2 py-1">
+          <div>Court Challan ( 1 )</div>
+          <div className="text-semibold">₹2000.00 </div>
+        </div>
+        <div className="flex justify-between items-center text-black px-2 py-1">
+          <div>Convenience Fee</div>
+          <div className="text-semibold">₹100.00</div>
+        </div>
+        <div className="border-t border-1 border-dashed border-gray-300 my-2"></div>
+        <div className="flex justify-between items-center text-black px-2 py-1">
           <div className="text-md font-bold text-cyan-700">Pledge Reward</div>
           <div className="text-md font-bold text-cyan-700">-₹500.00</div>
         </div>
