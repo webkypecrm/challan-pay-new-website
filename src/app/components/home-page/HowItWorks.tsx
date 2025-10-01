@@ -64,12 +64,12 @@ export default function HowItWorks() {
 
       {/* Steps Grid */}
       <div className="flex flex-col justify-center items-center w-full relative">
-        <div className="w-12 h-12 absolute -top-4 -left-1 rounded-full bg-cyan-500 text-white text-lg font-bold flex items-center justify-center z-10">
+        <div className="lg:hidden w-12 h-12 absolute -top-4 -left-1 rounded-full bg-cyan-500 text-white text-lg font-bold flex items-center justify-center z-10">
           {selectedIndex + 1} {/* dynamically show current slide number */}
         </div>
 
         <Carousel
-          className="w-full max-w-xs sm:max-w-md "
+          className="w-full max-w-xs sm:max-w-md lg:max-w-6xl "
           setApi={setEmblaApi}
           plugins={[plugin.current]}
           onMouseEnter={plugin.current.stop}
@@ -77,7 +77,7 @@ export default function HowItWorks() {
         >
           <CarouselContent>
             {steps.map((step) => (
-              <CarouselItem key={step.id}>
+              <CarouselItem key={step.id} className="basis-full lg:basis-1/3">
                 <Card className=" flex flex-col items-center justify-center rounded-xl overflow-visible border shadow-sm py-0">
                   {/* Step Number Badge */}
 
@@ -104,7 +104,7 @@ export default function HowItWorks() {
             ))}
           </CarouselContent>
         </Carousel>
-        <div className="flex justify-center  mt-2 gap-2">
+        <div className="lg:hidden flex justify-center  mt-2 gap-2">
           {scrollSnaps.map((_, idx) => {
             // find relative position with wrap-around
             const offset =

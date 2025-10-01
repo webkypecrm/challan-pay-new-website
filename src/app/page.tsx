@@ -16,21 +16,23 @@ function HomePage() {
     <>
       <Header />
       <HeroSection />
-      <div className="p-4 bg-[#FAF8F7]">
+      <div className="p-4 bg-[#FAF8F7] lg:px-30">
         <ChallanCheckForm />
 
         <BotBanner />
         <TrustedByMillions />
         <Testimonials />
         <HowItWorks />
-
-        <TrustedPartner />
-        <SupportedBy />
+        <div className="lg:flex lg:justify-around gap-4">
+          <TrustedPartner />
+          <SupportedBy />
+        </div>
         <div>
           <LatestNews />
         </div>
         <CheckResolution />
       </div>
+
       <Footer />
     </>
   );

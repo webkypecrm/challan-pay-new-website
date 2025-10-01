@@ -13,7 +13,7 @@ function ChallanCartHeader() {
     router.push("/challan-status-login");
   };
   return (
-    <div className="mt-20 px-4 pb-4">
+    <div className="mt-20 px-4 pb-4  lg:px-15 ">
       <div className="flex items-center justify-between">
         {/* Left side: Back button + Title */}
         <div className="flex items-center gap-2">
@@ -32,7 +32,7 @@ function ChallanCartHeader() {
           <span className="text-xs font-medium text-gray-900">Share</span>
         </button>
       </div>
-      <div className="h-18 flex items-center justify-start p-2 gap-4 bg-slate-50 rounded-lg mt-4">
+      <div className="h-18 flex items-center justify-start p-2 gap-4 bg-slate-50 rounded-lg mt-4 lg:hidden">
         {/* Left side (car image) */}
         <Image
           src="/Images/car.svg"

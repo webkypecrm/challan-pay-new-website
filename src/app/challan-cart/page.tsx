@@ -14,12 +14,13 @@ function ChallanCart() {
     router.push("/payment-summary");
   };
   return (
-    <div className="bg-slate-100">
+    <div className="bg-slate-100 lg:bg-slate-100">
       <Header />
-      <div className="bg-white">
+      <div className="bg-white lg:px-30  lg:bg-slate-100 lg:py-4">
         <ChallanCartHeader />
       </div>
       <ChallanCartTabs />
+
       <BottomSheet
         amount="₹ 4000"
         subtitle="Total Challan Amount"

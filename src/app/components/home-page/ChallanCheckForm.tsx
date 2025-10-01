@@ -59,8 +59,8 @@ export default function Home() {
     <form id="challan-check" onSubmit={handleSubmit(onSubmit)}>
       <div className="flex flex-col lg:flex-row gap-4 justify-center ">
         {/* Left Section */}
-        <div className="flex flex-col lg:items-start w-full lg:w-1/3 gap-6">
-          <div className="text-xl font-bold lg:text-left">
+        <div className="flex flex-col  w-full lg:w-1/3 gap-6">
+          <div className="text-xl font-bold lg:text-center">
             Select Vehicle Type*
           </div>
 
@@ -91,7 +91,7 @@ export default function Home() {
                       className="w-full cursor-pointer flex flex-col items-center"
                     >
                       <Card
-                        className={`relative border rounded-full w-[120px] h-[120px] sm:w-[200px] sm:h-[180px] flex flex-col items-center justify-center transition ${
+                        className={`relative border rounded-full w-[120px] h-[120px] lg:rounded-full lg:w-[120px] lg:h-[120px] sm:w-[200px] sm:h-[180px] flex flex-col items-center justify-center transition ${
                           field.value === card.id
                             ? "border-cyan-600 bg-cyan-50"
                             : "border-gray-200"

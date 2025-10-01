@@ -11,8 +11,8 @@ import { DialogDemo } from "./HomePageDailog";
 export default function Banner() {
   const [open, setOpen] = useState(false);
   return (
-    <Card className="bg-white rounded-2xl px-2 py-4 shadow-sm border border-gray-200 my-10">
-      <div className="flex flex-col md:flex-row items-center md:justify-between gap-4">
+    <Card className="bg-white rounded-2xl px-2 py-4 shadow-sm border border-gray-200 my-10 lg:px-6">
+      <div className="flex flex-col md:flex-row items-center md:justify-between lg:justify-start gap-4 lg:gap-10">
         {/* image */}
         <Image
           src={"/Images/truckonroad.png"}
@@ -22,19 +22,21 @@ export default function Banner() {
           className="object-cover  h-auto md:w-[350px] md:h-[250px]"
         />
         {/* Left text */}
-        <p className="text-lg md:text-base font-bold text-black text-center md:text-left px-5">
-          Want to check challans for multiple vehicles together? Do not worry.{" "}
-        </p>
-        <DialogDemo open={open} onOpenChange={setOpen} />
-        {/* WhatsApp Button */}
-        <Button
-          variant="outline"
-          className="flex items-center h-10 gap-2 rounded-md bg-secondary text-green-600 hover:bg-green-50 justify-center"
-          onClick={() => setOpen(true)}
-        >
-          <FaWhatsapp size={40} color="" />
-          Chat with us on WhatsApp
-        </Button>
+        <div className="flex flex-col gap-2 lg:w-150">
+          <p className="text-lg lg:text-2xl md:text-base font-bold text-black text-center md:text-left px-5 lg:px-0">
+            Want to check challans for multiple vehicles together? Do not worry.{" "}
+          </p>
+          <DialogDemo open={open} onOpenChange={setOpen} />
+          {/* WhatsApp Button */}
+          <Button
+            variant="outline"
+            className="flex items-center h-10 gap-2 rounded-md bg-secondary text-green-600 hover:bg-green-50 justify-center  lg:w-60"
+            onClick={() => setOpen(true)}
+          >
+            <FaWhatsapp size={40} color="" />
+            Chat with us on WhatsApp
+          </Button>
+        </div>
       </div>
     </Card>
   );

@@ -10,11 +10,11 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="text-gray-200 ">
-      <div className="container mx-auto px-2 py-2 grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="container mx-auto px-2 py-2 grid grid-cols-1 lg:flex lg:justify-between md:grid-cols-4 gap-4 lg:px-30">
         {/* About / Logo Section */}
         <Card className="p-2 shadow-none flex flex-col items-start">
           <Image
-            src="/logo/text-logo.svg" // replace with your image path
+            src="/logo/text-logo.svg"
             alt="Challan Pay Logo"
             width={140}
             height={80}
@@ -36,7 +36,7 @@ export default function Footer() {
         </Card>
 
         {/* Quick Links */}
-        <div className="flex justify-between">
+        <div className="flex justify-between lg:hidden">
           <Card className="p-2 shadow-none">
             <h3 className="text-base font-bold mb-2">Quick Links</h3>
             <ul className="space-y-2">
@@ -72,8 +72,42 @@ export default function Footer() {
             </ul>
           </Card>
         </div>
+        <Card className="p-2 shadow-none hidden lg:flex">
+          <h3 className="text-base font-bold mb-2">Quick Links</h3>
+          <ul className="space-y-2">
+            <li>
+              <Link href="/" className="hover:text-blue-500">
+                Track Challan
+              </Link>
+            </li>
+            {/* <li>
+                <Link href="/blogs" className="hover:text-blue-500">
+                  Blogs
+                </Link>
+              </li> */}
+          </ul>
+        </Card>
+        <Card className="p-2 shadow-none hidden lg:flex">
+          <h3 className="text-base font-bold mb-2">Support</h3>
+          <ul className="space-y-2 mb-4">
+            {/* <li>
+                Call:{" "}
+                <Link href="tel:9199884411033" className="hover:text-blue-500">
+                  99884411033
+                </Link>
+              </li> */}
+            <li>
+              <Link
+                href="mailto:challan.support@lawyered.in"
+                className="hover:text-blue-500"
+              >
+                challan.support@lawyered.in
+              </Link>
+            </li>
+          </ul>
+        </Card>
         {/* Legal */}
-        <Card className="p-2 pt-0 shadow-none">
+        <Card className="p-2 pt-0 shadow-none lg:pt-2">
           <h3 className="text-base font-bold mb-2">Legal</h3>
           <ul className="space-y-2">
             <li>

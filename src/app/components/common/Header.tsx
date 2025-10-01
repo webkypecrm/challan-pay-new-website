@@ -38,7 +38,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-6">
+        <div className="hidden md:flex items-center  space-x-6">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -64,13 +64,15 @@ export default function Header() {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <Button variant="default">Check Challan Status</Button>
+          <Button variant="default" className="bg-cyan-600">
+            Track Challan Status
+          </Button>
         </div>
 
         {/* Mobile Menu */}
         <Sheet>
           <SheetTrigger asChild>
-            <div className="w-9  flex border-1 rounded-lg justify-center item-center ">
+            <div className="w-9 lg:hidden  flex border-1 rounded-lg justify-center item-center ">
               <Button variant="ghost" size="icon" className="md:hidden mt-0">
                 <Menu className="h-6 w-6 " />
               </Button>
