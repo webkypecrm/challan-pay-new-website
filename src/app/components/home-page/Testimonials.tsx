@@ -162,14 +162,17 @@ const Testimonials: React.FC = () => {
   }, [emblaApi]);
 
   return (
-    <div className="bg-[#31AB76] text-white py-4 px-2 mt-6 rounded-lg">
-      <h2 className="text-2xl font-bold text-center mb-4">
-        Real Stories, Real <br />
-        <span> Savings</span>
+    <div className="bg-[#31AB76] text-white py-4 px-2 mt-6 rounded-lg ">
+      <h2 className="text-2xl font-bold text-center mb-4 lg:text-4xl">
+        <span className="block lg:inline lg:font-broken">
+          Real Stories, Real
+        </span>
+        <span className="block lg:inline lg:font-broken"> Savings</span>
       </h2>
-      <div className="flex flex-wrap justify-center gap-6">
+
+      <div className="flex flex-wrap justify-center   lg:justify-center gap-6 ">
         <Carousel
-          className="w-full max-w-xs"
+          className="w-full max-w-xs lg:max-w-6xl"
           setApi={setEmblaApi} // 👈 connect carousel API
           plugins={[plugin.current]}
           onMouseEnter={plugin.current.stop}
@@ -177,7 +180,7 @@ const Testimonials: React.FC = () => {
         >
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index}>
+              <CarouselItem key={index} className="basis-full lg:basis-1/3">
                 <div className="bg-white text-black rounded-lg shadow-lg w-auto h-70 p-5 flex flex-col border-b-4 border-yellow-500">
                   <div className="flex flex-row justify-between">
                     <div>
@@ -237,32 +240,32 @@ const Testimonials: React.FC = () => {
           {/* <CarouselPrevious />
           <CarouselNext /> */}
         </Carousel>
-        <div className="flex justify-center  gap-2">
-          {scrollSnaps.map((_, idx) => {
-            // Default color = gray
-            let dotColor = "bg-gray-100";
+      </div>
+      <div className="flex justify-center  gap-2 mt-4">
+        {scrollSnaps.map((_, idx) => {
+          // Default color = gray
+          let dotColor = "bg-gray-100";
 
-            // If dot is within the active "window" of 3
-            const offset = idx - selectedIndex;
-            if (offset >= 0 && offset < 3) {
-              if (offset === 0) {
-                dotColor = "bg-green-500";
-              } else if (offset === 1) {
-                dotColor = "bg-yellow-400";
-              } else if (offset === 2) {
-                dotColor = "bg-red-500"; // active
-              }
+          // If dot is within the active "window" of 3
+          const offset = idx - selectedIndex;
+          if (offset >= 0 && offset < 3) {
+            if (offset === 0) {
+              dotColor = "bg-green-500";
+            } else if (offset === 1) {
+              dotColor = "bg-yellow-400";
+            } else if (offset === 2) {
+              dotColor = "bg-red-500"; // active
             }
+          }
 
-            return (
-              <button
-                key={idx}
-                onClick={() => emblaApi && emblaApi.scrollTo(idx)}
-                className={`w-2 h-2 rounded-full transition-colors ${dotColor}`}
-              />
-            );
-          })}
-        </div>
+          return (
+            <button
+              key={idx}
+              onClick={() => emblaApi && emblaApi.scrollTo(idx)}
+              className={`w-2 h-2 rounded-full transition-colors ${dotColor}`}
+            />
+          );
+        })}
       </div>
     </div>
   );

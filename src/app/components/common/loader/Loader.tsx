@@ -14,7 +14,7 @@ function Loader() {
           height={40}
         />
       </div>
-      <div className="items-center absolute top-10 ">
+      <div className="items-center absolute top-10  lg:hidden ">
         <Image
           src={"/Images/vector.png"}
           alt="Company Logo"

@@ -9,17 +9,24 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+//import { Button } from "@/components/ui/button";
 import type { EmblaCarouselType } from "embla-carousel";
 
 const cardData = [
   {
     title: (
+      // <>
+      //   <span className="text-black">Challan Pay</span>
+      //   <br />
+      //   <span className="text-black">AnyTime</span> <br />
+      //   <span className="text-black">AnyWhere</span>
+      // </>
       <>
-        <span className="text-black">Challan Pay</span>
-        <br />
-        <span className="text-black">AnyTime</span> <br />
-        <span className="text-black">AnyWhere</span>
+        <div className="flex flex-col lg:flex-row lg:space-x-2 text-black">
+          <span>Challan Pay</span>
+          <span>AnyTime</span>
+          <span>AnyWhere</span>
+        </div>
       </>
     ),
     description:
@@ -34,6 +41,13 @@ const cardData = [
         <span className="text-black">No stress.</span>{" "}
         <span className="text-black">With ChallanPay</span>
       </>
+      // <>
+      //   <div className="flex flex-col lg:flex-row lg:space-x-2 text-black">
+      //     <span>No queues.</span>
+      //     <span>No stress.</span>
+      //     <span>With ChallanPay</span>
+      //   </div>
+      // </>
     ),
     description:
       "Few clicks, thats it. Discover and resolve your traffic challans.",
@@ -41,11 +55,18 @@ const cardData = [
   },
   {
     title: (
+      // <>
+      //   <span className="text-black">Pay Traffic</span>
+      //   <br />
+      //   <span className="text-black">Challans</span>{" "}
+      //   <span className="text-black">Instantly</span>
+      // </>
       <>
-        <span className="text-black">Pay Traffic</span>
-        <br />
-        <span className="text-black">Challans</span>{" "}
-        <span className="text-black">Instantly</span>
+        <div className="flex flex-col lg:flex-row lg:space-x-2 text-black">
+          <span>Pay Traffic</span>
+          <span>Challans</span>
+          <span>Instantly</span>
+        </div>
       </>
     ),
     description: "No spam, no scam. Only authorized payments with ChallanPay.",
@@ -90,9 +111,8 @@ export function HeroSection() {
             <CarouselItem key={index}>
               <div className="p-1">
                 <Card className="h-100 border md:h-64 py-0 rounded-md">
-                  <CardContent className="flex items-center justify-center p-3 h-full">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
-                      {/* Left Content */}
+                  <CardContent className="flex items-center justify-center p-3 h-full lg:justify-between lg:p-6">
+                    <div className="w-full flex flex-col md:flex-row items-center justify-around gap-6 md:gap-10">
                       <div className="flex-1 md:text-left">
                         <h1 className="text-3xl md:text-4xl font-bold leading-snug">
                           {card.title}
