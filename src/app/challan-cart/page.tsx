@@ -21,12 +21,14 @@ function ChallanCart() {
       </div>
       <ChallanCartTabs />
 
-      <BottomSheet
-        amount="₹ 4000"
-        subtitle="Total Challan Amount"
-        buttonText="Proceed next"
-        onButtonClick={handleProccedNext}
-      />
+      <div className="lg:hidden block">
+        <BottomSheet
+          amount="₹ 4000"
+          subtitle="Total Challan Amount"
+          buttonText="Proceed next"
+          onButtonClick={handleProccedNext}
+        />
+      </div>
     </div>
   );
 }
