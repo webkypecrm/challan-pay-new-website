@@ -3,9 +3,9 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
+//import { useRouter } from "next/navigation";
 
-export default function () {
+export default function PaymentSummaryWebVersion() {
   return (
     <Card className="max-w-md w-full rounded-lg  p-4 mt-17 hidden lg:flex">
       <CardContent className="space-y-4 p-0">
