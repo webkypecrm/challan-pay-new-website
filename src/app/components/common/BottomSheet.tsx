@@ -22,14 +22,14 @@ export default function BottomSheet({
 }: BottomSheetProps) {
   const [isPledge, setIsPledge] = useState(true);
   return (
-    <div className="relative h-30 bg-gray-100 ">
+    <div className=" h-30 bg-gray-100 ">
       <div
         className={cn(
-          "fixed bottom-0 left-0 right-0 lg:fixed lg:bottom-0 lg:left-45",
+          "fixed bottom-0 left-0 right-0 lg:fixed lg:bottom-10 lg:left-45",
           "bg-white shadow-xl rounded-t-2xl border-t",
           "transition-transform duration-500",
           "h-30",
-          "lg:w-290 "
+          "lg:w-250 "
         )}
       >
         {isPledge && (

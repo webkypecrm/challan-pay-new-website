@@ -18,7 +18,7 @@ export default function TrackStatusBottomSheet({
   onSecondaryClick,
 }: BottomSheetProps) {
   return (
-    <div className="relative h-30 bg-gray-100">
+    <div className="relative h-30 bg-gray-100 lg:hidden block">
       <div
         className={cn(
           "fixed bottom-0 left-0 right-0",
