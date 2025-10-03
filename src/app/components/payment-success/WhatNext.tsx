@@ -4,7 +4,7 @@ import { CardContent } from "@/components/ui/card";
 
 function WhatNext() {
   return (
-    <Card className="w-full  px-4">
+    <Card className="w-full  px-4 lg:hidden block">
       <CardTitle className="my-4 text-xl font-bold">Whats Next</CardTitle>
       <CardContent className="grid gap-6  !bg-[#FAF8F7] rounded-lg">
         <ul>
