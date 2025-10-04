@@ -17,7 +17,7 @@ function PaymentSummaryHeader() {
     router.push("/challan-cart");
   };
   return (
-    <div className="mt-20 px-4 bg-white lg:px-15 lg:pr-2 lg:bg-slate-100">
+    <div className="mt-20 px-4 lg:px-0 bg-white  lg:bg-slate-100">
       <div className="flex items-center justify-between">
         {/* Left side: Back button + Title */}
         <div className="flex items-center gap-2">
@@ -32,7 +32,7 @@ function PaymentSummaryHeader() {
           </span>
         </div>
       </div>
-      <div className="h-18 flex items-center justify-start p-2 gap-4 bg-slate-50 rounded-lg mt-4 lg:w-[600px] lg:flex lg:justify-center lg:items-center lg:bg-white">
+      <div className="h-18 flex items-center justify-start p-2 gap-4 bg-slate-50 rounded-lg mt-4 lg:mt-4  lg:flex lg:justify-center lg:items-center lg:bg-white">
         {/* Left side (car image) */}
         {/* <div className="lg:flex lg:justify-center lg:items-center"> */}
         <Image

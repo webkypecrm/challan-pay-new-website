@@ -7,19 +7,19 @@ import PaymentSummaryWebVersion from "../components/payment-summary/PaymentSumma
 
 function page() {
   return (
-    <div className="bg-slate-50">
+    <div className="bg-slate-100 lg:flex lg:justify-center">
       <Header />
       {/* <div className="lg:flex lg:justify-center lg:gap-2"> */}
-      <div className="bg-white lg:px-30 lg:bg-slate-100 lg:py-4 lg:flex lg:items-center lg:justify-center lg:gap-2 ">
-        <div>
+      <div className="bg-white  lg:bg-slate-100 lg:py-4 lg:flex lg:items-center lg:max-w-6xl lg:justify-center lg:gap-2 ">
+        <div className="lg:w-full">
           <PaymentSummaryHeader />
-          <div className="lg:px-15 lg:pr-2">
+          <div className="lg:px-0 lg:pr-0">
             <PaymentSummaryTabs />
           </div>
         </div>
         <PaymentSummaryWebVersion />
       </div>
-      <div></div>
+
       {/* </div> */}
     </div>
   );

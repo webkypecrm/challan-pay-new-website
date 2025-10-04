@@ -8,7 +8,7 @@ import Image from "next/image";
 export function ChallanCartTabs() {
   return (
     <div className="lg:flex lg:justify-center">
-      <div className="flex w-full max-w-md flex-col gap-4 lg:w-full lg:max-w-6xl ">
+      <div className="flex w-full max-w-md flex-col gap-4 lg:w-full lg:max-w-6xl">
         <Tabs
           defaultValue="pending"
           className="lg:grid lg:grid-cols-[1fr_3fr] gap-4"
@@ -92,14 +92,14 @@ export function ChallanCartTabs() {
             </div>
             <TabsContent
               value="pending"
-              className="bg-slate-100 rounded-xl px-4 lg:bg-white min-h-screen "
+              className="bg-slate-100 rounded-xl px-4 lg:bg-white  "
             >
               <PendingChallanList />
             </TabsContent>
 
             <TabsContent
               value="paid"
-              className="bg-slate-100 px-4  lg:bg-white lg:rounded-lg min-h-screen"
+              className="bg-slate-100 px-4  lg:bg-white lg:rounded-lg "
             >
               <PaidChallanList />
             </TabsContent>

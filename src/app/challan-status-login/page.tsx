@@ -92,9 +92,9 @@ export default function LoginPage() {
   };
 
   return (
-    <>
+    <div className="lg:bg-white lg:h-screen lg:pt-10 lg:overflow-hidden ">
       <Header />
-      <Card className="w-full max-w-sm mt-10 mx-auto">
+      <Card className="w-full max-w-sm  mt-10 mx-auto lg:bg-white lg:min-h-screen">
         <div className="w-full flex flex-col justify-center items-center mt-5">
           <Image
             src="/Images/loginImg.png"
@@ -225,6 +225,6 @@ export default function LoginPage() {
         )}
         {loading && <Loader />}
       </Card>
-    </>
+    </div>
   );
 }

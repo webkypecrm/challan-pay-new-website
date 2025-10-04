@@ -16,10 +16,18 @@ function ChallanCart() {
   return (
     <div className="bg-slate-100 lg:bg-slate-100">
       <Header />
-      <div className="bg-white lg:px-30  lg:bg-slate-100 lg:py-4">
-        <ChallanCartHeader />
+      <div className="lg:flex lg:justify-center w-full">
+        <div className="w-full lg:max-w-6xl">
+          {" "}
+          {/* common width */}
+          <div className="bg-white lg:bg-slate-100 lg:py-4">
+            <ChallanCartHeader />
+          </div>
+          <div>
+            <ChallanCartTabs />
+          </div>
+        </div>
       </div>
-      <ChallanCartTabs />
 
       <div className="lg:hidden block">
         <BottomSheet
