@@ -22,7 +22,7 @@ export default function ChallanEmailCard() {
   };
 
   return (
-    <Card className="max-w-sm mx-auto border rounded-2xl">
+    <Card className="  border rounded-2xl">
       <CardHeader>
         <CardTitle className="text-lg font-semibold">
           Get this Challan on Email

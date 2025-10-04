@@ -13,7 +13,7 @@ function ChallanCartHeader() {
     router.push("/challan-status-login");
   };
   return (
-    <div className="mt-20 px-4 pb-4  lg:px-15 ">
+    <div className="mt-20 px-4 pb-4 lg:px-0">
       <div className="flex items-center justify-between">
         {/* Left side: Back button + Title */}
         <div className="flex items-center gap-2">

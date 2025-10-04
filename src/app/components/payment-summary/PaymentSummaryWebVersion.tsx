@@ -3,9 +3,10 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-//import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function PaymentSummaryWebVersion() {
+  const router = useRouter();
   return (
     <Card className="max-w-md w-full rounded-lg  p-4 mt-17 hidden lg:flex">
       <CardContent className="space-y-4 p-0">
@@ -51,8 +52,11 @@ export default function PaymentSummaryWebVersion() {
         </div>
 
         {/* Button */}
-        <Button className="w-full rounded-lg mt-2 bg-cyan-600">
-          Proceed to Pay →
+        <Button
+          className="w-full rounded-lg mt-2 bg-cyan-600"
+          onClick={() => router.push("/payment-success")}
+        >
+          Proceed to pay →
         </Button>
       </CardContent>
     </Card>

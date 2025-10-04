@@ -4,13 +4,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import PayAndClose from "./PayAndClose";
 import ContestAndWait from "./ContestAndWait";
 import BottomSheet from "../common/BottomSheet";
-//import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export function PaymentSummaryTabs() {
-  // const router = useRouter();
+  const router = useRouter();
 
   return (
-    <div className="rounded-xl lg:w-[600px] lg:px-6 lg:flex lg:justify-center lg:bg-white lg:my-4">
+    <div className="rounded-xl  lg:px-6 lg:flex lg:justify-center lg:bg-white lg:my-4">
       <div className="flex w-full max-w-md flex-col lg:max-w-3xl">
         <div className=" lg:text-sm lg:font-semibold lg:py-4  hidden lg:flex">
           Select Resolution Type
@@ -40,12 +40,14 @@ export function PaymentSummaryTabs() {
           </TabsContent>
         </Tabs>
       </div>
-      {/* <BottomSheet
-        amount="₹ 4000"
-        subtitle="Total Challan Amount"
-        buttonText="Proceed to pay"
-        onButtonClick={() => router.push("/payment-success")}
-      /> */}
+      <div className="lg:hidden block">
+        <BottomSheet
+          amount="₹ 4000"
+          subtitle="Total Challan Amount"
+          buttonText="Proceed to pay"
+          onButtonClick={() => router.push("/payment-success")}
+        />
+      </div>
     </div>
   );
 }
