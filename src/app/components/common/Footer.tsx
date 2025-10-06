@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="text-gray-200 ">
+    <footer className="text-gray-200 lg:bg-white">
       <div className="container mx-auto px-2 py-2 grid grid-cols-1 lg:flex lg:justify-between md:grid-cols-4 gap-4 lg:px-30">
         {/* About / Logo Section */}
         <Card className="p-2 shadow-none flex flex-col items-start">
