@@ -23,6 +23,7 @@ export default function Header() {
   const handleTrackChallanDashboard = () => {
     router.push("/track-challan-login");
   };
+
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
       <div className="container mx-auto flex items-center justify-between p-2 ">

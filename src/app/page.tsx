@@ -18,7 +18,6 @@ function HomePage() {
       <HeroSection />
       <div className="p-4 bg-[#FAF8F7] lg:px-30">
         <ChallanCheckForm />
-
         <BotBanner />
         <TrustedByMillions />
         <Testimonials />
@@ -32,7 +31,6 @@ function HomePage() {
         </div>
         <CheckResolution />
       </div>
-
       <Footer />
     </>
   );

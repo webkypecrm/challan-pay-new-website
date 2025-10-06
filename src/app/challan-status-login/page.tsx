@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import Header from "../components/common/Header";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,7 +20,9 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Loader from "../components/common/loader/Loader";
 import { useRouter } from "next/navigation";
-
+import { useAuth } from "@/context/AuthContext";
+import { AxiosError } from "axios";
+import toast from "react-hot-toast";
 // ✅ Validation Schema
 const loginSchema = z.object({
   fullName: z.string().min(3, "Full name must be at least 3 characters"),
@@ -32,11 +34,18 @@ const loginSchema = z.object({
 
 type LoginFormData = z.infer<typeof loginSchema>;
 
+interface ErrorResponse {
+  message?: string;
+}
+
 export default function LoginPage() {
   const router = useRouter();
   const [showOtp, setShowOtp] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
+  const { sendOtp, verifyOtp } = useAuth();
+  const [otpId, setOtpId] = useState("");
 
   const {
     // control,
@@ -47,10 +56,22 @@ export default function LoginPage() {
     resolver: zodResolver(loginSchema),
   });
 
-  // ✅ Handle login submit
-  const onSubmit = (data: LoginFormData) => {
-    console.log("Form Data:", data);
-    setShowOtp(true); // show OTP form conditionally
+  const onSubmit = async (data: LoginFormData) => {
+    try {
+      toast.loading("Sending OTP...");
+      const response = await sendOtp(data.phone);
+      setOtpId(response?.data?.otpId);
+      setShowOtp(true);
+      toast.dismiss(); // remove loading
+      toast.success("OTP send successfully");
+    } catch (error: unknown) {
+      const err = error as AxiosError<ErrorResponse>;
+      const message =
+        err.response?.data?.message || err.message || "Failed to send OTP";
+
+      setError(message);
+      toast.error(message);
+    }
   };
 
   // ✅ OTP input behavior
@@ -83,12 +104,43 @@ export default function LoginPage() {
     }
   };
 
-  const handleChallanDataFetch = () => {
-    setLoading(true);
+  const getOtpValue = () => {
+    return inputRefs.current.map((input) => input?.value).join("");
+  };
 
-    setTimeout(() => {
-      router.push("/challan-cart");
-    }, 9000);
+  const handleVerifyOtp = async (): Promise<void> => {
+    try {
+      toast.loading("Verifying OTP...");
+      await verifyOtp(otpId, getOtpValue());
+      toast.dismiss(); // remove loading
+      toast.success("OTP verified successfully");
+      setTimeout(() => {
+        router.push("/challan-cart");
+      }, 1000);
+    } catch (err: unknown) {
+      toast.dismiss();
+
+      let message = "OTP verification failed";
+
+      if (err instanceof AxiosError) {
+        // Axios error with response
+        message = err.response?.data?.message || err.message;
+      } else if (err instanceof Error) {
+        // Standard JS error
+        message = err.message;
+      } else if (typeof err === "string") {
+        // Plain string
+        message = err;
+      }
+
+      toast.error(message);
+      setError(message);
+    }
+  };
+
+  const handleChallanDataFetch = () => {
+    // setLoading(true);
+    handleVerifyOtp();
   };
 
   return (

@@ -1,6 +1,5 @@
 "use client";
 
-//import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -10,7 +9,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-//import { Check } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 // Zod schema
@@ -26,7 +24,6 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 export default function Home() {
-  //const [selected, setSelected] = useState<string>("");
   const router = useRouter();
 
   const {
@@ -44,7 +41,8 @@ export default function Home() {
   });
 
   const onSubmit = (data: FormData) => {
-    router.push("/challan-status-login");
+    const encoded = encodeURIComponent(JSON.stringify(data));
+    router.push(`/challan-status-login?data=${encoded}`);
   };
 
   // Dynamic cards array
