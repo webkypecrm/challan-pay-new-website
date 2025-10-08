@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import Header from "../components/common/Header";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,7 +18,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Loader from "../components/common/loader/Loader";
+//import Loader from "../components/common/loader/Loader";
 import { useRouter } from "next/navigation";
 
 // ✅ Validation Schema
@@ -223,7 +223,7 @@ export default function TrackLoginPage() {
             </div>
           </>
         )}
-        {loading && <Loader />}
+        {/* {loading && <Loader />} */}
       </Card>
     </>
   );
