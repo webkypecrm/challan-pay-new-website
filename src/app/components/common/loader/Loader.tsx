@@ -2,7 +2,11 @@ import React from "react";
 import Image from "next/image";
 import CircularProgressBar from "./CircularProgressBar";
 
-function Loader() {
+interface LoaderProps {
+  progress: number; // add this
+}
+
+const Loader: React.FC<LoaderProps> = ({ progress }) => {
   return (
     <div className="bg-white fixed inset-0 z-50 flex flex-col bg-gradient-to-b from-cyan-200 to-white">
       {/* Top bar with company logo */}
@@ -38,7 +42,7 @@ function Loader() {
           </p>{" "}
         </div>
         {/* <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div> */}
-        <CircularProgressBar />
+        <CircularProgressBar progress={progress} />
       </div>
 
       {/* Bottom image */}
@@ -52,6 +56,6 @@ function Loader() {
       </div>
     </div>
   );
-}
+};
 
 export default Loader;
