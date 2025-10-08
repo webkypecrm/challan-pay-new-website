@@ -1,16 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
+//import { useState, useEffect } from "react";
 
+interface CircularProgressBarProps {
+  progress: number;
+}
 interface CircularProgressProps {
-  percentage: number;
+  progress: number;
 }
 
-const CircularProgress: React.FC<CircularProgressProps> = ({ percentage }) => {
+const CircularProgress: React.FC<CircularProgressProps> = ({ progress }) => {
   const radius = 40;
   const strokeWidth = 8;
   const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (percentage / 100) * circumference;
+  const offset = circumference - (progress / 100) * circumference;
 
   return (
     <div className="relative flex items-center justify-center">
@@ -47,28 +50,14 @@ const CircularProgress: React.FC<CircularProgressProps> = ({ percentage }) => {
 
       {/* Percentage text in center */}
       <span className="absolute text-sm font-semibold text-black">
-        {percentage}%
+        {progress}%
       </span>
     </div>
   );
 };
 
-export default function CircularProgressBar() {
-  const [percentage, setPercentage] = useState<number>(0);
-
-  useEffect(() => {
-    let current = 0;
-    const interval = setInterval(() => {
-      current += 1;
-      if (current > 100) {
-        clearInterval(interval);
-      } else {
-        setPercentage(current);
-      }
-    }, 100); // every 100ms = ~10 seconds for full progress
-
-    return () => clearInterval(interval);
-  }, []);
-
-  return <CircularProgress percentage={percentage} />;
+export default function CircularProgressBar({
+  progress,
+}: CircularProgressBarProps) {
+  return <CircularProgress progress={progress} />;
 }

@@ -13,7 +13,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Image from "next/image";
-//import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -23,7 +22,10 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 import { AxiosError } from "axios";
 import toast from "react-hot-toast";
-// ✅ Validation Schema
+import { postRequest } from "@/lib/api";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+
 const loginSchema = z.object({
   fullName: z.string().min(3, "Full name must be at least 3 characters"),
   phone: z
@@ -38,23 +40,72 @@ interface ErrorResponse {
   message?: string;
 }
 
+interface DecodedData {
+  vehicleNumber: string;
+  vehicleType: string;
+}
+interface Subscriber {
+  id: string;
+  name: string;
+  // add other fields if any
+}
+
+interface Vehicle {
+  id: string;
+  type: string;
+  // add other fields if any
+}
+
+interface Response {
+  data: {
+    subscriber: Subscriber | null;
+    vehicle: Vehicle | null;
+  };
+  message: string;
+  status: string;
+}
+
+//const TOKEN = process.env.NEXT_PUBLIC_LAWYERED_PARTNER_TOKEN;
+
 export default function LoginPage() {
   const router = useRouter();
   const [showOtp, setShowOtp] = useState(false);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
   const { sendOtp, verifyOtp } = useAuth();
   const [otpId, setOtpId] = useState("");
+  const searchParams = useSearchParams();
+  const [decodedData, setDecodedData] = useState<DecodedData | null>(null);
 
   const {
     // control,
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
   });
+  const formData = {
+    name: watch("fullName") || "",
+    phone: watch("phone") || "",
+    vehicleNo: decodedData?.vehicleNumber || "",
+    vehicleType: decodedData?.vehicleType || "", // ✅ fixed typo (was vehicaleType)
+    utmSource: "facebook",
+  };
+
+  useEffect(() => {
+    const encoded = searchParams.get("data");
+    if (encoded) {
+      try {
+        const decoded = JSON.parse(decodeURIComponent(encoded));
+        setDecodedData(decoded);
+      } catch (error) {
+        console.error("Failed to decode data:", error);
+      }
+    }
+  }, [searchParams]);
 
   const onSubmit = async (data: LoginFormData) => {
     try {
@@ -74,7 +125,6 @@ export default function LoginPage() {
     }
   };
 
-  // ✅ OTP input behavior
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     index: number
@@ -114,9 +164,22 @@ export default function LoginPage() {
       await verifyOtp(otpId, getOtpValue());
       toast.dismiss(); // remove loading
       toast.success("OTP verified successfully");
-      setTimeout(() => {
-        router.push("/challan-cart");
-      }, 1000);
+      const response: Response = await postRequest(
+        "/v1/d-to-c/user-verification",
+        formData
+      );
+      if (response?.data) {
+        const result = response.data;
+        if (result?.subscriber?.id && result?.vehicle?.id) {
+          localStorage.setItem("subscriberId", result.subscriber.id);
+          localStorage.setItem("vehicleId", result.vehicle.id);
+        } else {
+          console.warn("Missing subscriber or vehicle data:", result);
+        }
+      } else {
+        console.error("No data found in response:", response);
+      }
+      router.push("/challan-cart");
     } catch (err: unknown) {
       toast.dismiss();
 
@@ -275,7 +338,7 @@ export default function LoginPage() {
             </div>
           </>
         )}
-        {loading && <Loader />}
+        {/* {loading && <Loader />} */}
       </Card>
     </div>
   );

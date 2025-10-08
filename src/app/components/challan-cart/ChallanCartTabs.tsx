@@ -1,11 +1,104 @@
+"use client";
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import PendingChallanList from "./PendingChallanList";
 import PaidChallanList from "./PaidChallanList";
 import { CheckCircle, Hourglass, Info } from "lucide-react";
-
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import toast from "react-hot-toast";
+import { getRequest } from "@/lib/api";
+import { AxiosError } from "axios";
+import Loader from "../common/loader/Loader";
+
+interface Vehicle {
+  id: number;
+  vehicleNo: string;
+  vehicleType: string;
+  subscription: string;
+  priceCategory: string;
+}
+
+interface Challan {
+  id: number;
+  challanNo: string;
+  date: string;
+  amount: number;
+  challanStatus: string;
+  courtChallan: boolean;
+}
+
+interface ChallanResponseData {
+  challans: Challan[];
+  vehicle: Vehicle;
+}
+
+interface ApiResponse {
+  status: "success" | "error";
+  message: string;
+  data: ChallanResponseData;
+}
 
 export function ChallanCartTabs() {
+  const [challans, setChallans] = useState<Challan[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [vehicle, setVehicle] = useState<Vehicle | null>(null);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const subscriberId = localStorage.getItem("subscriberId");
+    const vehicleId = localStorage.getItem("vehicleId");
+
+    if (!subscriberId || !vehicleId) {
+      toast.error("Missing subscriberId or vehicleId");
+      setLoading(false);
+      return;
+    }
+
+    const fetchChallans = async () => {
+      try {
+        setLoading(true);
+        setProgress(0);
+
+        // simulate progress
+        const interval = setInterval(() => {
+          setProgress((prev) => (prev < 90 ? prev + 5 : prev));
+        }, 300);
+        // call API
+        const response = await getRequest<ApiResponse>(
+          "/v1/d-to-c/find-challans",
+          {
+            subscriberId,
+            vehicleId,
+          }
+        );
+
+        // update state
+        setChallans(response.data.challans);
+        setVehicle(response.data.vehicle);
+
+        setProgress(100);
+        clearInterval(interval);
+      } catch (err) {
+        if (err instanceof AxiosError) {
+          toast.error(err.response?.data?.message || err.message);
+        } else if (err instanceof Error) {
+          toast.error(err.message);
+        } else {
+          toast.error("Unknown error occurred");
+        }
+      } finally {
+        setTimeout(() => {
+          setLoading(false);
+          setProgress(0);
+        }, 300);
+      }
+    };
+
+    fetchChallans();
+  }, []);
+
+  // console.log(challans.data.challans);
   return (
     <div className="lg:flex lg:justify-center">
       <div className="flex w-full max-w-md flex-col gap-4 lg:w-full lg:max-w-6xl">
@@ -13,20 +106,6 @@ export function ChallanCartTabs() {
           defaultValue="pending"
           className="lg:grid lg:grid-cols-[1fr_3fr] gap-4"
         >
-          {/* <TabsList className="w-full justify-center bg-white px-4 rounded-t-none lg:flex lg:flex-col lg:gap-4 lg:mt-4 ">
-            <TabsTrigger
-              className="w-1/2 text-center data-[state=active]:bg-black rounded-lg  data-[state=active]:rounded-lg data-[state=active]:text-white "
-              value="pending"
-            >
-              Pending
-            </TabsTrigger>
-            <TabsTrigger
-              className="w-1/2 text-center data-[state=active]:bg-black rounded-lg data-[state=active]:rounded-lg  data-[state=active]:text-white"
-              value="paid"
-            >
-              Paid
-            </TabsTrigger>
-          </TabsList> */}
           <div className="lg:bg-white lg:p-2 lg:pt-10 lg:rounded-lg">
             <TabsList
               className="
@@ -94,18 +173,19 @@ export function ChallanCartTabs() {
               value="pending"
               className="bg-slate-100 rounded-xl px-4 lg:bg-white  "
             >
-              <PendingChallanList />
+              <PendingChallanList challans={challans} />
             </TabsContent>
 
             <TabsContent
               value="paid"
               className="bg-slate-100 px-4  lg:bg-white lg:rounded-lg "
             >
-              <PaidChallanList />
+              <PaidChallanList challans={challans} />
             </TabsContent>
           </div>
         </Tabs>
       </div>
+      {loading && <Loader progress={progress} />}
     </div>
   );
 }

@@ -9,12 +9,38 @@ import InfoBanner from "../common/InfoBanner";
 import { Gift } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-function PendingChallanList() {
+interface Challan {
+  id: number;
+  challanNo: string;
+  date: string;
+  amount: number;
+  challanStatus: string;
+  courtChallan: boolean;
+}
+interface PendingChallanListProps {
+  challans: Challan[];
+}
+
+function PendingChallanList({ challans }: PendingChallanListProps) {
   const router = useRouter();
 
   const handleProccedNext = () => {
     router.push("/payment-summary");
   };
+  const onlineChallans = challans.filter(
+    (item) =>
+      item.challanStatus !== "Disposed" &&
+      ((item.challanStatus === "VIRTUAL COURT" &&
+        item.courtChallan === false) ||
+        item.challanStatus === "Pending")
+  );
+
+  const courtChallans = challans.filter(
+    (item) =>
+      item.courtChallan === true &&
+      item.challanStatus !== "VIRTUAL COURT" &&
+      item.challanStatus !== "Disposed"
+  );
   return (
     <div className="bg-slate-100 rounded-lg pb-4 lg:bg-white lg:py-2 lg:relative">
       <div className="text-lg font-bold mt-4 hidden lg:flex">
@@ -28,26 +54,28 @@ function PendingChallanList() {
         </div>
       </div>
       <div className="mt-2">
-        <p className="text-sm text-black font-bold">Online Challans (2)</p>
+        <p className="text-sm text-black font-bold">
+          Online Challans ({onlineChallans.length})
+        </p>
       </div>
       <div className="lg:flex lg:gap-4">
-        <div className="lg:flex-1">
-          <ChallanCard />
-        </div>
-        <div className="lg:flex-1">
-          <ChallanCard />
-        </div>
+        {onlineChallans.map((item) => (
+          <div className="lg:flex-1" key={item.id}>
+            <ChallanCard item={item} />
+          </div>
+        ))}
       </div>
       <div className="mt-6">
-        <p className="text-sm text-black font-bold">Court Challans (2)</p>
+        <p className="text-sm text-black font-bold">
+          Court Challans ({courtChallans.length})
+        </p>
       </div>
       <div className="lg:flex lg:gap-4">
-        <div className="lg:flex-1">
-          <ChallanCard />
-        </div>
-        <div className="lg:flex-1">
-          <ChallanCard />
-        </div>
+        {courtChallans.map((item) => (
+          <div className="lg:flex-1" key={item.id}>
+            <ChallanCard item={item} />
+          </div>
+        ))}
       </div>
       <div className=" h-30 bg-gray-100 hidden lg:flex">
         <div
