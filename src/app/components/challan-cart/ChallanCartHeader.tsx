@@ -1,15 +1,28 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { ChevronLeft } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 //import Image from "next/image";
 import { useRouter } from "next/navigation";
 import NumberPlateHeader from "../common/NumberPlateHeader";
+import { useEffect } from "react";
 
 function ChallanCartHeader() {
   const router = useRouter();
-  const vehicleNo = localStorage.getItem("vehicleNo");
+  // const vehicleNo = localStorage.getItem("vehicleNo");
+  const [vehicleNo, setVehicleNo] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // check if running in the browser
+      const storedUser = localStorage.getItem("vehicleNo");
+      if (storedUser) {
+        setVehicleNo(storedUser);
+      }
+    }
+  }, []);
+
   const handleBack = () => {
     router.push("/challan-status-login");
   };
