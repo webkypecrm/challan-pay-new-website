@@ -43,8 +43,8 @@ export const handleRazorpayPayment = async (
       return;
     }
 
-    const options = {
-      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY,
+    const options: RazorpayOptions = {
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY!, // ✅ add !
       amount: grandTotal * 100,
       currency: "INR",
       name: "Challan Pay",
