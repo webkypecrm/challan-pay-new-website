@@ -24,11 +24,24 @@ interface RazorpayOptions {
   };
 }
 
+// Define a strict type for the error object
+interface RazorpayError {
+  code: string;
+  description: string;
+  source: string;
+  step: string;
+  reason: string;
+  metadata: {
+    order_id: string;
+    payment_id?: string;
+  };
+}
+
 interface RazorpayInstance {
   open(): void;
   on(
     event: "payment.failed",
-    handler: (response: { error: any }) => void
+    handler: (response: { error: RazorpayError }) => void
   ): void;
 }
 
