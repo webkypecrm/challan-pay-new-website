@@ -17,7 +17,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Loader from "../components/common/loader/Loader";
+//import Loader from "../components/common/loader/Loader";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 import { AxiosError } from "axios";
@@ -53,6 +53,7 @@ interface Subscriber {
 interface Vehicle {
   id: string;
   type: string;
+  vehicleNo: string;
   // add other fields if any
 }
 
@@ -70,6 +71,7 @@ interface Response {
 export default function ChallanStatusLogin() {
   const router = useRouter();
   const [showOtp, setShowOtp] = useState(false);
+  const { setUser } = useAuth();
   // const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
@@ -170,6 +172,7 @@ export default function ChallanStatusLogin() {
       );
       if (response?.data) {
         const result = response.data;
+        setUser(result);
         if (result?.subscriber?.id && result?.vehicle?.id) {
           localStorage.setItem("subscriberId", result.subscriber.id);
           localStorage.setItem("vehicleId", result.vehicle.id);
@@ -236,7 +239,7 @@ export default function ChallanStatusLogin() {
                     <Label htmlFor="fullName">Full Name</Label>
                     <Input
                       id="fullName"
-                      placeholder="Aman Mishra"
+                      placeholder="Enter Name"
                       {...register("fullName")}
                     />
                     {errors.fullName && (

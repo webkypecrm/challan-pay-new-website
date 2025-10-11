@@ -5,27 +5,42 @@ import { Gift } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { PledgeModal } from "../common/PledgeModal";
 import { ReadMoreSlider } from "../common/ReadMoreSlider";
+import { useChallanContext } from "@/context/ChallanContext";
 
 function PayAndClose() {
   const [open, setOpen] = useState(false);
   const [openReadMore, setOpenReadMore] = useState(false);
+  const { data, setIsPledge, isPledge } = useChallanContext();
+
+  const handlePledgeChange = (checked: boolean) => {
+    setIsPledge(checked);
+    if (checked) {
+      setOpen(true); // open modal only when checked
+    } else {
+      setOpen(false); // close modal when unchecked
+    }
+  };
+
   return (
     <div className="border-1 border-yellow-700 rounded-2xl bg-white mb-4 ">
-      <div className="p-2 px-4 flex justify-between items-center bg-[#FEFCE8] rounded-t-2xl ">
-        <div className="text-yellow-700 text-xs font-semibold ">
-          Pledge & Claim ₹500 Reward
+      {isPledge && (
+        <div className="p-2 px-4 flex justify-between items-center bg-[#FEFCE8] rounded-t-2xl ">
+          <div className="text-yellow-700 text-xs font-semibold ">
+            Pledge & Claim ₹{data?.potentialDiscount} Reward
+          </div>
+          <div className="text-yellow-700 text-xs">
+            <Gift />
+          </div>
         </div>
-        <div className="text-yellow-700 text-xs">
-          <Gift />
-        </div>
-      </div>
-      <PledgeModal open={open} onOpenChange={setOpen} />
+      )}
+      <PledgeModal open={open} onOpenChange={setOpen} isPledge={isPledge} />
       <div className="p-4 flex items-center gap-2">
         <button type="button" onClick={() => setOpen(true)}>
           {" "}
           <Checkbox
             className="rounded-full w-6 h-6"
-            // onClick={() => setOpen(true)}
+            checked={isPledge}
+            onCheckedChange={handlePledgeChange}
           />
         </button>
 

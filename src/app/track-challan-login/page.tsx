@@ -39,7 +39,6 @@ export default function TrackLoginPage() {
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   const {
-    // control,
     register,
     handleSubmit,
     formState: { errors },
