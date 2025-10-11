@@ -2,7 +2,7 @@ import React from "react";
 import PaidChallanCard from "./PaidChallanCard";
 
 interface Challan {
-  id: number;
+  id: string | number;
   challanNo: string;
   date: string;
   amount: number;
@@ -15,7 +15,7 @@ interface PendingChallanListProps {
 
 function PaidChallanList({ challans }: PendingChallanListProps) {
   const paidChallans = challans.filter(
-    (item) => item.challanStatus === "Disposed"
+    (item) => item.challanStatus === "Disposed" || item.challanStatus === "Paid"
   );
   return (
     <div>
@@ -24,8 +24,8 @@ function PaidChallanList({ challans }: PendingChallanListProps) {
       </div>
       <div className="bg-slate-100 rounded-lg pt-2 pb-4 lg:bg-white lg:flex lg:gap-4">
         {paidChallans.map((item) => (
-          <div className="lg:flex-1" key={item.id}>
-            <PaidChallanCard item={item} />
+          <div className="lg:flex-1">
+            <PaidChallanCard key={item.id} item={item} />
           </div>
         ))}
       </div>

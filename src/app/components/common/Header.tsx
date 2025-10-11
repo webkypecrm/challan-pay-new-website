@@ -107,14 +107,7 @@ export default function Header() {
                   How it Works
                 </Link>
               </SheetClose>
-              {/* <SheetClose asChild>
-                <Link
-                  href="/about"
-                  className="text-gray-900 hover:text-blue-600"
-                >
-                  Blogs
-                </Link>
-              </SheetClose> */}
+
               <SheetClose asChild>
                 <Link href="#" className="text-gray-900 hover:text-blue-600">
                   Support

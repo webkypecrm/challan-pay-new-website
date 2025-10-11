@@ -11,7 +11,6 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useRouter } from "next/navigation";
 
-// Zod schema
 const schema = z.object({
   vehicleType: z.string().min(1, "Please select a vehicle type"),
   vehicleNumber: z
@@ -43,6 +42,7 @@ export default function Home() {
   const onSubmit = (data: FormData) => {
     const encoded = encodeURIComponent(JSON.stringify(data));
     router.push(`/challan-status-login?data=${encoded}`);
+    localStorage.setItem("vehicleNo", data.vehicleNumber);
   };
 
   // Dynamic cards array

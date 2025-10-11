@@ -1,12 +1,30 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from "react";
 import { postRequest } from "@/lib/api";
 
-interface User {
+interface Subscriber {
   id: string;
   name: string;
-  phone: string;
+  // add other fields if any
+}
+
+interface Vehicle {
+  id: string;
+  type: string;
+  vehicleNo: string;
+  // add other fields if any
+}
+
+interface User {
+  subscriber: Subscriber | null;
+  vehicle: Vehicle | null;
 }
 
 interface OtpResponse {
@@ -16,7 +34,7 @@ interface OtpResponse {
 }
 
 interface AuthContextType {
-  // otpId: string | null;
+  setUser: React.Dispatch<React.SetStateAction<User | null>>; // ✔ correct
   user: User | null;
   sendOtp: (phone: string) => Promise<OtpResponse>;
   verifyOtp: (phone: string, otp: string) => Promise<void>;
@@ -27,8 +45,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
-  // const [otpId, setOtpId] = useState("");
-  // Step 1: Send OTP
+
   const sendOtp = async (phone: string): Promise<OtpResponse> => {
     const res = await postRequest("/v1/d-to-c/send-otp", { phone });
     return res as OtpResponse;
@@ -40,22 +57,26 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         "/v1/d-to-c/verify-otp",
         { otpId, otp }
       );
-
-      setUser(data.user);
-      localStorage.setItem("user", JSON.stringify(data.user));
     } catch (error) {
       console.error("OTP verification failed", error);
       throw error;
     }
   };
 
+  useEffect(() => {
+    if (user) {
+      localStorage.setItem("user", JSON.stringify(user));
+    } else {
+      localStorage.removeItem("user");
+    }
+  }, [user]); // run whenever user changes
   // Logout
   const logout = () => {
     setUser(null);
     localStorage.removeItem("user");
   };
   return (
-    <AuthContext.Provider value={{ user, sendOtp, verifyOtp, logout }}>
+    <AuthContext.Provider value={{ user, setUser, sendOtp, verifyOtp, logout }}>
       {children}
     </AuthContext.Provider>
   );

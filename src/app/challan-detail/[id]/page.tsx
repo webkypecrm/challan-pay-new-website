@@ -1,20 +1,43 @@
 "use client";
 
 import React from "react";
-import Header from "../components/common/Header";
-import { ChevronLeft, Copy } from "lucide-react";
+import Header from "../../components/common/Header";
+import { Copy } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { useRouter } from "next/navigation";
-import CommonHeader from "../components/common/CommonHeader";
+import CommonHeader from "../../components/common/CommonHeader";
 import Image from "next/image";
-import ChallanEmailCard from "../components/challan-detail/ChallanEmailCard";
+import ChallanEmailCard from "../../components/challan-detail/ChallanEmailCard";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { Check } from "lucide-react";
+import { copyWithFeedback } from "@/lib/helpers";
+
+interface ChallanData {
+  challanNo: string;
+  amount: number;
+  challanDate: string;
+  offenseName: string;
+  challanPlace: string;
+}
 
 function ChallanDetail() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const [copied, setCopied] = useState(false);
+  const [challanData, setChallanData] = useState<ChallanData | null>(null);
+
+  useEffect(() => {
+    const data = localStorage.getItem("challanDetail");
+    if (data) {
+      setChallanData(JSON.parse(data));
+    }
+  }, [searchParams]);
 
   const handleBack = () => {
     router.push("/challan-cart");
   };
+
   return (
     <div className="lg:bg-slate-100">
       <Header />
@@ -37,7 +60,7 @@ function ChallanDetail() {
                   />
                   <div className="p-1 border border-gray-300">
                     <div className="border border-black font-bold">
-                      • UP 32MM 1113 •
+                      • {localStorage.getItem("vehicleNo")} •
                     </div>
                   </div>
                 </div>
@@ -48,13 +71,30 @@ function ChallanDetail() {
                   <div className="bg-slate-500 px-4 py-2 rounded-t-xl lg:py-8">
                     <p className="text-xs font-semibold text-white">Challan</p>
                     <div className="flex items-center gap-2">
-                      <p className="text-xs text-white">UP40838230418090682</p>
-                      <Copy className="cursor-pointer text-white" size={12} />
+                      <p className="text-xs text-white">
+                        {challanData?.challanNo}
+                      </p>
+                      {copied ? (
+                        <Check size={13} className="ml-1 mt-1 text-white" />
+                      ) : (
+                        <Copy
+                          size={13}
+                          className="ml-1 mt-1 cursor-pointer text-white"
+                          onClick={() =>
+                            copyWithFeedback(
+                              challanData?.challanNo || "",
+                              setCopied
+                            )
+                          }
+                        />
+                      )}
                     </div>
                   </div>
 
                   <div className="flex items-center justify-between py-4 px-2 bg-white">
-                    <p className="text-[#DC2626] font-bold">₹ 4000</p>
+                    <p className="text-[#DC2626] font-bold">
+                      ₹ {challanData?.amount}
+                    </p>
                     <p className="text-xs bg-blue-50 text-cyan-700 font-semibold p-1 rounded-sm">
                       Pending
                     </p>
@@ -62,17 +102,19 @@ function ChallanDetail() {
                   <Separator />
                   <div className="bg-white p-2 rounded-b-xl">
                     <p className="text-xs text-gray-500">Issued Date</p>
-                    <p className="text-black mb-4">20-08-2023</p>
+                    <p className="text-black mb-4">
+                      {challanData?.challanDate}
+                    </p>
                     <p className="text-xs text-gray-500 ">Offence</p>
                     <p className="text-black text-sm mb-4">
                       {" "}
-                      Violation of traffic rules by the driver except the
-                      offences mentioned in section 184 A,B,D,E,F and without
-                      any indication changing the alignment
+                      {challanData?.offenseName}
                     </p>
                     <Separator />
                     <p className="text-xs text-gray-500 mt-4">Location</p>
-                    <p className="text-black mb-4 text-sm">Gurugram, India</p>
+                    <p className="text-black mb-4 text-sm">
+                      {challanData?.challanPlace}
+                    </p>
                   </div>
                 </div>
               </div>

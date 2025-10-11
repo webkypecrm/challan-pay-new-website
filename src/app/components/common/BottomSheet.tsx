@@ -12,15 +12,16 @@ interface BottomSheetProps {
   subtitle?: string; // Text under amount
   buttonText?: string; // Button label
   onButtonClick?: () => void; // Button click handler
+  isPledge?: boolean;
 }
 
 export default function BottomSheet({
-  amount = "₹ 4000",
+  amount,
   subtitle = "Total Challan Amount",
   buttonText = "Proceed next",
   onButtonClick,
+  isPledge,
 }: BottomSheetProps) {
-  const [isPledge, setIsPledge] = useState(true);
   return (
     <div className=" h-30 bg-gray-100 ">
       <div

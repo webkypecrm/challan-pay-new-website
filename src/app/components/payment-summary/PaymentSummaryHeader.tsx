@@ -8,14 +8,17 @@ import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { PaymentSummarySheet } from "./PaymentSummarySheet";
+import { useChallanContext } from "@/context/ChallanContext";
 
 function PaymentSummaryHeader() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
+  const { selectedChallans, data } = useChallanContext();
 
   const handleBack = () => {
     router.push("/challan-cart");
   };
+  //console.log(data);
   return (
     <div className="mt-20 px-4 lg:px-0 bg-white  lg:bg-slate-100">
       <div className="flex items-center justify-between">
@@ -46,13 +49,17 @@ function PaymentSummaryHeader() {
         {/* Centered number plate */}
         {/* <div className="flex-1 flex justify-center"> */}
         <div className="p-1 border border-gray-300">
-          <div className="border border-black font-bold">• UP 32MM 1113 •</div>
+          <div className="border border-black font-bold">
+            • {localStorage.getItem("vehicleNo")} •
+          </div>
         </div>
         {/* </div> */}
         {/* </div> */}
       </div>
       <div className="block lg:hidden">
-        <div className="text-sm mt-2">2 Challans selected for settlement</div>
+        <div className="text-sm mt-2">
+          {selectedChallans.length} Challans selected for settlement
+        </div>
       </div>
       <div className="lg:hidden flex justify-between items-center border border-gray-200 p-2 rounded-lg mt-2">
         <button
@@ -63,7 +70,7 @@ function PaymentSummaryHeader() {
           <ChevronDown size={18} />
           <span className="mx-2"> Check Summary</span>
         </button>
-        <div className="text-base font-bold">₹ 4000</div>
+        <div className="text-base font-bold">₹ {data?.amountToPay}</div>
       </div>
       <div className="lg:hidden flex justify-center items-center  bg-cyan-50 border border-cyan-50 p-2  rounded-lg mt-3 ">
         <div className="text-xs font-semibold text-cyan-800">
@@ -71,7 +78,6 @@ function PaymentSummaryHeader() {
         </div>
       </div>
       <div className="h-4 bg-white lg:hidden"></div>
-
       <PaymentSummarySheet open={open} setOpen={setOpen} />
     </div>
   );

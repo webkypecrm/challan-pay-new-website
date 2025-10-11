@@ -1,5 +1,4 @@
 "use client";
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import PendingChallanList from "./PendingChallanList";
 import PaidChallanList from "./PaidChallanList";
@@ -59,7 +58,6 @@ export function ChallanCartTabs() {
       try {
         setLoading(true);
         setProgress(0);
-
         // simulate progress
         const interval = setInterval(() => {
           setProgress((prev) => (prev < 90 ? prev + 5 : prev));
@@ -72,7 +70,6 @@ export function ChallanCartTabs() {
             vehicleId,
           }
         );
-
         // update state
         setChallans(response.data.challans);
         setVehicle(response.data.vehicle);
@@ -163,7 +160,7 @@ export function ChallanCartTabs() {
 
                 <div className="p-1 border border-gray-300">
                   <div className="border border-black font-bold">
-                    • UP 32MM 1113 •
+                    • {localStorage.getItem("vehicleNo")} •
                   </div>
                 </div>
               </div>

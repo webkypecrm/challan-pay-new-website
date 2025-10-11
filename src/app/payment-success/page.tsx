@@ -67,9 +67,7 @@ function PaymentSuccess() {
                     height={60}
                     width={60}
                   />
-                  <p>
-                    Thank you Anurag, for submitting your challan for Contest!
-                  </p>
+                  <p>Thank you for submitting your challan!</p>
                 </div>
               </div>
             </div>

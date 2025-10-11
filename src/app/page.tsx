@@ -14,7 +14,7 @@ import { CheckResolution } from "./components/home-page/CheckResolution";
 function HomePage() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <HeroSection />
       <div className="p-4 bg-[#FAF8F7] lg:px-30">
         <ChallanCheckForm />

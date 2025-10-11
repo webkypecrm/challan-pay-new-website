@@ -3,6 +3,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 import { Toaster } from "react-hot-toast";
+import ConditionalHeader from "./components/common/ConditionalHeader";
+import { ChallanProvider } from "@/context/ChallanContext";
+//import Header from "./components/common/Header";
+
+//import CommonHeader from "./components/common/CommonHeader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,18 +36,21 @@ export default function RootLayout({
       >
         {" "}
         <AuthProvider>
-          {" "}
-          <Toaster
-            position="top-center"
-            toastOptions={{
-              duration: 3000,
-              style: {
-                background: "#333",
-                color: "#fff",
-              },
-            }}
-          />
-          {children}
+          <ChallanProvider>
+            {" "}
+            <Toaster
+              position="top-center"
+              toastOptions={{
+                duration: 3000,
+                style: {
+                  background: "#333",
+                  color: "#fff",
+                },
+              }}
+            />
+            <ConditionalHeader />
+            {children}
+          </ChallanProvider>
         </AuthProvider>
       </body>
     </html>

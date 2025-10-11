@@ -1,6 +1,6 @@
 "use client";
 import { Checkbox } from "@/components/ui/checkbox";
-import ChallanCard from "./ChallanCard";
+import PendingChallanCard from "./PendingChallanCard";
 import React from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -8,6 +8,7 @@ import { ChevronRight } from "lucide-react";
 import InfoBanner from "../common/InfoBanner";
 import { Gift } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useChallanContext } from "@/context/ChallanContext";
 
 interface Challan {
   id: number;
@@ -23,33 +24,45 @@ interface PendingChallanListProps {
 
 function PendingChallanList({ challans }: PendingChallanListProps) {
   const router = useRouter();
+  const { selectedChallans, selectAllNonZero } = useChallanContext();
 
   const handleProccedNext = () => {
     router.push("/payment-summary");
   };
+
+  console.log(selectedChallans);
   const onlineChallans = challans.filter(
     (item) =>
-      item.challanStatus !== "Disposed" &&
-      ((item.challanStatus === "VIRTUAL COURT" &&
-        item.courtChallan === false) ||
-        item.challanStatus === "Pending")
+      !item.courtChallan &&
+      (item.challanStatus === "VIRTUAL COURT" ||
+        item.challanStatus === "Pending" ||
+        item.challanStatus === "Unpaid")
   );
 
   const courtChallans = challans.filter(
     (item) =>
-      item.courtChallan === true &&
-      item.challanStatus !== "VIRTUAL COURT" &&
-      item.challanStatus !== "Disposed"
+      item.courtChallan &&
+      (item.challanStatus === "VIRTUAL COURT" ||
+        item.challanStatus === "Pending" ||
+        item.challanStatus === "Unpaid")
   );
+
+  console.log("onlineChallans", onlineChallans);
+
+  console.log("courtChallans", courtChallans);
+
   return (
     <div className="bg-slate-100 rounded-lg pb-4 lg:bg-white lg:py-2 lg:relative">
       <div className="text-lg font-bold mt-4 hidden lg:flex">
         Pending Challans
       </div>
       <div className="flex justify-between items-center py-3">
-        <div className="text-sm">0 Selected</div>
+        <div className="text-sm">{selectedChallans.length} Selected</div>
         <div className="text-sm flex items-center justify-center">
-          <Checkbox className="w-4 h-4 bg-white data-[state=checked]:bg-cyan-600   data-[state=checked]:text-white data-[state=checked]:border-cyan-600" />{" "}
+          <Checkbox
+            className="w-4 h-4 bg-white data-[state=checked]:bg-cyan-600   data-[state=checked]:text-white data-[state=checked]:border-cyan-600"
+            onClick={() => selectAllNonZero(challans)}
+          />{" "}
           <span className="mx-1">Select All</span>
         </div>
       </div>
@@ -58,23 +71,21 @@ function PendingChallanList({ challans }: PendingChallanListProps) {
           Online Challans ({onlineChallans.length})
         </p>
       </div>
-      <div className="lg:flex lg:gap-4">
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {onlineChallans.map((item) => (
-          <div className="lg:flex-1" key={item.id}>
-            <ChallanCard item={item} />
-          </div>
+          <PendingChallanCard key={item.id} item={item} />
         ))}
       </div>
+
       <div className="mt-6">
         <p className="text-sm text-black font-bold">
           Court Challans ({courtChallans.length})
         </p>
       </div>
-      <div className="lg:flex lg:gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {courtChallans.map((item) => (
-          <div className="lg:flex-1" key={item.id}>
-            <ChallanCard item={item} />
-          </div>
+          <PendingChallanCard key={item.id} item={item} />
         ))}
       </div>
       <div className=" h-30 bg-gray-100 hidden lg:flex">
