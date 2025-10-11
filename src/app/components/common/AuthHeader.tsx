@@ -13,9 +13,18 @@ import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useAuth } from "@/context/AuthContext";
 
+interface User {
+  subscriber: {
+    name?: string;
+    imageUrl?: string;
+  };
+  vehicle: {
+    vehicleNo?: string;
+  };
+}
 export default function AuthHeader() {
   const { logout } = useAuth();
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<User | null>(null);
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
