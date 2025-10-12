@@ -335,7 +335,10 @@ export default function ChallanStatusLogin() {
             <div className="text-xs text-center text-gray-600 mt-6 mx-6">
               Did not receive any code?
               <br />
-              <div className="text-blue-600 my-2  font-bold cursor-pointer">
+              <div
+                className="text-blue-600 my-2  font-bold cursor-pointer"
+                onClick={() => sendOtp(formData.phone)} // wrap it in arrow function
+              >
                 Resend Now
               </div>
             </div>
