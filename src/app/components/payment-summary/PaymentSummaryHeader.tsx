@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft } from "lucide-react";
 import { ChevronDown } from "lucide-react";
 //import { FaWhatsapp } from "react-icons/fa";
@@ -13,11 +13,16 @@ import { useChallanContext } from "@/context/ChallanContext";
 function PaymentSummaryHeader() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
+  const [vehicleNo, setVehicleNo] = useState<string | null>(null);
   const { selectedChallans, data } = useChallanContext();
 
   const handleBack = () => {
     router.push("/challan-cart");
   };
+  useEffect(() => {
+    const storedVehicleNo = localStorage.getItem("vehicleNo");
+    setVehicleNo(storedVehicleNo);
+  }, []);
   //console.log(data);
   return (
     <div className="mt-20 px-4 lg:px-0 bg-white  lg:bg-slate-100">
@@ -50,7 +55,7 @@ function PaymentSummaryHeader() {
         {/* <div className="flex-1 flex justify-center"> */}
         <div className="p-1 border border-gray-300">
           <div className="border border-black font-bold">
-            • {localStorage.getItem("vehicleNo")} •
+            • {vehicleNo || "N/A"} •
           </div>
         </div>
         {/* </div> */}

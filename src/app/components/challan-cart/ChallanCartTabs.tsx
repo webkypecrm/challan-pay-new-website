@@ -43,6 +43,7 @@ export function ChallanCartTabs() {
   const [loading, setLoading] = useState<boolean>(true);
   const [vehicle, setVehicle] = useState<Vehicle | null>(null);
   const [progress, setProgress] = useState(0);
+  const [vehicleNo, setVehicleNo] = useState<string | null>(null);
 
   useEffect(() => {
     const subscriberId = localStorage.getItem("subscriberId");
@@ -93,6 +94,11 @@ export function ChallanCartTabs() {
     };
 
     fetchChallans();
+  }, []);
+
+  useEffect(() => {
+    const storedVehicleNo = localStorage.getItem("vehicleNo");
+    setVehicleNo(storedVehicleNo);
   }, []);
 
   // console.log(challans.data.challans);
@@ -160,7 +166,7 @@ export function ChallanCartTabs() {
 
                 <div className="p-1 border border-gray-300">
                   <div className="border border-black font-bold">
-                    • {localStorage.getItem("vehicleNo")} •
+                    • {vehicleNo || "N/A"} •
                   </div>
                 </div>
               </div>

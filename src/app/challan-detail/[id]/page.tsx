@@ -26,6 +26,7 @@ function ChallanDetail() {
   const searchParams = useSearchParams();
   const [copied, setCopied] = useState(false);
   const [challanData, setChallanData] = useState<ChallanData | null>(null);
+  const [vehicleNo, setVehicleNo] = useState<string | null>(null);
 
   useEffect(() => {
     const data = localStorage.getItem("challanDetail");
@@ -33,6 +34,11 @@ function ChallanDetail() {
       setChallanData(JSON.parse(data));
     }
   }, [searchParams]);
+
+  useEffect(() => {
+    const storedVehicleNo = localStorage.getItem("vehicleNo");
+    setVehicleNo(storedVehicleNo);
+  }, []);
 
   const handleBack = () => {
     router.push("/challan-cart");
@@ -60,7 +66,7 @@ function ChallanDetail() {
                   />
                   <div className="p-1 border border-gray-300">
                     <div className="border border-black font-bold">
-                      • {localStorage.getItem("vehicleNo")} •
+                      • {vehicleNo || "N/A"} •
                     </div>
                   </div>
                 </div>
