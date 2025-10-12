@@ -23,7 +23,7 @@ function PaymentSummaryHeader() {
     const storedVehicleNo = localStorage.getItem("vehicleNo");
     setVehicleNo(storedVehicleNo);
   }, []);
-  //console.log(data);
+  console.log(data);
   return (
     <div className="mt-20 px-4 lg:px-0 bg-white  lg:bg-slate-100">
       <div className="flex items-center justify-between">
@@ -63,7 +63,9 @@ function PaymentSummaryHeader() {
       </div>
       <div className="block lg:hidden">
         <div className="text-sm mt-2">
-          {selectedChallans.length} Challans selected for settlement
+          {(data?.courtChallans?.length ?? 0) +
+            (data?.onlineChallans?.length ?? 0)}{" "}
+          Challans selected for settlement
         </div>
       </div>
       <div className="lg:hidden flex justify-between items-center border border-gray-200 p-2 rounded-lg mt-2">

@@ -9,6 +9,7 @@ import toast from "react-hot-toast";
 import { getRequest } from "@/lib/api";
 import { AxiosError } from "axios";
 import Loader from "../common/loader/Loader";
+import { useChallanContext } from "@/context/ChallanContext";
 
 interface Vehicle {
   id: number;
@@ -44,6 +45,7 @@ export function ChallanCartTabs() {
   const [vehicle, setVehicle] = useState<Vehicle | null>(null);
   const [progress, setProgress] = useState(0);
   const [vehicleNo, setVehicleNo] = useState<string | null>(null);
+  const { autoSelectAllOnInit } = useChallanContext();
 
   useEffect(() => {
     const subscriberId = localStorage.getItem("subscriberId");
@@ -73,6 +75,7 @@ export function ChallanCartTabs() {
         );
         // update state
         setChallans(response.data.challans);
+        autoSelectAllOnInit(response.data.challans);
         setVehicle(response.data.vehicle);
 
         setProgress(100);

@@ -47,6 +47,10 @@ function PendingChallanList({ challans }: PendingChallanListProps) {
         item.challanStatus === "Unpaid")
   );
 
+  const allSelected = challans
+    .filter((c) => c.amount > 0)
+    .every((c) => selectedChallans.includes(c.id));
+
   console.log("onlineChallans", onlineChallans);
 
   console.log("courtChallans", courtChallans);
@@ -60,6 +64,7 @@ function PendingChallanList({ challans }: PendingChallanListProps) {
         <div className="text-sm">{selectedChallans.length} Selected</div>
         <div className="text-sm flex items-center justify-center">
           <Checkbox
+            checked={allSelected} // ✅ controlled by allSelected
             className="w-4 h-4 bg-white data-[state=checked]:bg-cyan-600   data-[state=checked]:text-white data-[state=checked]:border-cyan-600"
             onClick={() => selectAllNonZero(challans)}
           />{" "}

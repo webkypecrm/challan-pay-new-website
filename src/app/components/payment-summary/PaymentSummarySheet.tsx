@@ -1,6 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import { useChallanContext } from "@/context/ChallanContext";
 import { CommonSheet } from "../common/CommonSheet";
 import { Check } from "lucide-react";
+import { handleRazorpayPayment } from "../PayWithRozorpay";
+import { useRouter } from "next/navigation";
 
 export function PaymentSummarySheet({
   open,
@@ -9,7 +14,21 @@ export function PaymentSummarySheet({
   open: boolean;
   setOpen: (v: boolean) => void;
 }) {
-  const { data, isPledge } = useChallanContext();
+  const { data, isPledge, selectedChallans } = useChallanContext();
+  const router = useRouter();
+
+  const handleProccedNext = () => {
+    handleRazorpayPayment(
+      {
+        challanIds: selectedChallans.map((c) => c) ?? [], // array of numbers
+        potentialDiscount: data?.potentialDiscount ?? 0, // fallback if undefined
+        grandTotal: data?.amountToPay ?? 0,
+        rewardGiven: true,
+      },
+      router
+      // setLoader
+    );
+  };
   const content = (
     <>
       <div className="bg-white rounded-lg p-2">
@@ -18,7 +37,7 @@ export function PaymentSummarySheet({
           <div className="text-semibold">₹{data?.onlineChallanAmount} </div>
         </div>
         <div className="flex justify-between items-center text-black px-2 py-1">
-          <div>Convenience Fee</div>
+          <div>Convenience Fee ({data?.onlineChallans?.length ?? 0} x 100)</div>
           <div className="text-semibold"> ₹{data?.onlineChallanFees}</div>
         </div>
         <div className="border-t border-1 border-dashed border-gray-300 my-2"></div>
@@ -27,7 +46,7 @@ export function PaymentSummarySheet({
           <div className="text-semibold">₹{data?.courtChallanAmount} </div>
         </div>
         <div className="flex justify-between items-center text-black px-2 py-1">
-          <div>Convenience Fee</div>
+          <div>Convenience Fee ({data?.courtChallans?.length ?? 0} x 500)</div>
           <div className="text-semibold">₹{data?.courtChallanFees}</div>
         </div>
         <div className="border-t border-1 border-dashed border-gray-300 my-2"></div>
@@ -64,7 +83,7 @@ export function PaymentSummarySheet({
       title="Payment Summary"
       content={content}
       buttonText="Proceed to pay"
-      onButtonClick={() => console.log("Pay clicked")}
+      onButtonClick={handleProccedNext}
     />
   );
 }
