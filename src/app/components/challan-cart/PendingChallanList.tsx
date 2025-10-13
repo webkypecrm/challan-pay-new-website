@@ -10,6 +10,7 @@ import { Gift } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useChallanContext } from "@/context/ChallanContext";
 import { useEffect } from "react";
+import EmptyState from "../common/EmptyState";
 
 interface Challan {
   id: number;
@@ -71,74 +72,84 @@ function PendingChallanList({ challans }: PendingChallanListProps) {
       <div className="text-lg font-bold mt-4 hidden lg:flex">
         Pending Challans
       </div>
-      <div className="flex justify-between items-center py-3">
-        <div className="text-sm">{selectedChallans.length} Selected</div>
-        <div className="text-sm flex items-center justify-center">
-          <Checkbox
-            checked={allSelected} // ✅ controlled by allSelected
-            className="w-4 h-4 bg-white data-[state=checked]:bg-cyan-600   data-[state=checked]:text-white data-[state=checked]:border-cyan-600"
-            onClick={() => selectAllNonZero(pendingChallan)}
-          />{" "}
-          <span className="mx-1">Select All</span>
-        </div>
-      </div>
-      <div className="mt-2">
-        <p className="text-sm text-black font-bold">
-          Online Challans ({onlineChallans.length})
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        {onlineChallans.map((item) => (
-          <PendingChallanCard key={item.id} item={item} />
-        ))}
-      </div>
-
-      <div className="mt-6">
-        <p className="text-sm text-black font-bold">
-          Court Challans ({courtChallans.length})
-        </p>
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        {courtChallans.map((item) => (
-          <PendingChallanCard key={item.id} item={item} />
-        ))}
-      </div>
-      <div className=" h-30 bg-gray-100 hidden lg:flex">
-        <div
-          className={cn(
-            "fixed bottom-0 left-0 right-0 lg:absolute lg:bottom-0 lg:left-0",
-            "bg-white shadow-xl rounded-t-2xl rounded-b-2xl border-t",
-            "transition-transform duration-500",
-            "h-30",
-            "lg:w-auto"
-          )}
-        >
-          <InfoBanner
-            title="Pledge & Claim Rewards"
-            bgColor="#FEFCE8"
-            textColor="#B45309"
-            icon={<Gift />}
-          />
-
-          <div className="p-4 flex justify-between items-center">
-            <div>
-              <h2 className="text-xl font-semibold">₹4000</h2>
-              <p className="text-[#737373] text-xs">Total amount to pay</p>
-            </div>
-
-            <div>
-              <Button
-                className="bg-cyan-600 text-sm font-medium flex items-center gap-1"
-                onClick={handleProccedNext}
-              >
-                Procced To Pay
-                <ChevronRight size={16} />
-              </Button>
+      {pendingChallan.length ? (
+        <>
+          <div className="flex justify-between items-center py-3">
+            <div className="text-sm">{selectedChallans.length} Selected</div>
+            <div className="text-sm flex items-center justify-center">
+              <Checkbox
+                checked={allSelected} // ✅ controlled by allSelected
+                className="w-4 h-4 bg-white data-[state=checked]:bg-cyan-600   data-[state=checked]:text-white data-[state=checked]:border-cyan-600"
+                onClick={() => selectAllNonZero(pendingChallan)}
+              />{" "}
+              <span className="mx-1">Select All</span>
             </div>
           </div>
-        </div>
-      </div>
+          <div className="mt-2">
+            <p className="text-sm text-black font-bold">
+              Online Challans ({onlineChallans.length})
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {onlineChallans.map((item) => (
+              <PendingChallanCard key={item.id} item={item} />
+            ))}
+          </div>
+
+          <div className="mt-6">
+            <p className="text-sm text-black font-bold">
+              Court Challans ({courtChallans.length})
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {courtChallans.map((item) => (
+              <PendingChallanCard key={item.id} item={item} />
+            ))}
+          </div>
+          <div className=" h-30 bg-gray-100 hidden lg:flex">
+            <div
+              className={cn(
+                "fixed bottom-0 left-0 right-0 lg:absolute lg:bottom-0 lg:left-0",
+                "bg-white shadow-xl rounded-t-2xl rounded-b-2xl border-t",
+                "transition-transform duration-500",
+                "h-30",
+                "lg:w-auto"
+              )}
+            >
+              <InfoBanner
+                title="Pledge & Claim Rewards"
+                bgColor="#FEFCE8"
+                textColor="#B45309"
+                icon={<Gift />}
+              />
+
+              <div className="p-4 flex justify-between items-center">
+                <div>
+                  <h2 className="text-xl font-semibold">₹4000</h2>
+                  <p className="text-[#737373] text-xs">Total amount to pay</p>
+                </div>
+
+                <div>
+                  <Button
+                    className="bg-cyan-600 text-sm font-medium flex items-center gap-1"
+                    onClick={handleProccedNext}
+                  >
+                    Procced To Pay
+                    <ChevronRight size={16} />
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      ) : (
+        <EmptyState
+          imageSrc="/Images/nochallan.png"
+          title="No, Active Challans found on"
+          subtitle="UP32MM1113"
+        />
+      )}
     </div>
   );
 }
