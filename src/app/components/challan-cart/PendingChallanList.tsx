@@ -62,8 +62,9 @@ function PendingChallanList({ challans }: PendingChallanListProps) {
   useEffect(() => {
     if (pendingChallan.length) {
       autoSelectAllOnInit(pendingChallan.filter((c) => c.amount > 0));
+      console.log("AMAN");
     }
-  }, []);
+  }, [pendingChallan.length]);
 
   return (
     <div className="bg-slate-100 rounded-lg pb-4 lg:bg-white lg:py-2 lg:relative">
