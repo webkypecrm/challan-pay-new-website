@@ -45,7 +45,7 @@ export function ChallanCartTabs() {
   const [vehicle, setVehicle] = useState<Vehicle | null>(null);
   const [progress, setProgress] = useState(0);
   const [vehicleNo, setVehicleNo] = useState<string | null>(null);
-  const { autoSelectAllOnInit } = useChallanContext();
+  //const { autoSelectAllOnInit } = useChallanContext();
 
   useEffect(() => {
     const subscriberId = localStorage.getItem("subscriberId");
@@ -61,7 +61,6 @@ export function ChallanCartTabs() {
       try {
         setLoading(true);
         setProgress(0);
-        // simulate progress
         const interval = setInterval(() => {
           setProgress((prev) => (prev < 90 ? prev + 5 : prev));
         }, 300);
@@ -75,9 +74,8 @@ export function ChallanCartTabs() {
         );
         // update state
         setChallans(response.data.challans);
-        autoSelectAllOnInit(response.data.challans);
+        // autoSelectAllOnInit(response.data.challans);
         setVehicle(response.data.vehicle);
-
         setProgress(100);
         clearInterval(interval);
       } catch (err) {

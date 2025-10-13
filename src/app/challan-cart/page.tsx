@@ -45,7 +45,7 @@ function ChallanCart() {
               (data.onlineChallanAmount || 0) + (data.courtChallanAmount || 0)
             }`}
             subtitle="Total Challan Amount"
-            buttonText="Proceed next"
+            buttonText="Proceed Next"
             onButtonClick={handleProccedNext}
             isPledge={isPledge}
           />

@@ -9,6 +9,7 @@ import InfoBanner from "../common/InfoBanner";
 import { Gift } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useChallanContext } from "@/context/ChallanContext";
+import { useEffect } from "react";
 
 interface Challan {
   id: number;
@@ -24,7 +25,8 @@ interface PendingChallanListProps {
 
 function PendingChallanList({ challans }: PendingChallanListProps) {
   const router = useRouter();
-  const { selectedChallans, selectAllNonZero } = useChallanContext();
+  const { selectedChallans, selectAllNonZero, autoSelectAllOnInit } =
+    useChallanContext();
 
   const handleProccedNext = () => {
     router.push("/payment-summary");
@@ -47,13 +49,21 @@ function PendingChallanList({ challans }: PendingChallanListProps) {
         item.challanStatus === "Unpaid")
   );
 
-  const allSelected = challans
+  const pendingChallan = [...onlineChallans, ...courtChallans];
+
+  console.log(pendingChallan);
+  const allSelected = pendingChallan
     .filter((c) => c.amount > 0)
     .every((c) => selectedChallans.includes(c.id));
 
   console.log("onlineChallans", onlineChallans);
 
   console.log("courtChallans", courtChallans);
+  useEffect(() => {
+    if (pendingChallan.length) {
+      autoSelectAllOnInit(pendingChallan.filter((c) => c.amount > 0));
+    }
+  }, []);
 
   return (
     <div className="bg-slate-100 rounded-lg pb-4 lg:bg-white lg:py-2 lg:relative">
@@ -66,7 +76,7 @@ function PendingChallanList({ challans }: PendingChallanListProps) {
           <Checkbox
             checked={allSelected} // ✅ controlled by allSelected
             className="w-4 h-4 bg-white data-[state=checked]:bg-cyan-600   data-[state=checked]:text-white data-[state=checked]:border-cyan-600"
-            onClick={() => selectAllNonZero(challans)}
+            onClick={() => selectAllNonZero(pendingChallan)}
           />{" "}
           <span className="mx-1">Select All</span>
         </div>
@@ -121,7 +131,7 @@ function PendingChallanList({ challans }: PendingChallanListProps) {
                 className="bg-cyan-600 text-sm font-medium flex items-center gap-1"
                 onClick={handleProccedNext}
               >
-                Procced to pay
+                Procced To Pay
                 <ChevronRight size={16} />
               </Button>
             </div>
