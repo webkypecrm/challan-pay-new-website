@@ -10,6 +10,8 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const schema = z.object({
   vehicleType: z.string().min(1, "Please select a vehicle type"),
@@ -24,6 +26,7 @@ type FormData = z.infer<typeof schema>;
 
 export default function Home() {
   const router = useRouter();
+  const pathname = usePathname();
 
   const {
     register,
@@ -56,6 +59,18 @@ export default function Home() {
     { id: "electric", title: "Electric", image: "/Images/electric.svg" },
     { id: "commercial", title: "Commercial", image: "/Images/truck.svg" },
   ];
+
+  useEffect(() => {
+    if (pathname === "/") {
+      if (typeof window !== "undefined") {
+        // Example: remove only specific items
+        localStorage.removeItem("selectedChallans");
+        localStorage.removeItem("challanDetail");
+        localStorage.removeItem("paymentEngagementData");
+        localStorage.removeItem("challanDetail");
+      }
+    }
+  }, [pathname]);
 
   return (
     <form id="challan-check" onSubmit={handleSubmit(onSubmit)}>

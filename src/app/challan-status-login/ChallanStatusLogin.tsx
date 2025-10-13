@@ -344,7 +344,6 @@ export default function ChallanStatusLogin() {
             </div>
           </>
         )}
-        {/* {loading && <Loader />} */}
       </Card>
     </div>
   );
