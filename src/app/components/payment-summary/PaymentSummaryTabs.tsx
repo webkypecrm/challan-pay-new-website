@@ -80,7 +80,7 @@ export function PaymentSummaryTabs() {
           <BottomSheet
             amount={`₹ ${data.amountToPay.toLocaleString()}`}
             subtitle="Total Challan Amount"
-            buttonText="Proceed to Pay"
+            buttonText="Proceed To Pay"
             onButtonClick={handleProccedNext}
             isPledge={isPledge}
           />

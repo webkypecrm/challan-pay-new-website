@@ -1,5 +1,6 @@
 import React from "react";
 import PaidChallanCard from "./PaidChallanCard";
+import EmptyState from "../common/EmptyState";
 
 interface Challan {
   id: string | number;
@@ -22,13 +23,21 @@ function PaidChallanList({ challans }: PendingChallanListProps) {
       <div className="text-lg font-bold  pt-4 hidden lg:flex">
         Paid Challans
       </div>
-      <div className="bg-slate-100 rounded-lg pt-2 pb-4 lg:bg-white lg:flex lg:gap-4">
-        {paidChallans.map((item) => (
-          <div className="lg:flex-1" key={item.id}>
-            <PaidChallanCard item={item} />
-          </div>
-        ))}
-      </div>
+      {paidChallans.length ? (
+        <div className="bg-slate-100 rounded-lg pt-2 pb-4 lg:bg-white lg:flex lg:gap-4">
+          {paidChallans.map((item) => (
+            <div className="lg:flex-1" key={item.id}>
+              <PaidChallanCard item={item} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <EmptyState
+          imageSrc="/Images/paid.png"
+          title="No, Paid Challans found on"
+          subtitle="UP32MM1113"
+        />
+      )}
     </div>
   );
 }
