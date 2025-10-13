@@ -19,6 +19,10 @@ function page() {
         </div>
         <PaymentSummaryWebVersion />
       </div>
+      <div id="loader" style={{ display: "none" }}>
+        Processing payment...
+      </div>
+
       {/* </div> */}
     </div>
   );
