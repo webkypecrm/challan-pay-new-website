@@ -56,7 +56,9 @@ const ChallanCardTrackStatus: React.FC<ChallanCardProps> = ({
             {incidentId && (
               <div className="flex justify-between items-center">
                 <div className="text-gray-500">Incident Id</div>
-                <div className="text-gray-700 font-medium">{incidentId}</div>
+                <div className="text-gray-700 font-medium">
+                  IRN-{incidentId}
+                </div>
               </div>
             )}
           </div>

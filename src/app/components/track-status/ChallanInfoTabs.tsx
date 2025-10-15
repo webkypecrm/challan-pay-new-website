@@ -1,87 +1,83 @@
+"use client";
+
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ChallanCardTrackStatus from "../common/ChallanCardTrackStatus";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/context/TrackStatusAuthContext";
+//import { useState } from "react";
+
 function ChallanInfoTabs() {
+  const { incidentData, setTab, tab } = useAuth();
   const router = useRouter();
-  const handleBack = () => {
-    router.push("track-challan-detail");
+  const handleBack = (id: string) => {
+    router.push(`track-challan-detail/${id}`);
   };
+
   return (
     <div className="rounded-b-xl mt-4">
-      <Tabs defaultValue="all">
+      <Tabs
+        value={tab}
+        onValueChange={(val) =>
+          setTab(val as "all" | "In Progress" | "Win" | "Refund Successful")
+        }
+      >
         <TabsList className="w-full flex justify-center gap-2 bg-slate-100">
           <TabsTrigger
             value="all"
-            className="text-center rounded-lg border border-gray-300 text-gray-600 
-                       data-[state=active]:border-blue-500 
-                       data-[state=active]:text-blue-600 
+            className="text-center rounded-lg border border-gray-300 text-gray-600
+                       data-[state=active]:border-blue-500
+                       data-[state=active]:text-blue-600
                        data-[state=active]:bg-white"
           >
             All
           </TabsTrigger>
           <TabsTrigger
-            value="inprogress"
-            className="text-center rounded-lg border border-gray-300 text-gray-600 
-                       data-[state=active]:border-blue-500 
-                       data-[state=active]:text-blue-600 
+            value="In Progress"
+            className="text-center rounded-lg border border-gray-300 text-gray-600
+                       data-[state=active]:border-blue-500
+                       data-[state=active]:text-blue-600
                        data-[state=active]:bg-white"
           >
             In Progress
           </TabsTrigger>
           <TabsTrigger
-            value="resolved"
-            className=" text-center rounded-lg border border-gray-300 text-gray-600 
-                       data-[state=active]:border-blue-500 
-                       data-[state=active]:text-blue-600 
+            value="Win"
+            className="text-center rounded-lg border border-gray-300 text-gray-600
+                       data-[state=active]:border-blue-500
+                       data-[state=active]:text-blue-600
                        data-[state=active]:bg-white"
           >
             Resolved
           </TabsTrigger>
-
           <TabsTrigger
-            value="refund"
-            className="text-center rounded-lg border border-gray-300 text-gray-600 
-                       data-[state=active]:border-blue-500 
-                       data-[state=active]:text-blue-600 
+            value="Refund Successful"
+            className="text-center rounded-lg border border-gray-300 text-gray-600
+                       data-[state=active]:border-blue-500
+                       data-[state=active]:text-blue-600
                        data-[state=active]:bg-white"
           >
             Refund
           </TabsTrigger>
         </TabsList>
 
-        <TabsContent value="all">
-          <ChallanCardTrackStatus
-            challanId="UP6545643843253554"
-            status="Closed"
-            vehicleNumber="HR26DK8337"
-            incidentId="INC1234"
-            onViewDetails={handleBack}
-          />
-          <ChallanCardTrackStatus
-            challanId="UP6545643843253554"
-            status="Closed"
-            vehicleNumber="HR26DK8337"
-            incidentId="INC1234"
-            onViewDetails={handleBack}
-          />
-          <ChallanCardTrackStatus
-            challanId="UP6545643843253554"
-            status="Closed"
-            vehicleNumber="HR26DK8337"
-            incidentId="INC1234"
-            onViewDetails={handleBack}
-          />
-        </TabsContent>
-        <TabsContent value="inprogress" className="bg-slate-100">
-          Resolved content here
-        </TabsContent>
-        <TabsContent value="resolved" className="bg-slate-100">
-          Resolved content here
-        </TabsContent>
-
-        <TabsContent value="refund" className="bg-slate-100">
-          Refund in progress content here
+        <TabsContent value={tab}>
+          {incidentData?.incidents?.length === 0 ? (
+            <div className="p-4 text-center text-gray-500">
+              No incidents found.
+            </div>
+          ) : (
+            incidentData?.incidents?.map((incident) => (
+              <ChallanCardTrackStatus
+                key={incident.id}
+                challanId={incident.challanNo}
+                status={incident.latestSecondaryStatus}
+                vehicleNumber={incident.vehicleNo}
+                incidentId={`${incident.id}`}
+                onViewDetails={() => handleBack(`${incident.id}`)}
+              />
+            ))
+          )}
         </TabsContent>
       </Tabs>
     </div>

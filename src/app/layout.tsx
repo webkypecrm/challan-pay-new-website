@@ -5,6 +5,7 @@ import { AuthProvider } from "@/context/AuthContext";
 import { Toaster } from "react-hot-toast";
 import ConditionalHeader from "./components/common/ConditionalHeader";
 import { ChallanProvider } from "@/context/ChallanContext";
+import { TrackStatusAuthProvider } from "@/context/TrackStatusAuthContext";
 //import Header from "./components/common/Header";
 
 //import CommonHeader from "./components/common/CommonHeader";
@@ -36,21 +37,23 @@ export default function RootLayout({
       >
         {" "}
         <AuthProvider>
-          <ChallanProvider>
-            {" "}
-            <Toaster
-              position="top-center"
-              toastOptions={{
-                duration: 3000,
-                style: {
-                  background: "#333",
-                  color: "#fff",
-                },
-              }}
-            />
-            <ConditionalHeader />
-            {children}
-          </ChallanProvider>
+          <TrackStatusAuthProvider>
+            <ChallanProvider>
+              {" "}
+              <Toaster
+                position="top-center"
+                toastOptions={{
+                  duration: 3000,
+                  style: {
+                    background: "#333",
+                    color: "#fff",
+                  },
+                }}
+              />
+              <ConditionalHeader />
+              {children}
+            </ChallanProvider>
+          </TrackStatusAuthProvider>
         </AuthProvider>
       </body>
     </html>

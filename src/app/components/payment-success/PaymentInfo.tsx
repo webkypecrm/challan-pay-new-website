@@ -1,12 +1,49 @@
+"use client";
+
 import { Separator } from "@/components/ui/separator";
 import React from "react";
 
-const PaymentInfo = () => {
+// PaymentInfo.tsx
+
+interface Subscriber {
+  id: number;
+}
+
+export interface PaymentDetail {
+  subscriber?: Subscriber;
+  vehicleNo?: string;
+  amountPaid?: number;
+  challanNo?: string;
+  challanInvoice?: string;
+}
+
+export interface PaymentInfoProps {
+  paymentDetail?: PaymentDetail[];
+}
+
+const PaymentInfo: React.FC<PaymentInfoProps> = ({ paymentDetail = [] }) => {
+  const totalAmount = paymentDetail.reduce(
+    (sum, item) => sum + (item.amountPaid || 0),
+    0
+  );
+
   const info = [
-    { label: "Subscriber ID", value: "LWD-1234" },
-    { label: "Vehicle Number", value: "UP32MM1113" },
-    { label: "Challans Submitted", value: "02" },
-    { label: "Total Amount Paid", value: "₹4236.00" },
+    {
+      label: "Subscriber ID",
+      value: paymentDetail[0]?.subscriber?.id ?? "—",
+    },
+    {
+      label: "Vehicle Number",
+      value: paymentDetail[0]?.vehicleNo ?? "—",
+    },
+    {
+      label: "Challans Submitted",
+      value: paymentDetail.length,
+    },
+    {
+      label: "Total Amount Paid",
+      value: `₹${totalAmount.toLocaleString()}`,
+    },
   ];
 
   return (

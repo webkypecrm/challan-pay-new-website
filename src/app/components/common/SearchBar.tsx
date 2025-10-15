@@ -2,7 +2,9 @@
 
 import * as React from "react";
 import { Input } from "@/components/ui/input";
+import { useEffect } from "react";
 import { Search } from "lucide-react";
+import { useAuth } from "@/context/TrackStatusAuthContext";
 
 interface SearchBarProps {
   placeholder?: string;
@@ -13,12 +15,20 @@ const SearchBar: React.FC<SearchBarProps> = ({
   placeholder = "Search...",
   onSearch,
 }) => {
+  const { search, setSearch } = useAuth();
   const [query, setQuery] = React.useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSearch(query);
+    setSearch(query);
   };
+
+  useEffect(() => {
+    if (search) {
+      setQuery(search);
+    }
+  }, [search]);
 
   return (
     <form

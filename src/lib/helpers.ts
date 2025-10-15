@@ -1,4 +1,7 @@
 // lib/helpers.ts
+
+import { format } from "date-fns";
+
 export const formatDate = (date: string) => {
   return new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
@@ -28,3 +31,20 @@ export const copyWithFeedback = async (
     console.error("Failed to copy:", err);
   }
 };
+
+export function formatDateTime(
+  isoDate: string,
+  includeYear: boolean = false
+): string {
+  if (!isoDate) return "-";
+
+  try {
+    const date = new Date(isoDate);
+    return includeYear
+      ? format(date, "dd MMM yyyy, hh:mm a")
+      : format(date, "dd MMM, hh:mm a");
+  } catch (error) {
+    console.error("Invalid date:", isoDate);
+    return "-";
+  }
+}

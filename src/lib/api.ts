@@ -73,47 +73,79 @@ export const postRequest = async <T>(
 };
 
 /**
- * PUT request (optional, with token)
+ * GET request (optionally with token)
+ *
+ *
  */
-export const putRequest = async <T>(
+
+export const getHeadersWithoutToken = (tokenRequired = false) => {
+  const token =
+    typeof window !== "undefined" ? localStorage.getItem("userToken") : null;
+
+  const headers: Record<string, string> = {
+    "Content-Type": "application/json",
+  };
+
+  if (tokenRequired && token) {
+    headers["Authorization"] = `Bearer ${token}`;
+  }
+
+  return headers;
+};
+
+export const getRequestWithoutToken = async <T>(
   url: string,
-  data?: Record<string, unknown>
+  params?: Record<string, unknown>,
+  tokenRequired = false
 ): Promise<T> => {
   try {
-    const response = await axiosInstance.put<T>(url, data, {
-      headers: getHeaders(TOKEN),
+    const response = await axiosInstance.get<T>(url, {
+      params,
+      headers: getHeadersWithoutToken(tokenRequired),
     });
     return response.data;
   } catch (error: unknown) {
     if (axios.isAxiosError(error)) {
       console.error(
-        "PUT request error:",
+        "GET request error:",
         error.response?.data || error.message
       );
     } else {
-      console.error("PUT request unknown error:", String(error));
+      console.error("GET request unknown error:", String(error));
     }
     throw error;
   }
 };
 
 /**
- * DELETE request (optional, with token)
+ * POST request (optionally with token)
+ *
+ *
  */
-export const deleteRequest = async <T>(url: string): Promise<T> => {
+
+export const postRequestWithoutToken = async <T>(
+  url: string,
+  data?: Record<string, unknown> | FormData,
+  tokenRequired = false
+): Promise<T> => {
   try {
-    const response = await axiosInstance.delete<T>(url, {
-      headers: getHeaders(TOKEN),
+    const response = await axiosInstance.post<T>(url, data, {
+      headers: {
+        ...getHeadersWithoutToken(tokenRequired),
+        ...(data instanceof FormData
+          ? { "Content-Type": "multipart/form-data" }
+          : {}),
+      },
     });
     return response.data;
   } catch (error: unknown) {
     if (axios.isAxiosError(error)) {
       console.error(
-        "DELETE request error:",
+        "POST request error:",
         error.response?.data || error.message
       );
     } else {
-      console.error("DELETE request unknown error:", String(error));
+      console.error("POST request unknown error:", String(error));
     }
     throw error;
   }
