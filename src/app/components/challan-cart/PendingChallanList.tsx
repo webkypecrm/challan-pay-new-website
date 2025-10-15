@@ -12,6 +12,15 @@ import { useChallanContext } from "@/context/ChallanContext";
 import { useEffect } from "react";
 import EmptyState from "../common/EmptyState";
 
+// interface Challan {
+//   id: number;
+//   challanNo: string;
+//   date: string;
+//   amount: number;
+//   challanStatus: string;
+//   courtChallan: boolean;
+// }
+
 interface Challan {
   id: number;
   challanNo: string;
@@ -19,7 +28,9 @@ interface Challan {
   amount: number;
   challanStatus: string;
   courtChallan: boolean;
+  offenseName: string; // ✅ added to match context
 }
+
 interface PendingChallanListProps {
   challans: Challan[];
 }
