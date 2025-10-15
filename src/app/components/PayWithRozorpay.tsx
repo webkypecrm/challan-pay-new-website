@@ -1,6 +1,6 @@
 import { postRequest } from "@/lib/api";
 import { useRouter } from "next/navigation";
-import { RazorpayOptions } from "@/lib/types";
+//import { RazorpayOptions } from "@/lib/types";
 import { json } from "zod";
 
 interface PaymentParams {
@@ -10,6 +10,19 @@ interface PaymentParams {
   rewardGiven: boolean;
 }
 
+interface RazorpayErrorResponse {
+  error: {
+    code: string;
+    description: string;
+    source: string;
+    step: string;
+    reason: string;
+    metadata: {
+      order_id: string;
+      payment_id: string;
+    };
+  };
+}
 interface CreateIncidentPayload extends PaymentParams {
   razorpayPaymentId: string;
 }
@@ -45,7 +58,7 @@ export const handleRazorpayPayment = async (
       return;
     }
 
-    const options: RazorpayOptions = {
+    const options = {
       key: process.env.NEXT_PUBLIC_RAZORPAY_KEY!, // ✅ add !
       amount: grandTotal * 100,
       currency: "INR",
@@ -99,11 +112,14 @@ export const handleRazorpayPayment = async (
     const rzp = new window.Razorpay(options);
 
     // 🔹 Catch failed payment events
-    rzp.on("payment.failed", function (response) {
-      console.error("❌ Payment failed:", response.error);
-      alert("Payment failed. Please try again.");
+    // rzp.on("payment.failed", function (response) {
+    //   console.error("❌ Payment failed:", response.error);
+    //   alert("Payment failed. Please try again.");
+    // });
+    rzp.on("payment.failed", function (response: RazorpayErrorResponse) {
+      console.error("❌ Payment failed:", response.error.description);
+      alert(`Payment failed: ${response.error.description}`);
     });
-
     rzp.open();
   } catch (error) {
     console.error("Payment process failed:", error);
