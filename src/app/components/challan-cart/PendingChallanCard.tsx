@@ -77,15 +77,17 @@ const PendingChallanCard: React.FC<ChallanCardProps> = ({ item }) => {
         <button
           className="flex items-center text-blue-700 text-sm hover:underline"
           onClick={() => {
-            const data = JSON.stringify({
-              amount: item.amount,
-              challanDate: item.challanDate,
-              challanNo: item.challanNo,
-              challanPlace: item.challanPlace,
-              offenseName: item.offenseName,
-            });
-            localStorage.setItem("challanDetail", data);
-            router.push(`/challan-detail/${item.id}`);
+            if (typeof window !== "undefined") {
+              const data = JSON.stringify({
+                amount: item.amount,
+                challanDate: item.challanDate,
+                challanNo: item.challanNo,
+                challanPlace: item.challanPlace,
+                offenseName: item.offenseName,
+              });
+              localStorage.setItem("challanDetail", data);
+              router.push(`/challan-detail/${item.id}`);
+            }
           }}
         >
           View Details <ArrowRight size={16} className="ml-1" />
