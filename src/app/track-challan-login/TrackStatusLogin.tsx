@@ -166,22 +166,7 @@ export default function TrackStatusLogin() {
       await verifyOtp(otpId, getOtpValue());
       toast.dismiss(); // remove loading
       toast.success("OTP verified successfully");
-      // const response: Response = await postRequest(
-      //   "/v1/d-to-c/user-verification",
-      //   formData
-      // );
-      // if (response?.data) {
-      //   const result = response.data;
-      //   setUser(result);
-      //   if (result?.subscriber?.id && result?.vehicle?.id) {
-      //     localStorage.setItem("subscriberId", result.subscriber.id);
-      //     localStorage.setItem("vehicleId", result.vehicle.id);
-      //   } else {
-      //     console.warn("Missing subscriber or vehicle data:", result);
-      //   }
-      // } else {
-      //   console.error("No data found in response:", response);
-      // }
+
       router.push("/track-status-dashboard");
     } catch (err: unknown) {
       toast.dismiss();

@@ -27,14 +27,6 @@ export default function TrackStatusBottomSheet({
           "h-30"
         )}
       >
-        {/* {isPledge && (
-          <InfoBanner
-            title="Pledge & Claim Rewards"
-            bgColor="#FEFCE8"
-            textColor="#B45309"
-            icon={<Gift />}
-          />
-        )} */}
         <div className="w-full p-4  flex  flex-col gap-2 items-center">
           {/* Two Buttons */}
 

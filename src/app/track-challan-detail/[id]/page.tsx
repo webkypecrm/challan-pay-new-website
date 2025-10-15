@@ -29,6 +29,7 @@ interface CaseLead {
   latestSecondaryStatus: string;
   resolutionDate: string;
   challanInvoice: string;
+  challanAmount: number;
   // add other fields as needed
 }
 
@@ -115,17 +116,15 @@ function TrackChallanDetail({ params }: PageProps) {
         </div>
         <div className="p-4 bg-white rounded-b-lg">
           <div className="flex justify-between items-center mb-3">
-            <div className="font-bold text-gray-900"></div>
+            <div className="font-bold text-gray-900">
+              ₹{caseData?.challanAmount?.toFixed(2)}
+            </div>
             <div
               className={`px-2 py-1 text-xs font-semibold rounded  bg-orange-50 text-orange-700`}
             >
               {caseData?.latestSecondaryStatus}
             </div>
           </div>
-
-          {/* <Separator /> */}
-
-          {/* Extra details: Vehicle + Incident + IRN */}
 
           <div className="flex flex-col gap-2 mt-3 text-sm">
             <div className="flex justify-between items-center">

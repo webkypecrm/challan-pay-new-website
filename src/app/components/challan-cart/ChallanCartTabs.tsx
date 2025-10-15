@@ -19,15 +19,6 @@ interface Vehicle {
   priceCategory: string;
 }
 
-// interface Challan {
-//   id: number;
-//   challanNo: string;
-//   date: string;
-//   amount: number;
-//   challanStatus: string;
-//   courtChallan: boolean;
-// }
-
 interface Challan {
   id: number;
   challanNo: string;

@@ -130,20 +130,6 @@ export default function HowItWorks() {
           })}
         </div>
       </div>
-
-      {/* CTA Button */}
-      {/* <div className="w-full flex justify-center mt-8">
-        <Button
-          className="w-full bg-cyan-600 hover:bg-cyan-700 text-white rounded-md px-6"
-          onClick={() => {
-            document.getElementById("challan-check")?.scrollIntoView({
-              behavior: "smooth", // 👈 smooth scrolling
-            });
-          }}
-        >
-          Check Challan Status
-        </Button>
-      </div> */}
     </section>
   );
 }

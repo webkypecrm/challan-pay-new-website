@@ -15,12 +15,6 @@ import type { EmblaCarouselType } from "embla-carousel";
 const cardData = [
   {
     title: (
-      // <>
-      //   <span className="text-black">Challan Pay</span>
-      //   <br />
-      //   <span className="text-black">AnyTime</span> <br />
-      //   <span className="text-black">AnyWhere</span>
-      // </>
       <>
         <div className="flex flex-col lg:flex-row lg:space-x-2 text-black">
           <span>Challan Pay</span>
@@ -41,13 +35,6 @@ const cardData = [
         <span className="text-black">No stress.</span>{" "}
         <span className="text-black">With ChallanPay</span>
       </>
-      // <>
-      //   <div className="flex flex-col lg:flex-row lg:space-x-2 text-black">
-      //     <span>No queues.</span>
-      //     <span>No stress.</span>
-      //     <span>With ChallanPay</span>
-      //   </div>
-      // </>
     ),
     description:
       "Few clicks, thats it. Discover and resolve your traffic challans.",
@@ -55,12 +42,6 @@ const cardData = [
   },
   {
     title: (
-      // <>
-      //   <span className="text-black">Pay Traffic</span>
-      //   <br />
-      //   <span className="text-black">Challans</span>{" "}
-      //   <span className="text-black">Instantly</span>
-      // </>
       <>
         <div className="flex flex-col lg:flex-row lg:space-x-2 text-black">
           <span>Pay Traffic</span>

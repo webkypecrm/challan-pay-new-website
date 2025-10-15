@@ -19,9 +19,9 @@ const ResolvedChallan: React.FC = () => {
     router.push("/track-status-dashboard");
   };
   const handleDetail = (id: string) => {
-    router.push(`track-challan-detail/${id}`);
+    router.push(`/track-challan-detail/${id}`);
   };
-  console.log(slug);
+  //console.log(slug);
 
   // When slug changes, update tab in context
   useEffect(() => {

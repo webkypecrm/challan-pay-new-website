@@ -40,9 +40,6 @@ const ChallanCardTrackStatus: React.FC<ChallanCardProps> = ({
         </div>
       </div>
 
-      {/* <Separator /> */}
-
-      {/* Extra details: Vehicle + Incident + IRN */}
       {(vehicleNumber || incidentId) && (
         <>
           <div className="flex flex-col gap-1 mt-3 text-sm">

@@ -18,7 +18,6 @@ export default function ChallanEmailCard() {
 
   const handleWhatsappShare = () => {
     console.log("Share on WhatsApp");
-    // WhatsApp share logic here
   };
 
   return (

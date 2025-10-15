@@ -8,7 +8,7 @@ import WhatNext from "../components/payment-success/WhatNext";
 import TrackStatusBottomSheet from "../components/common/TrackStatusBottomSheet";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { Check } from "lucide-react";
+//import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // ✅ Define proper TypeScript interfaces
@@ -41,11 +41,11 @@ const PaymentSuccess: React.FC = () => {
   }, []);
 
   return (
-    <div className="lg:px-40 lg:bg-slate-50">
+    <div className="lg:px-40 lg:bg-slate-50 lg:mt-20 ">
       <Header />
 
       {/* ✅ Mobile success message */}
-      <div className="bg-slate-50 mt-4 pb-4 lg:hidden block mt-16">
+      <div className="bg-slate-50 mt-4 pb-4 lg:hidden block mt-16 ">
         <div className="px-6 text-center text-black font-bold pt-6 flex flex-col items-center">
           <Image
             src="/gif/checked.gif"
@@ -64,12 +64,12 @@ const PaymentSuccess: React.FC = () => {
             {challanPaymentDetail?.incidents?.length || 0} Challan Submitted!
           </div>
 
-          <div className="hidden lg:flex items-center rounded-lg bg-green-100 p-2 mt-2 mx-4 h-10">
+          {/* <div className="hidden lg:flex items-center rounded-lg bg-green-100 p-2 mt-2 mx-4 h-10">
             <Check className="bg-green-800 rounded-full w-4 h-4 text-white p-1 mx-2" />
             <span className="text-green-800 text-xs font-semibold">
               You saved ₹500
             </span>
-          </div>
+          </div> */}
 
           <PaymentInfo paymentDetail={challanPaymentDetail?.incidents || []} />
 
