@@ -63,6 +63,15 @@ interface ChallanContextType {
   isPledge: boolean;
 }
 
+interface Challan {
+  id: number;
+  amount: number;
+  challanNo: string;
+
+  offenseName: string;
+  // add other fields if needed
+}
+
 const ChallanContext = createContext<ChallanContextType | undefined>(undefined);
 
 export const ChallanProvider: React.FC<{ children: React.ReactNode }> = ({
@@ -141,7 +150,7 @@ export const ChallanProvider: React.FC<{ children: React.ReactNode }> = ({
     const nonZeroIds = challans.filter((c) => c.amount > 0).map((c) => c.id);
     if (nonZeroIds.length === 0) return;
 
-    let savedChallans: any[] = [];
+    let savedChallans: Challan[] = [];
 
     if (typeof window !== "undefined") {
       savedChallans = JSON.parse(
