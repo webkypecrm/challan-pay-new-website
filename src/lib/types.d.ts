@@ -118,3 +118,11 @@ interface FollowUp {
   createdAt: string;
   comment: string;
 }
+
+declare global {
+  interface Window {
+    Razorpay: any;
+  }
+}
+
+export {};
