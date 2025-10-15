@@ -1,4 +1,3 @@
-// app/challan-status-login/page.tsx
 import { Suspense } from "react";
 import ChallanStatusLogin from "./ChallanStatusLogin";
 

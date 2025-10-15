@@ -6,9 +6,6 @@ import { Toaster } from "react-hot-toast";
 import ConditionalHeader from "./components/common/ConditionalHeader";
 import { ChallanProvider } from "@/context/ChallanContext";
 import { TrackStatusAuthProvider } from "@/context/TrackStatusAuthContext";
-//import Header from "./components/common/Header";
-
-//import CommonHeader from "./components/common/CommonHeader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

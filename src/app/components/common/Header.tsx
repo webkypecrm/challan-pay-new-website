@@ -49,13 +49,7 @@ export default function Header() {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
-              {/* <NavigationMenuItem>
-                <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className="px-3 py-2 text-gray-700 hover:text-blue-600">
-                    Blogs
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem> */}
+
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
                   <NavigationMenuLink className="px-3 py-2 text-gray-700 hover:text-blue-600">

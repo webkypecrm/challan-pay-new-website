@@ -173,12 +173,7 @@ export default function ChallanStatusLogin() {
       if (response?.data) {
         const result = response.data;
         setUser(result);
-        // if (result?.subscriber?.id && result?.vehicle?.id) {
-        //   localStorage.setItem("subscriberId", result.subscriber.id);
-        //   localStorage.setItem("vehicleId", result.vehicle.id);
-        // } else {
-        //   console.warn("Missing subscriber or vehicle data:", result);
-        // }
+
         if (typeof window !== "undefined") {
           if (result?.subscriber?.id) {
             localStorage.setItem(

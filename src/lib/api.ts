@@ -72,12 +72,6 @@ export const postRequest = async <T>(
   }
 };
 
-/**
- * GET request (optionally with token)
- *
- *
- */
-
 export const getHeadersWithoutToken = (tokenRequired = false) => {
   const token =
     typeof window !== "undefined" ? localStorage.getItem("userToken") : null;
