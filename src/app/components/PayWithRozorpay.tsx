@@ -111,15 +111,10 @@ export const handleRazorpayPayment = async (
 
     const rzp = new window.Razorpay(options);
 
-    // 🔹 Catch failed payment events
-    // rzp.on("payment.failed", function (response) {
-    //   console.error("❌ Payment failed:", response.error);
-    //   alert("Payment failed. Please try again.");
-    // });
-    rzp.on("payment.failed", function (response: RazorpayErrorResponse) {
-      console.error("❌ Payment failed:", response.error.description);
-      alert(`Payment failed: ${response.error.description}`);
+    rzp.on("payment.failed", (response) => {
+      console.error("❌ Payment failed:", response.error);
     });
+
     rzp.open();
   } catch (error) {
     console.error("Payment process failed:", error);
