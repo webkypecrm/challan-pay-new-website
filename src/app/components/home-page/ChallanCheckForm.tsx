@@ -44,8 +44,14 @@ export default function Home() {
 
   const onSubmit = (data: FormData) => {
     const encoded = encodeURIComponent(JSON.stringify(data));
+
+    // Navigate first
     router.push(`/challan-status-login?data=${encoded}`);
-    localStorage.setItem("vehicleNo", data.vehicleNumber);
+
+    // Only set localStorage in browser
+    if (typeof window !== "undefined") {
+      localStorage.setItem("vehicleNo", data.vehicleNumber);
+    }
   };
 
   // Dynamic cards array
