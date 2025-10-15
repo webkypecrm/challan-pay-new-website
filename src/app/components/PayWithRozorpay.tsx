@@ -84,10 +84,12 @@ export const handleRazorpayPayment = async (
             payload as unknown as Record<string, unknown>
           );
           console.log("Incident created:", apiResponse.data);
-          localStorage.setItem(
-            "paymentDetail",
-            JSON.stringify(apiResponse.data)
-          );
+          if (typeof window !== "undefined") {
+            localStorage.setItem(
+              "paymentDetail",
+              JSON.stringify(apiResponse.data)
+            );
+          }
         } catch (apiError) {
           console.error("Error creating incident:", apiError);
           alert("Payment succeeded, but failed to record in system.");

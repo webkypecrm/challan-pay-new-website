@@ -81,6 +81,7 @@ export const TrackStatusAuthProvider = ({
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState("");
   const [tab, setTab] = useState("all");
+  const [userInfo, setUserInfo] = useState<string | null>(null);
 
   const sendOtp = async (phone: string): Promise<OtpResponse> => {
     const res = await postRequestWithoutToken("/v1/customer/auth/send-otp", {
@@ -97,8 +98,10 @@ export const TrackStatusAuthProvider = ({
       );
       console.log(data);
       setUser(data?.data?.user);
-      localStorage.setItem("userToken", data?.data?.token);
-      localStorage.setItem("userInfo", JSON.stringify(data?.data?.user));
+      if (typeof window !== "undefined") {
+        localStorage.setItem("userToken", data?.data?.token);
+        localStorage.setItem("userInfo", JSON.stringify(data?.data?.user));
+      }
     } catch (error) {
       console.error("OTP verification failed", error);
       throw error;
@@ -107,7 +110,9 @@ export const TrackStatusAuthProvider = ({
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem("userInfo");
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("userInfo");
+    }
   };
 
   const fetchIncidentData = async () => {
@@ -130,10 +135,17 @@ export const TrackStatusAuthProvider = ({
   };
 
   useEffect(() => {
-    if (localStorage.getItem("userInfo")) {
+    if (typeof window !== "undefined") {
+      const savedUser = localStorage.getItem("userInfo");
+      setUserInfo(savedUser);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (userInfo) {
       fetchIncidentData();
     }
-  }, [localStorage.getItem("userInfo"), search, tab]);
+  }, [userInfo, search, tab]);
 
   if (loading)
     return (

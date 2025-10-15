@@ -90,10 +90,12 @@ export const ChallanProvider: React.FC<{ children: React.ReactNode }> = ({
         }
       );
       setData(response.data);
-      localStorage.setItem(
-        "paymentEngagementData",
-        JSON.stringify(response.data)
-      );
+      if (typeof window !== "undefined") {
+        localStorage.setItem(
+          "paymentEngagementData",
+          JSON.stringify(response.data)
+        );
+      }
     } catch (error) {
       console.error("Error fetching payment engagement:", error);
     } finally {
@@ -139,9 +141,13 @@ export const ChallanProvider: React.FC<{ children: React.ReactNode }> = ({
     const nonZeroIds = challans.filter((c) => c.amount > 0).map((c) => c.id);
     if (nonZeroIds.length === 0) return;
 
-    const savedChallans = JSON.parse(
-      localStorage.getItem("selectedChallans") || "[]"
-    );
+    let savedChallans: any[] = [];
+
+    if (typeof window !== "undefined") {
+      savedChallans = JSON.parse(
+        localStorage.getItem("selectedChallans") || "[]"
+      );
+    }
 
     // Only auto-select if nothing is already saved
     if (savedChallans.length === 0) {

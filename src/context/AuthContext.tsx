@@ -77,7 +77,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem("user");
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("user");
+    }
   };
   return (
     <AuthContext.Provider value={{ user, setUser, sendOtp, verifyOtp, logout }}>
