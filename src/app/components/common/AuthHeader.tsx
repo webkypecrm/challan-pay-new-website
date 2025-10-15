@@ -32,12 +32,9 @@ export default function AuthHeader() {
     }
   }, []);
 
-  console.log(user);
-
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
       <div className="container mx-auto flex items-center justify-between p-2">
-        {/* Logo */}
         <Link href="/">
           <Image
             src="/logo/text-logo.svg"

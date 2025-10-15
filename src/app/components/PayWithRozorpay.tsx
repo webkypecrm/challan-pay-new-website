@@ -1,5 +1,7 @@
 import { postRequest } from "@/lib/api";
 import { useRouter } from "next/navigation";
+import { RazorpayOptions } from "@/lib/types";
+import { json } from "zod";
 
 interface PaymentParams {
   challanIds: number[];
@@ -69,6 +71,10 @@ export const handleRazorpayPayment = async (
             payload as unknown as Record<string, unknown>
           );
           console.log("Incident created:", apiResponse.data);
+          localStorage.setItem(
+            "paymentDetail",
+            JSON.stringify(apiResponse.data)
+          );
         } catch (apiError) {
           console.error("Error creating incident:", apiError);
           alert("Payment succeeded, but failed to record in system.");

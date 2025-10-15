@@ -4,10 +4,14 @@ import React from "react";
 import SearchBar from "../components/common/SearchBar";
 import ChallanInfoTabs from "../components/track-status/ChallanInfoTabs";
 import Header from "../components/common/Header";
+import { useAuth } from "@/context/TrackStatusAuthContext";
 
 function SearchResult() {
+  const { setSearch } = useAuth();
   const handleSearch = (value: string) => {
-    console.log("Searching for:", value);
+    if (value) {
+      setSearch(value);
+    }
   };
   return (
     <div>

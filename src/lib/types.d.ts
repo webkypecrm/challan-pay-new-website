@@ -52,3 +52,69 @@ interface RazorpayConstructor {
 interface Window {
   Razorpay: RazorpayConstructor;
 }
+
+// types/dashboard.ts
+export interface DashboardResponse {
+  data: {
+    activeVehicles: number;
+    challansResolved: number;
+    pendingChallans: number;
+    submittedChallans: number;
+    refundChallans: number;
+    totalRewardsEarned: number;
+  };
+}
+
+export interface Incident {
+  id: number;
+  challanNo: string;
+  challanInvoice: string;
+  vehicleNo: string;
+  vehicleType: string;
+  driverName: string;
+  driverPhone: string;
+  incidentType: string;
+  incidentStory: string;
+  incidentArea: string;
+  incidentCity: string;
+  incidentState: string;
+  roadName: string;
+  latestStatus: string;
+  latestSecondaryStatus: string;
+  resolutionDate: string;
+  subscriptionExpires: string;
+  transactionId: string;
+  attachment: string;
+  rcDocument: string;
+  aadhaarFrontDocument: string;
+  aadhaarBackDocument: string;
+  otherDocument: string;
+  activeSubscription: string;
+  addedBy: string;
+  addedByComment: string;
+  address: string;
+  pincode: string;
+  createdAt: string;
+  // Add any other fields if necessary
+}
+
+export interface IncidentsData {
+  incidents: Incident[];
+  lastCursorId: number;
+}
+
+export interface IncidentsApiResponse {
+  status: "success" | "error"; // or just string if there are more statuses
+  message: string;
+  data: IncidentsData;
+}
+
+interface FollowUp {
+  id: string | number;
+  time: string; // ISO or formatted date string
+  title: string;
+  status?: "success" | "error" | "default";
+  link?: string;
+  createdAt: string;
+  comment: string;
+}
