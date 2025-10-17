@@ -57,17 +57,17 @@ function ChallanInfo() {
     router.push("/frequently-asked-questions");
   };
 
-  if (loading)
-    return (
-      <div className="flex items-center justify-center h-screen w-screen bg-gray-100">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
-      </div>
-    );
-  if (error) return <p>{error}</p>;
+  // if (loading)
+  //   return (
+  //     <div className="flex items-center justify-center h-screen w-screen bg-gray-100 lg:hidden">
+  //       <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
+  //     </div>
+  //   );
+  // if (error) return <p>{error}</p>;
 
   return (
-    <div className="">
-      <div className="bg-white rounded-xl px-4">
+    <div className="lg:rounded-lg">
+      <div className="bg-white rounded-xl px-4 lg:bg-slate-100 lg:px-0">
         <div className="grid grid-cols-2  sm:grid-cols-2 gap-4">
           <DashboardCard
             title="Challans Submitted on ChallanPay"
@@ -126,7 +126,7 @@ function ChallanInfo() {
           />
         </div>
       </div>
-      <div className="bg-slate-100 p-4">
+      <div className="bg-slate-100 p-4 lg:bg-white lg:rounded-lg">
         <div className="text-base font-bold my-2">Challans Information</div>
         <SearchBar placeholder="Search Challans..." onSearch={handleSearch} />
         <ChallanInfoTabs />

@@ -22,7 +22,7 @@ function ChallanInfoTabs() {
           setTab(val as "all" | "In Progress" | "Win" | "Refund Successful")
         }
       >
-        <TabsList className="w-full flex justify-center gap-2 bg-slate-100">
+        <TabsList className="w-full flex justify-center gap-2 bg-slate-100 lg:bg-white">
           <TabsTrigger
             value="all"
             className="text-center rounded-lg border border-gray-300 text-gray-600
@@ -61,7 +61,7 @@ function ChallanInfoTabs() {
           </TabsTrigger>
         </TabsList>
 
-        <TabsContent value={tab}>
+        {/* <TabsContent value={tab}>
           {incidentData?.incidents?.length === 0 ? (
             <div className="p-4 text-center text-gray-500">
               No incidents found.
@@ -77,6 +77,26 @@ function ChallanInfoTabs() {
                 onViewDetails={() => handleBack(`${incident.id}`)}
               />
             ))
+          )}
+        </TabsContent> */}
+        <TabsContent value={tab}>
+          {incidentData?.incidents?.length === 0 ? (
+            <div className="p-4 text-center text-gray-500">
+              No incidents found.
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 ">
+              {incidentData?.incidents?.map((incident) => (
+                <ChallanCardTrackStatus
+                  key={incident.id}
+                  challanId={incident.challanNo}
+                  status={incident.latestSecondaryStatus}
+                  vehicleNumber={incident.vehicleNo}
+                  incidentId={`${incident.id}`}
+                  onViewDetails={() => handleBack(`${incident.id}`)}
+                />
+              ))}
+            </div>
           )}
         </TabsContent>
       </Tabs>
