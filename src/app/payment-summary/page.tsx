@@ -13,8 +13,8 @@ function page() {
       {/* <div className="lg:flex lg:justify-center lg:gap-2"> */}
       <div className="bg-white  lg:bg-slate-100 lg:py-4 lg:flex lg:items-center lg:max-w-6xl lg:justify-center lg:gap-2 ">
         <div className="lg:w-full">
-          {/* <PaymentSummaryHeader /> */}
-          <ChallanCartHeader />
+          <PaymentSummaryHeader />
+          {/* <ChallanCartHeader /> */}
           <div className="lg:px-0 lg:pr-0">
             <PaymentSummaryTabs />
           </div>
