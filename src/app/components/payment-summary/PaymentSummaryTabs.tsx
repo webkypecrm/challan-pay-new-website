@@ -25,8 +25,8 @@ export function PaymentSummaryTabs() {
         grandTotal: data?.amountToPay ?? 0,
         rewardGiven: true,
       },
-      router
-      // setLoader
+      router,
+      setLoader
     );
   };
 
@@ -35,23 +35,34 @@ export function PaymentSummaryTabs() {
 
     setIsPledge(!!data.potentialDiscount);
   }, [data]);
-
+  if (loader) {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-70 z-50">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
+      </div>
+    );
+  }
   return (
     <div className="rounded-xl  lg:px-6 lg:flex lg:justify-center lg:bg-white bg-white lg:my-4">
       <div className="flex w-full max-w-md flex-col lg:max-w-3xl">
         <div className=" lg:text-sm lg:font-semibold lg:py-4  hidden lg:flex">
           Select Resolution Type
         </div>
-        <Tabs defaultValue="payandclose">
+        <Tabs
+          defaultValue={
+            data?.potentialDiscount === 0 ? "contestandwait" : "payandclose"
+          }
+        >
           {data?.amountToPay && data.amountToPay > 10000 && (
             <TabsList className="w-full justify-center  px-4 lg:px-0 rounded-t-none lg:rounded-md lg:bg-[#faf8f7]">
-              <TabsTrigger
-                className="w-1/2 text-center data-[state=active]:bg-black rounded-lg data-[state=active]:rounded-lg  data-[state=active]:text-white "
-                value="payandclose"
-              >
-                Pay & Close
-              </TabsTrigger>
-
+              {data?.potentialDiscount !== 0 ? (
+                <TabsTrigger
+                  className="w-1/2 text-center data-[state=active]:bg-black rounded-lg data-[state=active]:rounded-lg  data-[state=active]:text-white "
+                  value="payandclose"
+                >
+                  Pay & Close
+                </TabsTrigger>
+              ) : null}{" "}
               <TabsTrigger
                 className="w-1/2 text-center 
                data-[state=active]:bg-black 
@@ -65,13 +76,17 @@ export function PaymentSummaryTabs() {
             </TabsList>
           )}
 
-          <TabsContent value="payandclose" className=" px-4">
-            <PayAndClose />
-          </TabsContent>
+          {data?.potentialDiscount !== 0 ? (
+            <TabsContent value="payandclose" className=" px-4">
+              <PayAndClose />
+            </TabsContent>
+          ) : null}
 
-          <TabsContent value="contestandwait" className=" px-4">
-            <ContestAndWait />
-          </TabsContent>
+          {data?.amountToPay && data.amountToPay > 10000 ? (
+            <TabsContent value="contestandwait" className=" px-4">
+              <ContestAndWait />
+            </TabsContent>
+          ) : null}
         </Tabs>
       </div>
       <LoaderModal open={loader} message="Processing your payment..." />

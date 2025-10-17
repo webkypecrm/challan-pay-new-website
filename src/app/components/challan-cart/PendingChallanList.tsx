@@ -82,7 +82,7 @@ function PendingChallanList({ challans }: PendingChallanListProps) {
 
     setIsPledge(!!data.potentialDiscount);
   }, [data]);
-  console.log(data);
+  //console.log(data);
   return (
     <div className="bg-slate-100 rounded-lg pb-4 lg:bg-white lg:py-2 lg:relative">
       <div className="text-lg font-bold mt-4 hidden lg:flex">

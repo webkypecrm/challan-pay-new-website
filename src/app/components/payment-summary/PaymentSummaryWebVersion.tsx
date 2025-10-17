@@ -6,10 +6,12 @@ import { useRouter } from "next/navigation";
 import { useChallanContext } from "@/context/ChallanContext";
 import { Check } from "lucide-react";
 import { handleRazorpayPayment } from "../PayWithRozorpay";
+import { useState } from "react";
 
 export default function PaymentSummaryWebVersion() {
   const router = useRouter();
   const { data, isPledge, selectedChallans } = useChallanContext();
+  const [loader, setLoader] = useState(false);
 
   const handleProccedNext = () => {
     handleRazorpayPayment(
@@ -19,10 +21,18 @@ export default function PaymentSummaryWebVersion() {
         grandTotal: data?.amountToPay ?? 0,
         rewardGiven: true,
       },
-      router
+      router,
+      setLoader
     );
   };
 
+  if (loader) {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-70 z-50">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
+      </div>
+    );
+  }
   return (
     <Card className="max-w-md w-full rounded-lg p-4 mt-17 hidden lg:flex lg:mt-20">
       <CardContent className="space-y-4 p-0">

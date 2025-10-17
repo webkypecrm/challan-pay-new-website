@@ -35,8 +35,9 @@ interface CreateIncidentResponse {
 
 export const handleRazorpayPayment = async (
   { challanIds, potentialDiscount, grandTotal, rewardGiven }: PaymentParams,
-  router: ReturnType<typeof useRouter>
+  router: ReturnType<typeof useRouter>,
   // setLoading: (val: boolean) => void
+  setLoader: (val: boolean) => void
 ) => {
   // const router = useRouter();
 
@@ -64,12 +65,9 @@ export const handleRazorpayPayment = async (
       currency: "INR",
       name: "Challan Pay",
       description: "Challan Payment",
-      handler: async function (response: { razorpay_payment_id: string }) {
-        //console.log("✅ Razorpay payment success:", response);
-        //  setLoading(true);
-        // document.getElementById("loader").style.display = "block";
+      handler: function (response: { razorpay_payment_id: string }) {
+        setLoader(true);
 
-        // 🔹 Step 2: Send payment info to your API
         const payload: CreateIncidentPayload = {
           challanIds,
           potentialDiscount,
@@ -78,24 +76,67 @@ export const handleRazorpayPayment = async (
           razorpayPaymentId: response.razorpay_payment_id,
         };
 
-        try {
-          const apiResponse = await postRequest<CreateIncidentResponse>(
-            "/v1/d-to-c/create-incidents",
-            payload as unknown as Record<string, unknown>
-          );
-          console.log("Incident created:", apiResponse.data);
-          if (typeof window !== "undefined") {
-            sessionStorage.setItem(
-              "paymentDetail",
-              JSON.stringify(apiResponse.data)
+        postRequest<CreateIncidentResponse>(
+          "/v1/d-to-c/create-incidents",
+          payload as unknown as Record<string, unknown>
+        )
+          .then((apiResponse) => {
+            console.log("Incident created:", apiResponse.data);
+            if (typeof window !== "undefined") {
+              sessionStorage.setItem(
+                "paymentDetail",
+                JSON.stringify(apiResponse.data)
+              );
+            }
+            router.push(`/payment-success/${grandTotal}`);
+          })
+          .catch((apiError) => {
+            console.error("Error creating incident:", apiError);
+            alert(
+              "Payment succeeded, but failed to record in system. Redirecting anyway."
             );
-          }
-          router.push(`/payment-success/${grandTotal}`);
-        } catch (apiError) {
-          console.error("Error creating incident:", apiError);
-          alert("Payment succeeded, but failed to record in system.");
-        }
+            router.push(`/payment-success/${grandTotal}`);
+          })
+          .finally(() => {
+            setTimeout(() => {
+              setLoader(false);
+            }, 2000); // 2000 ms = 2 seconds
+          });
       },
+      // handler: async function (response: { razorpay_payment_id: string }) {
+      //   //console.log("✅ Razorpay payment success:", response);
+      //   //  setLoading(true);
+      //   // document.getElementById("loader").style.display = "block";
+
+      //   // 🔹 Step 2: Send payment info to your API
+      //   const payload: CreateIncidentPayload = {
+      //     challanIds,
+      //     potentialDiscount,
+      //     grandTotal,
+      //     rewardGiven,
+      //     razorpayPaymentId: response.razorpay_payment_id,
+      //   };
+
+      //   try {
+      //     setLoader(true); //
+      //     const apiResponse = await postRequest<CreateIncidentResponse>(
+      //       "/v1/d-to-c/create-incidents",
+      //       payload as unknown as Record<string, unknown>
+      //     );
+      //     console.log("Incident created:", apiResponse.data);
+      //     if (typeof window !== "undefined") {
+      //       sessionStorage.setItem(
+      //         "paymentDetail",
+      //         JSON.stringify(apiResponse.data)
+      //       );
+      //     }
+      //     router.push(`/payment-success/${grandTotal}`);
+      //     setLoader(false); //
+      //   } catch (apiError) {
+      //     console.error("Error creating incident:", apiError);
+      //     alert("Payment succeeded, but failed to record in system.");
+      //   }
+      // },
       modal: {
         ondismiss: function () {
           console.log("❌ Payment cancelled by user");
