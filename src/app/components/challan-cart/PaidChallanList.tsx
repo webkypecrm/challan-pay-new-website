@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import PaidChallanCard from "./PaidChallanCard";
 import EmptyState from "../common/EmptyState";
+import { useEffect, useState } from "react";
 
 interface Challan {
   id: string | number;
@@ -18,6 +21,13 @@ function PaidChallanList({ challans }: PendingChallanListProps) {
   const paidChallans = challans.filter(
     (item) => item.challanStatus === "Disposed" || item.challanStatus === "Paid"
   );
+  const [vehicleNo, setVehicleNo] = useState<string | null>(null);
+
+  useEffect(() => {
+    // ✅ Only runs in browser
+    const storedVehicle = sessionStorage.getItem("vehicleNo");
+    setVehicleNo(storedVehicle);
+  }, []);
   return (
     <div>
       <div className="text-lg font-bold  pt-4 hidden lg:flex">
@@ -35,7 +45,7 @@ function PaidChallanList({ challans }: PendingChallanListProps) {
         <EmptyState
           imageSrc="/Images/paid.png"
           title="No, Paid Challans found on"
-          subtitle={sessionStorage.getItem("vehicleNo")}
+          subtitle={vehicleNo}
         />
       )}
     </div>
