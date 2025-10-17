@@ -37,7 +37,7 @@ export function PaymentSummaryTabs() {
   }, [data]);
 
   return (
-    <div className="rounded-xl  lg:px-6 lg:flex lg:justify-center lg:bg-white lg:my-4">
+    <div className="rounded-xl  lg:px-6 lg:flex lg:justify-center lg:bg-white bg-white lg:my-4">
       <div className="flex w-full max-w-md flex-col lg:max-w-3xl">
         <div className=" lg:text-sm lg:font-semibold lg:py-4  hidden lg:flex">
           Select Resolution Type

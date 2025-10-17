@@ -90,7 +90,7 @@ export const handleRazorpayPayment = async (
               JSON.stringify(apiResponse.data)
             );
           }
-          router.push("/payment-success");
+          router.push(`/payment-success/${grandTotal}`);
         } catch (apiError) {
           console.error("Error creating incident:", apiError);
           alert("Payment succeeded, but failed to record in system.");
