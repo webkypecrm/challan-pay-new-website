@@ -93,7 +93,7 @@ function TrackChallanDetail({ params }: PageProps) {
     <>
       <div className="bg-slate-100 lg:hidden ">
         <Header />
-        <div className="bg-white rounded-lg">
+        <div className="bg-white rounded-lg mt-15 pb-2 px-4 ">
           <CommonHeader title="Challan Detail" onBack={handleBack} />
         </div>
         <div className="px-4 ">
