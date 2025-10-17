@@ -160,7 +160,7 @@ export default function Home() {
           </div>
 
           <Input
-            placeholder="eg. UP32MM1113"
+            placeholder="UP32MM1113"
             className="w-full h-12 rounded-md border bg-white"
             {...register("vehicleNumber", {
               onChange: (e) => {
@@ -174,17 +174,9 @@ export default function Home() {
             </p>
           )}
 
-          <p className="text-base font-normal text-sm md:text-base max-w-md mx-auto md:mx-0">
+          <p className="text-base font-normal text-sm md:text-base max-w-md  md:mx-0">
             Enter your vehicle registration number without spaces
           </p>
-
-          <Button
-            className="w-full bg-[#F04B50] tex-sm font-medium rounded-md sm:w-auto "
-            type="submit"
-          >
-            Check Challan Status
-          </Button>
-
           <div className="flex items-start gap-3">
             <Controller
               control={control}
@@ -209,6 +201,13 @@ export default function Home() {
               )}
             </div>
           </div>
+
+          <Button
+            className="w-full bg-[#F04B50] tex-sm font-medium rounded-md sm:w-auto "
+            type="submit"
+          >
+            Check Challan Status
+          </Button>
         </div>
       </div>
     </form>

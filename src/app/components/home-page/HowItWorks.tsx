@@ -22,13 +22,14 @@ export default function HowItWorks() {
     },
     {
       id: 2,
-      img: "/how-it-work/rectangle3.png",
+      img: "/how-it-work/rectangle2.png",
       heading: "View and Pay Challans",
       text: "Settle your challans without visiting courts - fast, easy and hassle-free",
     },
     {
       id: 3,
-      img: "/how-it-work/rectangle2.png",
+
+      img: "/how-it-work/rectangle3.png",
       heading: "View Challans",
       text: "Enter your vehicle number and mobile number to begin",
     },

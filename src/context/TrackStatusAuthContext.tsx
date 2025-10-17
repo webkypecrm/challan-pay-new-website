@@ -110,9 +110,8 @@ export const TrackStatusAuthProvider = ({
 
   const logout = () => {
     setUser(null);
-    if (typeof window !== "undefined") {
-      sessionStorage.removeItem("userInfo");
-    }
+    sessionStorage.removeItem("userInfo");
+    sessionStorage.removeItem("userToken");
   };
 
   const fetchIncidentData = async () => {
@@ -137,15 +136,17 @@ export const TrackStatusAuthProvider = ({
   useEffect(() => {
     if (typeof window !== "undefined") {
       const savedUser = sessionStorage.getItem("userInfo");
-      setUserInfo(savedUser);
+      if (savedUser) {
+        const parsedUser = JSON.parse(savedUser);
+        setUser(parsedUser);
+        setUserInfo(parsedUser);
+      }
     }
   }, []);
 
   useEffect(() => {
-    if (userInfo) {
-      fetchIncidentData();
-    }
-  }, [userInfo, search, tab]);
+    if (user) fetchIncidentData();
+  }, [user, search, tab]);
 
   if (loading)
     return (

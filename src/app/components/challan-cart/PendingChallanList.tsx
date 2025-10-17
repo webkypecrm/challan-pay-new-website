@@ -165,7 +165,7 @@ function PendingChallanList({ challans }: PendingChallanListProps) {
         <EmptyState
           imageSrc="/Images/nochallan.png"
           title="No, Active Challans found on"
-          subtitle="UP32MM1113"
+          subtitle={sessionStorage.getItem("vehicleNo")}
         />
       )}
     </div>
