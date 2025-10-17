@@ -5,7 +5,7 @@ import Image from "next/image";
 interface EmptyStateProps {
   imageSrc: string;
   title: string;
-  subtitle?: string;
+  subtitle?: string | number | null;
   width?: number;
   height?: number;
 }

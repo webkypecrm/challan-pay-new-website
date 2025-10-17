@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Header from "../components/common/Header";
-import PaymentInfo from "../components/payment-success/PaymentInfo";
-import ChallanDetailCard from "../components/payment-success/ChallanDetailCard";
-import WhatNext from "../components/payment-success/WhatNext";
-import TrackStatusBottomSheet from "../components/common/TrackStatusBottomSheet";
+import Header from "../../components/common/Header";
+import PaymentInfo from "../../components/payment-success/PaymentInfo";
+import ChallanDetailCard from "../../components/payment-success/ChallanDetailCard";
+import WhatNext from "../../components/payment-success/WhatNext";
+import TrackStatusBottomSheet from "../../components/common/TrackStatusBottomSheet";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 //import { Check } from "lucide-react";
@@ -26,6 +26,7 @@ interface PaymentDetail {
 
 const PaymentSuccess: React.FC = () => {
   const router = useRouter();
+
   const [challanPaymentDetail, setChallanPaymentDetail] =
     useState<PaymentDetail | null>(null);
 
@@ -74,10 +75,15 @@ const PaymentSuccess: React.FC = () => {
           <PaymentInfo paymentDetail={challanPaymentDetail?.incidents || []} />
 
           <div className="hidden lg:flex lg:flex-col lg:mx-4 lg:mt-4">
-            <Button className="bg-cyan-600 w-full">Track Status</Button>
-            <Button className="bg-white w-full text-black mt-4 border">
-              Download Challan Receipt
+            <Button
+              className="bg-cyan-600 w-full"
+              onClick={handleTrackChallanDashboard}
+            >
+              Track Status
             </Button>
+            {/* <Button className="bg-white w-full text-black mt-4 border">
+              Download Challan Receipt
+            </Button> */}
           </div>
         </div>
 

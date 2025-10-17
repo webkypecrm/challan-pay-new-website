@@ -1,6 +1,7 @@
 "use client";
 
 import { Separator } from "@/components/ui/separator";
+import { useParams } from "next/navigation";
 import React from "react";
 
 // PaymentInfo.tsx
@@ -22,10 +23,8 @@ export interface PaymentInfoProps {
 }
 
 const PaymentInfo: React.FC<PaymentInfoProps> = ({ paymentDetail = [] }) => {
-  const totalAmount = paymentDetail.reduce(
-    (sum, item) => sum + (item.amountPaid || 0),
-    0
-  );
+  const params = useParams(); // ✅ correct way
+  //console.log(params); // e.g. { amount: "500" }
 
   const info = [
     {
@@ -42,7 +41,7 @@ const PaymentInfo: React.FC<PaymentInfoProps> = ({ paymentDetail = [] }) => {
     },
     {
       label: "Total Amount Paid",
-      value: `₹${totalAmount.toLocaleString()}`,
+      value: `₹${params.amount ?? "—"}`, // ✅ access param directly
     },
   ];
 

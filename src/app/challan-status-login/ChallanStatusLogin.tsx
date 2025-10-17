@@ -127,6 +127,24 @@ export default function ChallanStatusLogin() {
     }
   };
 
+  const resendOtp = async (phone: string) => {
+    try {
+      toast.loading("Resend OTP...");
+      const response = await sendOtp(phone);
+      setOtpId(response?.data?.otpId);
+      setShowOtp(true);
+      toast.dismiss(); // remove loading
+      toast.success("OTP resend successfully");
+    } catch (error: unknown) {
+      const err = error as AxiosError<ErrorResponse>;
+      const message =
+        err.response?.data?.message || err.message || "Failed to send OTP";
+
+      setError(message);
+      toast.error(message);
+    }
+  };
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     index: number
@@ -343,7 +361,7 @@ export default function ChallanStatusLogin() {
               <br />
               <div
                 className="text-blue-600 my-2  font-bold cursor-pointer"
-                onClick={() => sendOtp(formData.phone)} // wrap it in arrow function
+                onClick={() => resendOtp(formData.phone)} // wrap it in arrow function
               >
                 Resend Now
               </div>

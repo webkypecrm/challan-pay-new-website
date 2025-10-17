@@ -41,10 +41,10 @@ function ChallanCartHeader() {
         </div>
 
         {/* Right side: Share button */}
-        <button className="flex items-center gap-2 px-2 py-1 bg-gray-100 border border-gray-200 rounded-md hover:bg-gray-200 transition">
+        {/* <button className="flex items-center gap-2 px-2 py-1 bg-gray-100 border border-gray-200 rounded-md hover:bg-gray-200 transition">
           <FaWhatsapp size={18} className="text-green-600" />
           <span className="text-xs font-medium text-gray-900">Share</span>
-        </button>
+        </button> */}
       </div>
       <NumberPlateHeader vehicleNumber={vehicleNo || ""} />
     </div>

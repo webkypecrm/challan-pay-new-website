@@ -48,13 +48,13 @@ function ChallanDetail() {
     <div className="lg:bg-slate-100">
       <Header />
       <div className="lg:px-30 lg:bg-slate-100 lg:flex lg:justify-center">
-        <div className="lg:w-[1040px]">
+        <div className="lg:w-[1200px]">
           <div className="mt-15 px-3 lg:mt-18">
             <CommonHeader title="Challan Detail" onBack={handleBack} />
           </div>
           <div className="lg:px-5 lg:flex lg:justify-between lg:w-full lg:gap-4">
             <div className="lg:w-full  ">
-              <div className="h-18 flex items-center justify-start p-2 gap-4 bg-white rounded-lg mt-4 lg:flex lg:justify-center lg:items-center">
+              <div className="h-18 flex items-center justify-start p-2 gap-4 bg-white rounded-lg  lg:flex lg:justify-center lg:items-center">
                 {/* Left side (car image) */}
                 <div className="flex justify-center items-center">
                   <Image

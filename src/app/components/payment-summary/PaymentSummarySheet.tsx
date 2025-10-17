@@ -77,7 +77,7 @@ export function PaymentSummarySheet({
             </div>
             <div className="flex justify-between items-center text-black px-2 py-1">
               <div>
-                Convenience Fee ({data.courtChallans?.length ?? 0} x 500)
+                Convenience Fee ({data.courtChallans?.length ?? 0} x 2000)
               </div>
               <div className="text-semibold">₹{data.courtChallanFees}</div>
             </div>

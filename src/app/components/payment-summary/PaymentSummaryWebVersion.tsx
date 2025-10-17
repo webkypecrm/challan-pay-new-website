@@ -72,7 +72,7 @@ export default function PaymentSummaryWebVersion() {
               </div>
               <div className="flex justify-between text-gray-500">
                 <span>
-                  Convenience Fee ({data.courtChallans?.length ?? 0} x 500)
+                  Convenience Fee ({data.courtChallans?.length ?? 0} x 2000)
                 </span>
                 <span>₹{data.courtChallanFees}</span>
               </div>

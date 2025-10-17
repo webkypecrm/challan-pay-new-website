@@ -74,14 +74,14 @@ function ChallanInfo() {
         <div className="grid grid-cols-2  sm:grid-cols-2 gap-4">
           <DashboardCard
             title="Challans Submitted on ChallanPay"
-            count={`${data?.data?.submittedChallans}`}
+            count={`${data?.data?.submittedChallans ?? 0}`}
             icon={
               <FileSpreadsheet size={20} className="text-cyan-600 bg-cyan-50" />
             }
           />
           <DashboardCard
             title="Resolved Challans"
-            count={`${data?.data?.challansResolved}`}
+            count={`${data?.data?.challansResolved ?? 0}`}
             icon={
               <CircleCheckBig
                 size={20}
@@ -92,7 +92,7 @@ function ChallanInfo() {
           />
           <DashboardCard
             title="Challans In Progress"
-            count={`${data?.data?.pendingChallans}`}
+            count={`${data?.data?.pendingChallans ?? 0}`}
             icon={
               <Hourglass size={20} className="text-orange-600 bg-orange-50" />
             }
@@ -100,7 +100,7 @@ function ChallanInfo() {
           />
           <DashboardCard
             title="Refund Challans"
-            count={`${data?.data?.refundChallans}`}
+            count={`${data?.data?.refundChallans ?? 0}`}
             icon={
               <BadgeIndianRupee size={20} className="text-red-600 bg-red-50" />
             }
