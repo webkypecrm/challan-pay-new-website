@@ -63,7 +63,7 @@ export function ReadMoreSlider({
               </p>
             </div>
             <Button className="bg-cyan-600 text-sm font-medium mt-4 w-full">
-              Proceed to pay
+              Proceed To Pay
               <ChevronRight size={16} />
             </Button>
           </SheetDescription>
