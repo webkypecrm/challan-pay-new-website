@@ -78,6 +78,7 @@ export default function TrackStatusLogin() {
   const { sendOtp, verifyOtp } = useAuth();
   const [otpId, setOtpId] = useState("");
   const searchParams = useSearchParams();
+  const [loading, setLoading] = useState(false);
   const [decodedData, setDecodedData] = useState<DecodedData | null>(null);
 
   const {
@@ -181,6 +182,7 @@ export default function TrackStatusLogin() {
   const handleVerifyOtp = async (): Promise<void> => {
     try {
       toast.loading("Verifying OTP...");
+      setLoading(true);
       await verifyOtp(otpId, getOtpValue());
       toast.dismiss(); // remove loading
       toast.success("OTP verified successfully");
@@ -204,6 +206,8 @@ export default function TrackStatusLogin() {
 
       toast.error(message);
       setError(message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -212,6 +216,12 @@ export default function TrackStatusLogin() {
     handleVerifyOtp();
   };
 
+  if (loading)
+    return (
+      <div className="flex items-center justify-center h-screen w-screen bg-gray-100">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
+      </div>
+    );
   return (
     <div className="lg:bg-white lg:h-screen lg:pt-10 lg:overflow-hidden ">
       <Header />
