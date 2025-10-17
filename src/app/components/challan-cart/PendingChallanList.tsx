@@ -31,6 +31,13 @@ function PendingChallanList({ challans }: PendingChallanListProps) {
   const [isPledge, setIsPledge] = useState(false);
   const { selectedChallans, selectAllNonZero, autoSelectAllOnInit, data } =
     useChallanContext();
+  const [vehicleNo, setVehicleNo] = useState<string | null>(null);
+
+  useEffect(() => {
+    // ✅ Only runs in browser
+    const storedVehicle = sessionStorage.getItem("vehicleNo");
+    setVehicleNo(storedVehicle);
+  }, []);
 
   const handleProccedNext = () => {
     router.push("/payment-summary");
@@ -165,7 +172,7 @@ function PendingChallanList({ challans }: PendingChallanListProps) {
         <EmptyState
           imageSrc="/Images/nochallan.png"
           title="No, Active Challans found on"
-          subtitle={sessionStorage.getItem("vehicleNo")}
+          subtitle={vehicleNo}
         />
       )}
     </div>
