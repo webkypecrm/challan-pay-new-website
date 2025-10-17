@@ -36,13 +36,13 @@ export default function TrackStatusBottomSheet({
           >
             {primaryText}
           </Button>
-          <Button
+          {/* <Button
             variant="outline"
             className="w-full bg-white border border-gray-300 text-sm font-medium text-gray-700"
             onClick={onSecondaryClick}
           >
             {secondaryText}
-          </Button>
+          </Button> */}
         </div>
       </div>
     </div>

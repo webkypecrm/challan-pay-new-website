@@ -34,7 +34,7 @@ export function PaymentSummarySheet({
 }) {
   const { data, isPledge, selectedChallans } = useChallanContext();
   const router = useRouter();
-  // const [loader, setLoader] = useState(false);
+  const [loader, setLoader] = useState(false);
 
   const handleProccedNext = () => {
     handleRazorpayPayment(
@@ -44,10 +44,18 @@ export function PaymentSummarySheet({
         grandTotal: data?.amountToPay ?? 0,
         rewardGiven: true,
       },
-      router
-      // setLoader
+      router,
+      setLoader
     );
   };
+
+  if (loader) {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-70 z-50">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
+      </div>
+    );
+  }
   const content = (
     <>
       <div className="bg-white rounded-lg p-2">
