@@ -43,7 +43,10 @@ function ChallanInfo() {
   };
 
   useEffect(() => {
-    fetchDashboardData();
+    const userInfo = localStorage.getItem("userInfo");
+    if (userInfo) {
+      fetchDashboardData();
+    }
   }, []);
 
   const handleSearch = (value: string) => {
