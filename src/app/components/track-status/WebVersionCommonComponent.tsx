@@ -21,7 +21,7 @@ const WebVersionCommonComponent: React.FC<TrackStatusHeaderProps> = ({
   const [info, setInfo] = useState<Info | null>(null);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem("userInfo");
+    const storedUser = sessionStorage.getItem("userInfo");
     if (storedUser) {
       setInfo(JSON.parse(storedUser));
     }

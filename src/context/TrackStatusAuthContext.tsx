@@ -99,8 +99,8 @@ export const TrackStatusAuthProvider = ({
       console.log(data);
       setUser(data?.data?.user);
       if (typeof window !== "undefined") {
-        localStorage.setItem("userToken", data?.data?.token);
-        localStorage.setItem("userInfo", JSON.stringify(data?.data?.user));
+        sessionStorage.setItem("userToken", data?.data?.token);
+        sessionStorage.setItem("userInfo", JSON.stringify(data?.data?.user));
       }
     } catch (error) {
       console.error("OTP verification failed", error);
@@ -111,7 +111,7 @@ export const TrackStatusAuthProvider = ({
   const logout = () => {
     setUser(null);
     if (typeof window !== "undefined") {
-      localStorage.removeItem("userInfo");
+      sessionStorage.removeItem("userInfo");
     }
   };
 
@@ -136,7 +136,7 @@ export const TrackStatusAuthProvider = ({
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const savedUser = localStorage.getItem("userInfo");
+      const savedUser = sessionStorage.getItem("userInfo");
       setUserInfo(savedUser);
     }
   }, []);

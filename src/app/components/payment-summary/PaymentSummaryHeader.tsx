@@ -20,7 +20,7 @@ function PaymentSummaryHeader() {
     router.push("/challan-cart");
   };
   useEffect(() => {
-    const storedVehicleNo = localStorage.getItem("vehicleNo");
+    const storedVehicleNo = sessionStorage.getItem("vehicleNo");
     setVehicleNo(storedVehicleNo);
   }, []);
   //console.log(data);

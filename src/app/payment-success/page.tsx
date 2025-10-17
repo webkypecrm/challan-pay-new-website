@@ -34,7 +34,7 @@ const PaymentSuccess: React.FC = () => {
   };
 
   useEffect(() => {
-    const paymentDetail = localStorage.getItem("paymentDetail");
+    const paymentDetail = sessionStorage.getItem("paymentDetail");
     if (paymentDetail) {
       setChallanPaymentDetail(JSON.parse(paymentDetail));
     }

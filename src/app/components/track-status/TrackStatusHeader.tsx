@@ -17,7 +17,7 @@ function TrackStatusHeader() {
 
   useEffect(() => {
     // Only runs on client side
-    const storedUser = localStorage.getItem("userInfo");
+    const storedUser = sessionStorage.getItem("userInfo");
     if (storedUser) {
       setInfo(JSON.parse(storedUser)); // parse JSON string to object
     }

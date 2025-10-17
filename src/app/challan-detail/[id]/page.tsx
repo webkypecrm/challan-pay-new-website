@@ -29,14 +29,14 @@ function ChallanDetail() {
   const [vehicleNo, setVehicleNo] = useState<string | null>(null);
 
   useEffect(() => {
-    const data = localStorage.getItem("challanDetail");
+    const data = sessionStorage.getItem("challanDetail");
     if (data) {
       setChallanData(JSON.parse(data));
     }
   }, [searchParams]);
 
   useEffect(() => {
-    const storedVehicleNo = localStorage.getItem("vehicleNo");
+    const storedVehicleNo = sessionStorage.getItem("vehicleNo");
     setVehicleNo(storedVehicleNo);
   }, []);
 
