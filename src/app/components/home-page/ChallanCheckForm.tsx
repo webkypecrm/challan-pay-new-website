@@ -50,7 +50,7 @@ export default function Home() {
 
     // Only set localStorage in browser
     if (typeof window !== "undefined") {
-      localStorage.setItem("vehicleNo", data.vehicleNumber);
+      sessionStorage.setItem("vehicleNo", data.vehicleNumber);
     }
   };
 
@@ -70,10 +70,11 @@ export default function Home() {
     if (pathname === "/") {
       if (typeof window !== "undefined") {
         // Example: remove only specific items
-        localStorage.removeItem("selectedChallans");
-        localStorage.removeItem("challanDetail");
-        localStorage.removeItem("paymentEngagementData");
-        localStorage.removeItem("challanDetail");
+        sessionStorage.removeItem("selectedChallans");
+        sessionStorage.removeItem("challanDetail");
+        sessionStorage.removeItem("paymentEngagementData");
+        sessionStorage.removeItem("challanDetail");
+        sessionStorage.removeItem("userInfo");
       }
     }
   }, [pathname]);

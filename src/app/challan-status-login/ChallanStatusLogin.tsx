@@ -176,13 +176,13 @@ export default function ChallanStatusLogin() {
 
         if (typeof window !== "undefined") {
           if (result?.subscriber?.id) {
-            localStorage.setItem(
+            sessionStorage.setItem(
               "subscriberId",
               result.subscriber.id.toString()
             );
           }
           if (result?.vehicle?.id) {
-            localStorage.setItem("vehicleId", result.vehicle.id.toString());
+            sessionStorage.setItem("vehicleId", result.vehicle.id.toString());
           }
         }
       } else {

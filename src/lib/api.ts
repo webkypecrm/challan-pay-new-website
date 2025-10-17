@@ -74,7 +74,7 @@ export const postRequest = async <T>(
 
 export const getHeadersWithoutToken = (tokenRequired = false) => {
   const token =
-    typeof window !== "undefined" ? localStorage.getItem("userToken") : null;
+    typeof window !== "undefined" ? sessionStorage.getItem("userToken") : null;
 
   const headers: Record<string, string> = {
     "Content-Type": "application/json",

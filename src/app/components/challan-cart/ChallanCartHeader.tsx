@@ -16,7 +16,7 @@ function ChallanCartHeader() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       // check if running in the browser
-      const storedUser = localStorage.getItem("vehicleNo");
+      const storedUser = sessionStorage.getItem("vehicleNo");
       if (storedUser) {
         setVehicleNo(storedUser);
       }

@@ -49,8 +49,8 @@ export function ChallanCartTabs() {
   //const { autoSelectAllOnInit } = useChallanContext();
 
   useEffect(() => {
-    const subscriberId = localStorage.getItem("subscriberId");
-    const vehicleId = localStorage.getItem("vehicleId");
+    const subscriberId = sessionStorage.getItem("subscriberId");
+    const vehicleId = sessionStorage.getItem("vehicleId");
 
     if (!subscriberId || !vehicleId) {
       toast.error("Missing subscriberId or vehicleId");
@@ -99,7 +99,7 @@ export function ChallanCartTabs() {
   }, []);
 
   useEffect(() => {
-    const storedVehicleNo = localStorage.getItem("vehicleNo");
+    const storedVehicleNo = sessionStorage.getItem("vehicleNo");
     setVehicleNo(storedVehicleNo);
   }, []);
 

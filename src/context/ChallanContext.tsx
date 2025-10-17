@@ -100,7 +100,7 @@ export const ChallanProvider: React.FC<{ children: React.ReactNode }> = ({
       );
       setData(response.data);
       if (typeof window !== "undefined") {
-        localStorage.setItem(
+        sessionStorage.setItem(
           "paymentEngagementData",
           JSON.stringify(response.data)
         );
@@ -154,22 +154,22 @@ export const ChallanProvider: React.FC<{ children: React.ReactNode }> = ({
 
     if (typeof window !== "undefined") {
       savedChallans = JSON.parse(
-        localStorage.getItem("selectedChallans") || "[]"
+        sessionStorage.getItem("selectedChallans") || "[]"
       );
     }
 
     // Only auto-select if nothing is already saved
     if (savedChallans.length === 0) {
       setSelectedChallans(nonZeroIds);
-      localStorage.setItem("selectedChallans", JSON.stringify(nonZeroIds));
+      sessionStorage.setItem("selectedChallans", JSON.stringify(nonZeroIds));
       fetchPaymentEngagement(nonZeroIds);
     }
   };
 
   // ✅ Load from localStorage on mount
   useEffect(() => {
-    const savedChallans = localStorage.getItem("selectedChallans");
-    const savedData = localStorage.getItem("paymentEngagementData");
+    const savedChallans = sessionStorage.getItem("selectedChallans");
+    const savedData = sessionStorage.getItem("paymentEngagementData");
     if (savedChallans) {
       const parsed = JSON.parse(savedChallans);
       setSelectedChallans(parsed);
@@ -181,7 +181,10 @@ export const ChallanProvider: React.FC<{ children: React.ReactNode }> = ({
 
   // ✅ Save to localStorage on change
   useEffect(() => {
-    localStorage.setItem("selectedChallans", JSON.stringify(selectedChallans));
+    sessionStorage.setItem(
+      "selectedChallans",
+      JSON.stringify(selectedChallans)
+    );
   }, [selectedChallans]);
 
   return (

@@ -74,7 +74,7 @@ const PaidChallanCard: React.FC<ChallanCardProps> = ({ item }) => {
                 challanPlace: item.challanPlace,
                 offenseName: item.offenseName,
               });
-              localStorage.setItem("challanDetail", data);
+              sessionStorage.setItem("challanDetail", data);
               router.push(`/challan-detail/${item.id}`);
             }
           }}

@@ -85,7 +85,7 @@ export const handleRazorpayPayment = async (
           );
           console.log("Incident created:", apiResponse.data);
           if (typeof window !== "undefined") {
-            localStorage.setItem(
+            sessionStorage.setItem(
               "paymentDetail",
               JSON.stringify(apiResponse.data)
             );

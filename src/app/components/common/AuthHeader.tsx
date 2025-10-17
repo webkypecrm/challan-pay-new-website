@@ -26,7 +26,7 @@ export default function AuthHeader() {
   const { logout } = useAuth();
   const [user, setUser] = useState<User | null>(null);
   useEffect(() => {
-    const storedUser = localStorage.getItem("user");
+    const storedUser = sessionStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }

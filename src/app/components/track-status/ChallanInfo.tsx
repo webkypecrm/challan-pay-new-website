@@ -43,7 +43,7 @@ function ChallanInfo() {
   };
 
   useEffect(() => {
-    const userInfo = localStorage.getItem("userInfo");
+    const userInfo = sessionStorage.getItem("userInfo");
     if (userInfo) {
       fetchDashboardData();
     }

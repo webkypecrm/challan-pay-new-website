@@ -66,9 +66,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     if (user) {
-      localStorage.setItem("user", JSON.stringify(user));
+      sessionStorage.setItem("user", JSON.stringify(user));
     } else {
-      localStorage.removeItem("user");
+      sessionStorage.removeItem("user");
     }
   }, [user]); // run whenever user changes
   // Logout
@@ -78,7 +78,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const logout = () => {
     setUser(null);
     if (typeof window !== "undefined") {
-      localStorage.removeItem("user");
+      sessionStorage.removeItem("user");
     }
   };
   return (
