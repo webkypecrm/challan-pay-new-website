@@ -7,6 +7,7 @@ import CommonHeader from "../../components/common/CommonHeader";
 //import ChallanCloseCard from "../../components/common/ChallanCloseCard";
 import ChallanCardTrackStatus from "@/app/components/common/ChallanCardTrackStatus";
 import { useAuth } from "@/context/TrackStatusAuthContext";
+import WebVersionCommonComponent from "@/app/components/track-status/WebVersionCommonComponent";
 
 const ResolvedChallan: React.FC = () => {
   const router = useRouter();
@@ -31,30 +32,62 @@ const ResolvedChallan: React.FC = () => {
   }, [slug, setTab]);
 
   return (
-    <div className="bg-slate-100 min-h-screen">
-      <Header />
-      <div className="bg-white rounded-xl">
-        <CommonHeader title="Resolved Challan" onBack={handleBack} />
+    <>
+      <div className="bg-slate-100 min-h-screen lg:hidden">
+        <Header />
+        <div className="bg-white rounded-xl">
+          <CommonHeader title="Resolved Challan" onBack={handleBack} />
+        </div>
+        <div className="px-4 py-3 space-y-3">
+          {incidentData?.incidents?.length === 0 ? (
+            <div className="p-4 text-center text-gray-500">
+              No incidents found.
+            </div>
+          ) : (
+            incidentData?.incidents?.map((incident) => (
+              <ChallanCardTrackStatus
+                key={incident.id}
+                challanId={incident.challanNo}
+                status={incident.latestSecondaryStatus}
+                vehicleNumber={incident.vehicleNo}
+                incidentId={`${incident.id}`}
+                onViewDetails={() => handleDetail(`${incident.id}`)}
+              />
+            ))
+          )}
+        </div>
       </div>
-      <div className="px-4 py-3 space-y-3">
-        {incidentData?.incidents?.length === 0 ? (
-          <div className="p-4 text-center text-gray-500">
-            No incidents found.
+      <WebVersionCommonComponent
+        LeftTabComponent={
+          <div className="bg-white min-h-screen rounded-lg">
+            <Header />
+            <div className="bg-white rounded-xl">
+              <CommonHeader title="Resolved Challan" onBack={handleBack} />
+            </div>
+            <div className="px-4 py-3">
+              {incidentData?.incidents?.length === 0 ? (
+                <div className="p-4 text-center text-gray-500">
+                  No incidents found.
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {incidentData?.incidents?.map((incident) => (
+                    <ChallanCardTrackStatus
+                      key={incident.id}
+                      challanId={incident.challanNo}
+                      status={incident.latestSecondaryStatus}
+                      vehicleNumber={incident.vehicleNo}
+                      incidentId={`${incident.id}`}
+                      onViewDetails={() => handleDetail(`${incident.id}`)}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
-        ) : (
-          incidentData?.incidents?.map((incident) => (
-            <ChallanCardTrackStatus
-              key={incident.id}
-              challanId={incident.challanNo}
-              status={incident.latestSecondaryStatus}
-              vehicleNumber={incident.vehicleNo}
-              incidentId={`${incident.id}`}
-              onViewDetails={() => handleDetail(`${incident.id}`)}
-            />
-          ))
-        )}
-      </div>
-    </div>
+        }
+      />
+    </>
   );
 };
 

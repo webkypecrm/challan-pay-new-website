@@ -68,7 +68,7 @@ export const handleRazorpayPayment = async (
         //console.log("✅ Razorpay payment success:", response);
         //  setLoading(true);
         // document.getElementById("loader").style.display = "block";
-        router.push("/payment-success");
+
         // 🔹 Step 2: Send payment info to your API
         const payload: CreateIncidentPayload = {
           challanIds,
@@ -90,6 +90,7 @@ export const handleRazorpayPayment = async (
               JSON.stringify(apiResponse.data)
             );
           }
+          router.push("/payment-success");
         } catch (apiError) {
           console.error("Error creating incident:", apiError);
           alert("Payment succeeded, but failed to record in system.");

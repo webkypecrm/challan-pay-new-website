@@ -59,8 +59,12 @@ export default function Header() {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <Button variant="default" className="bg-cyan-600">
-            Track Challan Status
+          <Button
+            variant="default"
+            className="bg-cyan-600"
+            onClick={handleTrackChallanDashboard}
+          >
+            Track Status
           </Button>
         </div>
 

@@ -13,6 +13,7 @@ import { getRequestWithoutToken } from "@/lib/api";
 import { Check } from "lucide-react";
 import { copyWithFeedback, formatDate } from "@/lib/helpers";
 import { FollowUp } from "@/lib/types";
+import WebVersionCommonComponent from "@/app/components/track-status/WebVersionCommonComponent";
 
 interface PageProps {
   params: {
@@ -89,85 +90,187 @@ function TrackChallanDetail({ params }: PageProps) {
   if (loading) return <p>Loading dashboard...</p>;
   if (error) return <p>{error}</p>;
   return (
-    <div className="bg-slate-100 ">
-      <Header />
-      <div className="bg-white rounded-lg">
-        <CommonHeader title="Challan Detail" onBack={handleBack} />
-      </div>
-      <div className="px-4 ">
-        <div className="bg-cyan-600 p-4 rounded-t-lg mt-4">
-          <div className="text-white text-sm">
-            <p>Challan </p>
-            <p className="flex ">
-              {caseData?.challanNo}{" "}
-              {copied ? (
-                <Check size={16} className="ml-2 mt-1 text-green-500" />
-              ) : (
-                <Copy
-                  size={16}
-                  className="ml-2 mt-1 cursor-pointer"
-                  onClick={() =>
-                    copyWithFeedback(`${caseData?.challanNo}`, setCopied)
-                  }
-                />
-              )}
-            </p>
-          </div>
+    <>
+      <div className="bg-slate-100 lg:hidden ">
+        <Header />
+        <div className="bg-white rounded-lg">
+          <CommonHeader title="Challan Detail" onBack={handleBack} />
         </div>
-        <div className="p-4 bg-white rounded-b-lg">
-          <div className="flex justify-between items-center mb-3">
-            <div className="font-bold text-gray-900">
-              ₹{caseData?.challanAmount?.toFixed(2)}
-            </div>
-            <div
-              className={`px-2 py-1 text-xs font-semibold rounded  bg-orange-50 text-orange-700`}
-            >
-              {caseData?.latestSecondaryStatus}
+        <div className="px-4 ">
+          <div className="bg-cyan-600 p-4 rounded-t-lg mt-4">
+            <div className="text-white text-sm">
+              <p>Challan </p>
+              <p className="flex ">
+                {caseData?.challanNo}{" "}
+                {copied ? (
+                  <Check size={16} className="ml-2 mt-1 text-green-500" />
+                ) : (
+                  <Copy
+                    size={16}
+                    className="ml-2 mt-1 cursor-pointer"
+                    onClick={() =>
+                      copyWithFeedback(`${caseData?.challanNo}`, setCopied)
+                    }
+                  />
+                )}
+              </p>
             </div>
           </div>
-
-          <div className="flex flex-col gap-2 mt-3 text-sm">
-            <div className="flex justify-between items-center">
-              <div className="text-[#737373] text-sm">Incident ID</div>
-              <div className="text-gray-700 font-medium">
-                IRN-{caseData?.id}
+          <div className="p-4 bg-white rounded-b-lg">
+            <div className="flex justify-between items-center mb-3">
+              <div className="font-bold text-gray-900">
+                ₹{caseData?.challanAmount?.toFixed(2)}
               </div>
-            </div>
-            <Separator />
-            <div className="flex justify-between items-center">
-              <div className="text-[#737373] text-sm">Vehicle</div>
-              <div className="text-gray-700 font-medium">
-                {caseData?.vehicleNo}
+              <div
+                className={`px-2 py-1 text-xs font-semibold rounded  bg-orange-50 text-orange-700`}
+              >
+                {caseData?.latestSecondaryStatus}
               </div>
             </div>
 
-            <Separator />
-            <div className="flex justify-between items-center">
-              <div className="text-[#737373] text-sm">Resolution Date</div>
-              <div className="text-gray-700 font-medium">
-                {formatDate(`${caseData?.resolutionDate}`)}
+            <div className="flex flex-col gap-2 mt-3 text-sm">
+              <div className="flex justify-between items-center">
+                <div className="text-[#737373] text-sm">Incident ID</div>
+                <div className="text-gray-700 font-medium">
+                  IRN-{caseData?.id}
+                </div>
+              </div>
+              <Separator />
+              <div className="flex justify-between items-center">
+                <div className="text-[#737373] text-sm">Vehicle</div>
+                <div className="text-gray-700 font-medium">
+                  {caseData?.vehicleNo}
+                </div>
+              </div>
+
+              <Separator />
+              <div className="flex justify-between items-center">
+                <div className="text-[#737373] text-sm">Resolution Date</div>
+                <div className="text-gray-700 font-medium">
+                  {formatDate(`${caseData?.resolutionDate}`)}
+                </div>
               </div>
             </div>
           </div>
+          <Button
+            className="bg-white text-black w-full mt-4"
+            onClick={() => window.open(caseData?.challanInvoice, "_blank")}
+          >
+            Download Receipt
+          </Button>
+          <Button
+            className="bg-cyan-600 text-white w-full mt-4"
+            onClick={handleRaiseDispute}
+          >
+            Raise a Dispute
+          </Button>
         </div>
-        <Button
-          className="bg-white text-black w-full mt-4"
-          onClick={() => window.open(caseData?.challanInvoice, "_blank")}
-        >
-          Download Receipt
-        </Button>
-        <Button
-          className="bg-cyan-600 text-white w-full mt-4"
-          onClick={handleRaiseDispute}
-        >
-          Raise a Dispute
-        </Button>
+        <div className="mt-4 px-4 mb-10">
+          <ResolutionTimeline followUps={followUpData} />
+        </div>
+        <RaiseDispute open={open} onOpenChange={setOpen} id={id} />
       </div>
-      <div className="mt-4 px-4 mb-10">
-        <ResolutionTimeline followUps={followUpData} />
-      </div>
-      <RaiseDispute open={open} onOpenChange={setOpen} id={id} />
-    </div>
+      <WebVersionCommonComponent
+        LeftTabComponent={
+          <div className="bg-white rounded-lg ">
+            <Header />
+            <div className="bg-white rounded-lg">
+              <CommonHeader title="Challan Detail" onBack={handleBack} />
+            </div>
+            <div className="flex justify-center gap-2">
+              <div className="mt-4 px-4 mb-10 w-full">
+                <ResolutionTimeline followUps={followUpData} />
+                <Button
+                  className="bg-cyan-600 text-white w-full mt-4"
+                  onClick={handleRaiseDispute}
+                >
+                  Raise a Dispute
+                </Button>
+              </div>
+              <div className="px-4 w-full">
+                <div className="bg-cyan-600 p-4 rounded-t-lg mt-4">
+                  <div className="text-white text-sm">
+                    <p>Challan </p>
+                    <p className="flex ">
+                      {caseData?.challanNo}{" "}
+                      {copied ? (
+                        <Check size={16} className="ml-2 mt-1 text-green-500" />
+                      ) : (
+                        <Copy
+                          size={16}
+                          className="ml-2 mt-1 cursor-pointer"
+                          onClick={() =>
+                            copyWithFeedback(
+                              `${caseData?.challanNo}`,
+                              setCopied
+                            )
+                          }
+                        />
+                      )}
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <div className="p-4 bg-white rounded-b-lg">
+                    <div className="flex justify-between items-center mb-3">
+                      <div className="font-bold text-gray-900">
+                        ₹{caseData?.challanAmount?.toFixed(2)}
+                      </div>
+                      <div
+                        className={`px-2 py-1 text-xs font-semibold rounded  bg-orange-50 text-orange-700`}
+                      >
+                        {caseData?.latestSecondaryStatus}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-2 mt-3 text-sm">
+                      <div className="flex justify-between items-center">
+                        <div className="text-[#737373] text-sm">
+                          Incident ID
+                        </div>
+                        <div className="text-gray-700 font-medium">
+                          IRN-{caseData?.id}
+                        </div>
+                      </div>
+                      <Separator />
+                      <div className="flex justify-between items-center">
+                        <div className="text-[#737373] text-sm">Vehicle</div>
+                        <div className="text-gray-700 font-medium">
+                          {caseData?.vehicleNo}
+                        </div>
+                      </div>
+
+                      <Separator />
+                      <div className="flex justify-between items-center">
+                        <div className="text-[#737373] text-sm">
+                          Resolution Date
+                        </div>
+                        <div className="text-gray-700 font-medium">
+                          {formatDate(`${caseData?.resolutionDate}`)}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <Button
+                    className="bg-white text-black w-full mt-4 mb-4 hover:bg-black hover:text-white border "
+                    onClick={() => {
+                      if (caseData?.challanInvoice) {
+                        window.open(caseData.challanInvoice, "_blank");
+                      } else {
+                        alert("Receipt not available!");
+                      }
+                    }}
+                  >
+                    Download Receipt
+                  </Button>
+                </div>
+              </div>
+            </div>
+            <RaiseDispute open={open} onOpenChange={setOpen} id={id} />
+          </div>
+        }
+      />
+    </>
   );
 }
 

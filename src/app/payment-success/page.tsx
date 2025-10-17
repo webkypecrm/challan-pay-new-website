@@ -48,7 +48,7 @@ const PaymentSuccess: React.FC = () => {
       <div className="bg-slate-50 mt-4 pb-4 lg:hidden block mt-16 ">
         <div className="px-6 text-center text-black font-bold pt-6 flex flex-col items-center">
           <Image
-            src="/gif/checked.gif"
+            src="/gif/Checked.gif"
             alt="success gif"
             height={120}
             width={120}

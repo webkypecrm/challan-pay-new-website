@@ -67,15 +67,8 @@ function VehicleInfo() {
     fetchVehicles();
   }, []);
 
-  if (loading)
-    return (
-      <div className="flex items-center justify-center h-screen w-screen bg-gray-100">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
-      </div>
-    );
-
   return (
-    <div className="p-4">
+    <div className=" pt-4">
       <div className="flex justify-between items-center">
         <div className="text-base font-bold">Vehicle Details</div>
         <div>
@@ -88,106 +81,108 @@ function VehicleInfo() {
         </div>
       </div>
 
-      <div className=" rounded-lg px-4 mt-4">
+      <div className="rounded-lg  mt-4">
         {loading ? (
           <p className="text-center py-6 text-gray-500">Loading vehicles...</p>
         ) : vehicles.length === 0 ? (
           <p className="text-center py-6 text-gray-500">No vehicles found.</p>
         ) : (
-          vehicles.map((vehicle) => (
-            <div
-              key={vehicle.id}
-              className="bg-white rounded-lg px-4 mt-4 mb-4"
-            >
-              <div className="flex items-center justify-start rounded-lg mb-2">
-                {/* Left side (car image) */}
-                <Image
-                  src="/Images/car.svg"
-                  alt="car image"
-                  width={60}
-                  height={30}
-                  className="object-contain"
-                />
-                <div className="w-full flex justify-between ml-2">
-                  <div className="border border-black font-bold rounded px-2 py-1">
-                    • {vehicle.vehicleNo} •
-                  </div>
-                  <div
-                    className={
-                      vehicle?.rc?.rcStatus === "ACTIVE"
-                        ? "bg-green-50 text-green-600 text-[10px]  p-1  rounded font-bold h-6"
-                        : "bg-gray-100 text-gray-600 text-[10px] p-1 rounded font-bold h-6"
-                    }
-                  >
-                    {vehicle?.rc?.rcStatus || "N/A"}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {vehicles.map((vehicle) => (
+              <div
+                key={vehicle.id}
+                className="bg-white rounded-lg px-4 py-2 mb-4"
+              >
+                <div className="flex items-center justify-start rounded-lg mb-2">
+                  {/* Left side (car image) */}
+                  <Image
+                    src="/Images/car.svg"
+                    alt="car image"
+                    width={60}
+                    height={30}
+                    className="object-contain"
+                  />
+                  <div className="w-full flex justify-between ml-2">
+                    <div className="border border-black font-bold rounded px-2 py-1">
+                      • {vehicle.vehicleNo} •
+                    </div>
+                    <div
+                      className={
+                        vehicle?.rc?.rcStatus === "ACTIVE"
+                          ? "bg-green-50 text-green-600 text-[10px] p-1 rounded font-bold h-6"
+                          : "bg-gray-100 text-gray-600 text-[10px] p-1 rounded font-bold h-6"
+                      }
+                    >
+                      {vehicle?.rc?.rcStatus || "N/A"}
+                    </div>
                   </div>
                 </div>
+
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem
+                    value={`owner-${vehicle.id}`}
+                    className="bg-white rounded-md my-1"
+                  >
+                    <AccordionTrigger>
+                      <div className="flex items-center">
+                        <CircleUser size={18} className="text-[#737373] mx-2" />{" "}
+                        Owner Details
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="flex justify-start gap-4 text-balance ml-2">
+                      <RegisterInfoCard
+                        name={vehicle?.rc?.ownerName}
+                        date={vehicle?.rc?.registrationDate}
+                        rto={vehicle?.rc?.registeredAt}
+                      />
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem
+                    value={`key-${vehicle.id}`}
+                    className="bg-white rounded-md my-1"
+                  >
+                    <AccordionTrigger>
+                      <div className="flex items-center">
+                        <FileSpreadsheet
+                          size={18}
+                          className="text-[#737373] mx-2"
+                        />{" "}
+                        Key Details
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="flex justify-start gap-4 text-balance ml-2">
+                      <KeyDetailCard
+                        puc={vehicle?.rc?.puccUpto}
+                        ins={vehicle?.rc?.insuranceUpto}
+                        rc={"N/A"}
+                      />
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem
+                    value={`vehicle-${vehicle.id}`}
+                    className="bg-white rounded-md my-1"
+                  >
+                    <AccordionTrigger>
+                      <div className="flex items-center">
+                        <Car size={18} className="text-[#737373] mx-2" />{" "}
+                        Vehicle Details
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="flex justify-start gap-4 text-balance ml-2">
+                      <VehicleDetailCard
+                        mod={vehicle?.rc?.makerModel}
+                        type={vehicle?.rc?.bodyType}
+                        eng={"N/A"}
+                        chs={"N/A"}
+                      />
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </div>
-
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem
-                  value={`owner-${vehicle.id}`}
-                  className="bg-white rounded-md my-1"
-                >
-                  <AccordionTrigger>
-                    <div className="flex items-center">
-                      <CircleUser size={18} className="text-[#737373] mx-2" />{" "}
-                      Owner Details
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="flex justify-start gap-4 text-balance ml-2">
-                    <RegisterInfoCard
-                      name={vehicle?.rc?.ownerName}
-                      date={vehicle?.rc?.registrationDate}
-                      rto={vehicle?.rc?.registeredAt}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem
-                  value={`key-${vehicle.id}`}
-                  className="bg-white rounded-md my-1"
-                >
-                  <AccordionTrigger>
-                    <div className="flex items-center">
-                      <FileSpreadsheet
-                        size={18}
-                        className="text-[#737373] mx-2"
-                      />{" "}
-                      Key Details
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="flex justify-start gap-4 text-balance ml-2">
-                    <KeyDetailCard
-                      puc={vehicle?.rc?.puccUpto}
-                      ins={vehicle?.rc?.insuranceUpto}
-                      rc={"N/A"}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem
-                  value={`vehicle-${vehicle.id}`}
-                  className="bg-white rounded-md my-1"
-                >
-                  <AccordionTrigger>
-                    <div className="flex items-center">
-                      <Car size={18} className="text-[#737373] mx-2" />
-                      Vehicle Details
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="flex justify-start gap-4 text-balance ml-2">
-                    <VehicleDetailCard
-                      mod={vehicle?.rc?.makerModel}
-                      type={vehicle?.rc?.bodyType}
-                      eng={"N/A"}
-                      chs={"N/A"}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </div>
-          ))
+            ))}
+          </div>
         )}
       </div>
 
