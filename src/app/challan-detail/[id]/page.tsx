@@ -49,7 +49,7 @@ function ChallanDetail() {
       <Header />
       <div className="lg:px-30 lg:bg-slate-100 lg:flex lg:justify-center">
         <div className="lg:w-[1200px]">
-          <div className="mt-14 px-2 lg:mt-18 mx-2">
+          <div className="mt-10 lg:mt-18 ">
             <CommonHeader title="Challan Detail" onBack={handleBack} />
           </div>
           <div className="lg:px-5 lg:flex lg:justify-between lg:w-full lg:gap-4">
