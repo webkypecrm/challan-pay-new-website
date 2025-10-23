@@ -44,6 +44,7 @@ interface PaymentEngagementData {
   potentialDiscount: number;
   onlineChallanFees: number;
   courtChallanFees: number;
+  courtChallansAmountToPay: number;
 }
 
 interface PaymentEngagementResponse {
