@@ -57,7 +57,7 @@ export default function RootLayout({
               >
                 <ConditionalHeader />
 
-                {children}
+                <div className="mt-22">{children}</div>
               </Suspense>
             </ChallanProvider>
           </TrackStatusAuthProvider>

@@ -657,7 +657,7 @@ export default function ChallanStatusLogin() {
                       </span>
                       <Input
                         id="phone"
-                        placeholder="9876543210"
+                        placeholder="9999999999"
                         {...register("phone")}
                         className="rounded-l-none flex-1 border-l-0"
                       />

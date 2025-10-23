@@ -15,7 +15,8 @@ import { Button } from "@/components/ui/button";
 interface Incident {
   challanNo: string;
   id: string;
-  challanType: string;
+  challanType: boolean;
+  courtChallan: boolean;
   createdAt?: string;
   latestSecondaryStatus: string;
 }
@@ -110,7 +111,7 @@ const PaymentSuccess: React.FC = () => {
               key={challan.challanNo}
               challanNo={challan.challanNo}
               incidentId={challan.id}
-              challanType={challan.challanType}
+              courtChallan={challan?.courtChallan}
               createdAt={challan.createdAt || "N/A"}
               status={challan.latestSecondaryStatus}
               //onClick={() => handleChallanClick(challan.challanNo)}

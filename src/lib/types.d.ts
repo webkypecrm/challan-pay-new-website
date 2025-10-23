@@ -95,6 +95,7 @@ export interface Incident {
   address: string;
   pincode: string;
   createdAt: string;
+  courtChallan: boolean;
   // Add any other fields if necessary
 }
 
