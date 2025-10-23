@@ -17,13 +17,19 @@ import {
 } from "@/components/ui/sheet";
 import { Menu, XIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
+//import { useEffect } from "react";
 
 export default function Header() {
   const router = useRouter();
   const handleTrackChallanDashboard = () => {
     router.push("/track-challan-login");
   };
-
+  const handleScroll = () => {
+    const section = document.getElementById("how-it-works");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
       <div className="container mx-auto flex items-center justify-between p-2 ">
@@ -43,16 +49,16 @@ export default function Header() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Link href="/" passHref>
-                  <NavigationMenuLink className="px-3 py-2 text-gray-700 hover:text-blue-600">
-                    How It Work
+                <Link href="/">
+                  <NavigationMenuLink className="px-3 py-2 text-gray-700 hover:text-cyan-600">
+                    How It Works
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className="px-3 py-2 text-gray-700 hover:text-blue-600">
+                  <NavigationMenuLink className="px-3 py-2 text-gray-700 hover:text-cyan-600">
                     Support
                   </NavigationMenuLink>
                 </Link>
@@ -82,10 +88,10 @@ export default function Header() {
               <SheetClose asChild>
                 <Link href="/">
                   <Image
-                    src="/logo/text-logo.svg" // Path to your logo in public folder
+                    src="/logo/text-logo-png.png" // Path to your logo in public folder
                     alt="Challan Pay Logo"
-                    width={108} // Adjust width
-                    height={28} // Adjust height
+                    width={200} // Adjust width
+                    height={40} // Adjust height
                     className="object-contain"
                   />
                 </Link>
@@ -101,13 +107,13 @@ export default function Header() {
               </SheetClose>
               <hr />
               <SheetClose asChild>
-                <Link href="/" className="text-gray-900 hover:text-blue-600">
+                <Link href="/" className="text-gray-900 hover:text-cyan-600">
                   How it Works
                 </Link>
               </SheetClose>
 
               <SheetClose asChild>
-                <Link href="#" className="text-gray-900 hover:text-blue-600">
+                <Link href="#" className="text-gray-900 hover:text-cyan-600">
                   Support
                 </Link>
               </SheetClose>

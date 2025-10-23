@@ -38,7 +38,7 @@ const cardData = [
     ),
     description:
       "Few clicks, thats it. Discover and resolve your traffic challans.",
-    image: "/Images/hero-section-img.png",
+    image: "/Images/hero-section-img3.png",
   },
   {
     title: (
@@ -51,13 +51,13 @@ const cardData = [
       </>
     ),
     description: "No spam, no scam. Only authorized payments with ChallanPay.",
-    image: "/Images/hero-section-img.png",
+    image: "/Images/hero-section-img2.png",
   },
 ];
 
 export function HeroSection() {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 3000, stopOnInteraction: false })
   );
 
   const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -123,7 +123,7 @@ export function HeroSection() {
       </Carousel>
 
       {/* Dots */}
-      <div className="flex justify-center mt-2 gap-2">
+      {/* <div className="flex justify-center mt-2 gap-2">
         {scrollSnaps.map((_, idx) => {
           // find relative position with wrap-around
           const offset =
@@ -147,7 +147,33 @@ export function HeroSection() {
             />
           );
         })}
+      </div> */}
+      <div className="flex justify-center mt-2 gap-2">
+        {scrollSnaps.map((_, idx) => {
+          // check if this dot is the active one
+          const isActive = idx === selectedIndex;
+
+          // default gray for all
+          let dotColor = "bg-gray-300";
+
+          // color only the active one based on index
+          if (isActive) {
+            if (idx === 0) dotColor = "bg-red-500";
+            else if (idx === 1) dotColor = "bg-yellow-400";
+            else if (idx === 2) dotColor = "bg-green-500";
+            // optional: add more colors if you have more slides
+          }
+
+          return (
+            <button
+              key={idx}
+              onClick={() => emblaApi && emblaApi.scrollTo(idx)}
+              className={`w-2 h-2 rounded-full transition-colors duration-300 ${dotColor}`}
+            />
+          );
+        })}
       </div>
+
       {/* <Button
         className="w-full bg-cyan-600 mt-4"
         onClick={() => {

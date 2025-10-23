@@ -1,4 +1,4 @@
-//import Header from "./components/common/Header";
+import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import { HeroSection } from "./components/home-page/HeroSection";
 import ChallanCheckForm from "./components/home-page/ChallanCheckForm";
@@ -14,7 +14,7 @@ import { CheckResolution } from "./components/home-page/CheckResolution";
 function HomePage() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <HeroSection />
       <div className="p-4 bg-[#FAF8F7] lg:px-30">
         <ChallanCheckForm />
