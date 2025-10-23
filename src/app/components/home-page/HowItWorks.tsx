@@ -30,7 +30,7 @@ export default function HowItWorks() {
       id: 3,
 
       img: "/how-it-work/rectangle3.png",
-      heading: "View Challans",
+      heading: "Settle Challans Easily",
       text: "Enter your vehicle number and mobile number to begin",
     },
   ];
