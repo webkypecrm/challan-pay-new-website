@@ -30,7 +30,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/">
           <Image
-            src="/logo/text-logo.svg" // Path to your logo in public folder
+            src="/logo/text-logo-jpg.jpg" // Path to your logo in public folder
             alt="Challan Pay Logo"
             width={108} // Adjust width
             height={28} // Adjust height
