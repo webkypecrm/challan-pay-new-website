@@ -16,7 +16,7 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { Menu, XIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 //import { useEffect } from "react";
 
 export default function Header() {
@@ -24,10 +24,18 @@ export default function Header() {
   const handleTrackChallanDashboard = () => {
     router.push("/track-challan-login");
   };
-  const handleScroll = () => {
-    const section = document.getElementById("how-it-works");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+  const pathname = usePathname();
+
+  const handleScrollToHowItWorks = () => {
+    if (pathname === "/") {
+      // Already on home — smooth scroll to section
+      const section = document.getElementById("how-it-works");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Navigate to home, then scroll after navigation
+      router.push("/#how-it-works");
     }
   };
   return (
@@ -49,7 +57,7 @@ export default function Header() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Link href="/">
+                <Link href="/" onClick={handleScrollToHowItWorks}>
                   <NavigationMenuLink className="px-3 py-2 text-gray-700 hover:text-cyan-600">
                     How It Works
                   </NavigationMenuLink>
