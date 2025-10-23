@@ -13,11 +13,18 @@ export default function Footer() {
       <div className="container mx-auto px-2 py-2 grid grid-cols-1 lg:flex lg:justify-between md:grid-cols-4 gap-4 lg:px-30">
         {/* About / Logo Section */}
         <Card className="p-2 shadow-none flex flex-col items-start">
-          <Image
+          {/* <Image
             src="/logo/text-logo.svg"
             alt="Challan Pay Logo"
             width={140}
             height={80}
+            className="object-contain"
+          /> */}
+          <Image
+            src="/logo/text-logo-png.png" // Path to your logo in public folder
+            alt="Challan Pay Logo"
+            width={200} // Adjust width
+            height={40} // Adjust height
             className="object-contain"
           />
           <div className="text-[#0A0A0A] text-sm font-bold">
