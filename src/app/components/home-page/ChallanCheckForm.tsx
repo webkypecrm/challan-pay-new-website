@@ -80,6 +80,11 @@ export default function Home() {
     }
   }, [pathname]);
 
+  useEffect(() => {
+    // Clear sessionStorage when the component mounts
+    sessionStorage.clear();
+  }, []);
+
   return (
     <form id="challan-check" onSubmit={handleSubmit(onSubmit)}>
       <div className="flex flex-col lg:flex-row gap-4 justify-center ">
@@ -190,11 +195,17 @@ export default function Home() {
             <div className="grid gap-2">
               <p className="text-muted-foreground text-sm">
                 I agree to the{" "}
-                <Link href="#" className="text-blue-600">
+                <Link
+                  href="https://lawyered.in/p/terms-and-conditions-for-challan-resolution"
+                  className="text-blue-600"
+                >
                   terms & conditions{" "}
                 </Link>
                 and the{" "}
-                <Link href="#" className="text-blue-600">
+                <Link
+                  href="https://lawyered.in/p/privacy-policy"
+                  className="text-blue-600"
+                >
                   privacy policy
                 </Link>
                 , and authorize ChallanPay to fetch my vehicle registration and

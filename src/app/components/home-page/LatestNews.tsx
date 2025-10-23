@@ -28,7 +28,7 @@ const newsData: NewsItem[] = [
     description:
       "Lawyered, a legal tech startup founded by Himanshu Gupta, is transforming the landscape of on-road legal assistance for vehicle owners in India. With its innovative LOTS platform, the company connects users to a network of over 70,000 lawyers for immediate support on traffic violations and legal disputes, operating 24/7 across 98% of Indias pin codes.",
     date: "Mar 15, 2025",
-    link: "#",
+    link: "https://yourstory.com/2024/08/justice-on-the-road-lawyered-legal-tech-startup-lawyers-network-highway",
   },
   {
     logo: "/news-logo/abp-logo-png_seeklogo-432770.png",
@@ -37,7 +37,7 @@ const newsData: NewsItem[] = [
     description:
       "At a justice innovation workshop in a rural Tamil Nadu law school—well past the temple town of Mahabalipuram—we asked a class of law students how many were using ChatGPT. Every hand shot up. In an urban college, this would not have been surprising. But here? Their professor explained: most of these students were the children of farmers and fishermen from adjoining villages.x",
     date: "Apr 02, 2025",
-    link: "#",
+    link: "https://news.abplive.com/technology/legal-tech-is-shaping-india-s-startup-future-here-s-how-1770572/amp",
   },
 
   {
@@ -47,7 +47,7 @@ const newsData: NewsItem[] = [
     description:
       "In India today, technology touches almost every part of our lives — from how we pay bills to how we travel, shop, and even consult a doctor. Quietly, but powerfully, its also starting to reshape another cornerstone of our society: the legal system.",
     date: "Mar 01, 2025",
-    link: "#",
+    link: "https://news.abplive.com/technology/legal-tech-is-shaping-india-s-startup-future-here-s-how-1770572/amp",
   },
   {
     logo: "/news-logo/Lawyered_logo (3446x654)_20250527_103837_0000.png",
@@ -56,7 +56,7 @@ const newsData: NewsItem[] = [
     description:
       "Himanshu Gupta, Founder & CEO of Lawyered, has been honored with the Entrepreneur of the Year in Service Business - Legal award at the Entrepreneur India Startup Awards",
     date: "Feb 20, 2025",
-    link: "#",
+    link: "https://www.autocarpro.in/news/cars24-partners-with-lawyered-for-streamlined-traffic-challan-resolution-122989",
   },
   {
     logo: "/news-logo/sugermint-mobile-logo.png",
@@ -65,7 +65,7 @@ const newsData: NewsItem[] = [
     description:
       "With a mission to make Indian roads safer and more efficient, Himanshu has introduced cutting-edge tools like challan resolution and immediate legal help through the LOTS app. His journey is a testament to passion, purpose, and the power of technology to solve real-world problems.",
     date: "Feb 10, 2025",
-    link: "#",
+    link: "https://sugermint.com/himanshu-gupta/",
   },
   {
     logo: "/news-logo/print_logo.png",
@@ -73,7 +73,7 @@ const newsData: NewsItem[] = [
     description:
       "On February 28, 2024, the Federation of Automobile Dealers Associations (FADA) and the Raipur Automobile Dealers Association (RADA) welcomed the launch of Lawyereds flagship product, LOTS24×7 (On-Road Legal Assistance), at dealerships across Raipur, Chhattisgarh.",
     date: "Jan 25, 2025",
-    link: "#",
+    link: "https://lawyered.in/events-and-news/lots-launches-at-dealerships-in-chhattisgarh-with-fada-&-rada",
   },
 ];
 
