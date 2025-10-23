@@ -12,6 +12,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const schema = z.object({
   vehicleType: z.string().min(1, "Please select a vehicle type"),
@@ -133,11 +134,7 @@ export default function Home() {
                       </Card>
 
                       <span
-                        className={`font-medium text-center text-sm sm:text-base ${
-                          field.value === card.id
-                            ? "text-cyan-600"
-                            : "text-black"
-                        }`}
+                        className={`font-medium text-center text-sm sm:text-base ${"text-black"}`}
                       >
                         {card.title}
                       </span>
@@ -160,7 +157,7 @@ export default function Home() {
           </div>
 
           <Input
-            placeholder="UP32MM1113"
+            placeholder="Enter Vehicle Number"
             className="w-full h-12 rounded-md border bg-white"
             {...register("vehicleNumber", {
               onChange: (e) => {
@@ -192,8 +189,15 @@ export default function Home() {
             />
             <div className="grid gap-2">
               <p className="text-muted-foreground text-sm">
-                I agree to the terms, conditions and the privacy policy, and
-                authorize ChallanPay to fetch my vehicle registration and
+                I agree to the{" "}
+                <Link href="#" className="text-blue-600">
+                  terms & conditions{" "}
+                </Link>
+                and the{" "}
+                <Link href="#" className="text-blue-600">
+                  privacy policy
+                </Link>
+                , and authorize ChallanPay to fetch my vehicle registration and
                 challan details from the Government database.
               </p>
               {errors.terms && (

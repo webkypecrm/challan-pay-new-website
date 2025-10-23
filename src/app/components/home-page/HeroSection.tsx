@@ -16,10 +16,11 @@ const cardData = [
   {
     title: (
       <>
-        <div className="flex flex-col lg:flex-row lg:space-x-2 text-black  uppercase">
+        <div className="flex flex-col lg:space-x-2 text-black  uppercase">
           <span>Challan Pay</span>
-          <span>AnyTime</span>
-          <span>AnyWhere</span>
+          <div>
+            <span>AnyTime</span> <span>AnyWhere</span>
+          </div>
         </div>
       </>
     ),
@@ -43,10 +44,11 @@ const cardData = [
   {
     title: (
       <>
-        <div className="flex flex-col lg:flex-row lg:space-x-2 text-black uppercase">
+        <div className="flex flex-col  lg:space-x-2 text-black uppercase">
           <span>Pay Traffic</span>
-          <span>Challans</span>
-          <span>Instantly</span>
+          <div>
+            <span>Challans</span> <span>Instantly</span>
+          </div>
         </div>
       </>
     ),
