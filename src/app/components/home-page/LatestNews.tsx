@@ -47,7 +47,7 @@ const newsData: NewsItem[] = [
     description:
       "In India today, technology touches almost every part of our lives — from how we pay bills to how we travel, shop, and even consult a doctor. Quietly, but powerfully, its also starting to reshape another cornerstone of our society: the legal system.",
     date: "Mar 01, 2025",
-    link: "https://news.abplive.com/technology/legal-tech-is-shaping-india-s-startup-future-here-s-how-1770572/amp",
+    link: "https://www.hindustantimes.com/business/delhi-traffic-challan-how-to-get-them-waived-off-or-settled-at-lok-adalat-2025-101740993817814.html",
   },
   {
     logo: "/news-logo/Lawyered_logo (3446x654)_20250527_103837_0000.png",
@@ -56,7 +56,7 @@ const newsData: NewsItem[] = [
     description:
       "Himanshu Gupta, Founder & CEO of Lawyered, has been honored with the Entrepreneur of the Year in Service Business - Legal award at the Entrepreneur India Startup Awards",
     date: "Feb 20, 2025",
-    link: "https://www.autocarpro.in/news/cars24-partners-with-lawyered-for-streamlined-traffic-challan-resolution-122989",
+    link: "https://lawyered.in/events-and-news/lots-launches-at-dealerships-in-chhattisgarh-with-fada-&-rada",
   },
   {
     logo: "/news-logo/sugermint-mobile-logo.png",
