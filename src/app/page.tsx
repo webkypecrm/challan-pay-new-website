@@ -21,7 +21,10 @@ function HomePage() {
         <BotBanner />
         <TrustedByMillions />
         <Testimonials />
-        <HowItWorks />
+
+        <div id="how-it-works">
+          <HowItWorks />
+        </div>
         <div className="lg:flex lg:justify-around gap-4">
           <TrustedPartner />
           <SupportedBy />
@@ -31,7 +34,9 @@ function HomePage() {
         </div>
         <CheckResolution />
       </div>
-      <Footer />
+      <div id="support">
+        <Footer />
+      </div>
     </>
   );
 }

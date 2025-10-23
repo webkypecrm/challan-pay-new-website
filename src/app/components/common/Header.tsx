@@ -38,6 +38,20 @@ export default function Header() {
       router.push("/#how-it-works");
     }
   };
+
+  const handleScrollToSupport = () => {
+    if (pathname === "/") {
+      // Already on home — smooth scroll to section
+      const section = document.getElementById("support");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Navigate to home, then scroll after navigation
+      router.push("/#support");
+    }
+  };
+
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
       <div className="container mx-auto flex items-center justify-between p-2 ">
@@ -57,7 +71,13 @@ export default function Header() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Link href="/" onClick={handleScrollToHowItWorks}>
+                <Link
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault(); // Prevent actual navigation
+                    handleScrollToHowItWorks();
+                  }}
+                >
                   <NavigationMenuLink className="px-3 py-2 text-gray-700 hover:text-cyan-600">
                     How It Works
                   </NavigationMenuLink>
@@ -65,7 +85,13 @@ export default function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/" legacyBehavior passHref>
+                <Link
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault(); // Prevent actual navigation
+                    handleScrollToSupport();
+                  }}
+                >
                   <NavigationMenuLink className="px-3 py-2 text-gray-700 hover:text-cyan-600">
                     Support
                   </NavigationMenuLink>
@@ -81,8 +107,6 @@ export default function Header() {
             Track Status
           </Button>
         </div>
-
-        {/* Mobile Menu */}
         <Sheet>
           <SheetTrigger asChild>
             <div className="w-9 lg:hidden  flex border-1 rounded-lg justify-center item-center ">
@@ -115,13 +139,27 @@ export default function Header() {
               </SheetClose>
               <hr />
               <SheetClose asChild>
-                <Link href="/" className="text-gray-900 hover:text-cyan-600">
+                <Link
+                  href="/"
+                  className="text-gray-900 hover:text-cyan-600"
+                  onClick={(e) => {
+                    e.preventDefault(); // Prevent actual navigation
+                    handleScrollToHowItWorks();
+                  }}
+                >
                   How it Works
                 </Link>
               </SheetClose>
 
               <SheetClose asChild>
-                <Link href="#" className="text-gray-900 hover:text-cyan-600">
+                <Link
+                  href="#"
+                  className="text-gray-900 hover:text-cyan-600"
+                  onClick={(e) => {
+                    e.preventDefault(); // Prevent actual navigation
+                    handleScrollToSupport();
+                  }}
+                >
                   Support
                 </Link>
               </SheetClose>

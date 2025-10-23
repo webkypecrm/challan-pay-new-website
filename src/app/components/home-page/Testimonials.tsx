@@ -31,7 +31,7 @@ const testimonials: Testimonial[] = [
     name: "Tina",
     description:
       "“WhatsApp pe link aaya, maine details check ki aur turant payment ho gaya. Pehle kabhi itna smooth nahi laga challan bharna.”",
-    location: "Two-Wheeler Owner • Jaipur",
+    location: "Car Owner • Jaipur",
     amountSaved: 1700,
     photo: "/photo/Polish_20250530_112728906.jpg",
   },
@@ -55,7 +55,7 @@ const testimonials: Testimonial[] = [
     name: "Zia",
     description:
       "“Got a message, clicked the link, paid the fine. It was surprisingly smooth. Save me a trip to the curt.”",
-    location: "Two-Wheeler Owner • Lucknow",
+    location: "Car Owner • Lucknow",
     amountSaved: 1300,
     photo: "/photo/Polish_20250530_113046363.jpg",
   },
@@ -71,7 +71,7 @@ const testimonials: Testimonial[] = [
     name: "Rashmi Sharma",
     description:
       "“Pehle socha online challan bharna risky hoga, par yahaan process clear tha aur har step pe update milta raha.”",
-    location: "Two-Wheeler Owner • Delhi",
+    location: "Car Owner • Delhi",
     amountSaved: 1500,
     photo: "/photo/Polish_20250704_123805883.jpg",
   },
@@ -95,7 +95,7 @@ const testimonials: Testimonial[] = [
     name: "Karan",
     description:
       "“I had multiple pending challans and was worried about deadlines, but this service cleared them all smoothly in one go.”",
-    location: "Two-Wheeler Owner • Mumbai",
+    location: "Car Owner • Mumbai",
     amountSaved: 2000,
     photo: "/photo/karan.png",
   },
@@ -119,7 +119,7 @@ const testimonials: Testimonial[] = [
     name: "Meena",
     description:
       "“WhatsApp pe link aaya, maine click karke payment kar diya. Bilkul court jaane ki tension hi nahi rahi.”",
-    location: "Two-Wheeler Owner • Varanasi",
+    location: "Car Owner • Varanasi",
     amountSaved: 2000,
     photo: "/photo/meena.png",
   },
