@@ -2,6 +2,8 @@ import { postRequest } from "@/lib/api";
 import { useRouter } from "next/navigation";
 //import { RazorpayOptions } from "@/lib/types";
 import { json } from "zod";
+import { useState } from "react";
+import { useEffect } from "react";
 
 interface PaymentParams {
   challanIds: number[];
@@ -40,6 +42,33 @@ export const handleRazorpayPayment = async (
   setLoader: (val: boolean) => void
 ) => {
   // const router = useRouter();
+  const [prefillData, setPrefillData] = useState({
+    name: "",
+    email: "",
+    contact: "",
+  });
+
+  // ✅ Load from sessionStorage once the component mounts
+  useEffect(() => {
+    try {
+      const raw = sessionStorage.getItem("user");
+      if (!raw) return;
+
+      const parsed = JSON.parse(raw);
+
+      const name = parsed?.subscriber?.name ?? "";
+      const email = parsed?.subscriber?.email ?? "";
+      const phone = parsed?.subscriber?.phone ?? "";
+
+      setPrefillData({
+        name,
+        email,
+        contact: phone ? String(phone).replace(/\s+/g, "") : "",
+      });
+    } catch (error) {
+      console.error("Error parsing sessionStorage user:", error);
+    }
+  }, []);
 
   try {
     const loadRazorpayScript = () => {
@@ -144,9 +173,9 @@ export const handleRazorpayPayment = async (
         },
       },
       prefill: {
-        name: "John Doe",
-        email: "john@example.com",
-        contact: "9999999999",
+        name: prefillData.name,
+        email: prefillData.email,
+        contact: prefillData.contact,
       },
       theme: {
         color: "#000",
