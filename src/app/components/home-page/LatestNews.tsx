@@ -120,7 +120,7 @@ export function LatestNews() {
               key={index}
               className="pl-2 md:basis-1/2 lg:basis-1/3"
             >
-              <Card className="rounded-xl border border-gray-200 py-0 shadow-sm hover:shadow-md transition h-110 lg:h-80">
+              <Card className="rounded-xl border border-gray-200 py-0 shadow-sm hover:shadow-md transition h-110 lg:h-90">
                 <CardContent className="p-5 space-y-3">
                   {/* Logo */}
                   <div className="flex items-center">
