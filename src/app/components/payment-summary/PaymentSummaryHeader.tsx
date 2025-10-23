@@ -14,7 +14,7 @@ function PaymentSummaryHeader() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const [vehicleNo, setVehicleNo] = useState<string | null>(null);
-  const { selectedChallans, data } = useChallanContext();
+  const { data } = useChallanContext();
 
   const handleBack = () => {
     router.push("/challan-cart");
@@ -25,7 +25,7 @@ function PaymentSummaryHeader() {
   }, []);
   //console.log(data);
   return (
-    <div className="mt-20 px-4 lg:px-0 bg-white  lg:bg-slate-100">
+    <div className="mt-25 px-4 lg:px-0 bg-white  lg:bg-slate-100">
       <div className="flex items-center justify-between">
         {/* Left side: Back button + Title */}
         <div className="flex items-center gap-2">
