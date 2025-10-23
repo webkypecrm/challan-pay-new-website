@@ -8,7 +8,8 @@ interface ChallanDetailProps {
   challanNo: string;
   status: string;
   incidentId: string;
-  challanType: string;
+  // challanType: boolean;
+  courtChallan: boolean;
   createdAt: string;
 }
 
@@ -16,7 +17,7 @@ const ChallanDetailCard: React.FC<ChallanDetailProps> = ({
   challanNo,
   status,
   incidentId,
-  challanType,
+  courtChallan,
   createdAt,
 }) => {
   const handleCopy = () => {
@@ -57,7 +58,7 @@ const ChallanDetailCard: React.FC<ChallanDetailProps> = ({
         <div className="flex justify-between items-center p-4">
           <div className="text-[#737373]">Challan Type</div>
           <div className="text-black text-sm font-semibold">
-            {challanType || "N/A"}
+            {courtChallan ? "Court Challan" : "Online Challan"}
           </div>
         </div>
 

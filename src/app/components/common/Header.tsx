@@ -115,7 +115,7 @@ export default function Header() {
               </Button>
             </div>
           </SheetTrigger>
-          <SheetContent side="top" className="w-full h-[240px] rounded-b-xl">
+          <SheetContent side="top" className="w-full h-[260px] rounded-b-xl">
             <nav className="flex flex-col  mx-3 gap-4 mt-3">
               <SheetClose asChild>
                 <Link href="/">

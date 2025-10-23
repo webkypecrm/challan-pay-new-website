@@ -10,7 +10,7 @@ interface PageHeaderProps {
 
 const CommonHeader: React.FC<PageHeaderProps> = ({ title, onBack }) => {
   return (
-    <div className="flex items-center justify-between p  pt-6 mt-12 lg:mt-0">
+    <div className="flex items-center justify-between p-4  pt-6 mt-12 lg:mt-0 ">
       {/* Left side: Back button + Title */}
       <div className="flex items-center gap-2">
         {onBack && (
