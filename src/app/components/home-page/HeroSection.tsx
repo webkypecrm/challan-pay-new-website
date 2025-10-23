@@ -16,7 +16,7 @@ const cardData = [
   {
     title: (
       <>
-        <div className="flex flex-col lg:flex-row lg:space-x-2 text-black">
+        <div className="flex flex-col lg:flex-row lg:space-x-2 text-black  uppercase">
           <span>Challan Pay</span>
           <span>AnyTime</span>
           <span>AnyWhere</span>
@@ -29,12 +29,12 @@ const cardData = [
   },
   {
     title: (
-      <>
+      <div className="uppercase">
         <span className="text-black">No queues.</span>
         <br />
         <span className="text-black">No stress.</span>{" "}
         <span className="text-black">With ChallanPay</span>
-      </>
+      </div>
     ),
     description:
       "Few clicks, thats it. Discover and resolve your traffic challans.",
@@ -43,7 +43,7 @@ const cardData = [
   {
     title: (
       <>
-        <div className="flex flex-col lg:flex-row lg:space-x-2 text-black">
+        <div className="flex flex-col lg:flex-row lg:space-x-2 text-black uppercase">
           <span>Pay Traffic</span>
           <span>Challans</span>
           <span>Instantly</span>
@@ -57,7 +57,7 @@ const cardData = [
 
 export function HeroSection() {
   const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: false })
+    Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
   );
 
   const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -84,6 +84,7 @@ export function HeroSection() {
         setApi={setEmblaApi} // 👈 connect carousel API
         plugins={[plugin.current]}
         className="w-full"
+        opts={{ loop: true }} // 🔁 makes it infinite
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
       >
@@ -121,33 +122,6 @@ export function HeroSection() {
           ))}
         </CarouselContent>
       </Carousel>
-
-      {/* Dots */}
-      {/* <div className="flex justify-center mt-2 gap-2">
-        {scrollSnaps.map((_, idx) => {
-          // find relative position with wrap-around
-          const offset =
-            (idx - selectedIndex + scrollSnaps.length) % scrollSnaps.length;
-
-          let dotColor = "bg-gray-200";
-
-          if (offset === 0) {
-            dotColor = "bg-red-500"; // active
-          } else if (offset === 1) {
-            dotColor = "bg-yellow-400"; // next
-          } else if (offset === 2) {
-            dotColor = "bg-green-500"; // next-next
-          }
-
-          return (
-            <button
-              key={idx}
-              onClick={() => emblaApi && emblaApi.scrollTo(idx)}
-              className={`w-2 h-2 rounded-full transition-colors ${dotColor}`}
-            />
-          );
-        })}
-      </div> */}
       <div className="flex justify-center mt-2 gap-2">
         {scrollSnaps.map((_, idx) => {
           // check if this dot is the active one
