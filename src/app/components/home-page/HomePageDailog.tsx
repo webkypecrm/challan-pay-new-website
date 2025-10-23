@@ -72,7 +72,6 @@
 //   );
 // }
 
-// DialogDemo.tsx
 "use client";
 import { Button } from "@/components/ui/button";
 import {
@@ -89,7 +88,6 @@ import { Label } from "@/components/ui/label";
 import { CommonSelect } from "../common/Select";
 import { FaWhatsapp } from "react-icons/fa";
 import { XIcon } from "lucide-react";
-import toast from "react-hot-toast";
 
 export function DialogDemo({
   open,
@@ -109,72 +107,76 @@ export function DialogDemo({
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault(); // ✅ prevents page reload
+
+    console.log("Form submitted ✅"); // test if called
 
     if (!companyName || !selected) {
-      toast.error("Please fill in all fields before sending the message.");
+      alert("Please fill in all fields before sending the message.");
       return;
     }
 
-    const phoneNumber = "919289928628"; // your WhatsApp number
-    const text = `Hello, I want to share my company details.%0A
-🏢 Company Name: ${companyName}%0A
-🚚 Number of Vehicles: ${selected}`;
-    const url = `https://wa.me/${phoneNumber}?text=${text}`;
-
+    const phoneNumber = "919289928628";
+    const text = `Hello, I want to share my company details.\n\n🏢 Company Name: ${companyName}\n🚚 Number of Vehicles: ${selected}`;
+    const encodedText = encodeURIComponent(text);
+    const url = `https://wa.me/${phoneNumber}?text=${encodedText}`;
     window.open(url, "_blank");
   };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <form onSubmit={handleSubmit}>
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogClose asChild>
-            <button className="absolute -top-8 left-1/2 -translate-x-1/2 rounded-full bg-black/50 w-6 h-6 flex justify-center items-center text-white font-bold py-1 shadow hover:bg-black">
-              <XIcon size={16} />
-            </button>
-          </DialogClose>
+      <DialogContent className="sm:max-w-[425px]">
+        {/* ❌ Don't wrap DialogContent in <form> directly — put form inside */}
+        <DialogHeader>
+          <DialogTitle className="px-5 font-bold">
+            Share Your Company Details
+          </DialogTitle>
+        </DialogHeader>
 
-          <DialogHeader>
-            <DialogTitle className="px-5 font-bold">
-              Share Your Company Details
-            </DialogTitle>
-          </DialogHeader>
+        {/* ✅ Form inside content */}
+        <form onSubmit={handleSubmit} className="grid gap-4 mt-2">
+          <div className="grid gap-3">
+            <Label htmlFor="companyName">Company Name</Label>
+            <Input
+              id="companyName"
+              name="companyName"
+              placeholder="Enter company name"
+              value={companyName}
+              onChange={(e) => setCompanyName(e.target.value)}
+            />
+          </div>
 
-          <div className="grid gap-4">
-            <div className="grid gap-3">
-              <Label htmlFor="companyName">Company Name</Label>
-              <Input
-                id="companyName"
-                name="companyName"
-                placeholder="Enter company name"
-                value={companyName}
-                onChange={(e) => setCompanyName(e.target.value)}
-              />
-            </div>
-
-            <div className="grid gap-3">
-              <Label htmlFor="vehicles">Number of Vehicles</Label>
-              <CommonSelect
-                placeholder="Select Vehicles"
-                options={vehicleOptions}
-                value={selected}
-                onChange={setSelected}
-              />
-            </div>
+          <div className="grid gap-3">
+            <Label htmlFor="vehicles">Number of Vehicles</Label>
+            <CommonSelect
+              placeholder="Select Vehicles"
+              options={vehicleOptions}
+              value={selected}
+              onChange={setSelected}
+            />
           </div>
 
           <DialogFooter>
             <Button
-              type="submit"
+              type="submit" // ✅ ensures form submission triggers handleSubmit
               className="bg-green-500 hover:bg-green-600 text-white flex items-center gap-2"
             >
-              <FaWhatsapp size={24} color="white" />
+              <FaWhatsapp size={22} />
               Send WhatsApp Message
             </Button>
           </DialogFooter>
-        </DialogContent>
-      </form>
+        </form>
+
+        {/* Close button */}
+        <DialogClose asChild>
+          <button
+            type="button"
+            className="absolute -top-8 left-1/2 -translate-x-1/2 rounded-full bg-black/50 w-6 h-6 flex justify-center items-center text-white font-bold py-1 shadow hover:bg-black"
+          >
+            <XIcon size={16} />
+          </button>
+        </DialogClose>
+      </DialogContent>
     </Dialog>
   );
 }
