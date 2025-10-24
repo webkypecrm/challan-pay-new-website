@@ -22,7 +22,7 @@ const InProgressChallan: React.FC = () => {
   const handleDetail = (id: string) => {
     router.push(`/track-challan-detail/${id}`);
   };
-  console.log(slug);
+  // console.log(slug);
 
   // When slug changes, update tab in context
   useEffect(() => {

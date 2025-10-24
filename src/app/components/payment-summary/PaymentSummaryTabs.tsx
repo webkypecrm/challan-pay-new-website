@@ -94,7 +94,7 @@ export function PaymentSummaryTabs() {
         {!loading && data?.amountToPay ? (
           <BottomSheet
             amount={`₹ ${data.amountToPay.toLocaleString()}`}
-            subtitle="Total Challan Amount"
+            subtitle="Total Payable Amount"
             buttonText="Proceed To Pay"
             onButtonClick={handleProccedNext}
             isPledge={isPledge}

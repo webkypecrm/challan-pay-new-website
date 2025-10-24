@@ -57,7 +57,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         "/v1/d-to-c/verify-otp",
         { otpId, otp }
       );
-      console.log(data);
+      //  console.log(data);
     } catch (error) {
       console.error("OTP verification failed", error);
       throw error;

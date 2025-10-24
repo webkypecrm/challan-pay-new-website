@@ -109,7 +109,7 @@ export function DialogDemo({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault(); // ✅ prevents page reload
 
-    console.log("Form submitted ✅"); // test if called
+    // console.log("Form submitted ✅"); // test if called
 
     if (!companyName || !selected) {
       alert("Please fill in all fields before sending the message.");

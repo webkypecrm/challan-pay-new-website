@@ -96,7 +96,7 @@ export const TrackStatusAuthProvider = ({
         "/v1/customer/auth/verify-otp",
         { otpId, otp }
       );
-      console.log(data);
+      // console.log(data);
       setUser(data?.data?.user);
       if (typeof window !== "undefined") {
         sessionStorage.setItem("userToken", data?.data?.token);

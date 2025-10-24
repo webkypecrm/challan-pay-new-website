@@ -57,14 +57,30 @@ export default function Home() {
 
   // Dynamic cards array
   const cards = [
-    { id: "private", title: "Private", image: "/Images/car.svg" },
+    {
+      id: "private",
+      title: "Private",
+      image: "/Images/car-black.png",
+      image1: "/Images/car.svg",
+    },
     {
       id: "private-two-wheeler",
       title: "Two - Wheeler",
-      image: "/Images/bike.svg",
+      image: "/Images/bike-black.png",
+      image1: "/Images/bike.svg",
     },
-    { id: "electric", title: "Electric", image: "/Images/electric.svg" },
-    { id: "commercial", title: "Commercial", image: "/Images/truck.svg" },
+    {
+      id: "electric",
+      title: "Electric",
+      image: "/Images/electric-black.png",
+      image1: "/Images/electric.svg",
+    },
+    {
+      id: "commercial",
+      title: "Commercial",
+      image: "/Images/truck-black.png",
+      image1: "/Images/truck.svg",
+    },
   ];
 
   useEffect(() => {
@@ -129,11 +145,21 @@ export default function Home() {
                       >
                         <CardContent className="flex flex-col items-center justify-center gap-1 p-2">
                           <div className="w-25 h-30 relative">
-                            <img
-                              src={card.image}
-                              alt={card.title}
-                              className="object-scale-down rounded-md"
-                            />
+                            {field.value === card.id ? (
+                              <img
+                                src={card.image1}
+                                alt={card.title}
+                                className="object-scale-down rounded-md "
+                              />
+                            ) : (
+                              <img
+                                src={card.image}
+                                alt={card.title}
+                                className={`object-scale-down rounded-md ${
+                                  card.title === "Private" ? "m-auto mt-10" : ""
+                                }  `}
+                              />
+                            )}
                           </div>
                         </CardContent>
                       </Card>

@@ -143,7 +143,11 @@ const testimonials: Testimonial[] = [
 
 const Testimonials: React.FC = () => {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({
+      delay: 3000, // 3 seconds between slides
+      stopOnInteraction: false, // keep autoplay even after manual scroll
+      stopOnMouseEnter: true, // pause on hover (optional)
+    })
   );
 
   const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -177,6 +181,7 @@ const Testimonials: React.FC = () => {
           plugins={[plugin.current]}
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
+          opts={{ loop: true }}
         >
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
@@ -241,22 +246,20 @@ const Testimonials: React.FC = () => {
           <CarouselNext /> */}
         </Carousel>
       </div>
-      <div className="flex justify-center  gap-2 mt-4">
-        {scrollSnaps.map((_, idx) => {
-          // Default color = gray
-          let dotColor = "bg-gray-100";
 
-          // If dot is within the active "window" of 3
-          const offset = idx - selectedIndex;
-          if (offset >= 0 && offset < 3) {
-            if (offset === 0) {
-              dotColor = "bg-green-500";
-            } else if (offset === 1) {
-              dotColor = "bg-yellow-400";
-            } else if (offset === 2) {
-              dotColor = "bg-red-500"; // active
-            }
-          }
+      <div className="flex justify-center gap-2 mt-4">
+        {scrollSnaps.map((_, idx) => {
+          // Determine the "window" of 3 dots centered around the current slide
+          const windowStart = Math.max(0, selectedIndex - 1);
+          const windowEnd = Math.min(scrollSnaps.length, windowStart + 3);
+
+          // Only render dots that are in the current visible window of 3
+          if (idx < windowStart || idx >= windowEnd) return null;
+
+          // Middle (active) one = yellow, others = gray
+          const middleIndex = windowStart + 1;
+          const dotColor =
+            idx === middleIndex ? "bg-yellow-400" : "bg-gray-300";
 
           return (
             <button

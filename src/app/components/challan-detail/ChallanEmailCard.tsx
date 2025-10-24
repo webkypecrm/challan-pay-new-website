@@ -12,12 +12,12 @@ export default function ChallanEmailCard() {
   const [vehicleNumber, setVehicleNumber] = useState("");
 
   const handleSendMail = () => {
-    console.log("Email:", email, "Vehicle:", vehicleNumber);
+    // console.log("Email:", email, "Vehicle:", vehicleNumber);
     // API call here
   };
 
   const handleWhatsappShare = () => {
-    console.log("Share on WhatsApp");
+    //  console.log("Share on WhatsApp");
   };
 
   return (
