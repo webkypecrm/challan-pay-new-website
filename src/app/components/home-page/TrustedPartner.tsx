@@ -23,7 +23,7 @@ export default function TrustedPartner() {
     { loop: true, align: "start" },
     [
       Autoplay({
-        delay: 2000,
+        delay: 3000,
         stopOnInteraction: false,
       }),
     ]

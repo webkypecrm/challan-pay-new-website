@@ -43,7 +43,7 @@ function PendingChallanList({ challans }: PendingChallanListProps) {
     router.push("/payment-summary");
   };
 
-  console.log(selectedChallans);
+  // console.log(selectedChallans);
   const onlineChallans = challans.filter(
     (item) =>
       !item.courtChallan &&
@@ -62,18 +62,18 @@ function PendingChallanList({ challans }: PendingChallanListProps) {
 
   const pendingChallan = [...onlineChallans, ...courtChallans];
 
-  console.log(pendingChallan);
+  // console.log(pendingChallan);
   const allSelected = pendingChallan
     .filter((c) => c.amount > 0)
     .every((c) => selectedChallans.includes(c.id));
 
-  console.log("onlineChallans", onlineChallans);
+  // console.log("onlineChallans", onlineChallans);
 
-  console.log("courtChallans", courtChallans);
+  //console.log("courtChallans", courtChallans);
   useEffect(() => {
     if (pendingChallan.length) {
       autoSelectAllOnInit(pendingChallan.filter((c) => c.amount > 0));
-      console.log("AMAN");
+      //  console.log("AMAN");
     }
   }, [pendingChallan.length]);
 

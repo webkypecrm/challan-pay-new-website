@@ -1,11 +1,21 @@
 import React from "react";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useChallanContext } from "@/context/ChallanContext";
 
 function ContestAndWait() {
+  const { setIsPledge, isPledge } = useChallanContext();
+
+  const handleContestChange = () => {
+    setIsPledge(false);
+  };
   return (
     <div className="border-1 border-gray-200 rounded-2xl bg-white mb-4 ">
       <div className="p-4 flex flex-1 items-center gap-2">
-        <Checkbox className="rounded-full w-6 h-6" />
+        <Checkbox
+          className="rounded-full w-6 h-6"
+          // checked={isPledge}
+          onCheckedChange={handleContestChange}
+        />
         <span className="text-sm font-semibold"> Contest and Wait</span>
       </div>
       <div className="p-2 flex flex-wrap justify-start items-center gap-2">
