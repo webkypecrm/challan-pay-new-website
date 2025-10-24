@@ -31,7 +31,7 @@ export default function HowItWorks() {
 
       img: "/how-it-work/rectangle2.png",
       heading: "Settle Challans Easily",
-      text: "Enter your vehicle number and mobile number to begin",
+      text: "Resolve and settle your challans easily online",
     },
   ];
 

@@ -607,7 +607,7 @@ export default function TrackStatusLogin() {
                       </span>
                       <Input
                         id="phone"
-                        placeholder="9453657489"
+                        placeholder="XXXXXXXXXX"
                         {...register("phone")}
                         className="rounded-l-none flex-1 border-l-0"
                       />
@@ -629,11 +629,15 @@ export default function TrackStatusLogin() {
             <div className="fixed bottom-0 lg:fixed lg:bottom-10 text-xs text-center py-2 mx-6">
               By continuing, you agree to our{" "}
               <span className="text-blue-600 underline">
-                <Link href="#">terms & Condition</Link>
+                <Link href="https://lawyered.in/p/terms-and-conditions-for-challan-resolution">
+                  terms & Condition
+                </Link>
               </span>{" "}
               and{" "}
               <span className="text-blue-600 underline">
-                <Link href="#">Privacy Policy</Link>
+                <Link href="https://lawyered.in/p/privacy-policy">
+                  Privacy Policy
+                </Link>
               </span>
             </div>
           </>

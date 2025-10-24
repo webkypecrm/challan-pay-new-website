@@ -73,7 +73,7 @@ const newsData: NewsItem[] = [
     description:
       "On February 28, 2024, the Federation of Automobile Dealers Associations (FADA) and the Raipur Automobile Dealers Association (RADA) welcomed the launch of Lawyereds flagship product, LOTS24×7 (On-Road Legal Assistance), at dealerships across Raipur, Chhattisgarh.",
     date: "Jan 25, 2025",
-    link: "https://lawyered.in/events-and-news/lots-launches-at-dealerships-in-chhattisgarh-with-fada-&-rada",
+    link: "https://theprint.in/ani-press-releases/fada-and-lawyered-spearheaded-on-road-legal-assistance-for-dealerships-started-from-raipur-on-february-28th-2024/1997875/",
   },
 ];
 
