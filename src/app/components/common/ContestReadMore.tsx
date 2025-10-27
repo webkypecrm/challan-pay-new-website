@@ -43,7 +43,7 @@ export function ContestReadMore({
                 I acknowledge and agree to abide by all applicable laws,
                 regulations, rules, and orders of Indian authorities governing
                 traffic violations and challan contestations. I understand that
-                these include, but are not limited to, provisions under the{" "}
+                these include, but are not limited to, provisions under the
                 <span className="italic">Motor Vehicles Act</span> and other
                 relevant legislations.
               </p>
@@ -58,7 +58,7 @@ export function ContestReadMore({
               </p>
 
               <p className="text-xs">
-                I commit to providing{" "}
+                I commit to providing
                 <span className="font-semibold">Lawyered</span> with accurate,
                 complete, and truthful information and documents necessary for
                 the effective contesting of my challans. I understand that the
@@ -72,21 +72,21 @@ export function ContestReadMore({
                 I authorize <span className="font-semibold">Lawyered</span> to
                 make payments of court fees, fines, or other charges related to
                 the contesting process on my behalf, with my prior consent. I
-                agree to reimburse any such amounts promptly as requested by{" "}
+                agree to reimburse any such amounts promptly as requested by
                 <span className="font-semibold">Lawyered</span>.
               </p>
 
               <p className="text-xs">
                 I affirm that this authorization may be revoked by me at any
-                time, provided such revocation is communicated to{" "}
+                time, provided such revocation is communicated to
                 <span className="font-semibold">Lawyered</span> in writing.
-                Until such revocation,{" "}
+                Until such revocation,
                 <span className="font-semibold">Lawyered</span> shall continue
                 to act with full authority granted herein.
               </p>
 
               <p className="text-xs">
-                I trust that <span className="font-semibold">Lawyered</span>{" "}
+                I trust that <span className="font-semibold">Lawyered</span>
                 will maintain strict confidentiality and security of all
                 personal, sensitive, and case-related information entrusted to
                 them, using it solely for the purpose of contesting my challans.

@@ -30,7 +30,7 @@ export function ReadMoreSlider({
               {/* 1️⃣ Safety Section */}
               <div className="space-y-2">
                 <div className="font-bold text-sm">
-                  💛 You Care About Safety, Yours and Everyone Else’s
+                  💛 You Care About Safety, Yours and Everyone Elses
                 </div>
                 <p className="text-xs">
                   Driving responsibly helps prevent accidents, protects loved
@@ -46,7 +46,7 @@ export function ReadMoreSlider({
                   👨‍👩‍👧 You Influence the People Around You
                 </div>
                 <p className="text-xs">
-                  Whether you're a parent, friend, colleague, or stranger on the
+                  Whether youre a parent, friend, colleague, or stranger on the
                   road—your behaviour sets a powerful example. When you drive
                   with discipline and respect, you silently inspire others to do
                   the same.
@@ -56,12 +56,12 @@ export function ReadMoreSlider({
               {/* 3️⃣ Safer India Section */}
               <div className="space-y-2">
                 <div className="font-bold text-sm">
-                  🇮🇳 You’re Part of a Safer India
+                  🇮🇳 Youre Part of a Safer India
                 </div>
                 <p className="text-xs">
-                  One person's responsible actions may seem small. But when
+                  One persons responsible actions may seem small. But when
                   thousands act together, it shifts the culture. Your pledge
-                  adds momentum to a collective force making India’s roads safer
+                  adds momentum to a collective force making Indias roads safer
                   and saner.
                 </p>
               </div>
@@ -69,11 +69,11 @@ export function ReadMoreSlider({
               {/* 4️⃣ Commitment Intro */}
               <div className="space-y-2">
                 <div className="font-bold text-sm">
-                  🫶 What You’re Choosing to Commit To
+                  🫶 What Youre Choosing to Commit To
                 </div>
                 <p className="text-xs">
                   Choosing responsible driving means standing for values that
-                  protect, respect, and inspire. Here’s what it reflects:
+                  protect, respect, and inspire. Heres what it reflects:
                 </p>
               </div>
 
@@ -85,7 +85,7 @@ export function ReadMoreSlider({
                     any substance.
                   </p>
                   <p className="text-xs">
-                    I value life—mine and others'. I will always choose safety
+                    I value life—mine and others. I will always choose safety
                     and responsibility over risk and regret.
                   </p>
                 </div>
@@ -129,8 +129,8 @@ export function ReadMoreSlider({
                     are met.
                   </p>
                   <p className="text-xs">
-                    I recognize that safe driving starts with a safe vehicle.
-                    I’ll keep mine roadworthy at all times.
+                    I recognize that safe driving starts with a safe vehicle. I
+                    will keep mine roadworthy at all times.
                   </p>
                 </div>
 
@@ -140,8 +140,8 @@ export function ReadMoreSlider({
                     fines, but to protect lives.
                   </p>
                   <p className="text-xs">
-                    I understand that speed thrills but often kills. I’ll choose
-                    control over recklessness.
+                    I understand that speed thrills but often kills. I will
+                    choose control over recklessness.
                   </p>
                 </div>
 
@@ -151,8 +151,8 @@ export function ReadMoreSlider({
                     other drivers.
                   </p>
                   <p className="text-xs">
-                    I won’t assume others can read my mind. Clear communication
-                    on the road saves lives.
+                    I will not assume others can read my mind. Clear
+                    communication on the road saves lives.
                   </p>
                 </div>
 
@@ -192,7 +192,7 @@ export function ReadMoreSlider({
                     📄 Keep my vehicle documents updated and readily accessible.
                   </p>
                   <p className="text-xs">
-                    I will ensure I’m legally compliant and prepared to
+                    I will ensure I am legally compliant and prepared to
                     cooperate during checks.
                   </p>
                 </div>
@@ -242,7 +242,7 @@ export function ReadMoreSlider({
               {/* 5️⃣ Conscious Driving Message */}
               <div className="space-y-2">
                 <p className="text-xs italic">
-                  You’re not pledging to be perfect. You’re pledging to be
+                  You are not pledging to be perfect. You are pledging to be
                   conscious, considerate, and committed.
                 </p>
               </div>
@@ -253,7 +253,7 @@ export function ReadMoreSlider({
                   🤝 What You Can Expect from Us
                 </div>
                 <p className="text-xs">
-                  We’re not just here to support your legal needs. We’re here to
+                  Were not just here to support your legal needs. Were here to
                   back your values. When you take this pledge, we commit to:
                 </p>
                 <ul className="list-disc list-inside text-xs space-y-1">
@@ -298,11 +298,11 @@ export function ReadMoreSlider({
               {/* 8️⃣ Final Message */}
               <div className="space-y-2">
                 <div className="font-bold text-sm">
-                  🚘 You're Not Just Clearing a Challan. You’re Leading by
+                  🚘 Youre Not Just Clearing a Challan. You are Leading by
                   Example
                 </div>
                 <p className="text-xs">
-                  When you take this pledge, you’re stepping up—not because
+                  When you take this pledge, you are stepping up—not because
                   someone asked you to, but because it aligns with who you are.
                   Responsible. Aware. Committed. And now, recognized.
                 </p>
