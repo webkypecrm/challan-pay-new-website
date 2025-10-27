@@ -34,12 +34,11 @@ function PrivacyPolicy() {
                 <strong>1.1</strong> Sproutech Solutions Private Limited, having
                 its office at MGF Metropolis Mall, Ground Floor LG-006,
                 Mehrauli-Gurgaon Rd, Sector 28, Gurugram, Haryana 122002, India
-                (Us, We, or Our) operate the website Challan Pay (the
-                "Website"). The Website and App, along with all associated
-                software, design, servers, data, user inputs and associated
-                services shall collectively be known as the Platform. The
-                services we provide to you via the Platform shall be known as
-                the Services.
+                (Us, We, or Our) operate the website Challan Pay (the Website).
+                The Website and App, along with all associated software, design,
+                servers, data, user inputs and associated services shall
+                collectively be known as the Platform. The services we provide
+                to you via the Platform shall be known as the Services.
               </p>
             </div>
 
@@ -100,7 +99,7 @@ function PrivacyPolicy() {
             <div className="space-y-2">
               <p className="text-gray-800 leading-relaxed text-sm mb-3">
                 <strong>1.6</strong> This Privacy Policy is to be read with, and
-                is an integral part of, our Terms of Use available at{" "}
+                is an integral part of, our Terms of Use available at
                 <a
                   href="#"
                   className="text-blue-600 underline hover:text-blue-800"

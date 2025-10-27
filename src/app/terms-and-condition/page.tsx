@@ -30,16 +30,16 @@ function TermsAndCondition() {
               out the terms of the agreement clearly in advance.
             </p>
             <p className="text-sm text-gray-800 mb-3">
-              Welcome to <strong>Challan Pay</strong> (“We”, “Us”, Company or
-              “Our”). These Terms and Conditions (“Terms”) govern your access to
-              and use of our website and services related to Challan Resolution,
+              Welcome to <strong>Challan Pay</strong> (We, Us, Company or Our).
+              These Terms and Conditions (Terms) govern your access to and use
+              of our website and services related to Challan Resolution,
               including verification of challan details and assisting with
               payment or contestation before appropriate authorities, tribunals,
-              or courts (“Service”). By accessing or using our Service, you
-              agree to be bound by these Terms.
+              or courts (Service). By accessing or using our Service, you agree
+              to be bound by these Terms.
             </p>
             <p className="text-sm  text-gray-800">
-              If you wish to use our “Common Needs” feature, you affirm that you
+              If you wish to use our Common Needs feature, you affirm that you
               are more than 18 years of age and are fully able and competent to
               enter into the terms, conditions, obligations, affirmations,
               representations, and warranties consequent to the creation of the
@@ -56,12 +56,12 @@ function TermsAndCondition() {
             <p className="text-sm  text-gray-800">
               The following terms and conditions constitute an agreement between
               you and <strong>SPROUTECH SOLUTIONS PRIVATE LIMITED</strong>
-              (“Challan Pay,” “we,” “Company” or “us”), the operator of Challan
-              Pay (the “Website”). “User,” “You,” or “Your” shall mean any
-              individual or legal entity who accesses, registers with, or uses
-              the Website or the services offered thereon, including but not
-              limited to vehicle owners, drivers, fleet operators, or their
-              authorized representatives.
+              (Challan Pay, we, Company or us), the operator of Challan Pay (the
+              Website). User, You, or Your shall mean any individual or legal
+              entity who accesses, registers with, or uses the Website or the
+              services offered thereon, including but not limited to vehicle
+              owners, drivers, fleet operators, or their authorized
+              representatives.
             </p>
             <p className="text-sm  text-gray-800">
               BY USING THE WEBSITE, AND/OR BY REGISTERING WITH US, YOU SIGNIFY
@@ -72,7 +72,7 @@ function TermsAndCondition() {
               the country (India).
             </p>
             <p className="text-sm  text-gray-800">
-              Please note that we offer the Website <strong>“AS IS”</strong> and
+              Please note that we offer the Website <strong>AS IS</strong> and
               without warranties. If you are registering an account or using the
               Website on behalf of another individual or entity, you represent
               that you are authorized to accept these Terms & Conditions on
@@ -183,11 +183,11 @@ function TermsAndCondition() {
               this purpose.
             </p>
             <p className="text-sm text-gray-800">
-              One of the Company’s online service offerings is a product
-              designed to facilitate the resolution of challans on a Pan India
-              basis in real time for the Indian Mobility Market (commercial and
-              private vehicles, including cabs) through its proprietary platform
-              known as CAAS “CHALLAN AS A SERVICE”.
+              One of the Companys online service offerings is a product designed
+              to facilitate the resolution of challans on a Pan India basis in
+              real time for the Indian Mobility Market (commercial and private
+              vehicles, including cabs) through its proprietary platform known
+              as CAAS CHALLAN AS A SERVICE.
             </p>
             <p className="text-sm text-gray-800">
               Our product CAAS “Challan as a Service” facilitates clearance,
@@ -285,7 +285,7 @@ function TermsAndCondition() {
                   </li>
                   <li>
                     We are unable to settle the challan within ninety (90) days
-                    from the date of receipt of the User’s request.
+                    from the date of receipt of the Users request.
                   </li>
                 </ul>
                 No refunds shall be granted after the submission of the challan
@@ -376,7 +376,7 @@ function TermsAndCondition() {
               <li>
                 From time to time, we may, at our sole discretion, introduce
                 promotional offers, discounts, credits, reward points, or
-                loyalty schemes (“Promotions”).
+                loyalty schemes (Promotions).
               </li>
               <li>
                 All Promotions are purely discretionary, conditional, and
@@ -408,11 +408,11 @@ function TermsAndCondition() {
                 Challan disposal TAT (Turn Around Time):
               </span>{" "}
               The User acknowledges and agrees that the indicative turnaround
-              time (“TAT”) for the resolution of challans shall ordinarily range
+              time (TAT) for the resolution of challans shall ordinarily range
               between thirty (30) to ninety (90) working days for court challans
               commencing from the date payment is acknowledged and confirmed by
               Us and receipt of all requisite documentation in satisfactory
-              form. The indicative turnaround time (“TAT”) for the resolution of
+              form. The indicative turnaround time (TAT) for the resolution of
               online challans is fifteen (15) working days from the date payment
               is acknowledged and confirmed by Us.
             </p>
@@ -536,7 +536,7 @@ function TermsAndCondition() {
             <ul className="list-disc px-4 text-sm text-gray-800 space-y-1">
               <li>
                 Any modification or update is deemed to have been carried out
-                with the User’s full consent and authorization.
+                with the Users full consent and authorization.
               </li>
               <li>
                 We shall not be liable for any loss, penalty, fine, rejection,
@@ -587,7 +587,7 @@ function TermsAndCondition() {
             </ul>
             <p className="text-sm text-gray-800 mt-2">
               All information submitted by Users shall be collected, processed,
-              stored, and used in accordance with the Company’s{" "}
+              stored, and used in accordance with the Companys{" "}
               <span className="font-medium">Privacy Policy</span>, which forms
               an integral part of these Terms and Conditions.
             </p>
@@ -830,15 +830,14 @@ function TermsAndCondition() {
               The User agrees to defend, indemnify, and hold harmless
               ChallanPay, its affiliates, directors, officers, employees,
               agents, service providers, and partners (collectively, the
-              “Indemnified Parties”) from and against any and all claims,
-              actions, demands, proceedings, liabilities, losses, damages,
-              penalties, fines, costs, or expenses (including reasonable
-              attorneys’ fees and litigation costs) arising out of or in
-              connection with:
+              Indemnified Parties) from and against any and all claims, actions,
+              demands, proceedings, liabilities, losses, damages, penalties,
+              fines, costs, or expenses (including reasonable attorneys fees and
+              litigation costs) arising out of or in connection with:
             </p>
             <ul className="list-disc text-sm text-gray-800 px-4 mt-2 space-y-1">
               <li>
-                (a) The User’s breach of these Terms of Use, Privacy Policy, or
+                (a) The Users breach of these Terms of Use, Privacy Policy, or
                 any other policy incorporated herein by reference;
               </li>
               <li>
@@ -853,10 +852,10 @@ function TermsAndCondition() {
               <li>
                 (d) Any third-party claim, penalty, or proceeding initiated by a
                 Government authority, court, or law enforcement body in relation
-                to the User’s challan, vehicle, or personal details;
+                to the Users challan, vehicle, or personal details;
               </li>
               <li>
-                (e) The User’s violation of any applicable law, rule, or
+                (e) The Users violation of any applicable law, rule, or
                 regulation;
               </li>
             </ul>
