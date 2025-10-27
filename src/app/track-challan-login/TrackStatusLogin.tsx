@@ -414,6 +414,7 @@ export default function TrackStatusLogin() {
   const [loading, setLoading] = useState(false);
   const [decodedData, setDecodedData] = useState<DecodedData | null>(null);
   const [error, setError] = useState("");
+  const [timer, setTimer] = useState(0); // ⏳ new state for timer
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   const {
@@ -446,6 +447,16 @@ export default function TrackStatusLogin() {
     }
   }, [searchParams]);
 
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (timer > 0) {
+      interval = setInterval(() => {
+        setTimer((prev) => prev - 1);
+      }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [timer]);
+
   // Send OTP
   const onSubmit = async (data: LoginFormData) => {
     try {
@@ -453,6 +464,7 @@ export default function TrackStatusLogin() {
       const response = await sendOtp(data.phone);
       setOtpId(response?.data?.otpId);
       setShowOtp(true);
+      setTimer(60);
       toast.dismiss();
       toast.success("OTP sent successfully");
     } catch (error: unknown) {
@@ -471,6 +483,7 @@ export default function TrackStatusLogin() {
       const response = await sendOtp(phone);
       setOtpId(response?.data?.otpId);
       setShowOtp(true);
+      setTimer(60);
       toast.dismiss();
       toast.success("OTP resent successfully");
     } catch (error: unknown) {
@@ -579,7 +592,7 @@ export default function TrackStatusLogin() {
             <CardHeader className="justify-center text-center">
               <CardTitle className="text-lg font-bold">
                 Login to check your
-                <br /> <span>challan status</span>
+                <br /> <span>Track status</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="px-6">
@@ -609,6 +622,7 @@ export default function TrackStatusLogin() {
                         id="phone"
                         placeholder="XXXXXXXXXX"
                         {...register("phone")}
+                        maxLength={10}
                         className="rounded-l-none flex-1 border-l-0"
                       />
                     </div>
@@ -670,25 +684,22 @@ export default function TrackStatusLogin() {
               </div>
             </CardContent>
 
-            {/* <CardFooter className="flex-col gap-2 mt-6">
-              <Button
-                type="button"
-                onClick={handleVerifyOtp}
-                className="w-full bg-cyan-600"
-              >
-                Submit OTP
-              </Button>
-            </CardFooter> */}
-
             <div className="text-xs text-center text-gray-600 mt-6 mx-6">
               Did not receive any code?
               <br />
-              <div
-                className="text-blue-600 my-2 font-bold cursor-pointer"
-                onClick={() => resendOtp(formData.phone)}
-              >
-                Resend Now
-              </div>
+              {timer > 0 ? (
+                <div className="text-gray-700 my-2 font-bold">
+                  Resend in {Math.floor(timer / 60)}:
+                  {String(timer % 60).padStart(2, "0")} min
+                </div>
+              ) : (
+                <div
+                  className="text-blue-600 my-2 font-bold cursor-pointer"
+                  onClick={() => resendOtp(formData.phone)}
+                >
+                  Resend Now
+                </div>
+              )}
             </div>
           </>
         )}

@@ -86,16 +86,18 @@ export default function TrustedPartner() {
       <div className="flex justify-center gap-2 mt-6">
         {scrollSnaps.map((_, idx) => {
           const offset = idx - selectedIndex;
-          const dotColor =
-            offset >= 0 && offset < dotColors.length
-              ? dotColors[offset]
-              : "bg-gray-200";
+
+          // Show only previous, current, and next (3 dots visible)
+          if (offset < -1 || offset > 1) return null;
+
+          // Dot color setup
+          const dotColor = offset === 0 ? "bg-cyan-600" : "bg-gray-300";
 
           return (
             <button
               key={idx}
               onClick={() => emblaApi && emblaApi.scrollTo(idx)}
-              className={`w-2 h-2 rounded-full transition-colors ${dotColor}`}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${dotColor}`}
               aria-label={`Go to slide ${idx + 1}`}
             />
           );

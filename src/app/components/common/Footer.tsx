@@ -35,10 +35,9 @@ export default function Footer() {
           <div className="text-[13px] mt-2">
             ChallanPay by LAWYERED <br /> Sproutech Solutions Private Limited
             <br />
-            India Accelerator Coworking, Lower Ground Floor,
-            <br /> LG-007-02,
-            <br /> MGF Metropolis Mall, MG Road, Gurugram, Haryana,
-            <br /> 122002
+            India Accelerator Coworking, Lower Ground Floor, LG-007-02, MGF{" "}
+            <br />
+            Metropolis Mall, MG Road, Gurugram, Haryana, 122002
           </div>
         </Card>
 
