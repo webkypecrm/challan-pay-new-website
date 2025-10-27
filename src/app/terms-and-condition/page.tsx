@@ -764,8 +764,8 @@ function TermsAndCondition() {
               providers or other users, we have no editorial control or
               responsibility of such content appearing on Challan Pay. All
               information, products or services contained on or provided through
-              this Website are provided "as is", without any warranty of any
-              kind, express or implied, to the fullest extent permissible under
+              this Website are provided as is, without any warranty of any kind,
+              express or implied, to the fullest extent permissible under
               applicable law. ChallanPay and its affiliates hereby disclaim all
               representations and warranties, express or implied, statutory or
               otherwise, including but not limited to warranties of
