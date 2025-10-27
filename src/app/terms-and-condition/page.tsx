@@ -262,7 +262,7 @@ function TermsAndCondition() {
               In the event of cancellation of any paid challan for which payment
               has been successfully made and a ticket ID generated, and the
               challan proceedings have not been concluded due to any reason(s),
-              users must notify us by mailing{" "}
+              users must notify us by mailing
               <span className="font-medium">Legalsupport@lawyered.in</span> or
               by adding a cancellation request over the generated ticket ID.
             </p>
@@ -587,7 +587,7 @@ function TermsAndCondition() {
             </ul>
             <p className="text-sm text-gray-800 mt-2">
               All information submitted by Users shall be collected, processed,
-              stored, and used in accordance with the Companys{" "}
+              stored, and used in accordance with the Companys
               <span className="font-medium">Privacy Policy</span>, which forms
               an integral part of these Terms and Conditions.
             </p>
@@ -610,14 +610,14 @@ function TermsAndCondition() {
                   <li>
                     <span className="font-medium">
                       Transactional communications:
-                    </span>{" "}
+                    </span>
                     acknowledgements, challan updates, payment confirmations,
                     alerts, and service notifications.
                   </li>
                   <li>
                     <span className="font-medium">
                       Promotional communications:
-                    </span>{" "}
+                    </span>
                     offers, discounts, loyalty schemes, marketing campaigns, and
                     service updates.
                   </li>
@@ -773,7 +773,7 @@ function TermsAndCondition() {
               freedom from virus strains.
             </p>
             <p className="text-sm text-gray-800 mt-2">
-              The Website may contain "hyperlinks" to Websites neither owned nor
+              The Website may contain hyperlinks to Websites neither owned nor
               controlled by Us and we are not responsible for, and, unless
               otherwise noted specifically, make no representations or
               endorsements with respect to these Websites or with respect to any
