@@ -118,7 +118,9 @@ export function RaiseDispute({
                 <div className="font-bold text-center">
                   You have raised a dispute on <br /> IRN-{id}
                 </div>
-                <div className="text-gray-500 my-2">Supported Documents</div>
+                {file && (
+                  <div className="text-gray-500 my-2">Supported Documents</div>
+                )}
                 {file && (
                   <div className="flex items-center justify-between bg-white border border-gray-200 rounded-lg mt-2 px-3 py-2">
                     <div className="flex items-center space-x-3">

@@ -142,3 +142,12 @@
   mask-repeat: no-repeat;
   mask-size: cover;
 }
+
+.icon-black {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%)
+    hue-rotate(0deg);
+}
+.icon-cyan {
+  filter: brightness(0) saturate(100%) invert(44%) sepia(91%) saturate(471%)
+    hue-rotate(143deg) brightness(92%) contrast(101%);
+}

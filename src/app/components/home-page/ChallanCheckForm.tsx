@@ -145,7 +145,7 @@ export default function Home() {
                       >
                         <CardContent className="flex flex-col items-center justify-center gap-1 p-2">
                           <div className="w-25 h-30 relative">
-                            {field.value === card.id ? (
+                            {/* {field.value === card.id ? (
                               <img
                                 src={card.image1}
                                 alt={card.title}
@@ -159,7 +159,16 @@ export default function Home() {
                                   card.title === "Private" ? "m-auto mt-10" : ""
                                 }  `}
                               />
-                            )}
+                            )} */}
+                            <img
+                              src={card.image1}
+                              alt={card.title}
+                              className={`object-scale-down rounded-md m-auto mt-8 ${
+                                field.value === card.id
+                                  ? "icon-cyan"
+                                  : "icon-black"
+                              }`}
+                            />
                           </div>
                         </CardContent>
                       </Card>

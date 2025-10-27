@@ -1,9 +1,14 @@
+"use client";
+
 import React from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useChallanContext } from "@/context/ChallanContext";
+import { ContestReadMore } from "../common/ContestReadMore";
+import { useState } from "react";
 
 function ContestAndWait() {
   const { setIsPledge, isPledge } = useChallanContext();
+  const [openReadMore, setOpenReadMore] = useState(false);
 
   const handleContestChange = () => {
     setIsPledge(false);
@@ -32,8 +37,11 @@ function ContestAndWait() {
       <div className="p-4 text-xs font-medium">
         I wish to contest my challans. I understand this may take 60–90 days,
         and I’ll get refunds for any waiver granted after closure...
-        <span className="text-blue-600">read more</span>
+        <span className="text-blue-600" onClick={() => setOpenReadMore(true)}>
+          read more
+        </span>
       </div>
+      <ContestReadMore open={openReadMore} setOpen={setOpenReadMore} />
     </div>
   );
 }

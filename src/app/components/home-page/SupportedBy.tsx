@@ -75,16 +75,16 @@ export default function SupportedBy({
               key={idx}
               className="
                 flex items-center justify-center flex-[0_0_50%]
-                sm:flex-[0_0_33.33%] md:flex-[0_0_25%] lg:flex-[0_0_20%]
+                sm:flex-[0_0_33.33%] md:flex-[0_0_25%] lg:flex-[0_0_30%]
                 p-2 bg-white border border-[#E5E5E5] rounded-lg
               "
             >
               <Image
                 src={partner.icon}
                 alt={partner.name}
-                width={140}
-                height={80}
-                className="object-contain w-full h-auto"
+                width={130}
+                height={100}
+                className="object-contain w-[100px] sm:w-[140px] md:w-[160px] h-auto"
               />
             </div>
           ))}
@@ -92,13 +92,17 @@ export default function SupportedBy({
       </div>
 
       {/* Dots */}
+
       <div className="flex justify-center gap-2 mt-4">
         {scrollSnaps.map((_, idx) => {
+          // Calculate offset from the current active index
           const offset = idx - selectedIndex;
-          const dotColor =
-            offset >= 0 && offset < dotColors.length
-              ? dotColors[offset]
-              : "bg-gray-200";
+
+          // Show only the previous, current, and next dots (3 visible)
+          if (offset < -1 || offset > 1) return null;
+
+          // Define color: active one (middle) is cyan, others gray
+          const dotColor = offset === 0 ? "bg-cyan-600" : "bg-gray-300";
 
           return (
             <button
