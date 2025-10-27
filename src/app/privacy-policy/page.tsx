@@ -34,28 +34,28 @@ function PrivacyPolicy() {
                 <strong>1.1</strong> Sproutech Solutions Private Limited, having
                 its office at MGF Metropolis Mall, Ground Floor LG-006,
                 Mehrauli-Gurgaon Rd, Sector 28, Gurugram, Haryana 122002, India
-                ("Us", "We", or "Our") operate the website Challan Pay (the
+                (Us, We, or Our) operate the website Challan Pay (the
                 "Website"). The Website and App, along with all associated
                 software, design, servers, data, user inputs and associated
-                services shall collectively be known as the “Platform”. The
+                services shall collectively be known as the Platform. The
                 services we provide to you via the Platform shall be known as
-                the “Services”.
+                the Services.
               </p>
             </div>
 
             {/* 1.2 */}
             <div className="space-y-2">
               <p className="text-gray-800 leading-relaxed text-sm mb-3">
-                <strong>1.2</strong> Welcome to Challan Pay, ("we", "us", or
-                "our"). Your privacy is important to us. This Privacy Policy
-                explains how we collect, use, disclose, and safeguard your
-                information when you visit and use our website and services,
-                which facilitate the online settlement of challans through
-                court, Lok Adalat, and similar mechanisms. This Privacy Policy
-                does not apply to any third-party websites or applications.
-                Please note that you shall visit any third-party sites and apps
-                at your own risk upon conditions laid down in their privacy
-                policies, if any.
+                <strong>1.2</strong> Welcome to Challan Pay, (we, us, or our).
+                Your privacy is important to us. This Privacy Policy explains
+                how we collect, use, disclose, and safeguard your information
+                when you visit and use our website and services, which
+                facilitate the online settlement of challans through court, Lok
+                Adalat, and similar mechanisms. This Privacy Policy does not
+                apply to any third-party websites or applications. Please note
+                that you shall visit any third-party sites and apps at your own
+                risk upon conditions laid down in their privacy policies, if
+                any.
               </p>
             </div>
 
@@ -123,7 +123,7 @@ function PrivacyPolicy() {
             <div className="space-y-2">
               <p className="text-gray-800 leading-relaxed text-sm mb-3">
                 <strong>2.1</strong> While using Our services, We may ask you to
-                provide certain personally identifiable information (“PII”) that
+                provide certain personally identifiable information (PII) that
                 can be used to contact or identify You. PII includes, but is not
                 limited to, your name, phone number, postal address, email
                 address and other information that by itself, or in conjunction
@@ -158,8 +158,8 @@ function PrivacyPolicy() {
                   Log Data:
                 </h3>
                 <p className="text-gray-800 leading-relaxed text-sm mb-3">
-                  This Log Data includes information such as your computer's
-                  Internet Protocol ("IP") address, geolocation and geospatial
+                  This Log Data includes information such as your computers
+                  Internet Protocol (IP) address, geolocation and geospatial
                   data, browser type and browser version. In case you are
                   accessing the App, we may collect certain mobile device
                   information such as device ID, model number, operating system,
