@@ -230,17 +230,11 @@ export default function Home() {
             <div className="grid gap-2">
               <p className="text-muted-foreground text-sm">
                 I agree to the{" "}
-                <Link
-                  href="https://lawyered.in/p/terms-and-conditions-for-challan-resolution"
-                  className="text-blue-600"
-                >
+                <Link href="/terms-and-condition" className="text-blue-600">
                   terms & conditions{" "}
                 </Link>
                 and the{" "}
-                <Link
-                  href="https://lawyered.in/p/privacy-policy"
-                  className="text-blue-600"
-                >
+                <Link href="/privacy-policy" className="text-blue-600">
                   privacy policy
                 </Link>
                 , and authorize ChallanPay to fetch my vehicle registration and

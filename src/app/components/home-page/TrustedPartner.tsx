@@ -7,16 +7,16 @@ import Autoplay from "embla-carousel-autoplay";
 
 export default function TrustedPartner() {
   const stats = [
-    { icon: "/partner-logo/cars241.png" },
-    { icon: "/partner-logo/spinny1.png" },
-    { icon: "/partner-logo/cardekho1.png" },
-    { icon: "/partner-logo/trucks1.png" },
-    { icon: "/partner-logo/ald1.png" },
-    { icon: "/partner-logo/olx1.png" },
-    { icon: "/partner-logo/droom1.png" },
-    { icon: "/partner-logo/park1.png" },
-    { icon: "/partner-logo/renewbuy1.png" },
-    { icon: "/partner-logo/carinfo1.png" },
+    { icon: "/partner-logo/cars242.png" },
+    { icon: "/partner-logo/spinny2.png" },
+    { icon: "/partner-logo/cardekho2.png" },
+    { icon: "/partner-logo/trucks2.png" },
+    { icon: "/partner-logo/ald2.png" },
+    { icon: "/partner-logo/olx2.png" },
+    { icon: "/partner-logo/droom2.png" },
+    { icon: "/partner-logo/park2.png" },
+    { icon: "/partner-logo/renewbuy2.png" },
+    { icon: "/partner-logo/carinfo2.png" },
   ];
 
   const [emblaRef, emblaApi] = useEmblaCarousel(

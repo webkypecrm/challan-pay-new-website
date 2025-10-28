@@ -23,14 +23,14 @@ function TermsAndCondition() {
           {/* Section I */}
           <section className="mb-8">
             <h2 className="text-sm font-bold text-black mb-3 uppercase">
-              I. Welcome to Challan Pay
+              I. Welcome to ChallanPay
             </h2>
             <p className="text-sm text-gray-800 mb-3">
               Since we will not be meeting face to face, it is important to set
               out the terms of the agreement clearly in advance.
             </p>
             <p className="text-sm text-gray-800 mb-3">
-              Welcome to <strong>Challan Pay</strong> (We, Us, Company or Our).
+              Welcome to <strong>ChallanPay</strong> (We, Us, Company or Our).
               These Terms and Conditions (Terms) govern your access to and use
               of our website and services related to Challan Resolution,
               including verification of challan details and assisting with
@@ -51,12 +51,12 @@ function TermsAndCondition() {
           {/* Section II */}
           <section className="mb-8">
             <h2 className="text-sm font-bold text-black mb-3 uppercase">
-              II. Terms and Conditions for Using Challan Pay
+              II. Terms and Conditions for Using ChallanPay
             </h2>
             <p className="text-sm  text-gray-800">
               The following terms and conditions constitute an agreement between
               you and <strong>SPROUTECH SOLUTIONS PRIVATE LIMITED</strong>
-              (Challan Pay, we, Company or us), the operator of Challan Pay (the
+              (ChallanPay, we, Company or us), the operator of ChallanPay (the
               Website). User, You, or Your shall mean any individual or legal
               entity who accesses, registers with, or uses the Website or the
               services offered thereon, including but not limited to vehicle
@@ -80,16 +80,16 @@ function TermsAndCondition() {
             </p>
             <p className="text-sm  text-gray-800">
               You understand that the specific method, features and services
-              offered on Challan Pay may be altered, improved, removed, or
-              adapted at any time by Challan Pay in its sole discretion and
+              offered on ChallanPay may be altered, improved, removed, or
+              adapted at any time by ChallanPay in its sole discretion and
               without any notice. If you do not agree with any of these terms,
               refrain from using this Website.
             </p>
             <p className="text-sm  text-gray-800">
               The User takes full responsibility for ensuring that the
-              information submitted is accurate. Challan Pay shall make no
-              effort to validate any information provided by the User with
-              respect to content, correctness, or usability. We may ask for more
+              information submitted is accurate. ChallanPay shall make no effort
+              to validate any information provided by the User with respect to
+              content, correctness, or usability. We may ask for more
               information to provide better services.
             </p>
           </section>
@@ -161,9 +161,9 @@ function TermsAndCondition() {
               Acknowledgement
             </h2>
             <p className="text-sm text-gray-800">
-              By choosing to contest a challan through Challan Pay, the User
-              acknowledges that Challan Pay is merely a facilitation platform
-              and does not assume responsibility for the conduct of legal
+              By choosing to contest a challan through ChallanPay, the User
+              acknowledges that ChallanPay is merely a facilitation platform and
+              does not assume responsibility for the conduct of legal
               proceedings, outcomes, delays, or compliance obligations imposed
               by the court.
             </p>
@@ -235,9 +235,9 @@ function TermsAndCondition() {
             <p className="font-medium text-sm mt-2">Payment Policy:</p>
             <p className="text-sm text-gray-800">
               All fees (Service fee and challan penalty fee) for challan
-              services on Challan Pay shall be payable upfront and in full,
-              prior to availing of any such service by the User. A Service fee
-              is charged for the use of our services, in addition to the challan
+              services on ChallanPay shall be payable upfront and in full, prior
+              to availing of any such service by the User. A Service fee is
+              charged for the use of our services, in addition to the challan
               amount payable to the concerned Government authority. The quantum,
               structure, and applicability of such fee are determined solely at
               our discretion and may vary depending on service type, payment
@@ -262,9 +262,9 @@ function TermsAndCondition() {
               In the event of cancellation of any paid challan for which payment
               has been successfully made and a ticket ID generated, and the
               challan proceedings have not been concluded due to any reason(s),
-              users must notify us by mailing
-              <span className="font-medium">Legalsupport@lawyered.in</span> or
-              by adding a cancellation request over the generated ticket ID.
+              users must notify us by mailing{" "}
+              <span className="font-medium">challan.support@lawyered.in</span>{" "}
+              or by adding a cancellation request over the generated ticket ID.
             </p>
             <p className="text-sm text-gray-800">
               Cancellations may only be requested within forty-eight (48) hours
@@ -350,7 +350,7 @@ function TermsAndCondition() {
               entertained.
             </p>
             <p className="text-sm text-gray-800">
-              The maximum refund amount claimable from Challan Pay cannot exceed
+              The maximum refund amount claimable from ChallanPay cannot exceed
               the amount paid by the user for availing the challan service(s).
             </p>
           </section>
@@ -757,12 +757,12 @@ function TermsAndCondition() {
               XVIII. Disclaimers
             </h2>
             <p className="text-sm text-gray-800 mt-2">
-              You acknowledge that your use of the Challan Pay Services is
-              solely at your own risk, and that you assume full responsibility
-              for all risks associated therewith. To the extent that any of the
-              Content included on Challan Pay is provided by third party content
+              You acknowledge that your use of the ChallanPay Services is solely
+              at your own risk, and that you assume full responsibility for all
+              risks associated therewith. To the extent that any of the Content
+              included on ChallanPay is provided by third party content
               providers or other users, we have no editorial control or
-              responsibility of such content appearing on Challan Pay. All
+              responsibility of such content appearing on ChallanPay. All
               information, products or services contained on or provided through
               this Website are provided as is, without any warranty of any kind,
               express or implied, to the fullest extent permissible under
@@ -785,12 +785,12 @@ function TermsAndCondition() {
               hyperlinks.
             </p>
             <p className="text-sm text-gray-800 mt-2">
-              Challan Pay will take all necessary precautions to protect itself
+              ChallanPay will take all necessary precautions to protect itself
               against failure of our hardware and our software. The Consumer
               acknowledges and agrees that temporary interruptions in service
-              may occur, and that Challan Pay shall have no liability for any
+              may occur, and that ChallanPay shall have no liability for any
               claim, cost, charge, loss or expense arising from or relating to
-              use of the Services. Challan Pay makes no guarantee that the
+              use of the Services. ChallanPay makes no guarantee that the
               Services will meet your requirements, or that the Service(s) will
               be uninterrupted, timely, secure, or error free. The Consumer
               acknowledges and agrees that in the event of failure, restoration
@@ -874,7 +874,7 @@ function TermsAndCondition() {
               Notwithstanding the above, the Consumers exclusive remedies for
               all damages, losses and causes of actions whether in contract,
               including negligence or otherwise, shall not exceed the aggregate
-              amount, which the Consumer paid directly to Challan Pay for the
+              amount, which the Consumer paid directly to ChallanPay for the
               service in question.
             </p>
           </section>
@@ -887,7 +887,7 @@ function TermsAndCondition() {
               jurisdiction of Gurugram, Haryana India and shall be governed by
               and shall be construed in accordance with the laws of the Republic
               of India, without giving effect to any choice of law rules or
-              principles. Any dispute with Challan Pay shall exclusively be
+              principles. Any dispute with ChallanPay shall exclusively be
               subject to the jurisdiction of the appropriate Courts situated at
               Gurugram, Haryana, India. No party shall object to removal or
               prosecution of any litigation to a court within the jurisdiction
@@ -900,7 +900,7 @@ function TermsAndCondition() {
               extent permitted by law, each party to this Terms & Conditions
               waives its or his or her right to a jury trial with respect to any
               dispute or other controversy arising from hereunder or your use of
-              or access to the Challan Pay Services or Website.
+              or access to the ChallanPay Services or Website.
             </p>
             <p className="text-sm text-gray-800 mt-2">
               Failure to exercise or delay in exercising any right hereunder, or
@@ -927,15 +927,15 @@ function TermsAndCondition() {
               associated with the Services.
             </p>
             <p className="text-sm text-gray-800 mt-2">
-              Challan Pay has the right to discontinue service, or deny access
-              to anyone who violates our policies or the terms and conditions
+              ChallanPay has the right to discontinue service, or deny access to
+              anyone who violates our policies or the terms and conditions
               stated herein, without prior notice or warning.
             </p>
             <p className="text-sm text-gray-800 mt-2">
-              Challan Pay may freely transfer, assign or delegate all or any
-              part of these Terms & Conditions, and any rights and duties
-              hereunder. These Terms & Conditions will be binding upon and inure
-              to the benefit of the heirs, successors and permitted assignees.
+              ChallanPay may freely transfer, assign or delegate all or any part
+              of these Terms & Conditions, and any rights and duties hereunder.
+              These Terms & Conditions will be binding upon and inure to the
+              benefit of the heirs, successors and permitted assignees.
             </p>
           </section>
 
@@ -962,9 +962,9 @@ function TermsAndCondition() {
             </h2>
             <p className="text-sm text-gray-800 mt-2">
               This agreement constitutes the entire and whole agreement between
-              user and Challan Pay, and is intended as a complete and exclusive
+              user and ChallanPay, and is intended as a complete and exclusive
               statement of the terms of the agreement. This agreement shall
-              supersede all other communications between Challan Pay and its
+              supersede all other communications between ChallanPay and its
               users with respect to the subject matter hereof and supersedes and
               replaces all prior or contemporaneous understandings or
               agreements, written or oral, regarding such subject matter. If at
@@ -975,14 +975,14 @@ function TermsAndCondition() {
               Terms and Conditions periodically.
             </p>
             <p className="text-sm text-gray-800 mt-2">
-              By using Challan Pay services or accessing the Challan Pay site,
-              you acknowledge that you have read these terms and conditions and
+              By using ChallanPay services or accessing the ChallanPay site, you
+              acknowledge that you have read these terms and conditions and
               agree to be bound by them.
             </p>
           </section>
 
           {/* XXIV. Grievance Officer */}
-          <section>
+          {/* <section>
             <h2 className="text-sm font-bold mb-2 mt-6">
               XXIV. Grievance Officer
             </h2>
@@ -1004,7 +1004,7 @@ function TermsAndCondition() {
                 <span>[_________________________]</span>
               </p>
             </div>
-          </section>
+          </section> */}
         </div>
       </div>
     </div>
