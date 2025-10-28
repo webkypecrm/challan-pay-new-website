@@ -122,7 +122,7 @@ export default function ChallanStatusLogin() {
       const response = await sendOtp(data.phone);
       setOtpId(response?.data?.otpId);
       setShowOtp(true);
-      setTimer(60);
+      setTimer(30);
       toast.dismiss();
       toast.success("OTP sent successfully");
     } catch (err: unknown) {
@@ -141,7 +141,7 @@ export default function ChallanStatusLogin() {
       toast.loading("Resending OTP...");
       const response = await sendOtp(phone);
       setOtpId(response?.data?.otpId);
-      setTimer(60); // ⏳ restart timer
+      setTimer(30); // ⏳ restart timer
       toast.dismiss();
       toast.success("OTP resent successfully");
     } catch (err: unknown) {
@@ -318,15 +318,11 @@ export default function ChallanStatusLogin() {
             <div className="fixed bottom-0 lg:fixed lg:bottom-10 text-xs text-center py-2 mx-6">
               By continuing, you agree to our{" "}
               <span className="text-blue-600 underline">
-                <Link href="https://lawyered.in/p/terms-and-conditions-for-challan-resolution">
-                  terms & Condition
-                </Link>
+                <Link href="/terms-and-condition">terms & Condition</Link>
               </span>{" "}
               and{" "}
               <span className="text-blue-600 underline">
-                <Link href="https://lawyered.in/p/privacy-policy">
-                  Privacy Policy
-                </Link>
+                <Link href="/privacy-policy">Privacy Policy</Link>
               </span>
             </div>
           </>
@@ -367,7 +363,7 @@ export default function ChallanStatusLogin() {
               {timer > 0 ? (
                 <div className="text-gray-700 my-2 font-bold">
                   Resend in {Math.floor(timer / 60)}:
-                  {String(timer % 60).padStart(2, "0")} min
+                  {String(timer % 60).padStart(2, "0")} sec
                 </div>
               ) : (
                 <div

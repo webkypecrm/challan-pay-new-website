@@ -275,6 +275,178 @@ function PrivacyPolicy() {
               </li>
             </ul>
           </section>
+          {/* 4. HOW WE USE YOUR INFORMATION */}
+          <section>
+            <h2 className="text-sm font-bold text-black mb-3">
+              4. HOW WE USE YOUR INFORMATION
+            </h2>
+            <p className="text-gray-800 leading-relaxed text-sm mb-3">
+              We use the collected information for the following purposes:
+            </p>
+            <ul className="list-disc list-inside text-gray-800 text-sm space-y-2">
+              <li>
+                To verify your identity and process challan-related services;
+              </li>
+              <li>
+                To enable challan payment, contestation, or tracking through
+                authorized government portals;
+              </li>
+              <li>
+                To provide customer support, assistance, and troubleshooting;
+              </li>
+              <li>
+                To communicate with you about your transactions, updates, or
+                notifications;
+              </li>
+              <li>
+                To manage our operations, internal record keeping, and improve
+                services;
+              </li>
+              <li>
+                To send promotional offers, surveys, and marketing
+                communications (only with consent);
+              </li>
+              <li>
+                To ensure compliance with applicable laws, court orders, and
+                regulatory requirements;
+              </li>
+              <li>
+                To detect, prevent, and investigate fraudulent or unauthorized
+                activities;
+              </li>
+              <li>
+                To personalize your experience and recommend relevant services;
+              </li>
+              <li>
+                To perform analytics and research to improve platform
+                performance;
+              </li>
+              <li>
+                To enforce our Terms of Use and protect the rights, property, or
+                safety of users and others.
+              </li>
+            </ul>
+          </section>
+
+          {/* 5. RIGHTS WITH RESPECT TO YOUR INFORMATION */}
+          <section>
+            <h2 className="text-sm font-bold text-black mb-3 mt-6">
+              5. RIGHTS WITH RESPECT TO YOUR INFORMATION
+            </h2>
+            <p className="text-gray-800 leading-relaxed text-sm mb-3">
+              You have the following rights regarding your personal data:
+            </p>
+            <ul className="list-disc list-inside text-gray-800 text-sm space-y-2">
+              <li>
+                <strong>Access:</strong> You may request access to the personal
+                information we hold about you.
+              </li>
+              <li>
+                <strong>Correction:</strong> You may request correction or
+                updates to inaccurate or incomplete information.
+              </li>
+              <li>
+                <strong>Erasure:</strong> You may request deletion of your
+                personal data, subject to legal obligations.
+              </li>
+              <li>
+                <strong>Withdrawal of Consent:</strong> You may withdraw consent
+                previously given for processing your data.
+              </li>
+              <li>
+                <strong>Grievance Redressal:</strong> You can contact our
+                Grievance Officer for concerns or clarifications.
+              </li>
+            </ul>
+          </section>
+
+          {/* 6. INFORMATION RETENTION AND DELETION */}
+          <section>
+            <h2 className="text-sm font-bold text-black mb-3 mt-6">
+              6. INFORMATION RETENTION AND DELETION
+            </h2>
+            <p className="text-gray-800 leading-relaxed text-sm mb-3">
+              We retain your personal and non-personal data for as long as
+              necessary to fulfill the purposes described in this Policy,
+              including legal, accounting, and reporting obligations. Upon
+              completion of your service request, your data may be archived
+              securely and retained for up to three (3) years unless a longer
+              retention period is required by law.
+            </p>
+            <p className="text-gray-800 leading-relaxed text-sm">
+              You may request deletion of your data at any time, subject to
+              legal and regulatory requirements.
+            </p>
+          </section>
+
+          {/* 7. SECURITY MEASURES AND DISCLAIMER OF LIABILITY */}
+          <section>
+            <h2 className="text-sm font-bold text-black mb-3 mt-6">
+              7. SECURITY MEASURES AND DISCLAIMER OF LIABILITY
+            </h2>
+            <p className="text-gray-800 leading-relaxed text-sm mb-3">
+              We implement commercially reasonable technical and organizational
+              security measures, including encryption, access controls, regular
+              audits, and secure data storage, to protect your personal data.
+              However, no method of transmission over the Internet or electronic
+              storage is 100% secure.
+            </p>
+            <p className="text-gray-800 leading-relaxed text-sm mb-3">
+              Therefore, while we strive to use acceptable means to protect your
+              information, we cannot guarantee its absolute security, and we
+              disclaim liability for unauthorized access, hacking, data loss, or
+              other breaches beyond our control.
+            </p>
+          </section>
+
+          {/* 8. CHANGES TO THIS PRIVACY POLICY */}
+          <section>
+            <h2 className="text-sm font-bold text-black mb-3 mt-6">
+              8. CHANGES TO THIS PRIVACY POLICY
+            </h2>
+            <p className="text-gray-800 leading-relaxed text-sm mb-3">
+              We may modify, revise, or update this Privacy Policy from time to
+              time. Such changes will be posted on this page with the updated
+              “Effective Date”. Your continued use of the Platform or Services
+              after any modification constitutes acceptance of the updated
+              Policy.
+            </p>
+          </section>
+
+          {/* 9. CONTACT US */}
+          <section>
+            <h2 className="text-sm font-bold text-black mb-3 mt-6">
+              9. CONTACT US
+            </h2>
+            <p className="text-gray-800 leading-relaxed text-sm mb-3">
+              For any queries, concerns, or feedback related to this Privacy
+              Policy, please contact us at:
+            </p>
+            <p className="text-gray-800 text-sm">
+              <strong>Phone:</strong> 9988441033
+            </p>
+          </section>
+
+          {/* 10. GRIEVANCE OFFICER */}
+          <section>
+            <h2 className="text-sm font-bold text-black mb-3 mt-6">
+              10. GRIEVANCE OFFICER
+            </h2>
+            <div className="text-gray-800 text-sm space-y-2">
+              <p>
+                <strong>Name:</strong> Deeksha Varshney
+              </p>
+              <p>
+                <strong>Mobile:</strong> 8076110124
+              </p>
+              <p>
+                <strong>Email:</strong> Deeksha.varshney@lawyered.in
+              </p>
+              <p>
+                <strong>CIN:</strong> U74900DL2015PTC285360
+              </p>
+            </div>
+          </section>
         </div>
       </div>
     </div>

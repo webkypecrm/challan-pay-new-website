@@ -117,18 +117,12 @@ export default function Footer() {
           <h3 className="text-base font-bold mb-2">Legal</h3>
           <ul className="space-y-2">
             <li>
-              <Link
-                href="https://lawyered.in/p/privacy-policy"
-                className="hover:text-blue-500"
-              >
+              <Link href="/privacy-policy" className="hover:text-blue-500">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link
-                href="https://lawyered.in/p/privacy-policy"
-                className="hover:text-blue-500"
-              >
+              <Link href="/terms-and-condition" className="hover:text-blue-500">
                 Terms of Services
               </Link>
             </li>

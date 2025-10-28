@@ -9,21 +9,21 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 //import { LoaderModal } from "../LoaderModal";
 
-interface ChallanData {
-  onlineChallans?: { id: number }[];
-  courtChallans?: { id: number }[];
-  onlineChallanAmount?: number;
-  courtChallanAmount?: number;
-  onlineChallanFees?: number;
-  courtChallanFees?: number;
-  potentialDiscount?: number;
-  amountToPay?: number;
-}
+// interface ChallanData {
+//   onlineChallans?: { id: number }[];
+//   courtChallans?: { id: number }[];
+//   onlineChallanAmount?: number;
+//   courtChallanAmount?: number;
+//   onlineChallanFees?: number;
+//   courtChallanFees?: number;
+//   potentialDiscount?: number;
+//   amountToPay?: number;
+// }
 
-interface ChallanSummaryProps {
-  data?: ChallanData;
-  isPledge?: boolean;
-}
+// interface ChallanSummaryProps {
+//   data?: ChallanData;
+//   isPledge?: boolean;
+// }
 
 export function PaymentSummarySheet({
   open,
