@@ -12,13 +12,13 @@ export function CheckResolution() {
   return (
     <>
       <div className="w-full  flex flex-col items-center justify-center gap-6 pt-12  ">
-        <div className="text-black text-center font-bold text-2xl font-broken lg:text-4xl lg:text-[#374151] uppercase lg:font-normal">
+        <div className=" text-center text-2xl font-broken lg:text-4xl lg:text-[#374151] uppercase lg:font-normal">
           Verified Challan Check<span> and Resolution</span>
         </div>
         <Tabs defaultValue="account" className="w-full ">
           {/* Tabs List full width */}
           <div className="lg:flex lg:justify-center">
-            <TabsList className="w-full flex justify-between bg-[#FAF8F7] lg:w-150 lg:h-12">
+            <TabsList className="w-full flex justify-between bg-[#FAF8F7] lg:bg-slate-50 lg:w-150 lg:h-12">
               <TabsTrigger value="account" className="flex-1 ">
                 ChallanPay
               </TabsTrigger>
@@ -30,7 +30,7 @@ export function CheckResolution() {
 
           {/* Tab Content full width */}
           <TabsContent value="account" className="w-full ">
-            <Card className="w-full bg-[#FAF8F7]">
+            <Card className="w-full bg-[#FAF8F7] lg:bg-slate-50">
               <CardContent className="grid gap-6">
                 <div className="flex  items-center justify-center lg:hidden">
                   <Image
@@ -63,7 +63,7 @@ export function CheckResolution() {
                   {/* Tab Content full width */}
                   <div className="w-full lg:flex ">
                     <TabsContent2 value="account1" className="w-full">
-                      <Card className="w-full  bg-[#FAF8F7]">
+                      <Card className="w-full  bg-[#FAF8F7] lg:bg-slate-50">
                         <CardContent className="grid gap-6">
                           <ul className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                             <li className="py-3 my-2">
@@ -146,7 +146,7 @@ export function CheckResolution() {
                       </Card>
                     </TabsContent2>
                     <TabsContent2 value="password2" className="w-full">
-                      <Card className="w-full  bg-[#FAF8F7]">
+                      <Card className="w-full  bg-[#FAF8F7] lg:bg-slate-50">
                         <CardContent className="grid gap-6">
                           <ul className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                             <li className="py-3 my-2">
@@ -262,7 +262,7 @@ export function CheckResolution() {
             </Card>
           </TabsContent>
           <TabsContent value="password" className="w-full">
-            <Card className="w-full  bg-[#FAF8F7]">
+            <Card className="w-full  bg-[#FAF8F7] lg:bg-slate-50">
               <CardContent className="grid gap-6">
                 <div className="flex  items-center justify-center  lg:hidden">
                   <Image
@@ -273,7 +273,10 @@ export function CheckResolution() {
                     className="object-contain w-64 h-auto md:w-[350px] md:h-[250px]"
                   />
                 </div>
-                <Tabs2 defaultValue="account2" className="w-full bg-[#FAF8F7]">
+                <Tabs2
+                  defaultValue="account2"
+                  className="w-full bg-[#FAF8F7] lg:bg-slate-50"
+                >
                   {/* Tabs List full width */}
                   <div className="lg:flex lg:justify-center">
                     <TabsList2 className="w-full flex justify-between lg:justify-center lg:w-200  lg:gap-x-4">
@@ -295,8 +298,8 @@ export function CheckResolution() {
                   {/* Tab Content full width */}
                   <div className="w-full lg:flex ">
                     <TabsContent2 value="account2" className="w-full">
-                      <Card className="w-full !bg-[#FAF8F7]">
-                        <CardContent className="grid gap-6  !bg-[#FAF8F7]">
+                      <Card className="w-full !bg-[#FAF8F7] lg:bg-slate-50">
+                        <CardContent className="grid gap-6  !bg-[#FAF8F7] lg:bg-slate-50">
                           <ul className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                             <li className="py-3 my-2">
                               <div className="flex items-start gap-3">
@@ -379,7 +382,7 @@ export function CheckResolution() {
                       </Card>
                     </TabsContent2>
                     <TabsContent2 value="password2" className="w-full">
-                      <Card className="w-full !bg-[#FAF8F7]">
+                      <Card className="w-full !bg-[#FAF8F7] lg:bg-slate-50">
                         <CardContent className="grid gap-6">
                           <ul className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                             <li className="py-3 my-2">

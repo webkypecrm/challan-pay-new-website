@@ -48,7 +48,7 @@ export default function TrustedPartner() {
   //const dotColors = ["bg-green-500", "bg-yellow-400", "bg-red-500"];
 
   return (
-    <div className="mt-4 h-60 bg-white p-4 rounded-xl pt-6">
+    <div className="mt-4 lg:h-60 bg-white p-4 rounded-xl pt-6">
       {/* Heading */}
       <div className="text-center mb-6">
         <h4 className="font-broken text-2xl md:text-3xl text-[#374151] uppercase">
