@@ -79,7 +79,7 @@ export function HeroSection() {
 
   return (
     <div
-      className="w-full max-w-screen-xl mx-auto px-4 "
+      className="w-full max-w-screen-xl mx-auto px-4 lg:max-w-7xl lg:px-1.5"
       style={{ marginTop: "100px", marginBottom: "30px" }}
     >
       <Carousel
@@ -94,11 +94,11 @@ export function HeroSection() {
           {cardData.map((card, index) => (
             <CarouselItem key={index}>
               <div className="p-1">
-                <Card className="h-100 border md:h-64 py-0 rounded-md">
+                <Card className="h-100 border md:h-64 py-0 rounded-md lg:rounded-none">
                   <CardContent className="flex items-center justify-center p-3 h-full lg:justify-between lg:p-6">
-                    <div className="w-full flex flex-col md:flex-row items-center justify-around gap-6 md:gap-10">
+                    <div className="w-full flex flex-col md:flex-row items-center justify-around lg:justify-between gap-6 md:gap-10">
                       <div className="flex-1 md:text-left">
-                        <h1 className="text-3xl md:text-4xl font-bold leading-snug">
+                        <h1 className="text-3xl lg:text-5xl  font-bold leading-none">
                           {card.title}
                         </h1>
                         <p className="mt-2 text-[#423F3F] font-medium text-sm md:text-base max-w-md mx-auto md:mx-0">
@@ -107,48 +107,48 @@ export function HeroSection() {
                       </div>
 
                       {/* Right Image */}
-                      <div className="flex-1 flex flex-col items-center">
+                      <div className="flex-1 flex flex-col items-center lg:items-end">
                         <Image
                           src={card.image}
                           alt="Challan Pay"
                           width={350}
                           height={250}
-                          className="object-contain w-64 h-auto md:w-[350px] md:h-[250px]"
+                          className="object-contain w-64 h-auto lg:w-[380px] lg:h-[280px]"
                         />
                       </div>
                     </div>
                   </CardContent>
                 </Card>
+                <div className="flex justify-center mt-2 gap-2">
+                  {scrollSnaps.map((_, idx) => {
+                    // check if this dot is the active one
+                    const isActive = idx === selectedIndex;
+
+                    // default gray for all
+                    let dotColor = "bg-gray-300";
+
+                    // color only the active one based on index
+                    if (isActive) {
+                      if (idx === 0) dotColor = "bg-red-500";
+                      else if (idx === 1) dotColor = "bg-yellow-400";
+                      else if (idx === 2) dotColor = "bg-green-500";
+                      // optional: add more colors if you have more slides
+                    }
+
+                    return (
+                      <button
+                        key={idx}
+                        onClick={() => emblaApi && emblaApi.scrollTo(idx)}
+                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${dotColor}`}
+                      />
+                    );
+                  })}
+                </div>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
       </Carousel>
-      <div className="flex justify-center mt-2 gap-2">
-        {scrollSnaps.map((_, idx) => {
-          // check if this dot is the active one
-          const isActive = idx === selectedIndex;
-
-          // default gray for all
-          let dotColor = "bg-gray-300";
-
-          // color only the active one based on index
-          if (isActive) {
-            if (idx === 0) dotColor = "bg-red-500";
-            else if (idx === 1) dotColor = "bg-yellow-400";
-            else if (idx === 2) dotColor = "bg-green-500";
-            // optional: add more colors if you have more slides
-          }
-
-          return (
-            <button
-              key={idx}
-              onClick={() => emblaApi && emblaApi.scrollTo(idx)}
-              className={`w-2 h-2 rounded-full transition-colors duration-300 ${dotColor}`}
-            />
-          );
-        })}
-      </div>
 
       {/* <Button
         className="w-full bg-cyan-600 mt-4"

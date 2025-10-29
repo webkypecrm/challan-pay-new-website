@@ -26,13 +26,13 @@ export default function TrustedByMillions() {
   ];
 
   return (
-    <Card className="w-full rounded-2xl  border  p-2 py-8 md:p-10 shadow-sm">
+    <Card className="w-full rounded-2xl lg:rounded-none  border  p-2 py-8 md:p-10 shadow-sm">
       {/* Heading */}
       <div className="text-center mb-8">
-        <h2 className="font-broken text-2xl text-[#374151] uppercase">
+        <h2 className="font-broken text-4xl text-[#374151] uppercase">
           Trusted By Millions
         </h2>
-        <p className="text-black font-medium text-sm md:text-base mt-1">
+        <p className=" text-2xl text-black font-medium md:text-base mt-1">
           Join the Largest Challan Resolution Platform in India
         </p>
       </div>
@@ -49,7 +49,7 @@ export default function TrustedByMillions() {
               className="mb-1"
             />
             <p className="font-bold text-lg text-black">{item.value}</p>
-            <p className="text-sm text-black">{item.label}</p>
+            <p className="font-medium text-lg text-black">{item.label}</p>
           </div>
         ))}
       </div>

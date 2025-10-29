@@ -56,7 +56,7 @@ export default function SupportedBy({
     };
   }, [emblaApi]);
 
-  const dotColors = ["bg-green-500", "bg-yellow-400", "bg-red-500"];
+  // const dotColors = ["bg-green-500", "bg-yellow-400", "bg-red-500"];
 
   return (
     <div className="w-full h-60 mt-4 bg-white rounded-xl p-4 pt-6">
@@ -74,16 +74,20 @@ export default function SupportedBy({
             <div
               key={idx}
               className="
-                flex items-center justify-center flex-[0_0_50%]
-                sm:flex-[0_0_33.33%] md:flex-[0_0_25%] lg:flex-[0_0_30%]
-                p-2 bg-white border border-[#E5E5E5] rounded-lg
-              "
+                            flex flex-col items-center justify-center flex-[0_0_50%] 
+                            sm:flex-[0_0_33.33%] md:flex-[0_0_25%] lg:flex-[0_0_20%] 
+                            xl:flex-[0_0_16.66%] 
+                            px-2 py-3 mx-2 bg-white border border-[#E5E5E5] 
+                            rounded-lg shadow-sm hover:shadow-md transition
+                          "
             >
               <Image
                 src={partner.icon}
-                alt={partner.name}
-                width={130}
-                height={100}
+                alt="Company logo"
+                width={160}
+                priority
+                loading="eager"
+                height={120}
                 className="object-contain w-[100px] sm:w-[140px] md:w-[160px] h-auto"
               />
             </div>

@@ -15,8 +15,10 @@ function HomePage() {
   return (
     <>
       <Header />
+
       <HeroSection />
-      <div className="p-4 bg-[#FAF8F7] lg:px-30">
+
+      <div className="p-4 bg-[#FAF8F7] lg:px-33 lg:bg-slate-50">
         <ChallanCheckForm />
         <BotBanner />
         <TrustedByMillions />
@@ -25,10 +27,19 @@ function HomePage() {
         <div id="how-it-works">
           <HowItWorks />
         </div>
-        <div className="lg:flex lg:justify-around gap-4">
+        {/* <div className="lg:flex lg:justify-around gap-4">
           <TrustedPartner />
           <SupportedBy />
+        </div> */}
+        <div className="lg:flex lg:justify-around gap-4">
+          <div className="lg:w-1/2 w-full">
+            <TrustedPartner />
+          </div>
+          <div className="lg:w-1/2 w-full">
+            <SupportedBy />
+          </div>
         </div>
+
         <div>
           <LatestNews />
         </div>
