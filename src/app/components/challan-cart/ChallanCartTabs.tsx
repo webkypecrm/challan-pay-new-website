@@ -111,20 +111,20 @@ export function ChallanCartTabs() {
           defaultValue="pending"
           className="lg:grid lg:grid-cols-[1fr_3fr] gap-4"
         >
-          <div className="lg:bg-white lg:p-2 lg:pt-10 lg:rounded-lg">
+          <div className="lg:bg-white lg:p-2 lg:pt-10 lg:rounded-lg px-4 bg-white pb-4 rounded-b-xl">
             <TabsList
               className="
-          w-full justify-center bg-white px-4 rounded-t-none 
+          w-full justify-center bg-[#faf8f7] lg:bg-white  px-4 
           flex flex-row gap-2
           lg:flex lg:flex-col lg:gap-4 lg:mt-4  lg:rounded-lg lg:mt-4
         "
             >
               {/* Pending */}
-              <TabsTrigger
+              {/* <TabsTrigger
                 value="pending"
                 className="
             w-1/2 text-center rounded-lg 
-            data-[state=active]:bg-cyan-600 data-[state=active]:text-white
+            data-[state=active]:bg-black lg:data-[state=active]:bg-[#F5F5F5] data-[state=active]:text-white lg:data-[state=active]:text-cyan-600 lg:bg-white
             lg:w-full lg:flex lg:items-center lg:justify-between lg:px-4 lg:py-6 lg:border
           "
               >
@@ -134,46 +134,107 @@ export function ChallanCartTabs() {
                 </span>
                 <span className="lg:hidden">Pending</span>
                 <Info className="hidden lg:block w-5 h-5" />
+              </TabsTrigger> */}
+              <TabsTrigger
+                value="pending"
+                className="
+    group data-[state=active]:shadow-none
+    w-1/2 text-center rounded-lg 
+    data-[state=active]:bg-black lg:data-[state=active]:bg-[#F5F5F5]
+    data-[state=active]:text-white lg:data-[state=active]:text-cyan-600
+    lg:bg-white
+    lg:w-full lg:flex lg:items-center lg:justify-between lg:px-4 lg:py-6 lg:border
+  "
+              >
+                {/* Desktop View */}
+                <span className="hidden lg:flex items-center gap-3">
+                  <div
+                    className="
+        w-8 h-8 rounded-md flex items-center justify-center
+        bg-gray-100 group-data-[state=active]:bg-cyan-600
+      "
+                  >
+                    <Hourglass className="w-6 h-6 text-black group-data-[state=active]:text-white" />
+                  </div>
+                  <span className="text-base font-medium">Pending</span>
+                </span>
+
+                {/* Mobile View */}
+                <span className="lg:hidden">Pending</span>
+
+                {/* Info Icon (Right Side) */}
+                <Info className="hidden lg:block w-6 h-6 text-gray-400 group-data-[state=active]:text-cyan-600" />
               </TabsTrigger>
 
               {/* Paid */}
-              <TabsTrigger
+              {/* <TabsTrigger
                 value="paid"
                 className="
-            w-1/2 text-center rounded-lg 
-            data-[state=active]:bg-cyan-600 data-[state=active]:text-white
+            w-1/2 text-center rounded-lg  lg:bg-white
+            data-[state=active]:bg-black  lg:data-[state=active]:bg-[#f5f5f5]  data-[state=active]:text-white lg:data-[state=active]:text-cyan-600 
             lg:w-full lg:flex lg:items-center lg:justify-between lg:px-4 lg:py-6 lg:border
           "
               >
                 <span className="hidden lg:flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5" />
+                  <div className="w-10 h-10 bg-[#0f94a0] rounded-sm flex items-center justify-center">
+                    <CheckCircle className="w-5 h-5 text-white" />
+                  </div>
                   Paid
                 </span>
+
                 <span className="lg:hidden">Paid</span>
                 <Info className="hidden lg:block w-5 h-5" />
+              </TabsTrigger> */}
+              <TabsTrigger
+                value="paid"
+                className="
+    group data-[state=active]:shadow-none
+    w-1/2 text-center rounded-lg lg:bg-white
+    data-[state=active]:bg-black lg:data-[state=active]:bg-[#f5f5f5]
+    data-[state=active]:text-white lg:data-[state=active]:text-cyan-600
+    lg:w-full lg:flex lg:items-center lg:justify-between lg:px-4 lg:py-6 lg:border
+  "
+              >
+                <span className="hidden lg:flex items-center gap-3">
+                  <div
+                    className="
+        w-8 h-8 rounded-md flex items-center justify-center
+        bg-gray-100 group-data-[state=active]:bg-cyan-600
+      "
+                  >
+                    <CheckCircle className="w-6 h-6 text-black group-data-[state=active]:text-white" />
+                  </div>
+                  <span className="text-base font-medium">Paid</span>
+                </span>
+
+                <span className="lg:hidden">Paid</span>
+
+                <Info className="hidden lg:block w-6 h-6 text-gray-400 group-data-[state=active]:text-cyan-600" />
               </TabsTrigger>
             </TabsList>
           </div>
           <div>
-            <div className="h-18 flex items-center justify-center p-2 gap-4 bg-white mb-4 rounded-lg  hidden lg:flex">
-              {/* Left side (car image) */}
-              <div className="flex justify-center items-center">
+            <div className="h-18 flex items-center justify-center p-2 bg-white mb-4 rounded-lg hidden lg:flex">
+              {/* Wrapper to keep image and number plate centered with small gap */}
+              <div className="flex items-center justify-center gap-10">
+                {/* Left side (car image) */}
                 <Image
                   src="/Images/car.svg"
                   alt="car image"
-                  width={80}
+                  width={70}
                   height={30}
-                  className="object-contain"
+                  className="object-contain icon-cyan"
                 />
 
-                <div className="p-1 border border-gray-300">
-                  <div className="border border-black font-bold">
+                {/* Number plate */}
+                <div className="p-1 border border-gray-300 bg-white">
+                  <div className="border border-black font-bold px-3 py-1 text-sm text-center">
                     • {vehicleNo || "N/A"} •
                   </div>
                 </div>
               </div>
-              {/* </div> */}
             </div>
+
             <TabsContent
               value="pending"
               className="bg-slate-100 rounded-xl px-4 lg:bg-white  "

@@ -13,16 +13,9 @@ export default function Footer() {
       <div className="container mx-auto px-2 py-2 grid grid-cols-1 lg:flex lg:justify-between md:grid-cols-4 gap-4 lg:px-30">
         {/* About / Logo Section */}
         <Card className="p-2 shadow-none flex flex-col items-start">
-          {/* <Image
-            src="/logo/text-logo.svg"
-            alt="Challan Pay Logo"
-            width={140}
-            height={80}
-            className="object-contain"
-          /> */}
           <Image
             src="/logo/text-logo-png.png" // Path to your logo in public folder
-            alt="Challan Pay Logo"
+            alt="ChallanPay Logo"
             width={200} // Adjust width
             height={40} // Adjust height
             className="object-contain"
@@ -86,11 +79,6 @@ export default function Footer() {
                 Track Challan
               </Link>
             </li>
-            {/* <li>
-                <Link href="/blogs" className="hover:text-blue-500">
-                  Blogs
-                </Link>
-              </li> */}
           </ul>
         </Card>
         <Card className="p-2 shadow-none hidden lg:flex">
@@ -176,7 +164,7 @@ export default function Footer() {
       </Card>
 
       <div className="bg-black text-center text-sm py-4">
-        &copy; {new Date().getFullYear()} Challan Pay. All Rights Reserved.
+        &copy; {new Date().getFullYear()} ChallanPay. All Rights Reserved.
       </div>
     </footer>
   );

@@ -21,7 +21,7 @@ export default function InfoBanner({
       className="p-2  px-4 flex justify-between items-center rounded-2xl"
       style={{ backgroundColor: bgColor, color: textColor }}
     >
-      <div className="text-xs font-medium">{title}</div>
+      <div className="text-xs font-bold">{title}</div>
       {icon || <Gift />}
     </div>
   );
