@@ -56,10 +56,11 @@ export default function HowItWorks() {
 
   return (
     <section className="w-full py-12 ">
-      <div className="text-center mb-8 px-4">
-        <h2 className="font-broken text-2xl text-[#374151] uppercase">
-          Pay Challan In Just 3 <br />
-          <span>Easy Steps</span>
+      <div className="text-center mb-8 px-4 lg:px-0">
+        <h2 className="font-broken text-2xl text-[#374151] uppercase lg:text-4xl">
+          How challanpay works
+          {/* <br />
+          <span>Easy Steps</span> */}
         </h2>
       </div>
 
@@ -70,7 +71,7 @@ export default function HowItWorks() {
         </div>
 
         <Carousel
-          className="w-full max-w-xs sm:max-w-md lg:max-w-6xl "
+          className="w-full max-w-xs sm:max-w-md lg:max-w-7xl "
           setApi={setEmblaApi}
           plugins={[plugin.current]}
           onMouseEnter={plugin.current.stop}

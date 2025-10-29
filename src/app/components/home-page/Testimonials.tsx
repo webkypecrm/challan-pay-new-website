@@ -16,6 +16,7 @@ interface Testimonial {
   location: string;
   amountSaved: number;
   photo: string;
+  role?: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -167,7 +168,7 @@ const Testimonials: React.FC = () => {
 
   return (
     <div className="bg-[#31AB76] text-white py-4 px-2 mt-6 rounded-lg ">
-      <h2 className="text-2xl font-bold text-center mb-4 lg:text-4xl">
+      <h2 className="text-2xl text-center mb-4 lg:text-4xl font-broken text-4xl text-[#ffff] uppercase lg:py-6">
         <span className="block lg:inline lg:font-broken">
           Real Stories, Real
         </span>
@@ -176,74 +177,84 @@ const Testimonials: React.FC = () => {
 
       <div className="flex flex-wrap justify-center   lg:justify-center gap-6 ">
         <Carousel
-          className="w-full max-w-xs lg:max-w-6xl"
-          setApi={setEmblaApi} // 👈 connect carousel API
+          className="w-full max-w-[1400px] mx-auto" // ✅ Ensures enough width for 4 cards
+          setApi={setEmblaApi}
           plugins={[plugin.current]}
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
-          opts={{ loop: true }}
+          opts={{
+            align: "start",
+            loop: true,
+            slidesToScroll: 1,
+          }}
         >
-          <CarouselContent>
+          <CarouselContent className="flex">
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="basis-full lg:basis-1/3">
-                <div className="bg-white text-black rounded-lg shadow-lg w-auto h-70 p-5 flex flex-col border-b-4 border-yellow-500">
-                  <div className="flex flex-row justify-between">
-                    <div>
-                      {" "}
-                      <p className="text-md font-bold text-[#2A9164]">
-                        ₹{testimonial.amountSaved}
-                      </p>
-                      <p className="text-xs  mb-2">Saved</p>
-                    </div>
-                    <div>
-                      <div className="flex items-center space-x-1 mt-2">
-                        {/* Add star ratings for testimonials */}
-                        {[...Array(5)].map((_, starIndex) => (
-                          <svg
-                            key={starIndex}
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="22"
-                            height="22"
-                            fill="currentColor"
-                            className="text-yellow-500"
-                            viewBox="0 0 16 16"
-                          >
-                            <path d="M8 12l-3.09 1.63.59-3.44L2 6.76l3.53-.29L8 3l1.47 3.47L13 6.76l-3.5 3.43.59 3.44L8 12z" />
-                          </svg>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  <p className="text-black mb-6 justify-start">
-                    {testimonial.description}
-                  </p>
-                  <div className="flex items-center gap-4 text-sm text-gray-600">
-                    {/* Rounded photo */}
+              <CarouselItem
+                key={index}
+                className="basis-full sm:basis-1/2 lg:basis-1/4 flex justify-center" // 👈 ensures 4 per slide
+              >
+                <div className="bg-white text-black rounded-2xl shadow-md w-[90%] lg:w-[90%] p-5 flex flex-col border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+                  {/* Profile Section */}
+                  <div className="flex items-center gap-3 mb-3">
                     <Image
                       src={testimonial.photo}
                       alt={testimonial.name}
-                      width={48} // equals w-12
-                      height={48} // equals h-12
-                      className="rounded-full object-cover"
+                      width={60}
+                      height={60}
+                      className="rounded-full object-cover border border-gray-300"
                     />
-
-                    {/* Name + Location on right side */}
-                    <div className="flex flex-col">
-                      <span className="font-semibold text-black">
+                    <div>
+                      <p className="font-semibold text-black text-[16px]">
                         {testimonial.name}
-                      </span>
-                      <span className="text-gray-900 text-xs">
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        {testimonial.role ? `${testimonial.role} • ` : ""}
                         {testimonial.location}
-                      </span>
+                      </p>
                     </div>
                   </div>
+
+                  {/* Saved + Rating Section */}
+                  <div className="flex items-center justify-between mb-3">
+                    <div>
+                      <p className="text-lg font-semibold text-[#2A9164]">
+                        ₹{testimonial.amountSaved}
+                      </p>
+                      <p className="text-xs font-semibold text-gray-700">
+                        Saved
+                      </p>
+                    </div>
+
+                    <div className="flex items-center space-x-1">
+                      {[...Array(5)].map((_, starIndex) => (
+                        <svg
+                          key={starIndex}
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="currentColor"
+                          className={`${
+                            starIndex < 5
+                              ? "text-yellow-400 drop-shadow-[0_0_4px_rgba(255,215,0,0.8)]"
+                              : "text-yellow-300 opacity-80"
+                          }`}
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 12l-3.09 1.63.59-3.44L2 6.76l3.53-.29L8 3l1.47 3.47L13 6.76l-3.5 3.43.59 3.44L8 12z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-sm text-black leading-relaxed">
+                    {testimonial.description}
+                  </p>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          {/* <CarouselPrevious />
-          <CarouselNext /> */}
         </Carousel>
       </div>
 

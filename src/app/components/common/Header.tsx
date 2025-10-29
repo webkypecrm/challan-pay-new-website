@@ -54,14 +54,24 @@ export default function Header() {
 
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
-      <div className="container mx-auto flex items-center justify-between p-2 ">
+      <div className="container mx-auto flex items-center justify-between p-2 lg:max-w-7xl lg:py-6 ">
         {/* Logo */}
-        <Link href="/">
+        <Link href="/" className="hidden lg:block">
           <Image
             src="/logo/text-logo-png.png" // Path to your logo in public folder
             alt="Challan Pay Logo"
-            width={200} // Adjust width
-            height={40} // Adjust height
+            width={250} // Adjust width
+            height={50} // Adjust height
+            className="object-contain "
+          />
+        </Link>
+
+        <Link href="/" className=" block lg:hidden">
+          <Image
+            src="/logo/text-logo-png.png" // Path to your logo in public folder
+            alt="Challan Pay Logo"
+            width={180} // Adjust width
+            height={35} // Adjust height
             className="object-contain"
           />
         </Link>
@@ -104,7 +114,7 @@ export default function Header() {
             className="bg-cyan-600"
             onClick={handleTrackChallanDashboard}
           >
-            Track Status
+            Track Challan Status
           </Button>
         </div>
         <Sheet>
@@ -167,7 +177,7 @@ export default function Header() {
                 className="bg-cyan-600 w-40 rounded-md"
                 onClick={handleTrackChallanDashboard}
               >
-                Track Status
+                Track Challan Status
               </Button>
             </nav>
           </SheetContent>

@@ -88,7 +88,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased lg:bg-slate-100`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased lg:bg-white`}
       >
         {" "}
         <AuthProvider>
@@ -122,7 +122,7 @@ export default function RootLayout({
                     style={{ display: "none", visibility: "hidden" }}
                   ></iframe>
                 </noscript>
-                <div className="mt-22">{children}</div>
+                <div className="mt-20 lg:mt-35">{children}</div>
               </Suspense>
             </ChallanProvider>
           </TrackStatusAuthProvider>
