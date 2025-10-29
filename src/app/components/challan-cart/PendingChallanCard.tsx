@@ -35,7 +35,7 @@ const PendingChallanCard: React.FC<ChallanCardProps> = ({ item }) => {
 
   return (
     <div
-      className={`bg-white p-4 rounded-lg mt-4 shadow hover:shadow-md transition-shadow ${
+      className={`bg-white p-4 rounded-lg  shadow hover:shadow-md transition-shadow ${
         isZero ? "opacity-50 pointer-events-none" : ""
       }`}
     >
