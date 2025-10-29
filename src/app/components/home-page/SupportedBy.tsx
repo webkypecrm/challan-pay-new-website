@@ -59,7 +59,7 @@ export default function SupportedBy({
   // const dotColors = ["bg-green-500", "bg-yellow-400", "bg-red-500"];
 
   return (
-    <div className="w-full h-60 mt-4 bg-white rounded-xl p-4 pt-6">
+    <div className="w-full lg:h-60 mt-4 bg-white rounded-xl p-4 pt-6">
       {/* Heading */}
       <div className="text-center mb-6">
         <h4 className="font-broken text-2xl md:text-3xl text-[#374151] uppercase">

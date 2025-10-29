@@ -168,7 +168,7 @@ const Testimonials: React.FC = () => {
 
   return (
     <div className="bg-[#31AB76] text-white py-4 px-2 mt-6 rounded-lg ">
-      <h2 className="text-2xl text-center mb-4 lg:text-4xl font-broken text-4xl text-[#ffff] uppercase lg:py-6">
+      <h2 className="text-2xl text-center mb-4 lg:text-4xl font-broken lg:text-4xl text-[#ffff] uppercase lg:py-6">
         <span className="block lg:inline lg:font-broken">
           Real Stories, Real
         </span>
@@ -177,7 +177,7 @@ const Testimonials: React.FC = () => {
 
       <div className="flex flex-wrap justify-center   lg:justify-center gap-6 ">
         <Carousel
-          className="w-full max-w-[1400px] mx-auto" // ✅ Ensures enough width for 4 cards
+          className="w-full max-w-[1100px] mx-auto" // ✅ Ensures enough width for 4 cards
           setApi={setEmblaApi}
           plugins={[plugin.current]}
           onMouseEnter={plugin.current.stop}
@@ -194,7 +194,7 @@ const Testimonials: React.FC = () => {
                 key={index}
                 className="basis-full sm:basis-1/2 lg:basis-1/4 flex justify-center" // 👈 ensures 4 per slide
               >
-                <div className="bg-white text-black rounded-2xl shadow-md w-[90%] lg:w-[90%] p-5 flex flex-col border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+                <div className="bg-white text-black rounded-2xl shadow-md w-[90%] lg:w-[100%] p-5 flex flex-col border border-gray-200 hover:shadow-lg transition-shadow duration-300">
                   {/* Profile Section */}
                   <div className="flex items-center gap-3 mb-3">
                     <Image
@@ -221,9 +221,7 @@ const Testimonials: React.FC = () => {
                       <p className="text-lg font-semibold text-[#2A9164]">
                         ₹{testimonial.amountSaved}
                       </p>
-                      <p className="text-xs font-semibold text-gray-700">
-                        Saved
-                      </p>
+                      <p className="text-xs font-semibold text-black">Saved</p>
                     </div>
 
                     <div className="flex items-center space-x-1">
@@ -236,7 +234,7 @@ const Testimonials: React.FC = () => {
                           fill="currentColor"
                           className={`${
                             starIndex < 5
-                              ? "text-yellow-400 drop-shadow-[0_0_4px_rgba(255,215,0,0.8)]"
+                              ? "text-yellow-400 drop-shadow-[0_0_5px_rgba(255,215,0,0.8)]"
                               : "text-yellow-300 opacity-80"
                           }`}
                           viewBox="0 0 16 16"

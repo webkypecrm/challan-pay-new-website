@@ -106,7 +106,7 @@ export default function HowItWorks() {
             ))}
           </CarouselContent>
         </Carousel>
-        <div className="lg:hidden flex justify-center  mt-2 gap-2">
+        {/* <div className="lg:hidden flex justify-center  mt-2 gap-2">
           {scrollSnaps.map((_, idx) => {
             // find relative position with wrap-around
             const offset =
@@ -130,7 +130,7 @@ export default function HowItWorks() {
               />
             );
           })}
-        </div>
+        </div> */}
       </div>
     </section>
   );
