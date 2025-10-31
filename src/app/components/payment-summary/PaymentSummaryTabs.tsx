@@ -43,51 +43,56 @@ export function PaymentSummaryTabs() {
     );
   }
   return (
-    <div className="rounded-xl  lg:px-6 lg:flex lg:justify-center lg:bg-white bg-white lg:my-4">
-      <div className="flex w-full max-w-md flex-col lg:max-w-3xl">
-        <div className=" lg:text-sm lg:font-semibold lg:py-4  hidden lg:flex">
-          Select Resolution Type
-        </div>
-        <Tabs
-          defaultValue={
-            data?.potentialDiscount === 0 ? "contestandwait" : "payandclose"
-          }
-        >
-          {data?.courtChallanAmount && data.courtChallanAmount >= 10000 ? (
-            <TabsList className="w-full justify-center  px-4 lg:px-0 rounded-t-none lg:rounded-md lg:bg-[#faf8f7]">
-              {data?.potentialDiscount !== 0 ? (
+    <div className="rounded-xl  lg:px-6 lg:flex lg:justify-center lg:bg-white bg-slate-100 lg:my-4">
+      <div className="flex w-full max-w-md flex-col lg:max-w-3xl ">
+        <div className="m-4 bg-white rounded-lg lg:m-0">
+          <div className=" lg:text-[16px] lg:font-semibold lg:py-4  hidden lg:flex">
+            Choose Resolution Type
+          </div>
+          <div className=" text-[15px] font-semibold py-2 px-4  lg:hidden block">
+            Select Resolution Type
+          </div>
+          <Tabs
+            defaultValue={
+              data?.potentialDiscount === 0 ? "contestandwait" : "payandclose"
+            }
+          >
+            {data?.courtChallanAmount && data.courtChallanAmount >= 10000 ? (
+              <TabsList className="w-full justify-center  px-4 lg:px-0 rounded-t-none lg:rounded-md lg:bg-[#faf8f7]  ">
+                {data?.potentialDiscount !== 0 ? (
+                  <TabsTrigger
+                    className="w-1/2 text-center data-[state=active]:bg-black rounded-lg data-[state=active]:rounded-lg  data-[state=active]:text-white "
+                    value="payandclose"
+                  >
+                    Pay & Close
+                  </TabsTrigger>
+                ) : null}{" "}
                 <TabsTrigger
-                  className="w-1/2 text-center data-[state=active]:bg-black rounded-lg data-[state=active]:rounded-lg  data-[state=active]:text-white "
-                  value="payandclose"
-                >
-                  Pay & Close
-                </TabsTrigger>
-              ) : null}{" "}
-              <TabsTrigger
-                className="w-1/2 text-center 
+                  className="w-1/2 text-center 
                data-[state=active]:bg-black 
                rounded-lg 
                data-[state=active]:rounded-lg  
                data-[state=active]:text-white"
-                value="contestandwait"
-              >
-                Contest & Wait
-              </TabsTrigger>
-            </TabsList>
-          ) : null}
+                  value="contestandwait"
+                >
+                  Contest & Wait
+                </TabsTrigger>
+              </TabsList>
+            ) : null}
 
-          {data?.potentialDiscount !== 0 ? (
-            <TabsContent value="payandclose" className=" px-4">
-              <PayAndClose />
-            </TabsContent>
-          ) : null}
+            {data?.potentialDiscount !== 0 ? (
+              <TabsContent value="payandclose" className=" px-4">
+                <PayAndClose />
+              </TabsContent>
+            ) : null}
 
-          {data?.courtChallanAmount && data.courtChallanAmount >= 10000 ? (
-            <TabsContent value="contestandwait" className=" px-4">
-              <ContestAndWait />
-            </TabsContent>
-          ) : null}
-        </Tabs>
+            {data?.courtChallanAmount && data.courtChallanAmount >= 10000 ? (
+              <TabsContent value="contestandwait" className=" px-4">
+                <ContestAndWait />
+              </TabsContent>
+            ) : null}
+          </Tabs>
+        </div>
       </div>
       <LoaderModal open={loader} message="Processing your payment..." />
       <div className="lg:hidden block">

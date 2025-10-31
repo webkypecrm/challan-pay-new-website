@@ -30,7 +30,7 @@ export default function Banner() {
           {/* WhatsApp Button */}
           <Button
             variant="outline"
-            className="flex items-center h-10 gap-2 rounded-md bg-secondary text-green-600 hover:bg-green-50 justify-center  lg:w-60"
+            className="flex items-center h-10 gap-2 rounded-md bg-secondary text-green-600 hover:bg-green-50 justify-center  lg:w-60 lg:mt-4"
             onClick={() => setOpen(true)}
           >
             <FaWhatsapp size={40} color="" />

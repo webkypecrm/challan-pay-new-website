@@ -64,13 +64,13 @@ export function PaymentSummarySheet({
           <>
             <div className="flex justify-between items-center text-black px-2 py-1">
               <div>Online Challan ( {data.onlineChallans?.length ?? 0} )</div>
-              <div className="text-semibold">₹{data.onlineChallanAmount}</div>
+              <div className="font-semibold">₹{data.onlineChallanAmount}</div>
             </div>
             <div className="flex justify-between items-center text-black px-2 py-1">
               <div>
                 Convenience Fee ({data.onlineChallans?.length ?? 0} x 100)
               </div>
-              <div className="text-semibold">₹{data.onlineChallanFees}</div>
+              <div className="font-semibold">₹{data.onlineChallanFees}</div>
             </div>
             <div className="border-t border-1 border-dashed border-gray-300 my-2"></div>
           </>
@@ -81,13 +81,13 @@ export function PaymentSummarySheet({
           <>
             <div className="flex justify-between items-center text-black px-2 py-1">
               <div>Court Challan ( {data.courtChallans?.length ?? 0} )</div>
-              <div className="text-semibold">₹{data.courtChallanAmount}</div>
+              <div className="font-semibold">₹{data.courtChallanAmount}</div>
             </div>
             <div className="flex justify-between items-center text-black px-2 py-1">
               <div>
                 Convenience Fee ({data.courtChallans?.length ?? 0} x 2000)
               </div>
-              <div className="text-semibold">₹{data.courtChallanFees}</div>
+              <div className="font-semibold">₹{data.courtChallanFees}</div>
             </div>
             <div className="border-t border-1 border-dashed border-gray-300 my-2"></div>
           </>

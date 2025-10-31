@@ -49,20 +49,17 @@ export function ReadMoreSlider({
   }
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetContent
-        side="bottom"
-        className="rounded-t-2xl bg-slate-50 max-h-[85vh]"
-      >
-        <SheetHeader>
+      <SheetContent side="bottom" className="rounded-t-2xl  max-h-[85vh]">
+        <SheetHeader className="pb-0">
           <SheetTitle className="mb-2">Why Your Pledge Matters</SheetTitle>
           <Separator />
         </SheetHeader>
-        <SheetDescription className="bg-white rounded-lg p-3 text-black overflow-y-auto flex-1">
+        <SheetDescription className="bg-white rounded-lg p-4 text-black overflow-y-auto flex-1 ">
           <div className="space-y-6 text-sm leading-relaxed text-gray-800">
             {/* 1️⃣ Safety Section */}
             <div className="space-y-2">
               <div className="font-bold text-sm">
-                💛 You Care About Safety, Yours and Everyone Elses
+                You Care About Safety, Yours and Everyone Elses
               </div>
               <p className="text-xs">
                 Driving responsibly helps prevent accidents, protects loved
@@ -75,7 +72,7 @@ export function ReadMoreSlider({
             {/* 2️⃣ Influence Section */}
             <div className="space-y-2">
               <div className="font-bold text-sm">
-                👨‍👩‍👧 You Influence the People Around You
+                You Influence the People Around You
               </div>
               <p className="text-xs">
                 Whether youre a parent, friend, colleague, or stranger on the
@@ -101,7 +98,7 @@ export function ReadMoreSlider({
             {/* 4️⃣ Commitment Intro */}
             <div className="space-y-2">
               <div className="font-bold text-sm">
-                🫶 What Youre Choosing to Commit To
+                What Youre Choosing to Commit To
               </div>
               <p className="text-xs">
                 Choosing responsible driving means standing for values that
@@ -113,7 +110,7 @@ export function ReadMoreSlider({
             <div className="space-y-3 pl-3 border-l-2 border-yellow-400">
               <div>
                 <p className="font-semibold text-xs">
-                  🚫 Never drink and drive, or drive under the influence of any
+                  Never drink and drive, or drive under the influence of any
                   substance.
                 </p>
                 <p className="text-xs">
@@ -124,7 +121,7 @@ export function ReadMoreSlider({
 
               <div>
                 <p className="font-semibold text-xs">
-                  🔇 Avoid honking unnecessarily and show patience on the road.
+                  Avoid honking unnecessarily and show patience on the road.
                 </p>
                 <p className="text-xs">
                   I understand that aggressive behaviour, including honking,
@@ -134,8 +131,8 @@ export function ReadMoreSlider({
 
               <div>
                 <p className="font-semibold text-xs">
-                  🚶 Stop completely at pedestrian crossings and give right of
-                  way when required.
+                  Stop completely at pedestrian crossings and give right of way
+                  when required.
                 </p>
                 <p className="text-xs">
                   I believe that roads are shared spaces, and I will always
@@ -145,7 +142,7 @@ export function ReadMoreSlider({
 
               <div>
                 <p className="font-semibold text-xs">
-                  🚗 Avoid overtaking from the wrong side or in blind spots.
+                  Avoid overtaking from the wrong side or in blind spots.
                 </p>
                 <p className="text-xs">
                   I will drive predictably and avoid shortcuts that compromise
@@ -155,8 +152,8 @@ export function ReadMoreSlider({
 
               <div>
                 <p className="font-semibold text-xs">
-                  🧰 Regularly maintain my vehicle to ensure safety standards
-                  are met.
+                  Regularly maintain my vehicle to ensure safety standards are
+                  met.
                 </p>
                 <p className="text-xs">
                   I recognize that safe driving starts with a safe vehicle. I
@@ -166,8 +163,8 @@ export function ReadMoreSlider({
 
               <div>
                 <p className="font-semibold text-xs">
-                  🚦 Stay within designated speed limits—not just to avoid
-                  fines, but to protect lives.
+                  Stay within designated speed limits—not just to avoid fines,
+                  but to protect lives.
                 </p>
                 <p className="text-xs">
                   I understand that speed thrills but often kills. I will choose
@@ -177,8 +174,8 @@ export function ReadMoreSlider({
 
               <div>
                 <p className="font-semibold text-xs">
-                  💡 Use indicators and signals to communicate clearly with
-                  other drivers.
+                  Use indicators and signals to communicate clearly with other
+                  drivers.
                 </p>
                 <p className="text-xs">
                   I will not assume others can read my mind. Clear communication
@@ -188,7 +185,7 @@ export function ReadMoreSlider({
 
               <div>
                 <p className="font-semibold text-xs">
-                  🔆 Avoid using high beams inappropriately, especially in city
+                  Avoid using high beams inappropriately, especially in city
                   areas or when approaching oncoming traffic.
                 </p>
                 <p className="text-xs">
@@ -199,7 +196,7 @@ export function ReadMoreSlider({
 
               <div>
                 <p className="font-semibold text-xs">
-                  😴 Pull over safely if I feel drowsy, distracted, or unfit to
+                  Pull over safely if I feel drowsy, distracted, or unfit to
                   drive.
                 </p>
                 <p className="text-xs">
@@ -210,7 +207,7 @@ export function ReadMoreSlider({
 
               <div>
                 <p className="font-semibold text-xs">
-                  👮 Treat all traffic enforcement officers with respect.
+                  Treat all traffic enforcement officers with respect.
                 </p>
                 <p className="text-xs">
                   I will engage with them respectfully, even if I disagree.
@@ -219,7 +216,7 @@ export function ReadMoreSlider({
 
               <div>
                 <p className="font-semibold text-xs">
-                  📄 Keep my vehicle documents updated and readily accessible.
+                  Keep my vehicle documents updated and readily accessible.
                 </p>
                 <p className="text-xs">
                   I will ensure I am legally compliant and prepared to cooperate
@@ -229,7 +226,7 @@ export function ReadMoreSlider({
 
               <div>
                 <p className="font-semibold text-xs">
-                  🤝 Act responsibly in the event of an accident.
+                  Act responsibly in the event of an accident.
                 </p>
                 <p className="text-xs">
                   I will help where possible, not flee or escalate the
@@ -239,7 +236,7 @@ export function ReadMoreSlider({
 
               <div>
                 <p className="font-semibold text-xs">
-                  📵 Never use my phone while driving, even at red lights.
+                  Never use my phone while driving, even at red lights.
                 </p>
                 <p className="text-xs">
                   No call or message is more important than a life. I will stay
@@ -249,18 +246,18 @@ export function ReadMoreSlider({
 
               <div>
                 <p className="font-semibold text-xs">
-                  🗣️ Educate at least one person a month on the importance of
-                  road safety.
+                  Educate at least one person a month on the importance of road
+                  safety.
                 </p>
                 <p className="text-xs">
-                  I believe change spreads through action and conversation. I’ll
-                  use my voice to create safer roads.
+                  I believe change spreads through action and conversation. I
+                  will use my voice to create safer roads.
                 </p>
               </div>
 
               <div>
                 <p className="font-semibold text-xs">
-                  🙏 Embrace humility and empathy every time I drive.
+                  Embrace humility and empathy every time I drive.
                 </p>
                 <p className="text-xs">
                   I will remember that each vehicle has a person with a story,
@@ -280,7 +277,7 @@ export function ReadMoreSlider({
             {/* 6️⃣ What You Can Expect */}
             <div className="space-y-2">
               <div className="font-bold text-sm">
-                🤝 What You Can Expect from Us
+                What You Can Expect from Us
               </div>
               <p className="text-xs">
                 Were not just here to support your legal needs. Were here to
@@ -308,7 +305,7 @@ export function ReadMoreSlider({
 
             {/* 7️⃣ Who This Is For */}
             <div className="space-y-2">
-              <div className="font-bold text-sm">👥 Who This Is For</div>
+              <div className="font-bold text-sm">Who This Is For</div>
               <ul className="list-disc list-inside text-xs space-y-1">
                 <li>
                   People who want to be better drivers and more mindful
@@ -327,7 +324,7 @@ export function ReadMoreSlider({
             {/* 8️⃣ Final Message */}
             <div className="space-y-2">
               <div className="font-bold text-sm">
-                🚘 Youre Not Just Clearing a Challan. You are Leading by Example
+                Youre Not Just Clearing a Challan. You are Leading by Example
               </div>
               <p className="text-xs">
                 When you take this pledge, you are stepping up—not because

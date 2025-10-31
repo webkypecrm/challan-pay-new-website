@@ -25,12 +25,12 @@ function PaymentSummaryHeader() {
   }, []);
   //console.log(data);
   return (
-    <div className="mt-25 px-4 lg:px-0 bg-white  lg:bg-slate-100">
+    <div className="mt-25 px-4 lg:px-0 bg-white lg:mt-0  lg:bg-slate-100">
       <div className="flex items-center justify-between">
         {/* Left side: Back button + Title */}
         <div className="flex items-center gap-2">
           <button
-            className="p-1 bg-gray-100 border border-gray-200 rounded-sm hover:bg-gray-200"
+            className="p-1 bg-white border border-gray-200 rounded-sm hover:bg-gray-200"
             onClick={handleBack}
           >
             <ChevronLeft size={18} />
@@ -40,27 +40,42 @@ function PaymentSummaryHeader() {
           </span>
         </div>
       </div>
-      <div className="h-18 flex items-center justify-start p-2 gap-4 bg-slate-50 rounded-lg mt-4 lg:mt-4  lg:flex lg:justify-center lg:items-center lg:bg-white">
-        {/* Left side (car image) */}
-        {/* <div className="lg:flex lg:justify-center lg:items-center"> */}
+      {/* <div className="h-18 flex items-center justify-start p-2 gap-4 bg-slate-50 rounded-lg mt-4 lg:mt-4  lg:flex lg:justify-center lg:items-center lg:bg-white">
+        
         <Image
           src="/Images/car.svg"
           alt="car image"
-          width={80}
-          height={30}
-          className="object-contain"
+          width={70}
+          height={25}
+          className="object-contain icon-cyan"
         />
 
-        {/* Centered number plate */}
-        {/* <div className="flex-1 flex justify-center"> */}
+       
         <div className="p-1 border border-gray-300">
           <div className="border border-black font-bold">
             • {vehicleNo || "N/A"} •
           </div>
         </div>
-        {/* </div> */}
-        {/* </div> */}
+       
+      </div> */}
+      <div className="h-18 flex items-center justify-center gap-4 p-2 bg-slate-50 rounded-lg mt-4 lg:bg-white">
+        {/* Car Image */}
+        <Image
+          src="/Images/car.svg"
+          alt="car image"
+          width={70}
+          height={25}
+          className="object-contain icon-cyan"
+        />
+
+        {/* Number Plate */}
+        <div className="p-1 border border-gray-300 rounded">
+          <div className="border border-black font-bold px-4 py-1 text-center rounded bg-white">
+            • {vehicleNo || "N/A"} •
+          </div>
+        </div>
       </div>
+
       <div className="block lg:hidden">
         <div className="text-sm mt-2">
           {(data?.courtChallans?.length ?? 0) +

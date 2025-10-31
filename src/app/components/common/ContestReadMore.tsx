@@ -50,17 +50,14 @@ export function ContestReadMore({
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetContent
-        side="bottom"
-        className="rounded-t-2xl bg-slate-50 max-h-[85vh]"
-      >
-        <SheetHeader>
+      <SheetContent side="bottom" className="rounded-t-2xl max-h-[85vh]">
+        <SheetHeader className="pb-0">
           <SheetTitle className="mb-2">
             Contest & Pay Acknowledgement
           </SheetTitle>
           <Separator />
         </SheetHeader>
-        <SheetDescription className="bg-white rounded-lg p-3 text-black overflow-y-auto flex-1">
+        <SheetDescription className="bg-white rounded-lg p-4 text-black overflow-y-auto flex-1">
           <div className="space-y-4 text-sm leading-relaxed text-gray-800">
             <p className="text-xs">
               I, the undersigned, hereby grant{" "}

@@ -85,7 +85,7 @@ export default function TrustedPartner() {
       </div>
 
       {/* Dots */}
-      <div className="flex justify-center gap-2 mt-6">
+      {/* <div className="flex justify-center gap-2 mt-6">
         {scrollSnaps.map((_, idx) => {
           const offset = idx - selectedIndex;
 
@@ -104,7 +104,7 @@ export default function TrustedPartner() {
             />
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 }

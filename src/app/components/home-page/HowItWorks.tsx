@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-//import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
   Carousel,
@@ -28,7 +27,6 @@ export default function HowItWorks() {
     },
     {
       id: 3,
-
       img: "/how-it-work/rectangle2.png",
       heading: "Settle Challans Easily",
       text: "Resolve and settle your challans easily online",
@@ -55,33 +53,34 @@ export default function HowItWorks() {
   }, [emblaApi]);
 
   return (
-    <section className="w-full py-12 ">
+    <section className="w-full py-12">
       <div className="text-center mb-8 px-4 lg:px-0">
         <h2 className="font-broken text-2xl text-[#374151] uppercase lg:text-4xl">
           How challanpay works
-          {/* <br />
-          <span>Easy Steps</span> */}
         </h2>
       </div>
 
-      {/* Steps Grid */}
       <div className="flex flex-col justify-center items-center w-full relative">
+        {/* Top-left badge for small screens */}
         <div className="lg:hidden w-12 h-12 absolute -top-4 -left-1 rounded-full bg-cyan-500 text-white text-lg font-bold flex items-center justify-center z-10">
-          {selectedIndex + 1} {/* dynamically show current slide number */}
+          {selectedIndex + 1}
         </div>
 
         <Carousel
-          className="w-full max-w-xs sm:max-w-md lg:max-w-7xl "
+          className="w-full max-w-xs sm:max-w-md lg:max-w-7xl"
           setApi={setEmblaApi}
           plugins={[plugin.current]}
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
         >
           <CarouselContent>
-            {steps.map((step) => (
+            {steps.map((step, index) => (
               <CarouselItem key={step.id} className="basis-full lg:basis-1/3">
-                <Card className=" flex flex-col items-center justify-center rounded-xl overflow-visible border shadow-sm py-0">
-                  {/* Step Number Badge */}
+                <Card className="relative flex flex-col items-center justify-center rounded-xl overflow-visible border shadow-sm py-0">
+                  {/* Number badge visible only on large screens */}
+                  <div className="hidden lg:flex w-10 h-10 absolute -top-3 -left-3 rounded-full bg-cyan-500 text-white text-lg font-bold items-center justify-center shadow-md">
+                    {index + 1}
+                  </div>
 
                   {/* Image */}
                   <Image
@@ -94,7 +93,7 @@ export default function HowItWorks() {
                 </Card>
 
                 {/* Heading & Text */}
-                <div className=" mt-2">
+                <div className="mt-2 text-center lg:text-left">
                   <h3 className="text-base font-bold text-black">
                     {step.heading}
                   </h3>
@@ -106,31 +105,6 @@ export default function HowItWorks() {
             ))}
           </CarouselContent>
         </Carousel>
-        {/* <div className="lg:hidden flex justify-center  mt-2 gap-2">
-          {scrollSnaps.map((_, idx) => {
-            // find relative position with wrap-around
-            const offset =
-              (idx - selectedIndex + scrollSnaps.length) % scrollSnaps.length;
-
-            let dotColor = "bg-gray-200";
-
-            if (offset === 0) {
-              dotColor = "bg-red-500"; // active
-            } else if (offset === 1) {
-              dotColor = "bg-yellow-400"; // next
-            } else if (offset === 2) {
-              dotColor = "bg-green-500"; // next-next
-            }
-
-            return (
-              <button
-                key={idx}
-                onClick={() => emblaApi && emblaApi.scrollTo(idx)}
-                className={`w-2 h-2 rounded-full transition-colors ${dotColor}`}
-              />
-            );
-          })}
-        </div> */}
       </div>
     </section>
   );

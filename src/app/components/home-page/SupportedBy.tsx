@@ -97,7 +97,7 @@ export default function SupportedBy({
 
       {/* Dots */}
 
-      <div className="flex justify-center gap-2 mt-4">
+      {/* <div className="flex justify-center gap-2 mt-4">
         {scrollSnaps.map((_, idx) => {
           // Calculate offset from the current active index
           const offset = idx - selectedIndex;
@@ -117,7 +117,7 @@ export default function SupportedBy({
             />
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 }

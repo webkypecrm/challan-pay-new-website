@@ -119,37 +119,36 @@ export function HeroSection() {
                     </div>
                   </CardContent>
                 </Card>
-                <div className="flex justify-center mt-2 gap-2">
-                  {scrollSnaps.map((_, idx) => {
-                    // check if this dot is the active one
-                    const isActive = idx === selectedIndex;
-
-                    // default gray for all
-                    let dotColor = "bg-gray-300";
-
-                    // color only the active one based on index
-                    if (isActive) {
-                      if (idx === 0) dotColor = "bg-red-500";
-                      else if (idx === 1) dotColor = "bg-yellow-400";
-                      else if (idx === 2) dotColor = "bg-green-500";
-                      // optional: add more colors if you have more slides
-                    }
-
-                    return (
-                      <button
-                        key={idx}
-                        onClick={() => emblaApi && emblaApi.scrollTo(idx)}
-                        className={`w-2 h-2 rounded-full transition-colors duration-300 ${dotColor}`}
-                      />
-                    );
-                  })}
-                </div>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
       </Carousel>
+      <div className="flex justify-center mt-2 gap-2">
+        {scrollSnaps.map((_, idx) => {
+          // check if this dot is the active one
+          const isActive = idx === selectedIndex;
 
+          // default gray for all
+          let dotColor = "bg-gray-300";
+
+          // color only the active one based on index
+          if (isActive) {
+            if (idx === 0) dotColor = "bg-red-500";
+            else if (idx === 1) dotColor = "bg-yellow-400";
+            else if (idx === 2) dotColor = "bg-green-500";
+            // optional: add more colors if you have more slides
+          }
+
+          return (
+            <button
+              key={idx}
+              onClick={() => emblaApi && emblaApi.scrollTo(idx)}
+              className={`w-2 h-2 rounded-full transition-colors duration-300 ${dotColor}`}
+            />
+          );
+        })}
+      </div>
       {/* <Button
         className="w-full bg-cyan-600 mt-4"
         onClick={() => {

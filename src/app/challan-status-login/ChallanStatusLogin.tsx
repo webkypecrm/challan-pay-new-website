@@ -247,14 +247,16 @@ export default function ChallanStatusLogin() {
     );
 
   return (
-    <div className="lg:bg-white lg:h-screen lg:pt-10 lg:overflow-hidden">
+    // <div className="lg:bg-white lg:h-screen lg:pt-0 lg:overflow-hidden">
+    // <div className="min-h-screen bg-white lg:h-screen lg:overflow-hidden lg:fixed lg:w-full lg:top-20 lg:left-0">
+    <div className="min-h-screen bg-white h-screen overflow-hidden fixed w-full top-4 left-0 lg:top-18">
       <Header />
-      <Card className="w-full max-w-sm mt-10 mx-auto lg:bg-white lg:min-h-screen">
+      <Card className="w-full max-w-sm mt-10 mx-auto lg:bg-white ">
         <div className="w-full flex flex-col justify-center items-center mt-5">
           <Image
             src="/Images/loginImg.png"
-            width={180}
-            height={120}
+            width={220}
+            height={140}
             alt="login-image"
           />
         </div>
@@ -263,7 +265,7 @@ export default function ChallanStatusLogin() {
           <>
             {/* Login Form */}
             <CardHeader className="justify-center text-center">
-              <CardTitle className="text-lg font-bold">
+              <CardTitle className="text-lg font-bold leading-none">
                 Login to check your
                 <br />
                 <span>challan status</span>

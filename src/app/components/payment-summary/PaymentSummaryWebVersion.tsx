@@ -34,7 +34,7 @@ export default function PaymentSummaryWebVersion() {
     );
   }
   return (
-    <Card className="max-w-md w-full rounded-lg p-4 mt-17 hidden lg:flex lg:mt-20">
+    <Card className="max-w-md w-full rounded-lg p-4 mt-17  hidden lg:flex lg:mt-7">
       <CardContent className="space-y-4 p-0">
         {/* Header */}
         <div className="text-[16px] font-semibold ">
@@ -62,13 +62,18 @@ export default function PaymentSummaryWebVersion() {
             <>
               <div className="flex justify-between">
                 <span>Online Challan ({data.onlineChallans?.length ?? 0})</span>
-                <span>₹{data.onlineChallanAmount}</span>
+                <span className="font-semibold text-black">
+                  ₹{data.onlineChallanAmount}
+                </span>
               </div>
               <div className="flex justify-between text-gray-500">
                 <span>
-                  Convenience Fee ({data.onlineChallans?.length ?? 0} x 100)
+                  <span className="text-black">Convenience Fee</span> (
+                  {data.onlineChallans?.length ?? 0} x 100)
                 </span>
-                <span>₹{data.onlineChallanFees}</span>
+                <span className="font-semibold text-black">
+                  ₹{data.onlineChallanFees}
+                </span>
               </div>
             </>
           ) : null}
@@ -78,13 +83,18 @@ export default function PaymentSummaryWebVersion() {
             <>
               <div className="flex justify-between pt-2">
                 <span>Court Challan ({data.courtChallans?.length ?? 0})</span>
-                <span>₹{data.courtChallanAmount}</span>
+                <span className="font-semibold">
+                  ₹{data.courtChallanAmount}
+                </span>
               </div>
               <div className="flex justify-between text-gray-500">
                 <span>
-                  Convenience Fee ({data.courtChallans?.length ?? 0} x 2000)
+                  <span className="text-black">Convenience Fee</span> (
+                  {data.courtChallans?.length ?? 0} x 2000)
                 </span>
-                <span>₹{data.courtChallanFees}</span>
+                <span className="font-semibold text-black">
+                  ₹{data.courtChallanFees}
+                </span>
               </div>
             </>
           ) : null}
@@ -93,7 +103,7 @@ export default function PaymentSummaryWebVersion() {
           {isPledge &&
             data?.potentialDiscount &&
             data.potentialDiscount > 0 && (
-              <div className="flex justify-between text-cyan-700 pt-2 font-semibold">
+              <div className="flex justify-between text-cyan-700 pt-2 font-bold">
                 <span>Pledge Reward</span>
                 <span>-₹{data.potentialDiscount}</span>
               </div>
