@@ -32,7 +32,7 @@ export default function TrustedByMillions() {
         <h2 className="font-broken lg:text-4xl text-[#374151] uppercase text-2xl ">
           Trusted By Millions
         </h2>
-        <p className=" lg:text-2xl text-black font-medium md:text-base mt-1 text-sm">
+        <p className=" lg:text-lg text-black font-medium md:text-base mt-1 text-sm">
           Join the Largest Challan Resolution Platform in India
         </p>
       </div>
@@ -48,7 +48,7 @@ export default function TrustedByMillions() {
               height={60}
               className="mb-1"
             />
-            <p className="font-bold lg:text-lg text-black text-sm">
+            <p className="font-bold lg:text-2xl text-black text-sm">
               {item.value}
             </p>
             <p className="font-medium lg:text-lg text-black text-sm">

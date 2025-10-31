@@ -27,10 +27,6 @@ function HomePage() {
         <div id="how-it-works">
           <HowItWorks />
         </div>
-        {/* <div className="lg:flex lg:justify-around gap-4">
-          <TrustedPartner />
-          <SupportedBy />
-        </div> */}
         <div className="lg:flex lg:justify-around gap-4">
           <div className="lg:w-1/2 w-full">
             <TrustedPartner />

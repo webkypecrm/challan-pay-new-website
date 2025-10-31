@@ -10,7 +10,7 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="text-gray-200 lg:bg-white">
-      <div className="container mx-auto px-2 py-2 grid grid-cols-1 lg:flex lg:justify-between md:grid-cols-4 gap-4 lg:px-30">
+      <div className="container mx-auto px-2 py-2 grid grid-cols-1 lg:flex lg:justify-between md:grid-cols-4 gap-4 lg:px-33">
         {/* About / Logo Section */}
         <Card className="p-2 shadow-none flex flex-col items-start">
           <Image
@@ -26,7 +26,8 @@ export default function Footer() {
             <span>challan resolution.</span>
           </div>
           <div className="text-[13px] mt-2">
-            ChallanPay by LAWYERED <br /> Sproutech Solutions Private Limited
+            ChallanPay by <Link href={"https://lawyered.in/"}>LAWYERED</Link>
+            <br /> Sproutech Solutions Private Limited
             <br />
             India Accelerator Coworking, Lower Ground Floor, LG-007-02, MGF{" "}
             <br />

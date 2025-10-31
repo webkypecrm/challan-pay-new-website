@@ -122,7 +122,7 @@ export default function RootLayout({
                     style={{ display: "none", visibility: "hidden" }}
                   ></iframe>
                 </noscript>
-                <div className="mt-20 lg:mt-35">{children}</div>
+                <div className="mt-20 lg:mt-32">{children}</div>
               </Suspense>
             </ChallanProvider>
           </TrackStatusAuthProvider>
