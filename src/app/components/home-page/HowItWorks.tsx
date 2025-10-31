@@ -78,9 +78,9 @@ export default function HowItWorks() {
               <CarouselItem key={step.id} className="basis-full lg:basis-1/3">
                 <Card className="relative flex flex-col items-center justify-center rounded-xl overflow-visible border shadow-sm py-0">
                   {/* Number badge visible only on large screens */}
-                  <div className="hidden lg:flex w-10 h-10 absolute -top-3 -left-3 rounded-full bg-cyan-500 text-white text-lg font-bold items-center justify-center shadow-md">
+                  {/* <div className="hidden lg:flex w-10 h-10 absolute -top-3 -left-3 rounded-full bg-cyan-500 text-white text-lg font-bold items-center justify-center shadow-md">
                     {index + 1}
-                  </div>
+                  </div> */}
 
                   {/* Image */}
                   <Image
