@@ -62,6 +62,8 @@ interface ChallanContextType {
   loading: boolean;
   setIsPledge: Dispatch<SetStateAction<boolean>>;
   isPledge: boolean;
+  isContestSelected: boolean;
+  setIsContestSelected: Dispatch<SetStateAction<boolean>>;
 }
 
 interface Challan {
@@ -82,6 +84,7 @@ export const ChallanProvider: React.FC<{ children: React.ReactNode }> = ({
   const [data, setData] = useState<PaymentEngagementData | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [isPledge, setIsPledge] = useState<boolean>(false);
+  const [isContestSelected, setIsContestSelected] = useState(false);
 
   // ✅ Fetch payment engagement data
   const fetchPaymentEngagement = async (challanIds: number[]) => {
@@ -199,6 +202,8 @@ export const ChallanProvider: React.FC<{ children: React.ReactNode }> = ({
         loading,
         setIsPledge,
         isPledge,
+        isContestSelected,
+        setIsContestSelected,
       }}
     >
       {children}

@@ -12,7 +12,8 @@ import { useRouter } from "next/navigation";
 import { LoaderModal } from "../LoaderModal";
 
 export function PaymentSummaryTabs() {
-  const { data, loading, selectedChallans } = useChallanContext();
+  const { data, loading, selectedChallans, isContestSelected } =
+    useChallanContext();
   const [isPledge, setIsPledge] = useState(false);
   const [loader, setLoader] = useState(false);
   const router = useRouter();
@@ -24,6 +25,7 @@ export function PaymentSummaryTabs() {
         potentialDiscount: data?.potentialDiscount ?? 0, // fallback if undefined
         grandTotal: data?.amountToPay ?? 0,
         rewardGiven: true,
+        isContest: isContestSelected,
       },
       router,
       setLoader

@@ -4,21 +4,34 @@ import React from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useChallanContext } from "@/context/ChallanContext";
 import { ContestReadMore } from "../common/ContestReadMore";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function ContestAndWait() {
-  const { setIsPledge, isPledge } = useChallanContext();
+  const { setIsContestSelected, isContestSelected, isPledge, setIsPledge } =
+    useChallanContext();
   const [openReadMore, setOpenReadMore] = useState(false);
 
   const handleContestChange = () => {
-    setIsPledge(false);
+    setIsContestSelected(!isContestSelected);
   };
+  useEffect(() => {
+    if (isPledge) {
+      setIsContestSelected(false);
+    }
+  }, [isPledge]);
+
+  useEffect(() => {
+    if (isContestSelected) {
+      setIsPledge(false);
+    }
+  }, [isContestSelected]);
+
   return (
     <div className="border-1 border-gray-200 rounded-2xl bg-white mb-4 ">
       <div className="p-4 flex flex-1 items-center gap-2">
         <Checkbox
           className="rounded-full w-6 h-6"
-          // checked={isPledge}
+          checked={isContestSelected}
           onCheckedChange={handleContestChange}
         />
         <span className="text-sm font-semibold"> Contest and Wait</span>
