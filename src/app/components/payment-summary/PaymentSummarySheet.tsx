@@ -32,7 +32,8 @@ export function PaymentSummarySheet({
   open: boolean;
   setOpen: (v: boolean) => void;
 }) {
-  const { data, isPledge, selectedChallans } = useChallanContext();
+  const { data, isPledge, selectedChallans, isContestSelected } =
+    useChallanContext();
   const router = useRouter();
   const [loader, setLoader] = useState(false);
 
@@ -43,6 +44,7 @@ export function PaymentSummarySheet({
         potentialDiscount: data?.potentialDiscount ?? 0, // fallback if undefined
         grandTotal: data?.amountToPay ?? 0,
         rewardGiven: true,
+        isContest: isContestSelected,
       },
       router,
       setLoader

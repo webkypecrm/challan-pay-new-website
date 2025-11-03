@@ -6,6 +6,7 @@ interface PaymentParams {
   potentialDiscount: number;
   grandTotal: number;
   rewardGiven: boolean;
+  isContest: boolean;
 }
 
 interface CreateIncidentPayload extends PaymentParams {
@@ -19,7 +20,13 @@ interface CreateIncidentResponse {
 }
 
 export const handleRazorpayPayment = async (
-  { challanIds, potentialDiscount, grandTotal, rewardGiven }: PaymentParams,
+  {
+    challanIds,
+    potentialDiscount,
+    grandTotal,
+    rewardGiven,
+    isContest,
+  }: PaymentParams,
   router: ReturnType<typeof useRouter>,
   setLoader: (val: boolean) => void
 ) => {
@@ -73,6 +80,7 @@ export const handleRazorpayPayment = async (
           grandTotal,
           rewardGiven,
           razorpayPaymentId: response.razorpay_payment_id,
+          isContest: isContest,
         };
 
         try {

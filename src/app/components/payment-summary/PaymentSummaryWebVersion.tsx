@@ -10,7 +10,8 @@ import { useState } from "react";
 
 export default function PaymentSummaryWebVersion() {
   const router = useRouter();
-  const { data, isPledge, selectedChallans } = useChallanContext();
+  const { data, isPledge, selectedChallans, isContestSelected } =
+    useChallanContext();
   const [loader, setLoader] = useState(false);
 
   const handleProccedNext = () => {
@@ -20,6 +21,7 @@ export default function PaymentSummaryWebVersion() {
         potentialDiscount: data?.potentialDiscount ?? 0,
         grandTotal: data?.amountToPay ?? 0,
         rewardGiven: true,
+        isContest: isContestSelected,
       },
       router,
       setLoader

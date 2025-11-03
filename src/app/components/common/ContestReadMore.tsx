@@ -23,7 +23,7 @@ export function ContestReadMore({
   open: boolean;
   setOpen: (v: boolean) => void;
 }) {
-  const { data, selectedChallans } = useChallanContext();
+  const { data, selectedChallans, isContestSelected } = useChallanContext();
 
   const [loader, setLoader] = useState(false);
   const router = useRouter();
@@ -34,6 +34,7 @@ export function ContestReadMore({
         potentialDiscount: data?.potentialDiscount ?? 0, // fallback if undefined
         grandTotal: data?.amountToPay ?? 0,
         rewardGiven: true,
+        isContest: isContestSelected,
       },
       router,
       setLoader
