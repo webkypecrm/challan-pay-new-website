@@ -38,7 +38,7 @@ function PayAndClose() {
         <button type="button" onClick={() => setOpen(true)}>
           {" "}
           <Checkbox
-            className="rounded-full w-6 h-6"
+            className="rounded-sm w-6 h-6"
             checked={isPledge}
             onCheckedChange={handlePledgeChange}
           />

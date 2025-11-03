@@ -30,7 +30,7 @@ function ContestAndWait() {
     <div className="border-1 border-gray-200 rounded-2xl bg-white mb-4 ">
       <div className="p-4 flex flex-1 items-center gap-2">
         <Checkbox
-          className="rounded-full w-6 h-6"
+          className="rounded-sm w-6 h-6"
           checked={isContestSelected}
           onCheckedChange={handleContestChange}
         />
