@@ -89,9 +89,9 @@ export const handleRazorpayPayment = async (
           router.push(`/payment-success/${grandTotal}`);
         } catch (err) {
           console.error("Error creating incident:", err);
-          alert(
-            "Payment succeeded, but failed to record in system. Redirecting anyway."
-          );
+          // alert(
+          //   "Payment succeeded, but failed to record in system. Redirecting anyway."
+          // );
           router.push(`/payment-success/${grandTotal}`);
         } finally {
           setTimeout(() => setLoader(false), 2000);
