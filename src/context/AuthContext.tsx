@@ -73,8 +73,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, [user]); // run whenever user changes
   // Logout
 
-  //console.log(user);
-
   const logout = () => {
     setUser(null);
     if (typeof window !== "undefined") {

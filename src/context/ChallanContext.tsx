@@ -83,7 +83,7 @@ export const ChallanProvider: React.FC<{ children: React.ReactNode }> = ({
   const [selectedChallans, setSelectedChallans] = useState<number[]>([]);
   const [data, setData] = useState<PaymentEngagementData | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
-  const [isPledge, setIsPledge] = useState<boolean>(false);
+  const [isPledge, setIsPledge] = useState<boolean>(true);
   const [isContestSelected, setIsContestSelected] = useState(false);
 
   // ✅ Fetch payment engagement data
