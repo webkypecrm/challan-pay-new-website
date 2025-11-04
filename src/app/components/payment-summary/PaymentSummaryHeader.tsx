@@ -40,7 +40,8 @@ function PaymentSummaryHeader() {
           </span>
         </div>
       </div>
-      {/* <div className="h-18 flex items-center justify-start p-2 gap-4 bg-slate-50 rounded-lg mt-4 lg:mt-4  lg:flex lg:justify-center lg:items-center lg:bg-white">
+
+      {/* <div className="h-18 flex items-center justify-center gap-4 p-2 bg-slate-50 rounded-lg mt-4 lg:bg-white">
         
         <Image
           src="/Images/car.svg"
@@ -50,27 +51,33 @@ function PaymentSummaryHeader() {
           className="object-contain icon-cyan"
         />
 
-       
-        <div className="p-1 border border-gray-300">
-          <div className="border border-black font-bold">
+      
+        <div className="p-1 border border-gray-300 rounded">
+          <div className="border border-black font-bold px-4 py-1 text-center rounded bg-white">
             • {vehicleNo || "N/A"} •
           </div>
         </div>
-       
       </div> */}
-      <div className="h-18 flex items-center justify-center gap-4 p-2 bg-slate-50 rounded-lg mt-4 lg:bg-white">
+      <div
+        className="
+  h-18 flex items-center p-2 gap-4 bg-slate-50 rounded-lg mt-4 relative
+  lg:bg-white lg:justify-center lg:gap-6
+"
+      >
         {/* Car Image */}
-        <Image
-          src="/Images/car.svg"
-          alt="car image"
-          width={70}
-          height={25}
-          className="object-contain icon-cyan"
-        />
+        <div className="absolute left-2 lg:static lg:left-auto">
+          <Image
+            src="/Images/car.svg"
+            alt="car image"
+            width={70}
+            height={25}
+            className="object-contain icon-cyan"
+          />
+        </div>
 
         {/* Number Plate */}
-        <div className="p-1 border border-gray-300 rounded">
-          <div className="border border-black font-bold px-4 py-1 text-center rounded bg-white">
+        <div className="mx-auto lg:mx-0 p-1 border border-gray-300 bg-white">
+          <div className="border border-black font-bold px-2 py-1 text-sm text-center">
             • {vehicleNo || "N/A"} •
           </div>
         </div>
