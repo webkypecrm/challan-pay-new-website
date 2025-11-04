@@ -60,15 +60,25 @@ export default function TrustedPartner() {
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {stats.map((item, idx) => (
+            // <div
+            //   key={idx}
+            //   className="
+            //     flex flex-col items-center justify-center flex-[0_0_50%]
+            //     sm:flex-[0_0_33.33%] md:flex-[0_0_25%] lg:flex-[0_0_20%]
+            //     xl:flex-[0_0_16.66%]
+            //     px-2 py-3 mx-2 bg-white border border-[#E5E5E5]
+            //     rounded-lg shadow-sm hover:shadow-md transition
+            //   "
+            // >
             <div
               key={idx}
               className="
-                flex flex-col items-center justify-center flex-[0_0_50%] 
-                sm:flex-[0_0_33.33%] md:flex-[0_0_25%] lg:flex-[0_0_20%] 
-                xl:flex-[0_0_16.66%] 
-                px-2 py-3 mx-2 bg-white border border-[#E5E5E5] 
-                rounded-lg shadow-sm hover:shadow-md transition
-              "
+    flex items-center justify-center 
+    flex-none 
+    w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6
+    px-2 py-3 mx-2 bg-white border border-[#E5E5E5] 
+    rounded-lg shadow-sm hover:shadow-md transition
+  "
             >
               <Image
                 src={item.icon}
@@ -83,28 +93,6 @@ export default function TrustedPartner() {
           ))}
         </div>
       </div>
-
-      {/* Dots */}
-      {/* <div className="flex justify-center gap-2 mt-6">
-        {scrollSnaps.map((_, idx) => {
-          const offset = idx - selectedIndex;
-
-          // Show only previous, current, and next (3 dots visible)
-          if (offset < -1 || offset > 1) return null;
-
-          // Dot color setup
-          const dotColor = offset === 0 ? "bg-cyan-600" : "bg-gray-300";
-
-          return (
-            <button
-              key={idx}
-              onClick={() => emblaApi && emblaApi.scrollTo(idx)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${dotColor}`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          );
-        })}
-      </div> */}
     </div>
   );
 }
