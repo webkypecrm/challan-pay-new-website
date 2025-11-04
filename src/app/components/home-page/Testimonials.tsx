@@ -55,7 +55,7 @@ const testimonials: Testimonial[] = [
   {
     name: "Zia",
     description:
-      "“Got a message, clicked the link, paid the fine. It was surprisingly smooth. Save me a trip to the curt.”",
+      "“Got a message, clicked the link, paid the fine. It was surprisingly smooth. Save me a trip to the court”",
     location: "Car Owner • Lucknow",
     amountSaved: 1300,
     photo: "/photo/Polish_20250530_113046363.jpg",
