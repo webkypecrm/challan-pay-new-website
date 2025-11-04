@@ -20,7 +20,7 @@ export default function TrustedPartner() {
   ];
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: "start" },
+    { loop: false, align: "start" },
     [
       Autoplay({
         delay: 3000,

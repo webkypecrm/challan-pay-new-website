@@ -26,7 +26,10 @@ export default function Footer() {
             <span>challan resolution.</span>
           </div>
           <div className="text-[13px] mt-2">
-            ChallanPay by <Link href={"https://lawyered.in/"}>LAWYERED</Link>
+            ChallanPay by{" "}
+            <Link href={"https://lawyered.in/"} className="text-blue-700">
+              LAWYERED
+            </Link>
             <br /> Sproutech Solutions Private Limited
             <br />
             India Accelerator Coworking, Lower Ground Floor, LG-007-02, MGF{" "}
