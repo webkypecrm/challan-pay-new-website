@@ -74,7 +74,7 @@ const ChallanDetailCard: React.FC<ChallanDetailProps> = ({
             {formatDate(createdAt)}
           </div>
         </div>
-        <div className="flex justify-between items-center p-2">
+        {/* <div className="flex justify-between items-center p-2">
           <div className="text-[#737373]">Download Invoice</div>
           <div className="text-black text-sm font-semibold">
             <Link
@@ -85,7 +85,7 @@ const ChallanDetailCard: React.FC<ChallanDetailProps> = ({
               Download
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

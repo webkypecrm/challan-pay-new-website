@@ -21,7 +21,7 @@ const CommonHeader: React.FC<PageHeaderProps> = ({ title, onBack }) => {
             <ChevronLeft size={18} />
           </button>
         )}
-        <span className="font-bold text-lg">{title}</span>
+        <span className="font-semibold text-sm">{title}</span>
       </div>
     </div>
   );
