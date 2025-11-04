@@ -108,6 +108,92 @@ export default function HowItWorks() {
           </Carousel>
         </div>
       </section>
+      <section className="w-full py-12 hidden lg:block">
+        <div className="text-center mb-8 px-4 py-4">
+          <h2 className="font-broken text-3xl text-[#374151] uppercase">
+            How challanpay works
+          </h2>
+        </div>
+
+        {/* Card 1 */}
+        <div className="flex justify-around gap-4 ">
+          <div className="relative flex flex-col justify-center items-center w-full mb-6">
+            <div className="w-12 h-12 absolute -top-4 -left-0 rounded-full bg-cyan-500 text-white text-lg font-bold flex items-center justify-center z-10">
+              1
+            </div>
+
+            <Card className="relative flex flex-col items-center justify-center rounded-xl overflow-visible border shadow-sm py-0 w-[350px] sm:max-w-md">
+              <Image
+                src="/how-it-work/rectangle1.png"
+                alt="Enter Details"
+                width={350}
+                height={250}
+                className="w-full h-auto object-contain"
+              />
+            </Card>
+
+            <div className="mt-2 text-center  w-[350px]">
+              <h3 className="text-base font-bold text-black">Enter Details</h3>
+              <p className="text-sm text-black mt-1">
+                Enter your vehicle number and mobile number to begin
+              </p>
+            </div>
+          </div>
+
+          {/* Card 2 */}
+          <div className="relative flex flex-col justify-center items-center w-full mb-6">
+            <div className="w-12 h-12 absolute -top-4 -left-0 rounded-full bg-cyan-500 text-white text-lg font-bold flex items-center justify-center z-10">
+              2
+            </div>
+
+            <Card className="relative flex flex-col items-center justify-center rounded-xl overflow-visible border shadow-sm py-0 w-[350px]  max-w-xs sm:max-w-md">
+              <Image
+                src="/how-it-work/rectangle3.png"
+                alt="View and Pay Challans"
+                width={350}
+                height={250}
+                className="w-full h-auto object-contain"
+              />
+            </Card>
+
+            <div className="mt-2 text-center w-[350px] ">
+              <h3 className="text-base font-bold text-black">
+                View and Pay Challans
+              </h3>
+              <p className="text-sm text-black mt-1">
+                Settle your challans without visiting courts - fast, easy and
+                hassle-free
+              </p>
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div className="relative flex flex-col justify-center items-center w-full mb-6">
+            <div className="w-12 h-12 absolute -top-4 -left-0 rounded-full bg-cyan-500 text-white text-lg font-bold flex items-center justify-center z-10">
+              3
+            </div>
+
+            <Card className="relative flex flex-col items-center justify-center rounded-xl overflow-visible border shadow-sm py-0 w-[350px] max-w-xs sm:max-w-md">
+              <Image
+                src="/how-it-work/rectangle2.png"
+                alt="Settle Challans Easily"
+                width={350}
+                height={250}
+                className="w-full h-auto object-contain"
+              />
+            </Card>
+
+            <div className="mt-2 text-center  w-[350px]">
+              <h3 className="text-base font-bold text-black">
+                Settle Challans Easily
+              </h3>
+              <p className="text-sm text-black mt-1">
+                Resolve and settle your challans easily online
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
