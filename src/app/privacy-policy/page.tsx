@@ -1,12 +1,13 @@
 import React from "react";
 import Header from "../components/common/Header";
 import Image from "next/image";
+import Footer from "../components/common/Footer";
 
 function PrivacyPolicy() {
   return (
-    <div className="lg:bg-slate-100">
+    <div className="lg:bg-white">
       <Header />
-      <div className="px-4 bg-white">
+      {/* <div className="px-4 bg-white">
         <div className="text-2xl font-bold pt-4">Privacy Policy</div>
         <div className="flex justify-center items-center rounded-md mt-4">
           <Image
@@ -17,9 +18,35 @@ function PrivacyPolicy() {
             className="object-contain "
           />
         </div>
+      </div> */}
+      <div className="px-4 bg-white lg:flex lg:justify-around  lg:items-center lg:border lg:rounded-none lg:mx-32 lg:mt-38">
+        <div className="text-2xl font-bold pt-4 lg:hidden block">
+          Privacy Policy
+        </div>
+        <div className="text-6xl font-bold pt-4 lg:block hidden uppercase">
+          Privacy <br /> Policy
+        </div>
+        <div className="flex justify-center items-center rounded-md mt-4 lg:rounded-0 lg:mt-0 block lg:hidden">
+          <Image
+            src="/Images/privacy.png"
+            alt="car image"
+            width={400}
+            height={300}
+            className="object-contain "
+          />
+        </div>
+        <div className="flex justify-center items-center rounded-md mt-4 lg:rounded-0 lg:mt-0 lg:block hidden p-2">
+          <Image
+            src="/Images/privacy-png.png"
+            alt="car image"
+            width={400}
+            height={300}
+            className="object-contain "
+          />
+        </div>
       </div>
-      <div className="min-h-screen md:px-20">
-        <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-2xl p-4">
+      <div className="min-h-screen md:px-20 lg:mb-10">
+        <div className="max-w-4xl mx-auto bg-white  rounded-2xl p-4 lg:max-w-[1290px] lg:mt-15 lg:rounded-none lg:shadow-none">
           <section>
             <p className="text-black text-sm md:text-base mb-3">
               <strong>Effective Date:</strong> August 8, 2025
@@ -449,6 +476,7 @@ function PrivacyPolicy() {
           </section>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,25 +1,41 @@
 import React from "react";
 import Header from "../components/common/Header";
 import Image from "next/image";
+import Footer from "../components/common/Footer";
 
 function TermsAndCondition() {
   return (
-    <div className="lg:bg-slate-100">
+    <div className="lg:bg-white">
       <Header />
-      <div className="px-4 bg-white">
-        <div className="text-2xl font-bold pt-4">Terms & Conditions</div>
-        <div className="flex justify-center items-center rounded-md mt-4">
+
+      <div className="px-4 bg-white lg:flex lg:justify-around  lg:items-center lg:border lg:rounded-none lg:mx-32 lg:mt-38">
+        <div className="text-2xl font-bold pt-4 lg:hidden block">
+          Terms & Conditions
+        </div>
+        <div className="text-6xl font-bold pt-4 lg:block hidden uppercase">
+          Terms & <br /> Conditions
+        </div>
+        <div className="flex justify-center items-center rounded-md mt-4 lg:rounded-0 lg:mt-0 block lg:hidden">
           <Image
             src="/Images/policy.png"
             alt="car image"
-            width={400}
-            height={300}
+            width={500}
+            height={350}
+            className="object-contain "
+          />
+        </div>
+        <div className="flex justify-center items-center rounded-md mt-4 lg:rounded-0 lg:mt-0 lg:block hidden p-2">
+          <Image
+            src="/Images/policy-png.png"
+            alt="car image"
+            width={500}
+            height={350}
             className="object-contain "
           />
         </div>
       </div>
-      <div className="min-h-screen md:px-20">
-        <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-2xl p-4">
+      <div className="min-h-screen md:px-20 lg:mb-10">
+        <div className="max-w-4xl mx-auto bg-white  rounded-2xl p-4 lg:max-w-[1290px] lg:mt-15 lg:rounded-none lg:shadow-none">
           {/* Section I */}
           <section className="mb-8">
             <h2 className="text-sm font-bold text-black mb-3 uppercase">
@@ -1007,6 +1023,7 @@ function TermsAndCondition() {
           </section> */}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
