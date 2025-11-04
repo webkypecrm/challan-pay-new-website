@@ -19,6 +19,7 @@ interface Incident {
   courtChallan: boolean;
   createdAt?: string;
   latestSecondaryStatus: string;
+  challanInvoice: string;
 }
 
 interface PaymentDetail {
@@ -30,10 +31,15 @@ const PaymentSuccess: React.FC = () => {
 
   const [challanPaymentDetail, setChallanPaymentDetail] =
     useState<PaymentDetail | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
   const handleTrackChallanDashboard = () => {
     router.push("/track-challan-login");
   };
+  // console.log(challanPaymentDetail);
+  const visibleIncidents = showAll
+    ? challanPaymentDetail?.incidents
+    : challanPaymentDetail?.incidents?.slice(0, 2) ?? [];
 
   useEffect(() => {
     const paymentDetail = sessionStorage.getItem("paymentDetail");
@@ -43,11 +49,11 @@ const PaymentSuccess: React.FC = () => {
   }, []);
 
   return (
-    <div className="lg:px-40 lg:bg-slate-50 lg:mt-20 ">
+    <div className="lg:px-40 lg:bg-slate-50 lg:pt-10 ">
       <Header />
 
       {/* ✅ Mobile success message */}
-      <div className="bg-slate-50 mt-4 pb-4 lg:hidden block mt-16 ">
+      <div className="bg-slate-50 mt-4 pb-4 lg:hidden block mt-16  ">
         <div className="px-6 text-center text-black font-bold pt-6 flex flex-col items-center">
           <Image
             src="/gif/Checked.gif"
@@ -65,13 +71,6 @@ const PaymentSuccess: React.FC = () => {
           <div className="lg:text-green-700 font-semibold lg:px-4 lg:pt-4 hidden lg:flex">
             {challanPaymentDetail?.incidents?.length || 0} Challan Submitted!
           </div>
-
-          {/* <div className="hidden lg:flex items-center rounded-lg bg-green-100 p-2 mt-2 mx-4 h-10">
-            <Check className="bg-green-800 rounded-full w-4 h-4 text-white p-1 mx-2" />
-            <span className="text-green-800 text-xs font-semibold">
-              You saved ₹500
-            </span>
-          </div> */}
 
           <PaymentInfo paymentDetail={challanPaymentDetail?.incidents || []} />
 
@@ -91,7 +90,7 @@ const PaymentSuccess: React.FC = () => {
         {/* ✅ Right side - Challan Details */}
         <div className="lg:w-full lg:bg-white lg:rounded-lg">
           <div className="hidden lg:flex lg:justify-center mb-4">
-            <div className="text-center text-black font-bold flex flex-col items-center">
+            <div className="text-center text-black font-bold flex flex-col items-center lg:py-8">
               <Image
                 src="/gif/icons8-check.gif"
                 alt="success gif"
@@ -105,8 +104,7 @@ const PaymentSuccess: React.FC = () => {
           <div className="lg:pl-4 text-lg font-bold hidden lg:flex">
             Challan Details
           </div>
-
-          {challanPaymentDetail?.incidents?.map((challan) => (
+          {visibleIncidents?.map((challan) => (
             <ChallanDetailCard
               key={challan.challanNo}
               challanNo={challan.challanNo}
@@ -114,9 +112,21 @@ const PaymentSuccess: React.FC = () => {
               courtChallan={challan?.courtChallan}
               createdAt={challan.createdAt || "N/A"}
               status={challan.latestSecondaryStatus}
-              //onClick={() => handleChallanClick(challan.challanNo)}
+              challanInvoice={challan.challanInvoice}
             />
           ))}
+
+          {/* View More Button */}
+          {(challanPaymentDetail?.incidents?.length || 0) > 2 && (
+            <div className="text-center my-4">
+              <button
+                onClick={() => setShowAll(!showAll)}
+                className="text-blue-700 underline"
+              >
+                {showAll ? "View Less" : "View More"}
+              </button>
+            </div>
+          )}
         </div>
       </div>
 

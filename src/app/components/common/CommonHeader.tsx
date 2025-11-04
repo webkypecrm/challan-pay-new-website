@@ -15,13 +15,13 @@ const CommonHeader: React.FC<PageHeaderProps> = ({ title, onBack }) => {
       <div className="flex items-center gap-2">
         {onBack && (
           <button
-            className="p-1 bg-gray-100 border border-gray-200 rounded-sm hover:bg-gray-200"
+            className="p-1 bg-white border border-gray-200 rounded-sm hover:bg-gray-200"
             onClick={onBack}
           >
             <ChevronLeft size={18} />
           </button>
         )}
-        <span className="text-base font-semibold">{title}</span>
+        <span className="font-bold text-lg">{title}</span>
       </div>
     </div>
   );

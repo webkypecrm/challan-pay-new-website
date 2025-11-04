@@ -3,6 +3,7 @@ import { formatDate } from "@/lib/helpers";
 import { Copy } from "lucide-react";
 import React from "react";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 interface ChallanDetailProps {
   challanNo: string;
@@ -11,6 +12,7 @@ interface ChallanDetailProps {
   // challanType: boolean;
   courtChallan: boolean;
   createdAt: string;
+  challanInvoice: string;
 }
 
 const ChallanDetailCard: React.FC<ChallanDetailProps> = ({
@@ -19,6 +21,7 @@ const ChallanDetailCard: React.FC<ChallanDetailProps> = ({
   incidentId,
   courtChallan,
   createdAt,
+  challanInvoice,
 }) => {
   const handleCopy = () => {
     navigator.clipboard.writeText(challanNo);
@@ -45,7 +48,7 @@ const ChallanDetailCard: React.FC<ChallanDetailProps> = ({
         </div>
 
         {/* Incident ID */}
-        <div className="flex justify-between items-center p-4">
+        <div className="flex justify-between items-center p-2">
           <div className="text-[#737373]">Incident ID</div>
           <div className="text-black text-sm font-semibold">
             IRN-{incidentId}
@@ -55,7 +58,7 @@ const ChallanDetailCard: React.FC<ChallanDetailProps> = ({
         <Separator />
 
         {/* Challan Type */}
-        <div className="flex justify-between items-center p-4">
+        <div className="flex justify-between items-center p-2">
           <div className="text-[#737373]">Challan Type</div>
           <div className="text-black text-sm font-semibold">
             {courtChallan ? "Court Challan" : "Online Challan"}
@@ -65,10 +68,22 @@ const ChallanDetailCard: React.FC<ChallanDetailProps> = ({
         <Separator />
 
         {/* Resolution Date */}
-        <div className="flex justify-between items-center p-4">
+        <div className="flex justify-between items-center p-2">
           <div className="text-[#737373]">Resolution Date</div>
           <div className="text-black text-sm font-semibold">
             {formatDate(createdAt)}
+          </div>
+        </div>
+        <div className="flex justify-between items-center p-2">
+          <div className="text-[#737373]">Download Invoice</div>
+          <div className="text-black text-sm font-semibold">
+            <Link
+              href={`${challanInvoice}`}
+              target="_blank"
+              className="text-blue-700 underline"
+            >
+              Download
+            </Link>
           </div>
         </div>
       </div>

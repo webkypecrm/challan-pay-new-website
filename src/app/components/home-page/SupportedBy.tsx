@@ -25,7 +25,7 @@ export default function SupportedBy({
   ];
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: "start" },
+    { loop: false, align: "start" },
     [Autoplay({ delay: autoplayDelay, stopOnInteraction: false })]
   );
 

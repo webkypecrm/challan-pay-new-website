@@ -41,7 +41,12 @@ const PaymentInfo: React.FC<PaymentInfoProps> = ({ paymentDetail = [] }) => {
     },
     {
       label: "Total Amount Paid",
-      value: `₹${params.amount ?? "—"}`, // ✅ access param directly
+      value:
+        params.amount !== undefined &&
+        params.amount !== null &&
+        params.amount !== ""
+          ? `₹${Number(params.amount).toFixed(2)}`
+          : "—",
     },
   ];
 
