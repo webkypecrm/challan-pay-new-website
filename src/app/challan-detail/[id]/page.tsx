@@ -74,7 +74,7 @@ function ChallanDetail() {
               </div> */}
               <div className="bg-slate-50 lg:bg-white  p-4  min-h-screen lg:min-h-0 lg:mb-4 lg:rounded-lg lg:flex lg:justify-center">
                 <div className="lg:w-[600px] lg:border lg:rounded-xl ">
-                  <div className="bg-slate-500 px-4 py-2 rounded-t-xl lg:py-8 lg:px-6 ">
+                  <div className="bg-[#64748B] px-4 py-2 rounded-t-xl lg:py-8 lg:px-6 ">
                     <p className="text-base font-semibold text-white">
                       Challan
                     </p>

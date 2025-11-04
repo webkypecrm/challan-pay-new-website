@@ -24,7 +24,7 @@ function ChallanCartHeader() {
   }, []);
 
   const handleBack = () => {
-    router.push("/challan-status-login");
+    router.push("/");
   };
   return (
     <div className="mt-25 px-4 pb-4 lg:px-0 lg:mt-0 lg:pb-0">
@@ -37,7 +37,7 @@ function ChallanCartHeader() {
           >
             <ChevronLeft size={18} />
           </button>
-          <span className="text-base font-semibold lg:font-bold">
+          <span className="text-base font-semibold lg:font-bold lg:text-lg">
             Challan Summary
           </span>
         </div>
