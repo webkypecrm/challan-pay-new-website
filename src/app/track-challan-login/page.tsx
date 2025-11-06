@@ -1,7 +1,12 @@
 // app/challan-status-login/page.tsx
-//import { Suspense } from "react";
+import { Suspense } from "react";
 import TrackStatusLogin from "./TrackStatusLogin";
 
 export default function Page() {
-  return <TrackStatusLogin />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      {" "}
+      <TrackStatusLogin />
+    </Suspense>
+  );
 }
