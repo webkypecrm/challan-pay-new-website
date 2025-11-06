@@ -28,10 +28,10 @@ const WebVersionCommonComponent: React.FC<TrackStatusHeaderProps> = ({
   }, []);
 
   return (
-    <div className="lg:flex lg:justify-center hidden lg:flex">
+    <div className="lg:flex lg:justify-center hidden lg:flex lg:bg-slate-100 lg:pb-5">
       <div className="bg-white rounded-b-xl lg:w-[1200px]">
         {/* Header */}
-        <div className="mt-16 px-4 flex justify-start text-center lg:bg-slate-100 lg:py-4">
+        <div className="mt-16 px-4 flex justify-start text-center lg:bg-slate-100 lg:py-4 lg:mt-0">
           <div className="w-9 h-9 flex items-center font-semibold text-cyan-600 text-sm justify-center bg-cyan-100 rounded-full mt-3">
             AB
           </div>

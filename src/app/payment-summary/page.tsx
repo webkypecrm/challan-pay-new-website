@@ -8,7 +8,7 @@ import PaymentSummaryWebVersion from "../components/payment-summary/PaymentSumma
 
 function page() {
   return (
-    <div className="bg-slate-100 lg:flex lg:justify-center">
+    <div className="bg-slate-100 lg:flex lg:justify-center lg:min-h-screen">
       <Header />
       {/* <div className="lg:flex lg:justify-center lg:gap-2"> */}
       <div

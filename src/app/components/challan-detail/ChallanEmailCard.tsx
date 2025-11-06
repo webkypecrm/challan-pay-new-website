@@ -21,7 +21,7 @@ export default function ChallanEmailCard() {
   };
 
   return (
-    <Card className="  border rounded-2xl">
+    <Card className="border rounded-2xl">
       <CardHeader>
         <CardTitle className="text-lg font-semibold">
           Get this Challan on Email
@@ -35,21 +35,12 @@ export default function ChallanEmailCard() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-
-        {/* Vehicle Number Input */}
-        <Input
-          type="text"
-          placeholder="Enter your vehicle registration number without spaces"
-          value={vehicleNumber}
-          onChange={(e) => setVehicleNumber(e.target.value)}
-        />
-
-        {/* Send Email Button */}
         <Button
           className="w-full bg-[#0099aa] hover:bg-[#008095] text-white font-medium"
           onClick={handleSendMail}
+          disabled
         >
-          Send me on mail
+          Send to my email
         </Button>
 
         {/* OR Separator */}
@@ -64,6 +55,7 @@ export default function ChallanEmailCard() {
           variant="outline"
           className="w-full flex items-center gap-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366]/10"
           onClick={handleWhatsappShare}
+          disabled
         >
           <FaWhatsapp className="text-lg" />
           Share on WhatsApp

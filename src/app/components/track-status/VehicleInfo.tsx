@@ -16,6 +16,8 @@ import { getRequestWithoutToken } from "@/lib/api"; // your utility
 //import { AxiosError } from "axios";
 import KeyDetailCard from "./KeyDetailCard";
 import VehicleDetailCard from "./VehicleDetailCard";
+import Lottie from "lottie-react";
+import loaderAnimation from "../../loader.json";
 
 interface Vehicle {
   id: string | number;
@@ -67,6 +69,17 @@ function VehicleInfo() {
     fetchVehicles();
   }, []);
 
+  if (loading)
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-gray-100 z-50">
+        <Lottie
+          animationData={loaderAnimation}
+          loop={true}
+          className="w-32 h-32"
+        />
+      </div>
+    );
+
   return (
     <div className=" pt-4">
       <div className="flex justify-between items-center">
@@ -83,8 +96,6 @@ function VehicleInfo() {
 
       <div className="rounded-lg  mt-4">
         {loading ? (
-          <p className="text-center py-6 text-gray-500">Loading vehicles...</p>
-        ) : vehicles.length === 0 ? (
           <p className="text-center py-6 text-gray-500">No vehicles found.</p>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">

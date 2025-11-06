@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardFooter,
+  // CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -21,6 +21,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useAuth } from "@/context/TrackStatusAuthContext";
 import { AxiosError } from "axios";
 import toast from "react-hot-toast";
+//import { tree } from "next/dist/build/templates/app-page";
 
 const loginSchema = z.object({
   fullName: z.string().min(3, "Full name must be at least 3 characters"),
@@ -198,16 +199,11 @@ export default function TrackStatusLogin() {
       setError(message);
       toast.error(message);
     } finally {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(true);
+      }, 2000);
     }
   };
-
-  if (loading)
-    return (
-      <div className="flex items-center justify-center h-screen w-screen bg-gray-100">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
-      </div>
-    );
 
   return (
     <div className="lg:bg-white lg:h-screen lg:pt-10 lg:overflow-hidden ">
@@ -226,9 +222,9 @@ export default function TrackStatusLogin() {
           <>
             {/* Login Form */}
             <CardHeader className="justify-center text-center">
-              <CardTitle className="text-lg font-bold">
+              <CardTitle className="text-lg font-bold leading-none">
                 Login to check your
-                <br /> <span>Track status</span>
+                <br /> <span>track status</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="px-6">
@@ -243,7 +239,7 @@ export default function TrackStatusLogin() {
                     />
                     {errors.fullName && (
                       <p className="text-red-500 text-sm">
-                        {errors.fullName.message}
+                        {errors?.fullName?.message}
                       </p>
                     )}
                   </div>
@@ -264,7 +260,7 @@ export default function TrackStatusLogin() {
                     </div>
                     {errors.phone && (
                       <p className="text-red-500 text-sm">
-                        {errors.phone.message}
+                        {errors?.phone?.message}
                       </p>
                     )}
                   </div>
@@ -276,10 +272,10 @@ export default function TrackStatusLogin() {
               </form>
             </CardContent>
 
-            <div className="fixed bottom-0 lg:fixed lg:bottom-10 text-xs text-center py-2 mx-6">
+            <div className="fixed bottom-0 lg:fixed lg:bottom-10 text-xs text-center py-2 mx-2">
               By continuing, you agree to our{" "}
               <span className="text-blue-600 underline">
-                <Link href="/terms-and-condition">terms & Condition</Link>
+                <Link href="/terms-and-condition">terms & Conditions</Link>
               </span>{" "}
               and{" "}
               <span className="text-blue-600 underline">

@@ -71,7 +71,13 @@ const ChallanDetailCard: React.FC<ChallanDetailProps> = ({
         <div className="flex justify-between items-center p-2">
           <div className="text-[#737373]">Resolution Date</div>
           <div className="text-black text-sm font-semibold">
-            {formatDate(createdAt)}
+            {courtChallan
+              ? new Date(
+                  new Date(createdAt).getTime() + 45 * 24 * 60 * 60 * 1000
+                ).toLocaleDateString("en-IN")
+              : new Date(
+                  new Date(createdAt).getTime() + 15 * 24 * 60 * 60 * 1000
+                ).toLocaleDateString("en-IN")}
           </div>
         </div>
         {/* <div className="flex justify-between items-center p-2">

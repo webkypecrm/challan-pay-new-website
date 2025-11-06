@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 //import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import VehicleDetailCard from "@/app/components/track-status/VehicleDetailCard";
 
 // ✅ Define proper TypeScript interfaces
 interface Incident {
@@ -47,7 +48,7 @@ const PaymentSuccess: React.FC = () => {
       setChallanPaymentDetail(JSON.parse(paymentDetail));
     }
   }, []);
-
+  //console.log(visibleIncidents);
   return (
     <div className="lg:px-40 lg:bg-slate-50 lg:pt-10 ">
       <Header />

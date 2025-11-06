@@ -45,7 +45,7 @@ function ChallanDetail() {
   };
 
   return (
-    <div className="lg:bg-slate-100">
+    <div className="lg:bg-slate-100 lg:min-h-screen lg:overflow-hidden">
       <Header />
       <div className="lg:px-30 lg:bg-slate-100 lg:flex lg:justify-center">
         <div className="lg:w-[1200px]">
@@ -101,7 +101,7 @@ function ChallanDetail() {
 
                   <div className="flex items-center justify-between py-4 px-2 bg-white lg:px-6 ">
                     <p className="text-[#DC2626] font-bold">
-                      ₹ {challanData?.amount}
+                      ₹{challanData?.amount}
                     </p>
                     <p className="text-xs bg-blue-50 text-cyan-600 font-semibold p-1 rounded-sm">
                       Pending
@@ -127,7 +127,7 @@ function ChallanDetail() {
                 </div>
               </div>
             </div>
-            <div className="lg:w-1/3 mt-4 hidden lg:block lg:mt-2">
+            <div className="lg:w-1/3 mt-4 hidden lg:block lg:mt-0">
               <ChallanEmailCard />
             </div>
           </div>

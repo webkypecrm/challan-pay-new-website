@@ -235,20 +235,11 @@ export default function ChallanStatusLogin() {
       toast.error(message);
       setError(message);
     } finally {
-      setLoading(false);
+      // setLoading(false);
     }
   };
 
-  if (loading)
-    return (
-      <div className="flex items-center justify-center h-screen w-screen bg-gray-100">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
-      </div>
-    );
-
   return (
-    // <div className="lg:bg-white lg:h-screen lg:pt-0 lg:overflow-hidden">
-    // <div className="min-h-screen bg-white lg:h-screen lg:overflow-hidden lg:fixed lg:w-full lg:top-20 lg:left-0">
     <div className="min-h-screen bg-white h-screen overflow-hidden fixed w-full top-4 left-0 lg:top-18">
       <Header />
       <Card className="w-full max-w-sm mt-10 mx-auto lg:bg-white ">
@@ -284,7 +275,7 @@ export default function ChallanStatusLogin() {
                     />
                     {errors.fullName && (
                       <p className="text-red-500 text-sm">
-                        {errors.fullName.message}
+                        {errors?.fullName?.message}
                       </p>
                     )}
                   </div>
@@ -305,7 +296,7 @@ export default function ChallanStatusLogin() {
                     </div>
                     {errors.phone && (
                       <p className="text-red-500 text-sm">
-                        {errors.phone.message}
+                        {errors?.phone?.message}
                       </p>
                     )}
                   </div>
@@ -317,10 +308,10 @@ export default function ChallanStatusLogin() {
               </form>
             </CardContent>
 
-            <div className="fixed bottom-0 lg:fixed lg:bottom-10 text-xs text-center py-2 mx-6">
+            <div className="fixed bottom-0 lg:fixed lg:bottom-10 text-xs text-center py-2 mx-2">
               By continuing, you agree to our{" "}
               <span className="text-blue-600 underline">
-                <Link href="/terms-and-condition">terms & Condition</Link>
+                <Link href="/terms-and-condition">terms & Conditions</Link>
               </span>{" "}
               and{" "}
               <span className="text-blue-600 underline">

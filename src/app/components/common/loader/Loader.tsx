@@ -12,7 +12,7 @@ const Loader: React.FC<LoaderProps> = ({ progress }) => {
       {/* Top bar with company logo */}
       <div className="flex items-center p-4">
         <Image
-          src={"/logo/logo.svg"}
+          src={"/logo/text-logo-png2.png"}
           alt="Company Logo"
           width={120}
           height={40}

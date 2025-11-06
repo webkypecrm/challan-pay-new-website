@@ -275,65 +275,66 @@ function PendingChallanList({ challans }: PendingChallanListProps) {
 
       {pendingChallan.length ? (
         <>
-          <div className="flex justify-between items-center py-1">
-            <div className="text-sm">{selectedChallans.length} Selected</div>
-            <div className="text-sm flex items-center justify-center">
-              <Checkbox
-                checked={allSelected}
-                className="w-4 h-4 bg-white data-[state=checked]:bg-cyan-600 data-[state=checked]:text-white data-[state=checked]:border-cyan-600"
-                onClick={() => selectAllNonZero(pendingChallan)}
-              />
-              <span className="mx-1">Select All</span>
+          <div className="lg:mb-30">
+            <div className="flex justify-between items-center py-1">
+              <div className="text-sm">{selectedChallans.length} Selected</div>
+              <div className="text-sm flex items-center justify-center">
+                <Checkbox
+                  checked={allSelected}
+                  className="w-4 h-4 bg-white data-[state=checked]:bg-cyan-600 data-[state=checked]:text-white data-[state=checked]:border-cyan-600"
+                  onClick={() => selectAllNonZero(pendingChallan)}
+                />
+                <span className="mx-1">Select All</span>
+              </div>
             </div>
-          </div>
 
-          {/* ONLINE CHALLANS */}
-          <div className="my-3">
-            <p className="text-sm text-black font-bold">
-              Online Challans ({onlineChallans.length})
-            </p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {visibleOnlineChallans.map((item) => (
-              <PendingChallanCard key={item.id} item={item} />
-            ))}
-          </div>
-          {onlineChallans.length > 2 && (
-            <div className="text-center mt-2">
-              <button
-                onClick={() => setShowAllOnline(!showAllOnline)}
-                className="text-blue-700 text-sm  hover:underline"
-              >
-                {showAllOnline ? "View Less" : "View More"}
-              </button>
+            {/* ONLINE CHALLANS */}
+            <div className="my-3">
+              <p className="text-sm text-black font-bold">
+                Online Challans ({onlineChallans.length})
+              </p>
             </div>
-          )}
-
-          {/* COURT CHALLANS */}
-          <div className="my-3">
-            <p className="text-sm text-black font-bold">
-              Court Challans ({courtChallans.length})
-            </p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {visibleCourtChallans.map((item) => (
-              <PendingChallanCard key={item.id} item={item} />
-            ))}
-          </div>
-          {courtChallans.length > 2 && (
-            <div className="text-center mt-2">
-              <button
-                onClick={() => setShowAllCourt(!showAllCourt)}
-                className="text-blue-700 text-sm  hover:underline"
-              >
-                {showAllCourt ? "View Less" : "View More"}
-              </button>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              {visibleOnlineChallans.map((item) => (
+                <PendingChallanCard key={item.id} item={item} />
+              ))}
             </div>
-          )}
+            {onlineChallans.length > 2 && (
+              <div className="text-center mt-2">
+                <button
+                  onClick={() => setShowAllOnline(!showAllOnline)}
+                  className="text-blue-700 text-sm  hover:underline"
+                >
+                  {showAllOnline ? "View Less" : "View More"}
+                </button>
+              </div>
+            )}
 
+            {/* COURT CHALLANS */}
+            <div className="my-3">
+              <p className="text-sm text-black font-bold">
+                Court Challans ({courtChallans.length})
+              </p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              {visibleCourtChallans.map((item) => (
+                <PendingChallanCard key={item.id} item={item} />
+              ))}
+            </div>
+            {courtChallans.length > 2 && (
+              <div className="text-center mt-2">
+                <button
+                  onClick={() => setShowAllCourt(!showAllCourt)}
+                  className="text-blue-700 text-sm  hover:underline"
+                >
+                  {showAllCourt ? "View Less" : "View More"}
+                </button>
+              </div>
+            )}
+          </div>
           {/* PAYMENT FOOTER */}
           {data && data?.amountToPay ? (
-            <div className="h-30 bg-gray-100 hidden lg:flex lg:bg-white">
+            <div className="h-30 bg-gray-100 hidden lg:flex lg:bg-white fixed bottom-4 w-[820px]">
               <div
                 className={cn(
                   "fixed bottom-0 left-0 right-0 lg:absolute lg:bottom-0 lg:left-0",

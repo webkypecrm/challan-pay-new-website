@@ -6,7 +6,6 @@ import { Toaster } from "react-hot-toast";
 import ConditionalHeader from "./components/common/ConditionalHeader";
 import { ChallanProvider } from "@/context/ChallanContext";
 import { TrackStatusAuthProvider } from "@/context/TrackStatusAuthContext";
-import { Suspense } from "react";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -105,25 +104,29 @@ export default function RootLayout({
                   },
                 }}
               />
-              <Suspense
-                fallback={
-                  <div className="flex items-center justify-center h-screen w-screen bg-gray-100">
-                    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
-                  </div>
-                }
-              >
-                <ConditionalHeader />
-                {/* ✅ Google Tag Manager (noscript) — goes immediately after <body> */}
-                <noscript>
-                  <iframe
-                    src="https://www.googletagmanager.com/ns.html?id=GTM-5HQP9D3"
-                    height="0"
-                    width="0"
-                    style={{ display: "none", visibility: "hidden" }}
-                  ></iframe>
-                </noscript>
-                <div className="mt-20 lg:mt-32">{children}</div>
-              </Suspense>
+              {/* <Suspense
+              fallback={
+                <div className="flex items-center justify-center h-screen w-screen bg-gray-100">
+                  <Lottie
+                    animationData={loaderAnimation}
+                    loop={true}
+                    className="w-24 h-24"
+                  />
+                </div>
+              }
+              > */}
+              <ConditionalHeader />
+              {/* ✅ Google Tag Manager (noscript) — goes immediately after <body> */}
+              <noscript>
+                <iframe
+                  src="https://www.googletagmanager.com/ns.html?id=GTM-5HQP9D3"
+                  height="0"
+                  width="0"
+                  style={{ display: "none", visibility: "hidden" }}
+                ></iframe>
+              </noscript>
+              <div className="mt-20 lg:mt-31">{children}</div>
+              {/* </Suspense> */}
             </ChallanProvider>
           </TrackStatusAuthProvider>
         </AuthProvider>

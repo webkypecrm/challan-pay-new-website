@@ -25,14 +25,14 @@ function ChallanCart() {
   }, [data]);
 
   return (
-    <div className="bg-slate-100 lg:bg-slate-100">
+    <div className="bg-slate-100 lg:bg-slate-100 lg:min-h-screen">
       <Header />
       <div className="lg:flex lg:justify-center w-full">
         <div className="w-full lg:max-w-6xl">
           <div className="bg-white lg:bg-slate-100 lg:py-4">
             <ChallanCartHeader />
           </div>
-          <div>
+          <div className="lg:mb-4">
             <ChallanCartTabs />
           </div>
         </div>

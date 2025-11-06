@@ -28,13 +28,13 @@ export default function PaymentSummaryWebVersion() {
     );
   };
 
-  if (loader) {
-    return (
-      <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-70 z-50">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
-      </div>
-    );
-  }
+  // if (loader) {
+  //   return (
+  //     <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-70 z-50">
+  //       <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
+  //     </div>
+  //   );
+  // }
   return (
     <Card className="max-w-md w-full rounded-lg p-4 mt-17  hidden lg:flex lg:mt-7">
       <CardContent className="space-y-4 p-0">

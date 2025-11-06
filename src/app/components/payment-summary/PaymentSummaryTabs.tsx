@@ -37,13 +37,13 @@ export function PaymentSummaryTabs() {
 
     setIsPledge(!!data.potentialDiscount);
   }, [data]);
-  if (loader) {
-    return (
-      <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-70 z-50">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
-      </div>
-    );
-  }
+  // if (loader) {
+  //   return (
+  //     <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-70 z-50">
+  //       <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
+  //     </div>
+  //   );
+  // }
   return (
     <div className="rounded-xl  lg:px-6 lg:flex lg:justify-center lg:bg-white bg-slate-100 lg:my-4">
       <div className="flex w-full max-w-md flex-col lg:max-w-3xl ">
