@@ -38,7 +38,7 @@ const cardData = [
       </div>
     ),
     description:
-      "Few clicks, thats it. Discover and resolve your traffic challans.",
+      "Few clicks, that's it. Discover and resolve your traffic challans.",
     image: "/Images/hero-section-img3.png",
   },
   {
@@ -102,7 +102,7 @@ export function HeroSection() {
                           {card.title}
                         </h1>
                         <p className="mt-2 text-[#423F3F] font-medium text-sm md:text-base max-w-md mx-auto md:mx-0">
-                          {card.description}
+                          {`${card.description}`}
                         </p>
                       </div>
 
