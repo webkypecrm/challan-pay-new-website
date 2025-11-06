@@ -26,16 +26,17 @@ function TrackStatusHeader() {
   return (
     <div className="lg:flex lg:justify-center">
       <div className="bg-white rounded-b-xl lg:w-[1200px]">
-        <div className="mt-18 px-4 flex justify-start text-center lg:bg-slate-100 lg:py-4">
+        <div className="mt-18 px-4 flex justify-start text-center lg:bg-slate-100 lg:py-4 lg:mt-0">
           <div className="w-9 h-9 flex items-center font-semibold text-cyan-600 text-sm justify-center bg-cyan-100 rounded-full text-center  mt-3">
             AB
           </div>
           <div className="p-2">
             <div className="text-base font-semibold">
-              Welcome, {info?.name ? info.name.split(" ")[0] : "N/A"}
+              Welcome,{" "}
+              {info?.name ? info.name.split(" ")[0].toLocaleLowerCase() : "N/A"}
             </div>
             <div className="text-sm font-semibold text-[#737373]">
-              M No : {info?.phone}
+              M no: {info?.phone}
             </div>
           </div>
         </div>

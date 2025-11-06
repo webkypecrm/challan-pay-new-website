@@ -17,28 +17,40 @@ import { useEffect, useState } from "react";
 import { getRequestWithoutToken } from "@/lib/api";
 import type { DashboardResponse } from "@/lib/types";
 import { useAuth } from "@/context/TrackStatusAuthContext";
+//import Lottie from "lottie-react";
+//import loaderAnimation from "../../loader.json";
+import Loader from "../common/loader/Loader";
 
 function ChallanInfo() {
   const router = useRouter();
   const [data, setData] = useState<DashboardResponse | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [progress, setProgress] = useState(0);
   const { setSearch } = useAuth();
 
   const fetchDashboardData = async () => {
+    setProgress(0);
+    const interval = setInterval(() => {
+      setProgress((prev) => (prev < 90 ? prev + 5 : prev));
+    }, 300);
     try {
-      setLoading(true);
       const response = await getRequestWithoutToken<DashboardResponse>(
         "/v1/customer/dashboard",
         {},
         true
       );
       setData(response);
+      setProgress(100);
+      clearInterval(interval);
     } catch (err) {
       console.error("Error fetching dashboard:", err);
       setError("Failed to load dashboard data");
     } finally {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+        setProgress(0);
+      }, 300);
     }
   };
 
@@ -59,14 +71,6 @@ function ChallanInfo() {
   const handleFrequentlyAsked = () => {
     router.push("/frequently-asked-questions");
   };
-
-  // if (loading)
-  //   return (
-  //     <div className="flex items-center justify-center h-screen w-screen bg-gray-100 lg:hidden">
-  //       <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
-  //     </div>
-  //   );
-  // if (error) return <p>{error}</p>;
 
   return (
     <div className="lg:rounded-lg">
@@ -134,6 +138,7 @@ function ChallanInfo() {
         <SearchBar placeholder="Search Challans..." onSearch={handleSearch} />
         <ChallanInfoTabs />
       </div>
+      {loading && <Loader progress={progress} />}
     </div>
   );
 }

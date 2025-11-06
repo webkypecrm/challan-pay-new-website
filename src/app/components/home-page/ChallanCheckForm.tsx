@@ -65,7 +65,7 @@ export default function Home() {
     },
     {
       id: "private-two-wheeler",
-      title: "Two - Wheeler",
+      title: "Two-Wheeler",
       image: "/Images/bike-black.png",
       image1: "/Images/bike.svg",
     },

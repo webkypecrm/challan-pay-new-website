@@ -126,9 +126,9 @@ function PrivacyPolicy() {
             <div className="space-y-2">
               <p className="text-gray-800 leading-relaxed text-sm mb-3">
                 <strong>1.6</strong> This Privacy Policy is to be read with, and
-                is an integral part of, our Terms of Use available at
+                is an integral part of, our Terms of Use available at{" "}
                 <a
-                  href="#"
+                  href="https://www.challanpay.in/terms-and-condition"
                   className="text-blue-600 underline hover:text-blue-800"
                 >
                   Link of terms of use (Challanpay)

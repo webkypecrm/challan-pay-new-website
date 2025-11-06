@@ -4,7 +4,7 @@ import TrackStatusHeader from "../components/track-status/TrackStatusHeader";
 
 function TrackStatusDashboard() {
   return (
-    <div className="bg-slate-100 ">
+    <div className="bg-slate-100 lg:pb-5">
       {/* <Header /> */}
       <TrackStatusHeader />
     </div>

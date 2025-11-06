@@ -24,18 +24,18 @@ const newsData: NewsItem[] = [
   {
     logo: "/news-logo/yourstory-logo-png_seeklogo-528345.png",
     title:
-      "Revolutionizing On-Road Legal Support:Lawyereds Journey Towards Accessible Justice",
+      "Revolutionizing On-Road Legal Support : Lawyered's Journey Towards Accessible Justice",
     description:
-      "Lawyered, a legal tech startup founded by Himanshu Gupta, is transforming the landscape of on-road legal assistance for vehicle owners in India. With its innovative LOTS platform, the company connects users to a network of over 70,000 lawyers for immediate support on traffic violations and legal disputes, operating 24/7 across 98% of Indias pin codes.",
+      "Lawyered, a legal tech startup founded by Himanshu Gupta is transforming the landscape of on-road legal assistance for vehicle owners in India. With its innovative LOTS platform and the company connects users to a network of over 70,000 lawyers for immediate support on traffic violations and legal disputes, operating 24/7 across 98% of India's pin codes.",
     date: "Mar 15, 2025",
     link: "https://yourstory.com/2024/08/justice-on-the-road-lawyered-legal-tech-startup-lawyers-network-highway",
   },
   {
     logo: "/news-logo/abp-logo-png_seeklogo-432770.png",
     title:
-      "Contracts To Code: Legal Tech Is Shaping Indias Startup Future. Heres How",
+      "Contracts To Code: Legal Tech Is Shaping India's Startup Future. Here's How",
     description:
-      "At a justice innovation workshop in a rural Tamil Nadu law school—well past the temple town of Mahabalipuram—we asked a class of law students how many were using ChatGPT. Every hand shot up. In an urban college, this would not have been surprising. But here? Their professor explained: most of these students were the children of farmers and fishermen from adjoining villages.x",
+      "At a justice innovation workshop in a rural Tamil Nadu law school—well past the temple town of Mahabalipuram—we asked a class of law students how many were using ChatGPT. Every hand shot up. In an urban college, this would not have been surprising. But here? Their professor explained: most of these students were the children of farmers and fishermen from adjoining villages",
     date: "Apr 02, 2025",
     link: "https://news.abplive.com/technology/legal-tech-is-shaping-india-s-startup-future-here-s-how-1770572/amp",
   },
@@ -45,7 +45,7 @@ const newsData: NewsItem[] = [
     title:
       "Delhi traffic challan: How to get them waived off or settled at Lok Adalat 2025",
     description:
-      "In India today, technology touches almost every part of our lives — from how we pay bills to how we travel, shop, and even consult a doctor. Quietly, but powerfully, its also starting to reshape another cornerstone of our society: the legal system.",
+      "In India today, technology touches almost every part of our lives — from how we pay bills to how we travel, shop, and even consult a doctor. Quietly, but powerfully, it's also starting to reshape another cornerstone of our society: the legal system.",
     date: "Mar 01, 2025",
     link: "https://www.hindustantimes.com/business/delhi-traffic-challan-how-to-get-them-waived-off-or-settled-at-lok-adalat-2025-101740993817814.html",
   },
@@ -138,11 +138,11 @@ export function LatestNews() {
 
                   {/* Title */}
                   <div className="font-bold text-sm text-[#0A0A0A]">
-                    {item.title}
+                    {`${item.title}`}
                   </div>
 
                   {/* Description */}
-                  <p className="text-sm  text-[#0A0A0A]">{item.description}</p>
+                  <p className="text-sm  text-[#0A0A0A]">{`${item.description}`}</p>
 
                   {/* Footer */}
                   <div className="flex items-center justify-between pt-2">

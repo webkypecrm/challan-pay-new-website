@@ -21,7 +21,7 @@ export default function Footer() {
             className="object-contain"
           />
           <div className="text-[#0A0A0A] text-sm font-bold">
-            Indias most trusted platform for traffic
+            {"India's most trusted platform for traffic"}
             <br />
             <span>challan resolution.</span>
           </div>
@@ -115,7 +115,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/terms-and-condition" className="hover:text-blue-500">
-                Terms of Services
+                Terms & Conditions
               </Link>
             </li>
           </ul>

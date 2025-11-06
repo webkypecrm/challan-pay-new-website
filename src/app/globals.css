@@ -151,3 +151,17 @@
   filter: brightness(0) saturate(100%) invert(44%) sepia(91%) saturate(471%)
     hue-rotate(143deg) brightness(92%) contrast(101%);
 }
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}

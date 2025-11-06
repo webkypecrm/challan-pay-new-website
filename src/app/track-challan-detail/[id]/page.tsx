@@ -14,6 +14,8 @@ import { Check } from "lucide-react";
 import { copyWithFeedback, formatDate } from "@/lib/helpers";
 import { FollowUp } from "@/lib/types";
 import WebVersionCommonComponent from "@/app/components/track-status/WebVersionCommonComponent";
+import Lottie from "lottie-react";
+import loaderAnimation from "../../loader.json";
 
 interface PageProps {
   params: {
@@ -87,13 +89,23 @@ function TrackChallanDetail({ params }: PageProps) {
     setOpen(true);
   };
 
-  if (loading) return <p>Loading dashboard...</p>;
+  if (loading)
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-gray-100 z-50">
+        <Lottie
+          animationData={loaderAnimation}
+          loop={true}
+          className="w-32 h-32"
+        />
+      </div>
+    );
+
   if (error) return <p>{error}</p>;
   return (
     <>
-      <div className="bg-slate-100 lg:hidden ">
+      <div className="bg-slate-100 lg:hidden  ">
         <Header />
-        <div className="bg-white rounded-lg mt-15  ">
+        <div className="bg-white rounded-lg mt-15 ">
           <CommonHeader title="Challan Detail" onBack={handleBack} />
         </div>
         <div className="px-4 ">

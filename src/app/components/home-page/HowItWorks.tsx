@@ -23,7 +23,7 @@ export default function HowItWorks() {
       id: 2,
       img: "/how-it-work/rectangle3.png",
       heading: "View and Pay Challans",
-      text: "Settle your challans without visiting courts - fast, easy and hassle-free",
+      text: "Settle your challans without visiting courts-fast, easy and hassle-free",
     },
     {
       id: 3,
