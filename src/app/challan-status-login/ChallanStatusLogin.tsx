@@ -311,7 +311,7 @@ export default function ChallanStatusLogin() {
             <div className="fixed bottom-0 lg:fixed lg:bottom-10 text-xs text-center py-2 mx-2">
               By continuing, you agree to our{" "}
               <span className="text-blue-600 underline">
-                <Link href="/terms-and-condition">terms & Conditions</Link>
+                <Link href="/terms-and-condition">Terms & Conditions</Link>
               </span>{" "}
               and{" "}
               <span className="text-blue-600 underline">

@@ -231,11 +231,11 @@ export default function Home() {
               <p className="text-muted-foreground text-sm">
                 I agree to the{" "}
                 <Link href="/terms-and-condition" className="text-blue-600">
-                  terms & conditions{" "}
+                  Terms & Conditions{" "}
                 </Link>
                 and the{" "}
                 <Link href="/privacy-policy" className="text-blue-600">
-                  privacy policy
+                  Privacy Policy
                 </Link>
                 , and authorize ChallanPay to fetch my vehicle registration and
                 challan details from the Government database.
