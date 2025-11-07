@@ -103,7 +103,7 @@ function TrackChallanDetail({ params }: PageProps) {
   if (error) return <p>{error}</p>;
   return (
     <>
-      <div className="bg-slate-100 lg:hidden  ">
+      <div className="bg-slate-100 lg:hidden   ">
         <Header />
         <div className="bg-white rounded-lg mt-15 ">
           <CommonHeader title="Challan Detail" onBack={handleBack} />
@@ -190,7 +190,7 @@ function TrackChallanDetail({ params }: PageProps) {
               <CommonHeader title="Challan Detail" onBack={handleBack} />
             </div>
             <div className="flex justify-center gap-2">
-              <div className="mt-4 px-4 mb-10 w-full">
+              <div className="mt-4 px-4  w-full min-h-screen ">
                 <ResolutionTimeline followUps={followUpData} />
                 <Button
                   className="bg-cyan-600 text-white w-full mt-4"
