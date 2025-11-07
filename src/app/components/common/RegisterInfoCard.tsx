@@ -12,7 +12,7 @@ export default function RegisterInfoCard({
   rto,
 }: RegisterInfoProps) {
   return (
-    <div className="w-[300px] rounded-xl border border-gray-200 bg-white shadow-sm">
+    <div className="w-[300px] lg:w-full rounded-xl border border-gray-200 bg-white shadow-sm">
       <div className="p-4 space-y-3">
         {/* Name */}
         <div>

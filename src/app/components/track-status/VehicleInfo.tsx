@@ -86,7 +86,7 @@ function VehicleInfo() {
         <div className="text-base font-bold">Vehicle Details</div>
         <div>
           <Button
-            className="bg-white text-black text-xs"
+            className="bg-transparent border border-gray-500 text-gary-500 text-sm font-medium hover:bg-black hover:text-white transition-all"
             onClick={() => setOpen(true)}
           >
             + Add Vehicle
@@ -98,7 +98,7 @@ function VehicleInfo() {
         {loading ? (
           <p className="text-center py-6 text-gray-500">No vehicles found.</p>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-4">
             {vehicles.map((vehicle) => (
               <div
                 key={vehicle.id}
@@ -109,9 +109,9 @@ function VehicleInfo() {
                   <Image
                     src="/Images/car.svg"
                     alt="car image"
-                    width={60}
+                    width={70}
                     height={30}
-                    className="object-contain"
+                    className="object-contain icon-cyan"
                   />
                   <div className="w-full flex justify-between ml-2">
                     <div className="border border-black font-bold rounded px-2 py-1">
@@ -135,12 +135,12 @@ function VehicleInfo() {
                     className="bg-white rounded-md my-1"
                   >
                     <AccordionTrigger>
-                      <div className="flex items-center">
+                      <div className="flex items-center ">
                         <CircleUser size={18} className="text-[#737373] mx-2" />{" "}
                         Owner Details
                       </div>
                     </AccordionTrigger>
-                    <AccordionContent className="flex justify-start gap-4 text-balance ml-2">
+                    <AccordionContent className="flex justify-start gap-4 text-balance ml-2 ">
                       <RegisterInfoCard
                         name={vehicle?.rc?.ownerName}
                         date={vehicle?.rc?.registrationDate}

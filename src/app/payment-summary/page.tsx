@@ -4,6 +4,7 @@ import PaymentSummaryHeader from "../components/payment-summary/PaymentSummaryHe
 import Header from "../components/common/Header";
 import { PaymentSummaryTabs } from "../components/payment-summary/PaymentSummaryTabs";
 import PaymentSummaryWebVersion from "../components/payment-summary/PaymentSummaryWebVersion";
+
 //import ChallanCartHeader from "../components/challan-cart/ChallanCartHeader";
 
 function page() {
@@ -22,6 +23,7 @@ function page() {
             <PaymentSummaryTabs />
           </div>
         </div>
+
         <PaymentSummaryWebVersion />
       </div>
 

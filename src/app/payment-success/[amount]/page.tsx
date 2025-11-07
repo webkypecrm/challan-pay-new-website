@@ -10,7 +10,9 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 //import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import VehicleDetailCard from "@/app/components/track-status/VehicleDetailCard";
+import Lottie from "lottie-react";
+import checkedLoader from "../../../../public/json/checked.json";
+//import VehicleDetailCard from "@/app/components/track-status/VehicleDetailCard";
 
 // ✅ Define proper TypeScript interfaces
 interface Incident {
@@ -56,11 +58,10 @@ const PaymentSuccess: React.FC = () => {
       {/* ✅ Mobile success message */}
       <div className="bg-slate-50 mt-4 pb-4 lg:hidden block mt-16  ">
         <div className="px-6 text-center text-black font-bold pt-6 flex flex-col items-center">
-          <Image
-            src="/gif/Checked.gif"
-            alt="success gif"
-            height={120}
-            width={120}
+          <Lottie
+            animationData={checkedLoader}
+            loop={true}
+            className="w-32 h-32"
           />
           <p>Thank you for submitting your challan!</p>
         </div>
@@ -92,11 +93,16 @@ const PaymentSuccess: React.FC = () => {
         <div className="lg:w-full lg:bg-white lg:rounded-lg">
           <div className="hidden lg:flex lg:justify-center mb-4">
             <div className="text-center text-black font-bold flex flex-col items-center lg:py-8">
-              <Image
+              {/* <Image
                 src="/gif/icons8-check.gif"
                 alt="success gif"
                 height={60}
                 width={60}
+              /> */}
+              <Lottie
+                animationData={checkedLoader}
+                loop={true}
+                className="w-32 h-32"
               />
               <p>Thank you for submitting your challan!</p>
             </div>

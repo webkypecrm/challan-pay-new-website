@@ -10,11 +10,13 @@ import { useEffect, useState } from "react";
 import { handleRazorpayPayment } from "../PayWithRozorpay";
 import { useRouter } from "next/navigation";
 import { LoaderModal } from "../LoaderModal";
+import Lottie from "lottie-react";
+import confettiLoader from "../../../../public/json/confetti.json";
 
 export function PaymentSummaryTabs() {
-  const { data, loading, selectedChallans, isContestSelected } =
+  const { data, loading, selectedChallans, isContestSelected, isPledge } =
     useChallanContext();
-  const [isPledge, setIsPledge] = useState(false);
+  const [isPledge1, setIsPledge1] = useState(false);
   const [loader, setLoader] = useState(false);
   const router = useRouter();
 
@@ -34,20 +36,23 @@ export function PaymentSummaryTabs() {
 
   useEffect(() => {
     if (!data) return; // prevent unnecessary updates when data is null
-
-    setIsPledge(!!data.potentialDiscount);
+    setIsPledge1(!!data.potentialDiscount);
   }, [data]);
-  // if (loader) {
-  //   return (
-  //     <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-70 z-50">
-  //       <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
-  //     </div>
-  //   );
-  // }
+
+  //console.log(isPledge);
   return (
     <div className="rounded-xl  lg:px-6 lg:flex lg:justify-center lg:bg-white bg-slate-100 lg:my-4">
       <div className="flex w-full max-w-md flex-col lg:max-w-3xl ">
         <div className="m-4 bg-white rounded-lg lg:m-0">
+          <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-50">
+            <Lottie
+              animationData={confettiLoader}
+              loop={isPledge}
+              className="w-[400] h-[400] max-w-[500px] max-h-[500px] lg:w-[400px] lg:h-[350px] 
+               lg:translate-x-[-230px] lg:translate-y-[50px]"
+            />
+          </div>
+
           <div className=" lg:text-[16px] lg:font-semibold lg:py-4  hidden lg:flex">
             Choose Resolution Type
           </div>
@@ -104,7 +109,7 @@ export function PaymentSummaryTabs() {
             subtitle="Total Payable Amount"
             buttonText="Proceed To Pay"
             onButtonClick={handleProccedNext}
-            isPledge={isPledge}
+            isPledge={isPledge1}
           />
         ) : null}
       </div>
