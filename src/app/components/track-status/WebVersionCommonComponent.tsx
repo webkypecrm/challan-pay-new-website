@@ -37,7 +37,8 @@ const WebVersionCommonComponent: React.FC<TrackStatusHeaderProps> = ({
           </div>
           <div className="p-2">
             <div className="text-base font-semibold">
-              Welcome, {info?.name ? info.name.split(" ")[0] : "N/A"}
+              Welcome,{" "}
+              {info?.name ? info.name.split(" ")[0].toLocaleLowerCase() : "N/A"}
             </div>
             <div className="text-sm font-semibold text-[#737373]">
               M No : {info?.phone}
