@@ -138,7 +138,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="https://www.instagram.com/challan_pay.in/?hl=en"
+              href="https://www.instagram.com/lots24x7"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-pink-500"
