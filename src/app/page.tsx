@@ -36,6 +36,7 @@ function HomePage() {
             <SupportedBy />
           </div>
         </div>
+
         <div className="bg-slate-50">
           <BlogsSection />
         </div>

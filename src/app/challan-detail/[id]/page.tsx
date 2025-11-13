@@ -128,6 +128,7 @@ function ChallanDetail() {
                 </div>
               </div>
             </div>
+
             <div className="lg:w-1/3 mt-4 hidden lg:block lg:mt-0 opacity-25">
               <ChallanEmailCard />
             </div>

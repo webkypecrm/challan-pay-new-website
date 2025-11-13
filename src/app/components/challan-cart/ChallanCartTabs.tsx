@@ -119,6 +119,22 @@ export function ChallanCartTabs() {
           lg:flex lg:flex-col lg:gap-4 lg:mt-4  lg:rounded-lg lg:mt-4
         "
             >
+              {/* Pending */}
+              {/* <TabsTrigger
+                value="pending"
+                className="
+            w-1/2 text-center rounded-lg 
+            data-[state=active]:bg-black lg:data-[state=active]:bg-[#F5F5F5] data-[state=active]:text-white lg:data-[state=active]:text-cyan-600 lg:bg-white
+            lg:w-full lg:flex lg:items-center lg:justify-between lg:px-4 lg:py-6 lg:border
+          "
+              >
+                <span className="hidden lg:flex items-center gap-2">
+                  <Hourglass className="w-5 h-5" />
+                  Pending
+                </span>
+                <span className="lg:hidden">Pending</span>
+                <Info className="hidden lg:block w-5 h-5" />
+              </TabsTrigger> */}
               <TabsTrigger
                 value="pending"
                 className="
@@ -147,6 +163,7 @@ export function ChallanCartTabs() {
                 <span className="lg:hidden">Pending</span>
 
                 {/* Info Icon (Right Side) */}
+
                 <div className="relative group inline-block">
                   <Info className="hidden lg:block w-6 h-6 text-gray-400 group-hover:text-cyan-600 cursor-pointer" />
                   <span className="absolute left-1/2 -translate-x-1/2 bottom-8 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded-md px-2 py-1 transition-opacity duration-300 whitespace-nowrap">
@@ -182,6 +199,7 @@ export function ChallanCartTabs() {
                 </span>
 
                 <span className="lg:hidden">Paid</span>
+
                 <div className="relative group inline-block">
                   <Info className="hidden lg:block w-6 h-6 text-gray-400 group-hover:text-cyan-600 cursor-pointer" />
                   <span className="absolute left-1/2 -translate-x-1/2 bottom-8 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded-md px-2 py-1 transition-opacity duration-300 whitespace-nowrap">
