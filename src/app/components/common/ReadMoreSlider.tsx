@@ -41,13 +41,6 @@ export function ReadMoreSlider({
     );
   };
 
-  // if (loader) {
-  //   return (
-  //     <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-70 z-50">
-  //       <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
-  //     </div>
-  //   );
-  // }
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetContent side="bottom" className="rounded-t-2xl  max-h-[85vh]">
@@ -325,7 +318,7 @@ export function ReadMoreSlider({
             {/* 8️⃣ Final Message */}
             <div className="space-y-2">
               <div className="font-bold text-sm">
-                Youre Not Just Clearing a Challan. You are Leading by Example
+                {`You're Not Just Clearing a Challan. You are Leading by Example`}
               </div>
               <p className="text-xs">
                 When you take this pledge, you are stepping up—not because

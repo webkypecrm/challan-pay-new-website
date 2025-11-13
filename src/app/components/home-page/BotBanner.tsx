@@ -11,7 +11,7 @@ import { DialogDemo } from "./HomePageDailog";
 export default function Banner() {
   const [open, setOpen] = useState(false);
   return (
-    <Card className="bg-white rounded-2xl px-2 py-4 shadow-sm border border-gray-200 my-10 lg:px-6 lg:max-w-7xl">
+    <Card className="bg-white rounded-2xl px-2 py-4  border border-gray-200 my-10 lg:px-6 lg:max-w-7xl">
       <div className="flex flex-col md:flex-row items-center md:justify-between lg:justify-start gap-4 lg:gap-10">
         {/* image */}
         <Image

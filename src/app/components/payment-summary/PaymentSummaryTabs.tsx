@@ -10,8 +10,9 @@ import { useEffect, useState } from "react";
 import { handleRazorpayPayment } from "../PayWithRozorpay";
 import { useRouter } from "next/navigation";
 import { LoaderModal } from "../LoaderModal";
-import Lottie from "lottie-react";
-import confettiLoader from "../../../../public/json/confetti.json";
+// import Lottie from "lottie-react";
+// import confettiLoader from "../../../../public/json/confetti.json";
+import ConfettiAnimation from "../common/ConfettiAnimation";
 
 export function PaymentSummaryTabs() {
   const { data, loading, selectedChallans, isContestSelected, isPledge } =
@@ -45,12 +46,13 @@ export function PaymentSummaryTabs() {
       <div className="flex w-full max-w-md flex-col lg:max-w-3xl ">
         <div className="m-4 bg-white rounded-lg lg:m-0">
           <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-50">
-            <Lottie
+            {/* <Lottie
               animationData={confettiLoader}
-              loop={isPledge}
+              loop={false}
               className="w-[400] h-[400] max-w-[500px] max-h-[500px] lg:w-[400px] lg:h-[350px] 
                lg:translate-x-[-230px] lg:translate-y-[50px]"
-            />
+            /> */}
+            <ConfettiAnimation isPledge={isPledge} />
           </div>
 
           <div className=" lg:text-[16px] lg:font-semibold lg:py-4  hidden lg:flex">

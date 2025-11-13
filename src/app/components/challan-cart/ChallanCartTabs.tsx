@@ -119,22 +119,6 @@ export function ChallanCartTabs() {
           lg:flex lg:flex-col lg:gap-4 lg:mt-4  lg:rounded-lg lg:mt-4
         "
             >
-              {/* Pending */}
-              {/* <TabsTrigger
-                value="pending"
-                className="
-            w-1/2 text-center rounded-lg 
-            data-[state=active]:bg-black lg:data-[state=active]:bg-[#F5F5F5] data-[state=active]:text-white lg:data-[state=active]:text-cyan-600 lg:bg-white
-            lg:w-full lg:flex lg:items-center lg:justify-between lg:px-4 lg:py-6 lg:border
-          "
-              >
-                <span className="hidden lg:flex items-center gap-2">
-                  <Hourglass className="w-5 h-5" />
-                  Pending
-                </span>
-                <span className="lg:hidden">Pending</span>
-                <Info className="hidden lg:block w-5 h-5" />
-              </TabsTrigger> */}
               <TabsTrigger
                 value="pending"
                 className="
@@ -163,28 +147,18 @@ export function ChallanCartTabs() {
                 <span className="lg:hidden">Pending</span>
 
                 {/* Info Icon (Right Side) */}
-                <Info className="hidden lg:block w-6 h-6 text-gray-400 group-data-[state=active]:text-cyan-600" />
+                <div className="relative group inline-block">
+                  <Info className="hidden lg:block w-6 h-6 text-gray-400 group-hover:text-cyan-600 cursor-pointer" />
+                  <span className="absolute left-1/2 -translate-x-1/2 bottom-8 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded-md px-2 py-1 transition-opacity duration-300 whitespace-nowrap">
+                    Show Pending Challans
+                  </span>
+                </div>
+
+                {/* <Info className="hidden lg:block w-6 h-6 text-gray-400 group-data-[state=active]:text-cyan-600" /> */}
               </TabsTrigger>
 
               {/* Paid */}
-              {/* <TabsTrigger
-                value="paid"
-                className="
-            w-1/2 text-center rounded-lg  lg:bg-white
-            data-[state=active]:bg-black  lg:data-[state=active]:bg-[#f5f5f5]  data-[state=active]:text-white lg:data-[state=active]:text-cyan-600 
-            lg:w-full lg:flex lg:items-center lg:justify-between lg:px-4 lg:py-6 lg:border
-          "
-              >
-                <span className="hidden lg:flex items-center gap-2">
-                  <div className="w-10 h-10 bg-[#0f94a0] rounded-sm flex items-center justify-center">
-                    <CheckCircle className="w-5 h-5 text-white" />
-                  </div>
-                  Paid
-                </span>
 
-                <span className="lg:hidden">Paid</span>
-                <Info className="hidden lg:block w-5 h-5" />
-              </TabsTrigger> */}
               <TabsTrigger
                 value="paid"
                 className="
@@ -208,8 +182,14 @@ export function ChallanCartTabs() {
                 </span>
 
                 <span className="lg:hidden">Paid</span>
+                <div className="relative group inline-block">
+                  <Info className="hidden lg:block w-6 h-6 text-gray-400 group-hover:text-cyan-600 cursor-pointer" />
+                  <span className="absolute left-1/2 -translate-x-1/2 bottom-8 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded-md px-2 py-1 transition-opacity duration-300 whitespace-nowrap">
+                    Show Paid Challans
+                  </span>
+                </div>
 
-                <Info className="hidden lg:block w-6 h-6 text-gray-400 group-data-[state=active]:text-cyan-600" />
+                {/* <Info className="hidden lg:block w-6 h-6 text-gray-400 group-data-[state=active]:text-cyan-600" /> */}
               </TabsTrigger>
             </TabsList>
           </div>

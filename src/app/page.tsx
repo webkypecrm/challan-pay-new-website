@@ -10,6 +10,7 @@ import TrustedPartner from "./components/home-page/TrustedPartner";
 import SupportedBy from "./components/home-page/SupportedBy";
 import { LatestNews } from "./components/home-page/LatestNews";
 import { CheckResolution } from "./components/home-page/CheckResolution";
+import BlogsSection from "./components/home-page/BlogsSection";
 
 function HomePage() {
   return (
@@ -35,7 +36,9 @@ function HomePage() {
             <SupportedBy />
           </div>
         </div>
-
+        <div className="bg-slate-50">
+          <BlogsSection />
+        </div>
         <div>
           <LatestNews />
         </div>

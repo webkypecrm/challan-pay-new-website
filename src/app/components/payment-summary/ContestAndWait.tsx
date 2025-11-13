@@ -48,8 +48,8 @@ function ContestAndWait() {
         </span>
       </div>
       <div className="p-4 text-xs font-medium">
-        I wish to contest my challans. I understand this may take 60–90 days,
-        and I’ll get refunds for any waiver granted after closure...
+        {`I wish to contest my challans. I understand this may take 60–90 days,
+        and I’ll get refunds for any waiver granted after closure...`}
         <span className="text-blue-600" onClick={() => setOpenReadMore(true)}>
           read more
         </span>

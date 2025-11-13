@@ -103,9 +103,10 @@ function ChallanDetail() {
                     <p className="text-[#DC2626] font-bold">
                       ₹{challanData?.amount}
                     </p>
-                    <p className="text-xs bg-blue-50 text-cyan-600 font-semibold p-1 rounded-sm">
+                    {/* <p className="text-xs bg-blue-50 text-cyan-600 font-semibold p-1 rounded-sm">
                       Pending
-                    </p>
+                    </p> */}
+                    <p></p>
                   </div>
                   <Separator />
                   <div className="bg-white p-2 rounded-b-xl lg:px-6">
@@ -127,7 +128,7 @@ function ChallanDetail() {
                 </div>
               </div>
             </div>
-            <div className="lg:w-1/3 mt-4 hidden lg:block lg:mt-0">
+            <div className="lg:w-1/3 mt-4 hidden lg:block lg:mt-0 opacity-25">
               <ChallanEmailCard />
             </div>
           </div>
