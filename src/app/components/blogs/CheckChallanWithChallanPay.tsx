@@ -22,10 +22,10 @@ function CheckChallanWithChallanPay() {
 
         {/* Meta Information */}
         <div className="text-sm text-gray-500 mb-4 hidden lg:block">
-          <span>Dec 3, 2024</span> • <span>5 min read</span> •{" "}
+          {/* <span>Dec 3, 2024</span> • <span>5 min read</span> • */}
           <span>Author: Team ChallanPay</span>
         </div>
-        <div className="lg:text-5xl lg:uppercase font-bold lg:my-8 leading-tight text-xl mb-4">
+        <div className="lg:text-5xl  font-bold lg:my-8 leading-tight text-xl mb-4">
           {`ChallanPay: India’s Trusted Platform for Fast and Easy Challan
           Resolution`}
         </div>

@@ -290,6 +290,13 @@ export default function Header() {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/blog-listing">
+                  <NavigationMenuLink className="px-3 py-2 text-gray-700 hover:text-cyan-600">
+                    Blogs
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
           <Button
@@ -312,7 +319,7 @@ export default function Header() {
               </Button>
             </div>
           </SheetTrigger>
-          <SheetContent side="top" className="w-full h-[260px] rounded-b-xl">
+          <SheetContent side="top" className="w-full h-[290px] rounded-b-xl">
             <nav className="flex flex-col  mx-3 gap-4 mt-3">
               <SheetClose asChild>
                 <Link href="/">
@@ -360,6 +367,12 @@ export default function Header() {
                 }}
               >
                 Support
+              </Link>
+              <Link
+                href="/blog-listing"
+                className="text-gray-900 hover:text-cyan-600"
+              >
+                Blogs
               </Link>
 
               <Button
