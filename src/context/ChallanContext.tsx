@@ -9,6 +9,7 @@ import React, {
   Dispatch,
   SetStateAction,
 } from "react";
+import { useRouter } from "next/navigation";
 
 interface Challan {
   id: number;
@@ -85,6 +86,7 @@ export const ChallanProvider: React.FC<{ children: React.ReactNode }> = ({
   const [loading, setLoading] = useState<boolean>(false);
   const [isPledge, setIsPledge] = useState<boolean>(true);
   const [isContestSelected, setIsContestSelected] = useState(false);
+  const router = useRouter();
 
   // ✅ Fetch payment engagement data
   const fetchPaymentEngagement = async (challanIds: number[]) => {
@@ -190,6 +192,12 @@ export const ChallanProvider: React.FC<{ children: React.ReactNode }> = ({
       JSON.stringify(selectedChallans)
     );
   }, [selectedChallans]);
+
+  // useEffect(() => {
+  //   if (selectedChallans.length === 0) {
+  //     router.push("/");
+  //   }
+  // }, [selectedChallans]);
 
   return (
     <ChallanContext.Provider

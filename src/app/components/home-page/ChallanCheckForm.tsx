@@ -49,7 +49,7 @@ export default function Home() {
     // Navigate first
     router.push(`/challan-status-login?data=${encoded}`);
 
-    // Only set localStorage in browser
+    // Only set sessionStorage in browser
     if (typeof window !== "undefined") {
       sessionStorage.setItem("vehicleNo", data.vehicleNumber);
     }

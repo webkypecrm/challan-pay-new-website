@@ -11,6 +11,7 @@ import {
 import Image from "next/image";
 //import { Button } from "@/components/ui/button";
 import type { EmblaCarouselType } from "embla-carousel";
+import Shimmer from "../common/Shimmer";
 
 const cardData = [
   {
@@ -79,9 +80,10 @@ export function HeroSection() {
 
   return (
     <div
-      className="w-full max-w-screen-xl mx-auto px-4 lg:max-w-7xl lg:px-1.5"
-      style={{ marginTop: "100px", marginBottom: "30px" }}
+      className="w-full max-w-screen-xl mx-auto px-4 lg:max-w-7xl lg:px-1.5 mt-25 mb-5 lg:mt-31"
+      // style={{ marginTop: "100px", marginBottom: "30px" }}
     >
+      {/* <Shimmer height="100px" width="100%" /> */}
       <Carousel
         setApi={setEmblaApi} // 👈 connect carousel API
         plugins={[plugin.current]}

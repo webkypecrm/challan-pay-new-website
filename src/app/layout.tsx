@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Challan Pay",
+  title: "ChallanPay",
   description: "Power By Lawyered",
   icons: {
     icon: [
@@ -125,7 +125,7 @@ export default function RootLayout({
                   style={{ display: "none", visibility: "hidden" }}
                 ></iframe>
               </noscript>
-              <div className="mt-20 lg:mt-31">{children}</div>
+              <div className="mt-20 lg:mt-26">{children}</div>
               {/* </Suspense> */}
             </ChallanProvider>
           </TrackStatusAuthProvider>

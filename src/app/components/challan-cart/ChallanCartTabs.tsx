@@ -167,7 +167,7 @@ export function ChallanCartTabs() {
                 <div className="relative group inline-block">
                   <Info className="hidden lg:block w-6 h-6 text-gray-400 group-hover:text-cyan-600 cursor-pointer" />
                   <span className="absolute left-1/2 -translate-x-1/2 bottom-8 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded-md px-2 py-1 transition-opacity duration-300 whitespace-nowrap">
-                    Show Pending Challans
+                    Challans that are still unpaid
                   </span>
                 </div>
 
@@ -203,7 +203,7 @@ export function ChallanCartTabs() {
                 <div className="relative group inline-block">
                   <Info className="hidden lg:block w-6 h-6 text-gray-400 group-hover:text-cyan-600 cursor-pointer" />
                   <span className="absolute left-1/2 -translate-x-1/2 bottom-8 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded-md px-2 py-1 transition-opacity duration-300 whitespace-nowrap">
-                    Show Paid Challans
+                    {`Challans you’ve already paid.`}
                   </span>
                 </div>
 

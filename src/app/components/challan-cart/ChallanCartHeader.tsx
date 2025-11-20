@@ -7,9 +7,14 @@ import { ChevronLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 import NumberPlateHeader from "../common/NumberPlateHeader";
 import { useEffect } from "react";
+import { HowToPaySheet } from "../common/HowToPaySheet";
+import { tr } from "zod/v4/locales";
+import { HowToPayDesktopModal } from "../common/HowToPayDesktopModal";
 
 function ChallanCartHeader() {
   const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const [openDesktop, setOpenDesktop] = useState(false);
   // const vehicleNo = localStorage.getItem("vehicleNo");
   const [vehicleNo, setVehicleNo] = useState("");
 
@@ -43,11 +48,21 @@ function ChallanCartHeader() {
         </div>
 
         {/* Right side: Share button */}
-        {/* <button className="flex items-center gap-2 px-2 py-1 bg-gray-100 border border-gray-200 rounded-md hover:bg-gray-200 transition">
-          <FaWhatsapp size={18} className="text-green-600" />
-          <span className="text-xs font-medium text-gray-900">Share</span>
-        </button> */}
+        <button
+          className="flex items-center gap-2 px-2 py-1 text-sm text-cyan-700 font-medium lg:hidden block   underline leading-normal"
+          onClick={() => setOpen(true)}
+        >
+          How To Pay?
+        </button>
+        <button
+          className="flex items-center gap-2 px-2 py-1 text-sm text-cyan-700 font-medium hidden lg:block  underline leading-normal"
+          onClick={() => setOpenDesktop(true)}
+        >
+          How To Pay?
+        </button>
       </div>
+      <HowToPaySheet open={open} setOpen={setOpen} />
+      <HowToPayDesktopModal open={openDesktop} setOpen={setOpenDesktop} />
       <NumberPlateHeader vehicleNumber={vehicleNo || ""} />
     </div>
   );

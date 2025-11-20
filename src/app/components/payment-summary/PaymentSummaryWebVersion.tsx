@@ -6,13 +6,86 @@ import { useRouter } from "next/navigation";
 import { useChallanContext } from "@/context/ChallanContext";
 import { Check } from "lucide-react";
 import { handleRazorpayPayment } from "../PayWithRozorpay";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+
+interface SavingsItem {
+  image: string;
+  title: string;
+  emoji: string;
+  showImage: boolean;
+}
+
+const savingsData: SavingsItem[] = [
+  {
+    image: "/rewardUser/riya.png",
+    title: "Riya from Mumbai saved ₹750",
+    emoji: "🎉",
+    showImage: true,
+  },
+  {
+    image: "",
+    title: "Jaipur cleared 246+ challans this week!",
+    emoji: "🔔",
+    showImage: false,
+  },
+  {
+    image: "",
+    title: "Drivers from Pune saved ₹15,000 today!",
+    emoji: "🚗",
+    showImage: false,
+  },
+  {
+    image: "/rewardUser/ravi.png",
+    title: "Ravi just paid ₹4,800 court challan",
+    emoji: "🔐",
+    showImage: true,
+  },
+  {
+    image: "/rewardUser/kavita.png",
+    title: "Kavita claimed ₹1250 reward",
+    emoji: "🎉",
+    showImage: true,
+  },
+  {
+    image: "",
+    title: "235+ challans resolved in Surat today!",
+    emoji: "🔧",
+    showImage: false,
+  },
+  {
+    image: "/rewardUser/aditya.png",
+    title: "Aditya from Kolkata saved ₹1,650!",
+    emoji: "🎁",
+    showImage: true,
+  },
+  {
+    image: "",
+    title: "Delhi users saved over ₹25,000 in fines",
+    emoji: "🕛",
+    showImage: false,
+  },
+  {
+    image: "/rewardUser/ajay.png",
+    title: "Ajay from Pune just saved ₹1650",
+    emoji: "🎊",
+    showImage: true,
+  },
+  {
+    image: "",
+    title: "6470+ challans resolved in last 15 days",
+    emoji: "💰",
+    showImage: false,
+  },
+];
 
 export default function PaymentSummaryWebVersion() {
   const router = useRouter();
   const { data, isPledge, selectedChallans, isContestSelected } =
     useChallanContext();
   const [loader, setLoader] = useState(false);
+  const [fadeState, setFadeState] = useState("fade-in");
+  const [index, setIndex] = useState(() => Math.floor(Math.random() * 10));
 
   const handleProccedNext = () => {
     handleRazorpayPayment(
@@ -28,15 +101,22 @@ export default function PaymentSummaryWebVersion() {
     );
   };
 
-  // if (loader) {
-  //   return (
-  //     <div className="fixed inset-0 flex items-center justify-center bg-gray-100 bg-opacity-70 z-50">
-  //       <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
-  //     </div>
-  //   );
-  // }
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFadeState("fade-out");
+
+      // fade-out hone ke baad next item show karo
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % savingsData.length);
+        setFadeState("fade-in");
+      }, 500); // fade-out duration
+    }, 5000); // har message kitne time me change ho
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <Card className="max-w-md w-full rounded-lg p-4 mt-17  hidden lg:flex lg:mt-7">
+    <Card className="max-w-md w-full rounded-lg p-4 mt-17  hidden lg:flex lg:mt-19">
       <CardContent className="space-y-4 p-0">
         {/* Header */}
         <div className="text-[16px] font-semibold ">
@@ -45,15 +125,28 @@ export default function PaymentSummaryWebVersion() {
         </div>
 
         {/* Info Banner (Pledge Reward Info) */}
-        {isPledge && data?.potentialDiscount && data.potentialDiscount > 0 ? (
-          <div className="bg-cyan-50 text-cyan-700 text-sm text-center py-2 rounded-md font-medium">
-            You saved ₹{data.potentialDiscount} by pledging!
+
+        <div className="flex justify-center items-center  bg-cyan-50 border border-cyan-50 px-2  rounded-lg mt-3  bg-gradient-3 ">
+          <div key={index} className={`${fadeState} min-w-[350px] `}>
+            <div className="flex justify-between items-center">
+              <div className="text-[14px] text-black font-medium flex items-center gap-2 ">
+                {savingsData[index].showImage && (
+                  <Image
+                    alt="user"
+                    src={savingsData[index].image}
+                    width={20}
+                    height={20}
+                    className="rounded-[50%]"
+                  />
+                )}
+
+                <span>{savingsData[index].title}</span>
+              </div>
+
+              <div className="text-[28px]">{savingsData[index].emoji}</div>
+            </div>
           </div>
-        ) : (
-          <div className="bg-cyan-50 text-cyan-700 text-sm text-center py-2 rounded-md font-medium">
-            630 people have claimed ₹500 reward
-          </div>
-        )}
+        </div>
 
         <hr className="border-gray-200" />
 

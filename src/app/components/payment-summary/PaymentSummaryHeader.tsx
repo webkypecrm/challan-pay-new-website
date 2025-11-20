@@ -10,11 +10,83 @@ import { useRouter } from "next/navigation";
 import { PaymentSummarySheet } from "./PaymentSummarySheet";
 import { useChallanContext } from "@/context/ChallanContext";
 
+interface SavingsItem {
+  image: string;
+  title: string;
+  emoji: string;
+  showImage: boolean;
+}
+
+const savingsData: SavingsItem[] = [
+  {
+    image: "/rewardUser/riya.png",
+    title: "Riya from Mumbai saved ₹750",
+    emoji: "🎉",
+    showImage: true,
+  },
+  {
+    image: "",
+    title: "Jaipur cleared 246+ challans this week!",
+    emoji: "🔔",
+    showImage: false,
+  },
+  {
+    image: "",
+    title: "Drivers from Pune saved ₹15,000 today!",
+    emoji: "🚗",
+    showImage: false,
+  },
+  {
+    image: "/rewardUser/ravi.png",
+    title: "Ravi just paid ₹4,800 court challan",
+    emoji: "🔐",
+    showImage: true,
+  },
+  {
+    image: "/rewardUser/kavita.png",
+    title: "Kavita claimed ₹1250 reward",
+    emoji: "🎉",
+    showImage: true,
+  },
+  {
+    image: "",
+    title: "235+ challans resolved in Surat today!",
+    emoji: "🔧",
+    showImage: false,
+  },
+  {
+    image: "/rewardUser/aditya.png",
+    title: "Aditya from Kolkata saved ₹1,650!",
+    emoji: "🎁",
+    showImage: true,
+  },
+  {
+    image: "",
+    title: "Delhi users saved over ₹25,000 in fines",
+    emoji: "⌚",
+    showImage: false,
+  },
+  {
+    image: "/rewardUser/ajay.png",
+    title: "Ajay from Pune just saved ₹1650",
+    emoji: "🎊",
+    showImage: true,
+  },
+  {
+    image: "",
+    title: "6470+ challans resolved in last 15 days",
+    emoji: "💰",
+    showImage: false,
+  },
+];
+
 function PaymentSummaryHeader() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const [vehicleNo, setVehicleNo] = useState<string | null>(null);
   const { data } = useChallanContext();
+  const [index, setIndex] = useState(() => Math.floor(Math.random() * 10));
+  const [fadeState, setFadeState] = useState("fade-in");
 
   const handleBack = () => {
     router.push("/challan-cart");
@@ -23,7 +95,21 @@ function PaymentSummaryHeader() {
     const storedVehicleNo = sessionStorage.getItem("vehicleNo");
     setVehicleNo(storedVehicleNo);
   }, []);
-  //console.log(data);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFadeState("fade-out");
+      // fade-out hone ke baad next item show karo
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % savingsData.length);
+        setFadeState("fade-in");
+      }, 400); // fade-out duration
+    }, 5000); // har message kitne time me change ho
+
+    return () => clearInterval(interval);
+  }, []);
+
+  //console.log(index);
   return (
     <div className="mt-25 px-4 lg:px-0 bg-white lg:mt-0  lg:bg-slate-100">
       <div className="flex items-center justify-between">
@@ -101,9 +187,25 @@ function PaymentSummaryHeader() {
         </button>
         <div className="text-base font-bold">₹ {data?.amountToPay}</div>
       </div>
-      <div className="lg:hidden flex justify-center items-center  bg-cyan-50 border border-cyan-50 p-2  rounded-lg mt-3 ">
-        <div className="text-xs font-semibold text-cyan-800">
-          630 Peoples have claimed ₹500 reward
+      <div className="lg:hidden flex justify-center items-center  bg-cyan-50 border border-cyan-50 px-2  rounded-lg mt-3  bg-gradient-3 ">
+        <div key={index} className={`${fadeState}  w-full`}>
+          <div className="flex justify-between items-center">
+            <div className="text-[14px] text-black font-medium flex items-center gap-2 ">
+              {savingsData[index].showImage && (
+                <Image
+                  alt="user"
+                  src={savingsData[index].image}
+                  width={20}
+                  height={20}
+                  className="rounded-[50%]"
+                />
+              )}
+
+              <span>{savingsData[index].title}</span>
+            </div>
+
+            <div className="text-[28px]">{savingsData[index].emoji}</div>
+          </div>
         </div>
       </div>
       <div className="h-4 bg-white lg:hidden"></div>

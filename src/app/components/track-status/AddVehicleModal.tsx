@@ -84,7 +84,7 @@ export function AddVehicleModal({ open, onOpenChange }: AddVehicleFormProps) {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[400px]">
         <DialogClose asChild>
-          <button className="absolute -top-8 right-38 rounded-full bg-black/50 w-6 h-6 flex justify-center items-center text-white font-bold hover:bg-black">
+          <button className="absolute -top-8 right-38 lg:right-45 rounded-full bg-black/50 w-6 h-6 flex justify-center items-center text-white font-bold hover:bg-black">
             <XIcon size={16} />
           </button>
         </DialogClose>
