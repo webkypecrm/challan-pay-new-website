@@ -105,6 +105,7 @@ export default function TrustedByMillions() {
             muted
             playsInline
             preload="auto"
+            controls
             className="absolute top-[3%] lg:left-[24%] left-[14%] lg:w-[52%] w-[70%]  h-[94%] object-cover rounded-lg"
           />
         </div>
