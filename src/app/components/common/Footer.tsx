@@ -125,7 +125,7 @@ export default function Footer() {
         <ul className="mt-1 flex items-center justify-center">
           <li className="flex items-center space-x-3">
             <Link
-              href="https://x.com/challanpay25389?t=Rt94s4lkuIfFsUpMHC8_VA&s=09"
+              href="https://x.com/challanpay25389?s=21"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-green-500"
@@ -138,7 +138,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="https://www.instagram.com/lots24x7"
+              href="https://www.instagram.com/challanpay.in"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-pink-500"
@@ -147,7 +147,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="https://www.facebook.com/share/14KSBMrXdXs/?mibextid=wwXIfr"
+              href="https://www.facebook.com/share/17kdM2BvuV/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-600"
