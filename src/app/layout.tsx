@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     siteName: "ChallanPay",
     images: [
       {
-        url: "https://challanpay.in/logo/logo.svg",
-        width: 108,
-        height: 28,
+        url: "/logo/ChallanPayLogo.png",
+        width: 1600,
+        height: 400,
         alt: "ChallanPay Logo",
       },
     ],
