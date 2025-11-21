@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "ChallanPay",
     images: [
       {
-        url: "/logo/logo.svg", // <-- Yaha apna logo ka full URL lagana
+        url: "https://challanpay.in/logo/logo.svg",
         width: 108,
         height: 28,
         alt: "ChallanPay Logo",

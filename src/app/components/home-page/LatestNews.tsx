@@ -77,7 +77,7 @@ const newsData: NewsItem[] = [
   },
 
   {
-    logo: "/news-logo/india-time.png",
+    logo: "/news-logo/business-standard.png",
     title:
       "E-Challan Backlog Soars: ChallanPay Featured in TOI Gurgaon Edition",
     description:
