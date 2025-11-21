@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import moengage from "@moengage/web-sdk";
 
 const schema = z.object({
   vehicleType: z.string().min(1, "Please select a vehicle type"),
@@ -44,6 +45,11 @@ export default function Home() {
   });
 
   const onSubmit = (data: FormData) => {
+    moengage.track_event("vehicleSelection", {
+      vehicleType: data.vehicleType,
+      vehicleNumber: data.vehicleNumber,
+      eventPage: "https://www.challanpay.in/",
+    });
     const encoded = encodeURIComponent(JSON.stringify(data));
 
     // Navigate first

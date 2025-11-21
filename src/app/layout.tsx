@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { AuthProvider } from "@/context/AuthContext";
-import { Toaster } from "react-hot-toast";
-import ConditionalHeader from "./components/common/ConditionalHeader";
-import { ChallanProvider } from "@/context/ChallanContext";
-import { TrackStatusAuthProvider } from "@/context/TrackStatusAuthContext";
+// import { AuthProvider } from "@/context/AuthContext";
+// import { Toaster } from "react-hot-toast";
+// import ConditionalHeader from "./components/common/ConditionalHeader";
+// import { ChallanProvider } from "@/context/ChallanContext";
+// import { TrackStatusAuthProvider } from "@/context/TrackStatusAuthContext";
 import Script from "next/script";
+//import { initMoengage } from "@/lib/moengage";
+import ClientWrapper from "./ClientWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,8 +21,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ChallanPay",
-  description: "Power By Lawyered",
+  title: "ChallanPay – Fast & Secure Challan Payments",
+  description:
+    "Pay your vehicle challans instantly with ChallanPay. Fast, secure, and easy to use.",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -28,6 +31,32 @@ export const metadata: Metadata = {
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
     apple: "/apple-touch-icon.png",
+  },
+
+  openGraph: {
+    title: "ChallanPay – Fast & Secure Challan Payments",
+    description:
+      "Pay your vehicle challans instantly with ChallanPay. Fast, secure, and easy to use.",
+    url: "https://challanpay.in",
+    siteName: "ChallanPay",
+    images: [
+      {
+        url: "/logo/logo.svg", // <-- Yaha apna logo ka full URL lagana
+        width: 108,
+        height: 28,
+        alt: "ChallanPay Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  // Twitter card
+  twitter: {
+    card: "summary_large_image",
+    title: "ChallanPay – Fast & Secure Challan Payments",
+    description: "Pay your vehicle challans instantly with ChallanPay.",
+    images: ["/logo/logo.svg"], // <-- Same logo here
   },
 };
 
@@ -90,7 +119,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased lg:bg-white`}
       >
         {" "}
-        <AuthProvider>
+        {/* <AuthProvider>
           <TrackStatusAuthProvider>
             <ChallanProvider>
               {" "}
@@ -104,19 +133,7 @@ export default function RootLayout({
                   },
                 }}
               />
-              {/* <Suspense
-              fallback={
-                <div className="flex items-center justify-center h-screen w-screen bg-gray-100">
-                  <Lottie
-                    animationData={loaderAnimation}
-                    loop={true}
-                    className="w-24 h-24"
-                  />
-                </div>
-              }
-              > */}
               <ConditionalHeader />
-              {/* ✅ Google Tag Manager (noscript) — goes immediately after <body> */}
               <noscript>
                 <iframe
                   src="https://www.googletagmanager.com/ns.html?id=GTM-5HQP9D3"
@@ -126,10 +143,13 @@ export default function RootLayout({
                 ></iframe>
               </noscript>
               <div className="mt-20 lg:mt-26">{children}</div>
-              {/* </Suspense> */}
+             
             </ChallanProvider>
           </TrackStatusAuthProvider>
-        </AuthProvider>
+        </AuthProvider> */}
+        <ClientWrapper>
+          <div className="mt-20 lg:mt-26">{children}</div>
+        </ClientWrapper>
       </body>
     </html>
   );
