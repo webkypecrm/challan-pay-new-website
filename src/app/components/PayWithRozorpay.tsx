@@ -116,23 +116,23 @@ export const handleRazorpayPayment = async (
             );
           }
           const response = apiResponse.data;
-          //console.log(response);
-          moengage.track_event("ticketCreated", {
-            irnNumbers: response?.data?.caseLeads.map(
-              (caseLead) => caseLead.id
-            ),
-            creationDate: new Date().toLocaleString(),
-            challanNumbers: response?.data?.caseLeads.map(
-              (caseLead) => caseLead.challanNo
-            ),
-            vehicleNumber: response?.data.caseLeads[0].vehicleNo,
-            challanAmount: response?.data.caseLeads.reduce(
-              (acc, caseLead) => acc + caseLead.challanAmount,
-              0
-            ),
-            paidAmount: grandTotal,
-          });
 
+          //    moengage.track_event("ticketCreated", {
+          //   irnNumbers: response?.data?.caseLeads.map(
+          //     (caseLead) => caseLead.id
+          //   ),
+          //   creationDate: new Date().toLocaleString(),
+          //   challanNumbers: response?.data?.caseLeads.map(
+          //     (caseLead) => caseLead.challanNo
+          //   ),
+          //   vehicleNumber: response?.data.caseLeads[0].vehicleNo,
+          //   challanAmount: response?.data.caseLeads.reduce(
+          //     (acc, caseLead) => acc + caseLead.challanAmount,
+          //     0
+          //   ),
+          //   paidAmount: grandTotal,
+          // });
+          //console.log(response);
           // moengage.track_event("rewardOpted", {
           //   rewardSelected: rewardGiven,
           //   rewardAmount: potentialDiscount,

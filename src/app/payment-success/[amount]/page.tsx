@@ -6,7 +6,7 @@ import PaymentInfo from "../../components/payment-success/PaymentInfo";
 import ChallanDetailCard from "../../components/payment-success/ChallanDetailCard";
 import WhatNext from "../../components/payment-success/WhatNext";
 import TrackStatusBottomSheet from "../../components/common/TrackStatusBottomSheet";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 //import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -31,6 +31,7 @@ interface PaymentDetail {
 
 const PaymentSuccess: React.FC = () => {
   const router = useRouter();
+  const params = useParams();
 
   const [challanPaymentDetail, setChallanPaymentDetail] =
     useState<PaymentDetail | null>(null);
@@ -50,6 +51,19 @@ const PaymentSuccess: React.FC = () => {
       setChallanPaymentDetail(JSON.parse(paymentDetail));
     }
   }, []);
+
+  useEffect(() => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "challanPaymentSuccess",
+      transaction_id: "TXN123456789",
+      transaction_value: params?.amount,
+      vehicle_number: sessionStorage.getItem("vehicleNo"),
+      challan_id: "CHLN987654",
+      payment_method: "UPI",
+    });
+  }, []);
+
   //console.log(visibleIncidents);
   return (
     <div className="lg:px-40 lg:bg-slate-50 lg:pt-10 ">
