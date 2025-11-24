@@ -26,7 +26,6 @@ function page() {
 
         <PaymentSummaryWebVersion />
       </div>
-
       {/* </div> */}
     </div>
   );

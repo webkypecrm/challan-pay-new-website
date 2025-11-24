@@ -6,6 +6,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { PledgeModal } from "../common/PledgeModal";
 import { ReadMoreSlider } from "../common/ReadMoreSlider";
 import { useChallanContext } from "@/context/ChallanContext";
+import moengage from "@moengage/web-sdk";
 
 function PayAndClose() {
   const [open, setOpen] = useState(false);
@@ -14,6 +15,11 @@ function PayAndClose() {
 
   const handlePledgeChange = (checked: boolean) => {
     setIsPledge(checked);
+    moengage.track_event("rewardOpted", {
+      rewardSelected: isPledge,
+      rewardAmount: data?.potentialDiscount,
+      vehicleNo: sessionStorage.getItem("vehicleNo"),
+    });
     if (checked) {
       setOpen(true); // open modal only when checked
     } else {

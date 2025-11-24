@@ -1,5 +1,6 @@
 import { postRequest } from "@/lib/api";
 import { useRouter } from "next/navigation";
+import moengage from "@moengage/web-sdk";
 
 interface PaymentParams {
   challanIds: number[];
@@ -13,10 +14,20 @@ interface CreateIncidentPayload extends PaymentParams {
   razorpayPaymentId: string;
 }
 
+interface CaseLead {
+  id: number | string;
+  challanNo: string;
+  vehicleNo: string;
+  challanAmount: number;
+}
+interface APIData {
+  caseLeads: CaseLead[];
+}
+
 interface CreateIncidentResponse {
   status: string;
   message: string;
-  data?: unknown;
+  data?: { data: APIData };
 }
 
 export const handleRazorpayPayment = async (
@@ -30,8 +41,13 @@ export const handleRazorpayPayment = async (
   router: ReturnType<typeof useRouter>,
   setLoader: (val: boolean) => void
 ) => {
+  moengage.track_event("paymentInitiated", {
+    totalAmount: grandTotal + potentialDiscount,
+    rewardAvailed: rewardGiven,
+    payableAmount: grandTotal,
+    vehicleNo: sessionStorage.getItem("vehicleNo"),
+  });
   try {
-    // ✅ Read from sessionStorage directly (no hooks)
     let prefillData = { name: "", email: "", contact: "" };
 
     if (typeof window !== "undefined") {
@@ -48,7 +64,6 @@ export const handleRazorpayPayment = async (
       }
     }
 
-    // ✅ Load Razorpay script
     const loadRazorpayScript = () =>
       new Promise<boolean>((resolve) => {
         const script = document.createElement("script");
@@ -63,12 +78,11 @@ export const handleRazorpayPayment = async (
       alert("Razorpay SDK failed to load. Check your connection.");
       return;
     }
-
     const options = {
       key: process.env.NEXT_PUBLIC_RAZORPAY_KEY!,
       amount: grandTotal * 100,
       currency: "INR",
-      name: "Challan Pay",
+      name: "ChallanPay",
       description: "Challan Payment",
       prefill: prefillData,
       theme: { color: "#000" },
@@ -83,6 +97,13 @@ export const handleRazorpayPayment = async (
           isContest: isContest,
         };
 
+        moengage.track_event("paymentSuccess", {
+          transactionId: response.razorpay_payment_id,
+          paymentAmount: grandTotal,
+          paymentStatus: "success",
+          paymentTime: new Date().toISOString(),
+        });
+
         try {
           const apiResponse = await postRequest<CreateIncidentResponse>(
             "/v1/d-to-c/create-incidents",
@@ -94,13 +115,35 @@ export const handleRazorpayPayment = async (
               JSON.stringify(apiResponse.data)
             );
           }
+          const response = apiResponse.data;
+          //console.log(response);
+          moengage.track_event("ticketCreated", {
+            irnNumbers: response?.data?.caseLeads.map(
+              (caseLead) => caseLead.id
+            ),
+            creationDate: new Date().toLocaleString(),
+            challanNumbers: response?.data?.caseLeads.map(
+              (caseLead) => caseLead.challanNo
+            ),
+            vehicleNumber: response?.data.caseLeads[0].vehicleNo,
+            challanAmount: response?.data.caseLeads.reduce(
+              (acc, caseLead) => acc + caseLead.challanAmount,
+              0
+            ),
+            paidAmount: grandTotal,
+          });
+
+          // moengage.track_event("rewardOpted", {
+          //   rewardSelected: rewardGiven,
+          //   rewardAmount: potentialDiscount,
+          //   vehicleNo: sessionStorage.getItem("vehicleNo"),
+          // });
           router.push(`/payment-success/${grandTotal}`);
         } catch (err) {
           console.error("Error creating incident:", err);
           alert(
             "Payment succeeded, but failed to record in system. Redirecting anyway."
           );
-          //router.push(`/payment-success/${grandTotal}`);
         } finally {
           setTimeout(() => setLoader(false), 2000);
         }

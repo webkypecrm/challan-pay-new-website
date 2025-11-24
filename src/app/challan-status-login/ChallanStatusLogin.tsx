@@ -3,13 +3,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import Header from "../components/common/Header";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Image from "next/image";
@@ -23,6 +17,7 @@ import { AxiosError } from "axios";
 import toast from "react-hot-toast";
 import { postRequest } from "@/lib/api";
 import { useSearchParams } from "next/navigation";
+import moengage from "@moengage/web-sdk";
 
 const loginSchema = z.object({
   fullName: z.string().min(3, "Full name must be at least 3 characters"),
@@ -117,6 +112,12 @@ export default function ChallanStatusLogin() {
 
   // Submit login to send OTP
   const onSubmit = async (data: LoginFormData) => {
+    moengage.track_event("otpRequested", {
+      mobileNumber: data.phone,
+      otpSent: "Yes",
+      eventPage: window.location.href,
+    });
+
     try {
       toast.loading("Sending OTP...");
       const response = await sendOtp(data.phone);
@@ -197,6 +198,14 @@ export default function ChallanStatusLogin() {
 
   // Verify OTP
   const handleVerifyOtp = async (otpValue?: string) => {
+    moengage.add_first_name(formData.name);
+    moengage.add_mobile(formData.phone);
+    moengage.identifyUser(formData.phone);
+    moengage.track_event("otpVerified", {
+      mobileNumber: formData.name,
+      otpStatus: "verified",
+      eventPage: window.location.href,
+    });
     const otp = otpValue || getOtpValue();
     try {
       setLoading(true);
