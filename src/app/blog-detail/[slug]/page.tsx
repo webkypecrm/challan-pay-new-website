@@ -1,93 +1,14 @@
-// import { getRequest } from "@/lib/api";
-// import BlogDetailClient from "./BlogDetailClient";
-// import Footer from "@/app/components/common/Footer";
+import { getRequest } from "@/lib/api";
+import BlogDetailClient from "./BlogDetailClient";
+import Footer from "@/app/components/common/Footer";
 
 // interface Params {
 //   slug: string;
 // }
 
-// interface Author {
-//   firstName: string;
-//   lastName?: string;
-// }
-
-// interface Category {
-//   id: number;
-//   name: string;
-// }
-
-// interface Blog {
-//   name: string;
-//   cover: string;
-//   description: string;
-//   shortDescription: string;
-//   metaDescription: string;
-//   metaKeywords: string;
-//   meta: string;
-//   createdAt: string;
-//   readMins: number;
-//   author: Author;
-//   category: Category;
-// }
-
-// interface ApiResponse {
-//   status: string;
-//   data?: {
-//     blog?: Blog;
-//   };
-// }
-
-// export async function generateMetadata({ params }: { params: Params }) {
-//   try {
-//     const res: ApiResponse = await getRequest(`/v1/blogs/${params.slug}`);
-//     const blog = res?.data?.blog;
-
-//     if (!blog) {
-//       return {
-//         title: "Blog Not Found",
-//         description: "No blog data available",
-//       };
-//     }
-
-//     return {
-//       title: blog.meta || blog.name,
-//       description: blog.metaDescription || "",
-//       keywords: blog.metaKeywords || [],
-//       openGraph: {
-//         title: blog.meta || blog.name,
-//         description: blog.metaDescription || "",
-//         images: [{ url: blog.cover }],
-//       },
-//       twitter: {
-//         card: "summary_large_image",
-//         title: blog.meta || blog.name,
-//         description: blog.metaDescription,
-//         images: [blog.cover],
-//       },
-//     };
-//   } catch (e) {
-//     return {
-//       title: "Blog Detail",
-//       description: "Blog information",
-//     };
-//   }
-// }
-
-// export default function Page({ params }: { params: Params }) {
-//   return (
-//     <>
-//       <BlogDetailClient slug={params.slug} />
-//       <Footer />
-//     </>
-//   );
-// }
-
-import { getRequest } from "@/lib/api";
-import BlogDetailClient from "./BlogDetailClient";
-import Footer from "@/app/components/common/Footer";
-
-interface Params {
-  slug: string;
+interface PageProps {
+  params: { slug: string };
+  searchParams: { id: string };
 }
 
 interface Author {
@@ -121,9 +42,9 @@ interface ApiResponse {
   };
 }
 
-export async function generateMetadata({ params }: { params: Params }) {
+export async function generateMetadata({ params, searchParams }: PageProps) {
   try {
-    const res: ApiResponse = await getRequest(`/v1/blogs/${params.slug}`);
+    const res: ApiResponse = await getRequest(`/v1/blogs/${searchParams.id}`);
     const blog = res?.data?.blog;
 
     if (!blog) {
@@ -157,8 +78,8 @@ export async function generateMetadata({ params }: { params: Params }) {
   }
 }
 
-export default async function Page({ params }: { params: Params }) {
-  const res: ApiResponse = await getRequest(`/v1/blogs/${params.slug}`);
+export default async function Page({ params, searchParams }: PageProps) {
+  const res: ApiResponse = await getRequest(`/v1/blogs/${searchParams.id}`);
   const blog = res?.data?.blog;
 
   const schemaData = blog
@@ -197,7 +118,7 @@ export default async function Page({ params }: { params: Params }) {
         />
       )}
 
-      <BlogDetailClient slug={params.slug} />
+      <BlogDetailClient slug={searchParams.id} />
       <Footer />
     </>
   );
