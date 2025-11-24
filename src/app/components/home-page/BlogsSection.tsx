@@ -17,42 +17,6 @@ import loaderAnimation from "../../loader.json";
 import Lottie from "lottie-react";
 import { formatDate } from "@/lib/helpers";
 
-// interface Blog {
-//   id: number;
-//   title: string;
-//   description: string;
-//   date: string;
-//   image: string;
-// }
-
-// const blogs: Blog[] = [
-//   {
-//     id: 1,
-//     title:
-//       "ChallanPay: India’s Trusted Platform for Fast and Easy Challan Resolution",
-//     description:
-//       "Managing traffic challans has become a significant concern for vehicle owners across India. With increasing digital enforcement and automated e-challan systems, many people find themselves struggling to keep track of outstanding fines, payment deadlines, and resolution procedures. This is where ChallanPay steps in. As India’s largest and most reliable challan resolution platform, ChallanPay simplifies the entire process of tracking and clearing challans through a fast, secure, and user-friendly system available at www.challanpay.in.",
-//     date: "Mar 12, 2024",
-//     image: "/blogs/blog1.png",
-//   },
-//   {
-//     id: 2,
-//     title: "Legal Support for Challans: A Complete Guide by ChallanPay",
-//     description:
-//       "Traffic challans have become a routine part of modern urban life, especially with increased digital enforcement across India. Whether it is a speeding violation, signal jump, missing documentation, or an e-challan issued through automated systems, most vehicle owners struggle to understand the legal process that follows.",
-//     date: "Mar 12, 2024",
-//     image: "/blogs/blog2.png",
-//   },
-//   {
-//     id: 3,
-//     title: "Transforming Legal Risk Management with ChallanPay",
-//     description:
-//       "Introduction: The Changing Face of Legal Risk In India’s rapidly evolving legal-and-mobility landscape, managing legal risks associated with vehicles, fleets and transport operations is no longer a back-office chore - it’s a strategic imperative. Rising regulatory complexity, real-time enforcement tools and generational shifts in mobility demand more proactive, technology-driven approaches.",
-//     date: "Mar 12, 2024",
-//     image: "/blogs/blog3.png",
-//   },
-// ];
-
 interface Blog {
   id: number;
   name: string;
@@ -176,38 +140,6 @@ export default function BlogsSection() {
 
         {/* Desktop View — Original Grid Layout */}
         <div className="hidden lg:grid grid-cols-5 gap-4">
-          {/* Left column — Large card (2/5) */}
-          {/* <div className="col-span-2 bg-white rounded-2xl overflow-hidden border border-gray-200  transition-shadow duration-300 p-5">
-            <div className="relative w-full h-65">
-              <Image
-                src={blogs[0]?.cover}
-                alt={blogs[0]?.name}
-                fill
-                className="object-cover rounded-xl"
-              />
-            </div>
-
-            <div className="mt-4">
-              <h3 className="text-lg font-semibold text-gray-900 leading-snug mb-2">
-                {blogs[0]?.name}
-              </h3>
-              <p className="text-gray-600 text-sm mb-3 line-clamp-6 my-6">
-                {blogs[0]?.shortDescription}
-              </p>
-
-              <div className="flex justify-between items-center my-4">
-                <span className="text-sm text-gray-500">
-                  {formatDate(blogs[0]?.createdAt)}
-                </span>
-                <Link
-                  href={`/blog-detail/${blogs[0]?.id}`}
-                  className="text-sm font-medium text-blue-600 hover:underline"
-                >
-                  Read More
-                </Link>
-              </div>
-            </div>
-          </div> */}
           {blogs?.length > 0 && (
             <div className="col-span-2 bg-white rounded-2xl overflow-hidden border border-gray-200 transition-shadow duration-300 p-5">
               <div className="relative w-full h-65">
