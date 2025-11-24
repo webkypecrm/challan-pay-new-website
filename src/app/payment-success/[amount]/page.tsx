@@ -56,11 +56,11 @@ const PaymentSuccess: React.FC = () => {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "challanPaymentSuccess",
-      transaction_id: "TXN123456789",
+      transaction_id: sessionStorage.getItem("TRID"),
       transaction_value: params?.amount,
       vehicle_number: sessionStorage.getItem("vehicleNo"),
-      challan_id: "CHLN987654",
-      payment_method: "UPI",
+      // challan_id: "CHLN987654",
+      payment_method: "ONLINE",
     });
   }, []);
 
