@@ -59,9 +59,9 @@ export const metadata: Metadata = {
     images: ["/logo/logo.svg"], // <-- Same logo here
   },
 
-  verification: {
-    google: "ewEGjg8z88yht-jA-TNRSC4pQKM_5IkuY2jb4UQF1uc",
-  },
+  // verification: {
+  //   google: "ewEGjg8z88yht-jA-TNRSC4pQKM_5IkuY2jb4UQF1uc",
+  // },
 };
 
 // export default function RootLayout({
@@ -214,6 +214,31 @@ export default function RootLayout({
               })(window,document,'script','dataLayer','GTM-5HQP9D3');
             `,
           }}
+        />
+        {/* Google Analytics (GA4) */}
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-2YKF6J30Z1"
+        />
+
+        <Script
+          id="google-analytics-inline"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2YKF6J30Z1');
+    `,
+          }}
+        />
+
+        {/* Google Site Verification */}
+        <meta
+          name="google-site-verification"
+          content="ewEGjg8z88yht-jA-TNRSC4pQKM_5IkuY2jb4UQF1uc"
         />
       </head>
 

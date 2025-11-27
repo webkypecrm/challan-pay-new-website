@@ -21,32 +21,30 @@ import Image from "next/image";
 
 const steps = [
   {
-    image: "/howtopayimage/step1.png",
-    title: "Step 1: Select Your Challans To Pay",
+    image: "/how-contest-works/step1.png",
+    title: "Step 1: Choose Contest and Make Payment ",
     description:
-      "View all your pending challans, select the ones you want to resolve, and proceed in a single tap.",
+      "Complete your challan payment securely to initiate the process.",
   },
   {
-    image: "/howtopayimage/step2.png",
-    title: "Step 2: Click Proceed Get Rewards",
-    description:
-      "Unlock personalized offers and rewards tailored to your selected challans.",
+    image: "/how-contest-works/step2.png",
+    title: "Step 2: We Contest on Your Behalf",
+    description: "Our team reviews your case and files the contest for you.",
   },
   {
-    image: "/howtopayimage/step3.png",
-    title: "Step 3: Pay & Resolve with Rewards",
-    description:
-      "Complete payment securely using your preferred method and enjoy your rewards!",
+    image: "/how-contest-works/step3.png",
+    title: "Step 3: Track Your Case Status",
+    description: "Monitor real-time updates and stay informed at every stage.",
   },
   {
-    image: "/howtopayimage/step4.png",
-    title: "Step 4: Track Your Challan Status",
+    image: "/how-contest-works/step4.png",
+    title: "Step 4: Receive Up to 100% Waiver",
     description:
-      "Monitor the progress of your payments in real time and get instant resolution updates.",
+      "Based on eligibility, you can get a partial or full waiver on your challan amount.",
   },
 ];
 
-export function HowToPaySheet({
+export function HowItWorksSheet({
   open,
   setOpen,
 }: {
@@ -135,7 +133,7 @@ export function HowToPaySheet({
 
               {/* Cyan Dots Indicator */}
             </Carousel>
-            <div className="flex justify-center  gap-1">
+            <div className="flex justify-center mt-0 gap-1">
               {steps.map((_, index) => (
                 <div
                   key={index}

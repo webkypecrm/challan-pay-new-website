@@ -5,12 +5,15 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useChallanContext } from "@/context/ChallanContext";
 import { ContestReadMore } from "../common/ContestReadMore";
 import { useState, useEffect } from "react";
+import { HowItWorksDesktopModal } from "../common/HowItWorksDesktopModal";
+import { HowItWorksSheet } from "../common/HowItWorksSheet";
 
 function ContestAndWait() {
   const { setIsContestSelected, isContestSelected, isPledge, setIsPledge } =
     useChallanContext();
   const [openReadMore, setOpenReadMore] = useState(false);
-
+  const [open, setOpen] = useState(false);
+  const [openDesktop, setOpenDesktop] = useState(false);
   const handleContestChange = () => {
     setIsContestSelected(!isContestSelected);
   };
@@ -28,13 +31,31 @@ function ContestAndWait() {
 
   return (
     <div className="border-1 border-gray-200 rounded-2xl bg-white mb-4 ">
-      <div className="p-4 flex flex-1 items-center gap-2">
-        <Checkbox
-          className="rounded-sm w-6 h-6"
-          checked={isContestSelected}
-          onCheckedChange={handleContestChange}
-        />
-        <span className="text-sm font-semibold"> Contest and Wait</span>
+      <div className="p-4 flex flex-1 justify-between items-center gap-2">
+        <div className="flex flex-1 items-center gap-2">
+          <Checkbox
+            className="rounded-sm w-6 h-6"
+            checked={isContestSelected}
+            onCheckedChange={handleContestChange}
+          />
+          <span className="text-sm font-semibold"> Contest and Wait</span>
+        </div>
+
+        <div>
+          {/* Right side: Share button */}
+          <button
+            className="flex items-center gap-2 px-2 py-1 text-sm text-cyan-700 font-medium lg:hidden block   underline leading-normal"
+            onClick={() => setOpen(true)}
+          >
+            How it Works?
+          </button>
+          <button
+            className="flex items-center gap-2 px-2 py-1 text-sm text-cyan-700 font-medium hidden lg:block  underline leading-normal"
+            onClick={() => setOpenDesktop(true)}
+          >
+            How it Works?
+          </button>
+        </div>
       </div>
       <div className="p-2 flex flex-wrap justify-start items-center gap-2">
         <span className="text-xs font-semibold text-green-800 font-semibold p-2 bg-green-50 mx-2">
@@ -55,6 +76,8 @@ function ContestAndWait() {
         </span>
       </div>
       <ContestReadMore open={openReadMore} setOpen={setOpenReadMore} />
+      <HowItWorksSheet open={open} setOpen={setOpen} />
+      <HowItWorksDesktopModal open={openDesktop} setOpen={setOpenDesktop} />
     </div>
   );
 }
