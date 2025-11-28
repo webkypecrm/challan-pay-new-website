@@ -122,7 +122,7 @@ export default function BlogsSection() {
                               {formatDate(blog.createdAt)}
                             </span>
                             <Link
-                              href={`/blog-detail/${blog.id}`}
+                              href={`/blog-detail/${blog.slug}?id=${blog.id}`}
                               className="text-sm font-medium text-blue-600 hover:underline"
                             >
                               Read More
