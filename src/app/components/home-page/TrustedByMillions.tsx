@@ -98,13 +98,24 @@ export default function TrustedByMillions() {
             className="w-[300px] h-[500px] object-contain"
           />
 
-          <video
+          {/* <video
             src="/video/video.mp4"
             autoPlay
             loop
             muted
             playsInline
             preload="auto"
+            controls
+            className="absolute top-[3%] lg:left-[24%] left-[14%] lg:w-[52%] w-[70%]  h-[94%] object-cover rounded-lg"
+          /> */}
+
+          <video
+            src="/video/video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="none"
             controls
             className="absolute top-[3%] lg:left-[24%] left-[14%] lg:w-[52%] w-[70%]  h-[94%] object-cover rounded-lg"
           />
