@@ -29,12 +29,13 @@ const Loader: React.FC<LoaderProps> = ({ progress }) => {
       </div>
 
       <div className="flex-1 flex flex-col items-center justify-center z-100">
-        <Image
+        <img
           src="/gif/trafficLight.gif"
           alt="center"
           width={100}
           height={100}
         />
+
         <div className="flex flex-col text-center justify-center items-center mt-4 mb-4">
           <p className="text-lg font-bold">
             Please wait for a while, data <br /> is preparing to serve you...
