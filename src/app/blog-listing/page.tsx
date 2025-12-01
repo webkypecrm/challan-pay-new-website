@@ -154,7 +154,7 @@ function BlogsListing() {
 
           <div className="flex justify-center items-center rounded-md mt-4 lg:rounded-0 lg:mt-0 block lg:hidden">
             <Image
-              src="/blogs/blog-heading.png"
+              src="/blogs/blog-heading.webp"
               alt="blog image"
               width={400}
               height={300}
