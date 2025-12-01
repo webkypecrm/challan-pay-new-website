@@ -254,7 +254,7 @@ export default function ChallanStatusLogin() {
       <Card className="w-full max-w-sm mt-10 mx-auto lg:bg-white ">
         <div className="w-full flex flex-col justify-center items-center mt-5">
           <Image
-            src="/Images/loginImg.png"
+            src="/Images/loginImg.webp"
             width={220}
             height={140}
             alt="login-image"
