@@ -32,7 +32,7 @@ const Loader: React.FC<LoaderProps> = ({ progress }) => {
         <Image
           // src={"/loader-img/road-side.png"}
           // src={"/gif/trafficLight.gif"}
-          src={"/Gif/trafficLight.gif"}
+          src={"/public/gif/trafficLight.gif"}
           alt="Center"
           width={100}
           height={100}
