@@ -13,15 +13,15 @@ export default function SupportedBy({
   autoplayDelay = 2000,
 }: SupportedByProps) {
   const partners = [
-    { icon: "/supported-by/Agami2.png", name: "Agami" },
-    { icon: "/supported-by/MSME2.png", name: "MSME" },
-    { icon: "/supported-by/ULIP-Consolidated2.png", name: "ULIP" },
+    { icon: "/supported-by/Agami2.webp", name: "Agami" },
+    { icon: "/supported-by/MSME2.webp", name: "MSME" },
+    { icon: "/supported-by/ULIP-Consolidated2.webp", name: "ULIP" },
     {
-      icon: "/supported-by/Entrepreneurlndia2.png",
+      icon: "/supported-by/Entrepreneurlndia2.webp",
       name: "Entrepreneur India",
     },
-    { icon: "/supported-by/fada2.png", name: "FADA" },
-    { icon: "/supported-by/aitwa2.png", name: "AITWA" },
+    { icon: "/supported-by/fada2.webp", name: "FADA" },
+    { icon: "/supported-by/aitwa2.webp", name: "AITWA" },
   ];
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
