@@ -168,7 +168,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Facebook Pixel */}
-        <Script
+        {/* <Script
           id="facebook-pixel"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -185,9 +185,9 @@ export default function RootLayout({
               fbq('track', 'PageView');
             `,
           }}
-        />
+        /> */}
 
-        <noscript>
+        {/* <noscript>
           <img
             height="1"
             width="1"
@@ -195,10 +195,10 @@ export default function RootLayout({
             src="https://www.facebook.com/tr?id=1131279109198514&ev=PageView&noscript=1"
             alt="facebook-pixel"
           />
-        </noscript>
+        </noscript> */}
 
         {/* Google Tag Manager */}
-        <Script
+        {/* <Script
           id="google-tag-manager"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -214,15 +214,15 @@ export default function RootLayout({
               })(window,document,'script','dataLayer','GTM-5HQP9D3');
             `,
           }}
-        />
+        /> */}
         {/* Google Analytics (GA4) */}
-        <Script
+        {/* <Script
           id="google-analytics"
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-2YKF6J30Z1"
-        />
+        /> */}
 
-        <Script
+        {/* <Script
           id="google-analytics-inline"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -233,27 +233,27 @@ export default function RootLayout({
       gtag('config', 'G-2YKF6J30Z1');
     `,
           }}
-        />
+        /> */}
 
         {/* Google Site Verification */}
-        <meta
+        {/* <meta
           name="google-site-verification"
           content="ewEGjg8z88yht-jA-TNRSC4pQKM_5IkuY2jb4UQF1uc"
-        />
+        /> */}
       </head>
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased lg:bg-white`}
       >
         {/* ⭐ MUST BE JUST UNDER <body> — Required by Google Tag Manager */}
-        <noscript>
+        {/* <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-5HQP9D3"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
-        </noscript>
+        </noscript> */}
 
         <ClientWrapper>
           <div className="mt-20 lg:mt-26">{children}</div>
