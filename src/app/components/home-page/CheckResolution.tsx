@@ -34,7 +34,7 @@ export function CheckResolution() {
               <CardContent className="grid gap-6">
                 <div className="flex  items-center justify-center lg:hidden">
                   <Image
-                    src={"/Images/challanpay.png"}
+                    src={"/Images/challanpay.webp"}
                     alt="Challan Pay Png"
                     width={350}
                     height={250}
@@ -249,7 +249,7 @@ export function CheckResolution() {
                     </TabsContent2>
                     <div className="flex items-center justify-center hidden lg:flex">
                       <Image
-                        src={"/Images/challanpay.png"}
+                        src={"/Images/challanpay.webp"}
                         alt="Challan Pay Png"
                         width={350}
                         height={250}
@@ -266,7 +266,7 @@ export function CheckResolution() {
               <CardContent className="grid gap-6">
                 <div className="flex  items-center justify-center  lg:hidden">
                   <Image
-                    src={"/Images/government.png"}
+                    src={"/Images/government.webp"}
                     alt="Challan Pay Png"
                     width={350}
                     height={250}
@@ -485,7 +485,7 @@ export function CheckResolution() {
                     </TabsContent2>
                     <div className="flex  items-center justify-center hidden lg:flex ">
                       <Image
-                        src={"/Images/government.png"}
+                        src={"/Images/government.webp"}
                         alt="Challan Pay Png"
                         width={350}
                         height={250}

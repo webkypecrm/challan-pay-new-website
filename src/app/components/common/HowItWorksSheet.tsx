@@ -21,23 +21,23 @@ import Image from "next/image";
 
 const steps = [
   {
-    image: "/how-contest-works/step1.png",
+    image: "/how-contest-works/step1.webp",
     title: "Step 1: Choose Contest and Make Payment ",
     description:
       "Complete your challan payment securely to initiate the process.",
   },
   {
-    image: "/how-contest-works/step2.png",
+    image: "/how-contest-works/step2.webp",
     title: "Step 2: We Contest on Your Behalf",
     description: "Our team reviews your case and files the contest for you.",
   },
   {
-    image: "/how-contest-works/step3.png",
+    image: "/how-contest-works/step3.webp",
     title: "Step 3: Track Your Case Status",
     description: "Monitor real-time updates and stay informed at every stage.",
   },
   {
-    image: "/how-contest-works/step4.png",
+    image: "/how-contest-works/step4.webp",
     title: "Step 4: Receive Up to 100% Waiver",
     description:
       "Based on eligibility, you can get a partial or full waiver on your challan amount.",

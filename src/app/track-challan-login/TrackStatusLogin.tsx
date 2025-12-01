@@ -211,7 +211,7 @@ export default function TrackStatusLogin() {
       <Card className="w-full max-w-sm mt-10 mx-auto lg:bg-white lg:min-h-screen">
         <div className="w-full flex flex-col justify-center items-center mt-5">
           <Image
-            src="/Images/loginImg.png"
+            src="/Images/loginImg.webp"
             width={180}
             height={120}
             alt="login-image"

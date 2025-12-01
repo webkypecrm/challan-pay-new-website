@@ -28,7 +28,7 @@ function PrivacyPolicy() {
         </div>
         <div className="flex justify-center items-center rounded-md mt-4 lg:rounded-0 lg:mt-0 block lg:hidden">
           <Image
-            src="/Images/privacy.png"
+            src="/Images/privacy.webp"
             alt="car image"
             width={400}
             height={300}
@@ -37,7 +37,7 @@ function PrivacyPolicy() {
         </div>
         <div className="flex justify-center items-center rounded-md mt-4 lg:rounded-0 lg:mt-0 lg:block hidden p-2">
           <Image
-            src="/Images/privacy-png.png"
+            src="/Images/privacy-png.webp"
             alt="car image"
             width={400}
             height={300}

@@ -26,7 +26,7 @@ function TermsAndCondition() {
         </div>
         <div className="flex justify-center items-center rounded-md mt-4 lg:rounded-0 lg:mt-0 lg:block hidden p-2">
           <Image
-            src="/Images/policy-png.png"
+            src="/Images/policy-png.webp"
             alt="car image"
             width={500}
             height={350}

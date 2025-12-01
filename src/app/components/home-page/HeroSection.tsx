@@ -27,7 +27,7 @@ const cardData = [
     ),
     description:
       "ChallanPay brings you a fast, secure, and hassle-free way to settle your traffic challans online",
-    image: "/Images/hero-section-img.png",
+    image: "/Images/hero-section-img.webp",
   },
   {
     title: (
@@ -54,7 +54,7 @@ const cardData = [
       </>
     ),
     description: "No spam, no scam. Only authorized payments with ChallanPay.",
-    image: "/Images/hero-section-img2.png",
+    image: "/Images/hero-section-img2.webp",
   },
 ];
 

@@ -12,25 +12,25 @@ import { XIcon } from "lucide-react";
 
 const steps = [
   {
-    image: "/howtopayimage/step1.png",
+    image: "/howtopayimage/step1.webp",
     title: "Step 1: Select Your Challans To Pay",
     description:
       "View all your pending challans, select the ones you want to resolve, and proceed in a single tap.",
   },
   {
-    image: "/howtopayimage/step2.png",
+    image: "/howtopayimage/step2.webp",
     title: "Step 2: Click Proceed Get Rewards",
     description:
       "Unlock personalized offers and rewards tailored to your selected challans.",
   },
   {
-    image: "/howtopayimage/step3.png",
+    image: "/howtopayimage/step3.webp",
     title: "Step 3: Pay & Resolve with Rewards",
     description:
       "Complete payment securely using your preferred method and enjoy your rewards!",
   },
   {
-    image: "/howtopayimage/step4.png",
+    image: "/howtopayimage/step4.webp",
     title: "Step 4: Track Your Challan Status",
     description:
       "Monitor the progress of your payments in real time and get instant resolution updates.",

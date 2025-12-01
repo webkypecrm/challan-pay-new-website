@@ -18,7 +18,7 @@ interface SavingsItem {
 
 const savingsData: SavingsItem[] = [
   {
-    image: "/rewardUser/riya.png",
+    image: "/rewardUser/riya.webp",
     title: "Riya from Mumbai saved ₹750",
     emoji: "🎉",
     showImage: true,
@@ -36,13 +36,13 @@ const savingsData: SavingsItem[] = [
     showImage: false,
   },
   {
-    image: "/rewardUser/ravi.png",
+    image: "/rewardUser/ravi.webp",
     title: "Ravi just paid ₹4,800 court challan",
     emoji: "🔐",
     showImage: true,
   },
   {
-    image: "/rewardUser/kavita.png",
+    image: "/rewardUser/kavita.webp",
     title: "Kavita claimed ₹1250 reward",
     emoji: "🎉",
     showImage: true,
@@ -54,7 +54,7 @@ const savingsData: SavingsItem[] = [
     showImage: false,
   },
   {
-    image: "/rewardUser/aditya.png",
+    image: "/rewardUser/aditya.webp",
     title: "Aditya from Kolkata saved ₹1,650!",
     emoji: "🎁",
     showImage: true,
@@ -66,7 +66,7 @@ const savingsData: SavingsItem[] = [
     showImage: false,
   },
   {
-    image: "/rewardUser/ajay.png",
+    image: "/rewardUser/ajay.webp",
     title: "Ajay from Pune just saved ₹1650",
     emoji: "🎊",
     showImage: true,

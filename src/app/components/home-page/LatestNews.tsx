@@ -22,7 +22,7 @@ interface NewsItem {
 
 const newsData: NewsItem[] = [
   {
-    logo: "/news-logo/yourstory-logo-png_seeklogo-528345.png",
+    logo: "/news-logo/yourstory-logo-png_seeklogo-528345.webp",
     title:
       "Revolutionizing On-Road Legal Support : Lawyered's Journey Towards Accessible Justice",
     description:
@@ -31,7 +31,7 @@ const newsData: NewsItem[] = [
     link: "https://yourstory.com/2024/08/justice-on-the-road-lawyered-legal-tech-startup-lawyers-network-highway",
   },
   {
-    logo: "/news-logo/abp-logo-png_seeklogo-432770.png",
+    logo: "/news-logo/abp-logo-png_seeklogo-432770.webp",
     title:
       "Contracts To Code: Legal Tech Is Shaping India's Startup Future. Here's How",
     description:
@@ -41,7 +41,7 @@ const newsData: NewsItem[] = [
   },
 
   {
-    logo: "/news-logo/images3.png",
+    logo: "/news-logo/images3.webp",
     title:
       "Delhi traffic challan: How to get them waived off or settled at Lok Adalat 2025",
     description:
@@ -50,7 +50,7 @@ const newsData: NewsItem[] = [
     link: "https://www.hindustantimes.com/business/delhi-traffic-challan-how-to-get-them-waived-off-or-settled-at-lok-adalat-2025-101740993817814.html",
   },
   {
-    logo: "/news-logo/Lawyered_logo (3446x654)_20250527_103837_0000.png",
+    logo: "/news-logo/Lawyered_logo.webp",
     title:
       "Celebrating Vision and Leadership:Himanshu Gupta Awarded Entrepreneur of the Year at 2024 Entrepreneur India Startup Awards",
     description:
@@ -59,7 +59,7 @@ const newsData: NewsItem[] = [
     link: "https://lawyered.in/events-and-news/lots-launches-at-dealerships-in-chhattisgarh-with-fada-&-rada",
   },
   {
-    logo: "/news-logo/sugermint-mobile-logo.png",
+    logo: "/news-logo/sugermint-mobile-logo.webp",
     title:
       "Meet Himanshu Gupta: The Visionary Revolutionizing Road Side Legal Assistance with LOTS",
     description:
@@ -68,7 +68,7 @@ const newsData: NewsItem[] = [
     link: "https://sugermint.com/himanshu-gupta/",
   },
   {
-    logo: "/news-logo/print_logo.png",
+    logo: "/news-logo/print_logo.webp",
     title: "LOTS Launches at Dealerships in Chhattisgarh with FADA & RADA",
     description:
       "On February 28, 2024, the Federation of Automobile Dealers Associations (FADA) and the Raipur Automobile Dealers Association (RADA) welcomed the launch of Lawyereds flagship product, LOTS24×7 (On-Road Legal Assistance), at dealerships across Raipur, Chhattisgarh.",
@@ -77,7 +77,7 @@ const newsData: NewsItem[] = [
   },
 
   {
-    logo: "/news-logo/business-standard.png",
+    logo: "/news-logo/business-standard.webp",
     title:
       "E-Challan Backlog Soars: ChallanPay Featured in TOI Gurgaon Edition",
     description:
@@ -86,7 +86,7 @@ const newsData: NewsItem[] = [
     link: "https://epaper.indiatimes.com/timesepaper/publication-the-times-of-india,city-delhi.cms?redirectionSource=TOIWeb&_gl=1*7eud4s*_gcl_au*ODcxNDcxMTQuMTc1MjgyNDA1MQ..*_ga*MjEzNTU4Mzk1NS4xNzE3NDE3MjU3*_ga_FCN624MN68*czE3NjA1OTIxMDUkbzQ1JGcxJHQxNzYwNTkyMTMwJGozNSRsMCRoMA",
   },
   {
-    logo: "/news-logo/business-standard.png",
+    logo: "/news-logo/business-standard.webp",
     title: "Addressing India’s E-Challan Backlog: ChallanPay to the Rescue",
     description:
       "With 60% of traffic fines stuck in courts and only 27.5% closure rate (2019–2024), ChallanPay brings legal-tech innovation to help resolve e-challan cases efficiently.",
@@ -94,7 +94,7 @@ const newsData: NewsItem[] = [
     link: "https://www.business-standard.com/industry/auto/e-challan-backlog-swells-beyond-courts-125081801112_1.html",
   },
   {
-    logo: "/news-logo/the-economic-time.png",
+    logo: "/news-logo/the-economic-time.webp",
     title:
       "ChallanPay Supports National Lok Adalat to Simplify Challan Resolutions",
     description:
@@ -103,7 +103,7 @@ const newsData: NewsItem[] = [
     link: "https://m.economictimes.com/wealth/save/national-lok-adalat-on-10-may-you-can-settle-traffic-challans-drink-and-drive-case-select-property-dispute-and-more/articleshow/121024621.cms",
   },
   {
-    logo: "/news-logo/cxo.png",
+    logo: "/news-logo/cxo.webp",
     title:
       "Leading the way among Top Legal Startups Streamlining Traffic Challans",
     description:
@@ -112,7 +112,7 @@ const newsData: NewsItem[] = [
     link: "https://cxotoday.com/story/tech-driven-and-hassle-free-4-legal-startups-streamlining-traffic-challan/",
   },
   {
-    logo: "/news-logo/ev-revolution.png",
+    logo: "/news-logo/ev-revolution.webp",
     title:
       "How a Missed Online Challan Can Turn Costly in India’s Digital Traffic System",
     description:
@@ -121,7 +121,7 @@ const newsData: NewsItem[] = [
     link: "https://evolutionautoindia.in/how-indias-tech-driven-traffic-system-turns-a-missed-online-challan-into-a-costly-affair/",
   },
   {
-    logo: "/news-logo/techi-expert.png",
+    logo: "/news-logo/techi-expert.webp",
     title: "Smart Ways to Manage Digital Challans: Tips for Everyday Commuters",
     description:
       "Discover effective strategies to manage digital challans easily. Learn how commuters can stay compliant, avoid penalties, and simplify traffic fine management.",
@@ -129,7 +129,7 @@ const newsData: NewsItem[] = [
     link: "https://www.techiexpert.com/smart-ways-to-tackle-digital-challans-lessons-for-everyday-commuters/",
   },
   {
-    logo: "/news-logo/the-economic-time.png",
+    logo: "/news-logo/the-economic-time.webp",
     title: "Lawyered Unveils ChallanPay for Seamless Challan Resolution",
     description:
       "Lawyered introduces ChallanPay, a one-stop digital platform to discover, contest & pay traffic challans across India — boosting compliance for drivers & fleets.",
@@ -137,7 +137,7 @@ const newsData: NewsItem[] = [
     link: "https://auto.economictimes.indiatimes.com/amp/news/industry/lawyered-launches-challanpay-to-simplify-and-digitise-traffic-challan-resolution/125289397",
   },
   {
-    logo: "/news-logo/the-economic-time.png",
+    logo: "/news-logo/the-economic-time.webp",
     title: "Wrong E-Challans: A Rising Legal Risk for Drivers",
     description:
       "Lawyered highlights how incorrect e-challans jeopardise drivers’ rights, urging fast legal recourse and smarter resolution via tech-driven solutions.",
