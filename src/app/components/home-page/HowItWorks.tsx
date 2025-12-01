@@ -124,7 +124,7 @@ export default function HowItWorks() {
 
             <Card className="relative flex flex-col items-center justify-center rounded-xl overflow-visible border shadow-sm py-0 w-[350px] sm:max-w-md">
               <Image
-                src="/how-it-work/rectangle1.png"
+                src="/how-it-work/rectangle1.webp"
                 alt="Enter Details"
                 width={350}
                 height={250}
@@ -148,7 +148,7 @@ export default function HowItWorks() {
 
             <Card className="relative flex flex-col items-center justify-center rounded-xl overflow-visible border shadow-sm py-0 w-[350px]  max-w-xs sm:max-w-md">
               <Image
-                src="/how-it-work/rectangle3.png"
+                src="/how-it-work/rectangle3.webp"
                 alt="View and Pay Challans"
                 width={350}
                 height={250}
@@ -175,7 +175,7 @@ export default function HowItWorks() {
 
             <Card className="relative flex flex-col items-center justify-center rounded-xl overflow-visible border shadow-sm py-0 w-[350px] max-w-xs sm:max-w-md">
               <Image
-                src="/how-it-work/rectangle2.png"
+                src="/how-it-work/rectangle2.webp"
                 alt="Settle Challans Easily"
                 width={350}
                 height={250}
