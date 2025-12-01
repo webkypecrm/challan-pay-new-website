@@ -31,6 +31,7 @@ const Loader: React.FC<LoaderProps> = ({ progress }) => {
       <div className="flex-1 flex flex-col items-center justify-center z-100">
         <Image
           // src={"/loader-img/road-side.png"}
+          // src={"/gif/trafficLight.gif"}
           src={"/gif/trafficLight.gif"}
           alt="Center"
           width={100}
