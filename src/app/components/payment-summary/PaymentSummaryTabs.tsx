@@ -66,7 +66,7 @@ export function PaymentSummaryTabs() {
               data?.potentialDiscount === 0 ? "contestandwait" : "payandclose"
             }
           >
-            {data?.courtChallanAmount && data.courtChallanAmount >= 10000 ? (
+            {data?.courtChallanAmount && data.courtChallanAmount >= 5000 ? (
               <TabsList className="w-full justify-center  px-4 lg:px-0 rounded-t-none lg:rounded-md lg:bg-[#faf8f7]  ">
                 {data?.potentialDiscount !== 0 ? (
                   <TabsTrigger
@@ -95,7 +95,7 @@ export function PaymentSummaryTabs() {
               </TabsContent>
             ) : null}
 
-            {data?.courtChallanAmount && data.courtChallanAmount >= 10000 ? (
+            {data?.courtChallanAmount && data.courtChallanAmount >= 5000 ? (
               <TabsContent value="contestandwait" className=" px-4">
                 <ContestAndWait />
               </TabsContent>
