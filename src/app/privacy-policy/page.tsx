@@ -463,9 +463,9 @@ function PrivacyPolicy() {
               <p>
                 <strong>Name:</strong> Deeksha Varshney
               </p>
-              <p>
+              {/* <p>
                 <strong>Mobile:</strong> 8076110124
-              </p>
+              </p> */}
               <p>
                 <strong>Email:</strong> Deeksha.varshney@lawyered.in
               </p>
